@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–64; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–65; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -858,6 +858,10 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    NOT listed. **Written from the plugin format as I know it and not installed anywhere — the sandbox has no `/plugin`.** First real
    test: on the Mac run the two commands in `docs/HOW-TO-ASK.md` and check the skills appear; if `skills` paths are rejected,
    fall back to a `skills/` dir at the plugin root. Needs the repo checkout to run scripts.
+
+65. **Merged items 62–64 into `main`** (fast-forward, `origin` only; user: "merge to main if everything is fine"). Diff was skills, docs
+   and `.claude-plugin/` only. The plugin install is now reachable from the default branch but **still untested** (item 64). The
+   `iqratahir` mirror was NOT pushed (sandbox has only `origin`): from the Mac run `git push iqratahir main`.
 
 ## 6. Next up
 
