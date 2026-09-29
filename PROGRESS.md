@@ -823,6 +823,21 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 
 ## 6. Next up
 
+0d. **Favourites/Saved searches re-capture (user will do it later, 2026-09-29).** Deliverable `favourites-revamp` v4 is built
+   and sent, with grey placeholder images and derived (unverified) empty states.
+   - **Part A (recommended, one command):** on the Mac, signed in: `git checkout claude/eloquent-maxwell-gokls5 && git pull
+     origin claude/eloquent-maxwell-gokls5 && npm run capture:account -- favourites saved-searches` (images now inline). Then
+     `git checkout -B favourites-capture && git add -f design-kit/reference/live/favourites.* design-kit/reference/live/saved-searches.*
+     design-kit/reference/live/screens/favourites.* design-kit/reference/live/screens/saved-searches.* && git commit -m "Recapture"
+     && git push -f origin favourites-capture`. Then here: `git fetch origin favourites-capture && git checkout
+     origin/favourites-capture -- design-kit/reference/live && git reset -q HEAD design-kit/reference/live`, rebuild the two live
+     templates (**never with a partial `reference/live` — see the GOTCHA in item 57; restore pruned files with
+     `git ls-files -d | xargs git checkout --`**), `node scripts/build-derived-states.mjs`, regenerate `flows.json` node ids,
+     `npm run qa -- --scope favourites-revamp`, rebuild **without** `--placeholder-images`, bump the version.
+   - **Part B (optional):** sign out, sign in with an account that has nothing saved, `npm run capture:account -- favourites-empty
+     saved-searches-empty` (routes already in the script), push the same way. Replaces the derived empty states with real ones
+     and settles the wording/size questions; retire `build-derived-states.mjs` then.
+
 0c. **Use the new gate on real work** (items 52–54; favourites now passes QA). Confirm with the user: (a) the flags and roles that change a
    surface (`design-kit/qa/product/{flags,roles}.md` are seeds, not facts), (b) canonical strings for
    `cpy.verbatim`, (c) `payment` still has no empty-state decision (it is not a list — set `no_list` if so). Then run the first real
