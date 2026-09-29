@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–65; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–66; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -862,6 +862,15 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 65. **Merged items 62–64 into `main`** (fast-forward, `origin` only; user: "merge to main if everything is fine"). Diff was skills, docs
    and `.claude-plugin/` only. The plugin install is now reachable from the default branch but **still untested** (item 64). The
    `iqratahir` mirror was NOT pushed (sandbox has only `origin`): from the Mac run `git push iqratahir main`.
+
+66. **Single-skill package for claude.ai** — `npm run package:skill` (`scripts/package-single-skill.py`) builds
+   `dist/skills/dubizzle-design-handoff.skill` from the four repo skills (they stay separate here; the package is generated, so
+   nothing to keep in sync). Layout: orchestrator `SKILL.md`, `stages/1-design|2-qa|3-deliverable.md`, `qa/` and `deliverables/`
+   (scripts, schema, references). New name avoids the clash with account skills `design-qa`/`design-deliverables` from the other
+   project. Scripts' repo-root lookup now tries the working directory first, so they run when installed outside the repo.
+   Tested: unzipped outside the repo, `matrix.py` and `build_deliverable.py` run from the repo root. NOT tested: upload to claude.ai,
+   or running scripts inside Claude Design (unknown whether it has a shell). Correction: Claude Design does list account-uploaded
+   skills on `/`; the Claude Code plugin does not reach it.
 
 ## 6. Next up
 

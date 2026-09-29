@@ -2,10 +2,12 @@
 import json, pathlib, re
 
 def repo_root(start=None):
-    p = pathlib.Path(start or __file__).resolve()
-    for parent in [p] + list(p.parents):
-        if (parent / "package.json").exists() and (parent / "design-kit").is_dir():
-            return parent
+    # the working directory first, so the scripts also work when the skill is installed outside the repo
+    starts = [pathlib.Path(start).resolve()] if start else [pathlib.Path.cwd().resolve(), pathlib.Path(__file__).resolve()]
+    for p in starts:
+        for parent in [p] + list(p.parents):
+            if (parent / "package.json").exists() and (parent / "design-kit").is_dir():
+                return parent
     raise SystemExit("cannot find the repo root (package.json + design-kit/)")
 
 def load_json(p, default=None):

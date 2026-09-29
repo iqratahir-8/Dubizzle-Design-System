@@ -22,9 +22,10 @@ DELIV_VERSION_SCHEMA = 1
 
 
 def repo_root():
-    for p in [HERE] + list(HERE.parents):
-        if (p / "package.json").exists() and (p / "design-kit").is_dir():
-            return p
+    for start in (pathlib.Path.cwd().resolve(), HERE):
+        for p in [start] + list(start.parents):
+            if (p / "package.json").exists() and (p / "design-kit").is_dir():
+                return p
     sys.exit("cannot find the repo root")
 
 

@@ -209,3 +209,10 @@ That gives `design-to-handoff`, `feature-design`, `design-qa`, `design-deliverab
 they already load from `.claude/skills/` without the plugin. Update later with `/plugin marketplace update dubizzle`.
 The plugin definition is `.claude-plugin/` (it points at `.claude/skills`, so nothing is duplicated).
 
+## One skill for claude.ai upload
+
+The repo keeps four separate skills. For claude.ai (where names like `design-qa` can clash with skills already on the account)
+run `npm run package:skill`: it stitches them into **one** skill, `dubizzle-design-handoff`, at
+`dist/skills/dubizzle-design-handoff.skill` (gitignored). Upload it at Settings → Capabilities → Skills. The scripts still need
+the repo checked out and are run from its root, so use it for the process in Claude Design and Claude Code in the repo for real runs.
+
