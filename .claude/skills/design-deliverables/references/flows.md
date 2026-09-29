@@ -28,6 +28,7 @@ not CSS selectors, so a hotspot survives a re-layout.
 - QA enforces: every endpoint exists (`flw.dead`), every node is in the ledger (`flw.node`), every
   screen is reachable from `entry` (`flw.reach`), every non-entry screen has a route back
   (`flw.back`), every modal/drawer/sheet/dialog has a `dismiss`/`close` (`flw.dismiss`).
+- **One entry per platform:** replace `"entry": "list"` with `"entries": {"web-desktop": "list", "web-mobile": "m-list"}` and give every screen its `platform`. The runner shows a platform switch and a picker filtered to it; QA checks reachability from every entry. (`entry` still works for a single-platform flow.)
 - Never write a flow specific to one feature into the skill; the feature is a parameter.
 
 Runner: **Back**, **Reset**, **Show hotspots**, a screen picker, and `?screen=<screen id>` deep

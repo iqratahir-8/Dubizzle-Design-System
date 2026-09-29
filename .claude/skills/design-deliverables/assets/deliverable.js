@@ -88,7 +88,10 @@
   /* prototype runner: flows.json transitions key on node ids; back / reset / state picker / deep link / hotspots */
   var stage = $("#dd-proto");
   if (stage && flows) {
-    var cur = flows.entry, hist = [], hot = false, box = $("#dd-proto-box"), title = $("#dd-proto-title");
+    var plat = new URLSearchParams(location.search).get("platform"), entries = flows.entries || null;
+    if (entries && !entries[plat]) plat = Object.keys(entries)[0];
+    function entryOf() { return entries ? entries[plat] : flows.entry; }
+    var cur = entryOf(), hist = [], hot = false, box = $("#dd-proto-box"), title = $("#dd-proto-title");
     var qs = new URLSearchParams(location.search);
     function keyOf(id) { return (flows.screens[id] || {}).key; }
     function show(id, push) {
@@ -108,12 +111,15 @@
     }
     function back() { if (hist.length) show(hist.pop(), false); }
     $("#dd-proto-back").onclick = back;
-    $("#dd-proto-reset").onclick = function () { hist = []; show(flows.entry, false); };
+    $("#dd-proto-reset").onclick = function () { hist = []; show(entryOf(), false); };
     $("#dd-proto-hot").onclick = function () { hot = !hot; this.setAttribute("aria-pressed", hot); show(cur, false); };
-    var pick = $("#dd-proto-pick");
-    Object.keys(flows.screens).forEach(function (id) { var o = document.createElement("option"); o.value = id; o.textContent = id; pick.appendChild(o); });
+    var pick = $("#dd-proto-pick"), pl = $("#dd-proto-plat");
+    function fillPicker() { pick.innerHTML = ""; Object.keys(flows.screens).forEach(function (id) { if (entries && flows.screens[id].platform !== plat) return; var o = document.createElement("option"); o.value = id; o.textContent = id; pick.appendChild(o); }); }
+    fillPicker();
     pick.onchange = function () { show(pick.value, true); };
-    show(flows.screens[qs.get("screen")] ? qs.get("screen") : flows.entry, false);
+    if (pl && entries) { Object.keys(entries).forEach(function (k) { var o = document.createElement("option"); o.value = k; o.textContent = k; if (k === plat) o.selected = true; pl.appendChild(o); });
+      pl.onchange = function () { plat = pl.value; hist = []; fillPicker(); show(entryOf(), false); }; }
+    show(flows.screens[qs.get("screen")] ? qs.get("screen") : entryOf(), false);
   }
   /* deep link into a state picker: ?screen=<group>&state=<variant> */
   (function () { var q = new URLSearchParams(location.search), g = q.get("screen"), s = q.get("state"); if (!g || !s) return;

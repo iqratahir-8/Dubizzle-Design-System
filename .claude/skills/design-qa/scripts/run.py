@@ -276,7 +276,8 @@ def check_flows(rep, root, registry, pages):
             continue
         any_flow = True
         flow = json.loads((root / fp).read_text(encoding="utf-8"))
-        screens = flow.get("screens", {}); entry = flow.get("entry")
+        screens = flow.get("screens", {})
+        entries = list((flow.get("entries") or {}).values()) or [flow.get("entry")]
         trans = flow.get("transitions", [])
         for c in ("flw.dead", "flw.node", "flw.reach", "flw.back", "flw.dismiss", "flw.orphan"):
             rep.ran(c)
@@ -287,25 +288,27 @@ def check_flows(rep, root, registry, pages):
             if t.get("node") and ids and t["node"] not in ids:
                 rep.fail("flw.node", feat, f"transition {t['from']} → {t['to']} names node {t['node']} which is not in the ledger",
                          node=t["node"])
-        if entry not in screens:
-            rep.fail("flw.reach", feat, f"entry screen '{entry}' does not exist"); continue
+        bad_entry = [e for e in entries if e not in screens]
+        for e in bad_entry:
+            rep.fail("flw.reach", feat, f"entry screen '{e}' does not exist")
+        entries = [e for e in entries if e in screens]
         adj = {}
         for t in trans:
             adj.setdefault(t["from"], set()).add(t["to"])
-        seen, stack = {entry}, [entry]
+        seen, stack = set(entries), list(entries)
         while stack:
             for n in adj.get(stack.pop(), ()):
                 if n not in seen and n in screens:
                     seen.add(n); stack.append(n)
-        for s in screens:
-            if s not in seen:
-                rep.fail("flw.reach", feat, f"screen '{s}' is not reachable from entry '{entry}'")
-            if s != entry:
-                back = [t for t in trans if t["from"] == s and t.get("kind") in ("back", "dismiss", "close")]
+        for s_ in screens:
+            if s_ not in seen:
+                rep.fail("flw.reach", feat, f"screen '{s_}' is not reachable from any entry ({', '.join(entries)})")
+            if s_ not in entries:
+                back = [t for t in trans if t["from"] == s_ and t.get("kind") in ("back", "dismiss", "close")]
                 if not back:
-                    rep.fail("flw.back", feat, f"screen '{s}' has no route back")
-                if screens[s].get("kind") in ("modal", "drawer", "sheet", "dialog") and not [t for t in back if t.get("kind") in ("dismiss", "close")]:
-                    rep.fail("flw.dismiss", feat, f"{screens[s]['kind']} '{s}' has no dismiss control")
+                    rep.fail("flw.back", feat, f"screen '{s_}' has no route back")
+                if screens[s_].get("kind") in ("modal", "drawer", "sheet", "dialog") and not [t for t in back if t.get("kind") in ("dismiss", "close")]:
+                    rep.fail("flw.dismiss", feat, f"{screens[s_]['kind']} '{s_}' has no dismiss control")
         for pid, p in pages.items():
             if p.get("feature") == feat and pid not in {v.get("page", k) for k, v in screens.items()} and p.get("kind") != "overlay":
                 rep.fail("flw.orphan", pid, f"page '{pid}' is in feature '{feat}' but no flow references it")

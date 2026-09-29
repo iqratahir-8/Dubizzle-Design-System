@@ -327,7 +327,7 @@ def main():
         flows_out = dict(flows, screens=pk)
         body["prototype"] = ('<div id="dd-proto"><div class="dd-bar"><button class="dd-btn" id="dd-proto-back">← Back</button>'
                              '<button class="dd-btn" id="dd-proto-reset">Reset</button><button class="dd-btn" id="dd-proto-hot" aria-pressed="false">Show hotspots</button>'
-                             '<select id="dd-proto-pick" aria-label="jump to screen"></select></div><p class="dd-hint" id="dd-proto-title"></p>'
+                             '<select id="dd-proto-plat" aria-label="platform"' + ('' if flows.get('entries') else ' hidden') + '></select><select id="dd-proto-pick" aria-label="jump to screen"></select></div><p class="dd-hint" id="dd-proto-title"></p>'
                              '<div class="dd-frame-box" id="dd-proto-box"></div></div><p class="dd-hint">Deep link: <code>?screen=&lt;screen id&gt;</code>. '
                              'Transitions key on node ids, so a hotspot survives a re-layout.</p>')
     else:

@@ -30,6 +30,8 @@ Report schema: v1
 ### Fixed after the first real feature run
 - `flw.orphan` compared page ids with flow *screen* ids; it now compares with the pages the flow's screens use.
 
+- `flw.reach` accepts `entries` (one per platform) and checks reachability from every one.
+
 ### Known gaps
 - Empty/loading/error states are almost never captured on live, so every live page reports
   `cov.empty` as a note. Authored screens must draw them.

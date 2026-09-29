@@ -1,5 +1,4 @@
 {
-  "entry": "list",
   "screens": {
     "list": {
       "page": "favourites",
@@ -14,6 +13,22 @@
     "saved-empty": {
       "page": "saved-searches",
       "platform": "web-desktop",
+      "state": "empty",
+      "kind": "page"
+    },
+    "m-list": {
+      "page": "favourites",
+      "platform": "web-mobile",
+      "kind": "page"
+    },
+    "m-saved": {
+      "page": "saved-searches",
+      "platform": "web-mobile",
+      "kind": "page"
+    },
+    "m-saved-empty": {
+      "page": "saved-searches",
+      "platform": "web-mobile",
       "state": "empty",
       "kind": "page"
     }
@@ -42,6 +57,34 @@
       "to": "list",
       "node": "6:46",
       "kind": "back"
+    },
+    {
+      "from": "m-list",
+      "to": "m-saved",
+      "node": "3:6",
+      "kind": "forward"
+    },
+    {
+      "from": "m-saved",
+      "to": "m-list",
+      "node": "7:5",
+      "kind": "back"
+    },
+    {
+      "from": "m-saved",
+      "to": "m-saved-empty",
+      "node": "7:36",
+      "kind": "forward"
+    },
+    {
+      "from": "m-saved-empty",
+      "to": "m-list",
+      "node": "8:5",
+      "kind": "back"
     }
-  ]
+  ],
+  "entries": {
+    "web-desktop": "list",
+    "web-mobile": "m-list"
+  }
 }

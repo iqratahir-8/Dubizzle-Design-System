@@ -1,7 +1,7 @@
 {
   "feature": "favourites-revamp",
   "title": "Favourites and Saved searches",
-  "version": 1,
+  "version": 2,
   "audience": "engineer",
   "platforms": [
     "web-desktop",
@@ -18,7 +18,7 @@
   "summary": {
     "problem": "Favourites and Saved searches share one screen behind two tabs. The screens had no empty state and the saved-searches tab had no design at all.",
     "scope": "Favourites and Saved searches on desktop and mobile web: the saved-ads list, the saved-searches list, and the empty state of each tab.",
-    "changed": ""
+    "changed": "v2 adds the mobile prototype flow (Favourites tab, Saved searches tab, delete to empty state) and one open question: mobile Favourites cards have no way to un-save an ad."
   },
   "signoff": {
     "who": [
@@ -96,9 +96,19 @@
       "q": "The saved-searches row (title, chips, View results, delete) is a proposal with no live reference. Does live have a different layout, and does delete ask for confirmation?",
       "owner": "designer",
       "blocks": "R4, R5"
+    },
+    {
+      "q": "Mobile Favourites cards have no heart, so a saved ad cannot be un-saved from the list on mobile (desktop cards have one). Is the remove action elsewhere (card menu, swipe, or the ad page)?",
+      "owner": "designer",
+      "blocks": "R2 on mobile (the only way to reach the empty state)"
     }
   ],
   "changelog": [
+    {
+      "version": 2,
+      "date": "2026-09-29",
+      "notes": "Added the mobile prototype flow, a platform switch in the prototype runner, and an open question about un-saving on mobile."
+    },
     {
       "version": 1,
       "date": "2026-09-29",

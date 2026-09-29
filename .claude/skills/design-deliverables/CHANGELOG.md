@@ -37,6 +37,9 @@ Accepts QA report schema: v1 · Node ledger version: 1
 - Tables now scroll inside themselves; the document fits a 390px phone.
 - A `back`/`dismiss` hotspot now goes to the screen its transition declares (it used to just pop history).
 
+### Added after v1 of favourites-revamp
+- Flows may declare one entry per platform (`entries`); the runner has a platform switch (`?platform=web-mobile`).
+
 ### Known gaps
 - Built end to end only as a DRAFT of the hand-built `favourites` page (QA was blocked by its missing
   empty states and clipped mobile spec row, correctly), opened in headless Chrome: no console errors, no network

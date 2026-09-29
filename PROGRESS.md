@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable — items 52–55) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable + mobile prototype — items 52–56) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -770,7 +770,15 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    product owner. **4 open questions carried in the document** (Egypt saved-searches flag, US-spelling
    "favorites", empty-state text size, saved-search row layout/delete confirmation). Bugs found and fixed while
    building it: grid overflow at 1800px, tables on phones, back-hotspot target, `flw.orphan`.
-   Sections not covered: no mobile prototype flow; button states show declared, not rendered, states.
+   Sections not covered: button states show declared, not rendered, states.
+
+56. **`favourites-revamp` v2: mobile prototype flow** (user request). `flows.json` now has `entries` per platform
+   (`web-desktop` → `list`, `web-mobile` → `m-list`); the runner has a platform switch and deep link
+   `?platform=web-mobile`; QA `flw.reach` checks every entry. Mobile flow: Favourites tab → Saved searches tab →
+   delete a saved search → empty state → back. Clicked through in headless Chrome, incl. switching platform;
+   no errors. **New finding, open question in the document:** mobile Favourites cards have **no heart**, so a
+   saved ad can't be un-saved from the mobile list (desktop cards have one) — the mobile Favourites empty state is
+   therefore unreachable in the flow. Version bumped to 2 with a changelog entry (v1 had already been sent).
 
 ## 6. Next up
 
