@@ -1,0 +1,11 @@
+{
+  "name": "dubizzle",
+  "owner": { "name": "dubizzle design system team" },
+  "plugins": [
+    {
+      "name": "dubizzle-design",
+      "source": "./",
+      "description": "Design → QA → hand-off deliverable for dubizzle Egypt. Requires the dubizzle-design-system repo checkout and `npm install`."
+    }
+  ]
+}

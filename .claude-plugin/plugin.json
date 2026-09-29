@@ -1,0 +1,18 @@
+{
+  "name": "dubizzle-design",
+  "version": "1.0.0",
+  "description": "dubizzle Egypt design workflow: design a feature, QA it against every state/platform, and build an internal hand-off deliverable. Needs the dubizzle-design-system repo checked out (the skills call its scripts).",
+  "author": { "name": "dubizzle design system team" },
+  "repository": "https://github.com/chaudhary-umair-ahmad/dubizzle-design-system",
+  "skills": [
+    "./.claude/skills/design-to-handoff",
+    "./.claude/skills/feature-design",
+    "./.claude/skills/design-qa",
+    "./.claude/skills/design-deliverables",
+    "./.claude/skills/token-check",
+    "./.claude/skills/rtl-arabic",
+    "./.claude/skills/motion-design",
+    "./.claude/skills/imagery-illustration",
+    "./.claude/skills/chart-data-viz"
+  ]
+}

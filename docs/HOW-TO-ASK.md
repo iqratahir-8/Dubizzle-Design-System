@@ -195,3 +195,17 @@ Things to know:
   it never grants one.
 - After a re-capture: `npm run qa:registry` refreshes the screen list without losing your edits.
 
+## Installing the skills as a plugin (any Claude account)
+
+The skills call this repo's scripts, so **clone the repo and run `npm install` first**. Then, once per account:
+
+```
+/plugin marketplace add chaudhary-umair-ahmad/dubizzle-design-system
+/plugin install dubizzle-design@dubizzle
+```
+
+That gives `design-to-handoff`, `feature-design`, `design-qa`, `design-deliverables` and the specialist skills
+(`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`) in every folder. Inside the repo
+they already load from `.claude/skills/` without the plugin. Update later with `/plugin marketplace update dubizzle`.
+The plugin definition is `.claude-plugin/` (it points at `.claude/skills`, so nothing is duplicated).
+

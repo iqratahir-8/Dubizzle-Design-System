@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–63; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–64; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -852,6 +852,12 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    `design-deliverables` → summary). It holds no design/QA/bundling logic; the three stage skills stay separate and usable alone
    (user asked "complete skill or keep separate" — answer: both). Added to CLAUDE.md rule 7 and HOW-TO-ASK. Untested on a fresh
    feature; first real use is its test.
+
+64. **Plugin packaging** — `.claude-plugin/plugin.json` (plugin `dubizzle-design`, 9 own skills, pointing at `.claude/skills`) and
+   `.claude-plugin/marketplace.json` (marketplace `dubizzle`). Third-party skills in the folder (higgsfield-*, etc.) are deliberately
+   NOT listed. **Written from the plugin format as I know it and not installed anywhere — the sandbox has no `/plugin`.** First real
+   test: on the Mac run the two commands in `docs/HOW-TO-ASK.md` and check the skills appear; if `skills` paths are rejected,
+   fall back to a `skills/` dir at the plugin root. Needs the repo checkout to run scripts.
 
 ## 6. Next up
 
