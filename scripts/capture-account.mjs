@@ -36,6 +36,10 @@ export const ACCOUNT_SCREENS = {
   'settings-privacy': '/en/settings/privacy',
   'settings-notifications': '/en/settings/notifications',
   packages: '/en/payments/businesspackages/my-account',
+  /* Favourites — URL NOT VERIFIED (written without access to live). If the capture reports a 404 or the wrong
+     page, open Favourites in the signed-in browser, copy the address-bar path here, and re-run. Sign in with an
+     account that has nothing saved to get the empty state. */
+  favourites: '/en/favorites',
 
   /* Agency portal (/en/agencyPortal — camelCase; every lowercase spelling 404s).
      Reachable only with an agency account; the nav lists these eight sections. */
