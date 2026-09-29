@@ -1,0 +1,18 @@
+@import '@app/branding/styles/variables.css';
+@import '@app/styles/deviceWidths.css';
+
+.tab {
+    border-bottom: 0.1rem solid $tabSwitcherInactiveColor;
+
+    @media (min-width: $deviceWidthMobile) {
+        min-width: 18.8rem;
+    }
+
+    @media (max-width: $deviceWidthMobile) {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: center;
+        padding: 1.8rem 0.7rem;
+    }
+}

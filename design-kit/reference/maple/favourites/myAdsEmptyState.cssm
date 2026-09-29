@@ -1,0 +1,14 @@
+@import '@app/styles/deviceWidths.css';
+
+.container {
+    width: 100%;
+    padding: 2rem 0;
+
+    @media (max-width: $deviceWidthMobile) {
+        height: calc(100vh - 394px);
+    }
+}
+
+.image {
+    height: 18rem;
+}
