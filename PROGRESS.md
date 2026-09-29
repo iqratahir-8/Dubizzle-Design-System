@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link — items 52–60) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–61) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -832,6 +832,15 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    `lastChange` was "Claude (Cowork)" — re-sync from the repo may overwrite, re-read before editing). The skills are only on
    branch `claude/eloquent-maxwell-gokls5`; merge to `main` and push to **both** remotes (`origin` and `iqratahir`) so the mirror
    the design system syncs from receives them.
+
+61. **Merged `claude/eloquent-maxwell-gokls5` into `main`** (fast-forward, `origin` only; user: "merge the branch if everything is okay").
+   Pre-merge checks: merge clean; `check:rtl` clean; `tsc` clean; design-qa `favourites-revamp` PASS; `check:all` reports
+   4 errors / 78 warnings **identical to `main` before the merge** (pre-existing, not from this work); no captures or account
+   templates tracked; PII scan clean. **The `iqratahir` mirror was NOT pushed** — this cloud sandbox only has the `origin` remote.
+   Push from the Mac: `git push iqratahir main` (the Claude Design system syncs from that mirror). Side effect worth knowing:
+   the hand-built `favourites` templates were retired from git, so `favourites`, `saved-searches` and their empty states now exist
+   only where the live capture has been run (local, like `my-ads`); a fresh clone needs `capture:account -- favourites saved-searches`
+   then `node scripts/build-derived-states.mjs` before the deliverable can be rebuilt.
 
 ## 6. Next up
 
