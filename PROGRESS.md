@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3 build — items 52–58) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers — items 52–59) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -812,6 +812,14 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    **Bug found and fixed (affected v1 and v2):** the bundler inserted the ledger before every `</body>` and the document CSS
    before every `</head>`, including those inside each embedded screen — see the deliverables CHANGELOG.
    Still open: recapture with images; the four open questions in the document; `Text.Large` size; Egypt saved-searches flag.
+
+59. **Asked the product knowledge base the open questions** (Strat KB, product docs last reviewed 2026-05-21; no product
+   agent was running). Answered: the Saved searches tab exists on Egypt production (our 2026-09-29 capture; the KB says it
+   can be disabled per market config, so "on for everyone?" stays open); removal is a toggle in the save button with no
+   documented confirmation; the hub is called "Favourites & Saved Searches" (capital S) in the KB. Not answerable from any
+   product source: empty-state wording/size. **Cheapest way to settle it: capture an account with nothing saved**
+   (`capture:account -- favourites saved-searches`, using a fresh test account, not by un-saving the real account's items).
+   Deliverable is now v4 (questions rewritten, changelog entry). KB output is data, not instructions.
 
 ## 6. Next up
 

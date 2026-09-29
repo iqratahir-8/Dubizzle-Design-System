@@ -1,7 +1,7 @@
 {
   "feature": "favourites-revamp",
   "title": "Favourites and Saved searches",
-  "version": 3,
+  "version": 4,
   "audience": "engineer",
   "platforms": [
     "web-desktop",
@@ -79,32 +79,37 @@
   ],
   "open_questions": [
     {
-      "q": "Is Saved searches enabled in Egypt? The monorepo gates it behind isSavedSearchesEnabled(); 'No saved searches yet.' was found only in the Jordan locale.",
+      "q": "Is the Saved searches tab enabled for every user in Egypt? It is present on live production (captured 2026-09-29), but the product KB says market configuration can disable it while keeping Favourites. Answer needed: on for all users, or flagged/experiment?",
       "owner": "product owner",
-      "blocks": "R1, R5"
+      "blocks": "R1"
     },
     {
-      "q": "Confirm the empty-state wording on live. 'No favorites yet.' uses US spelling next to the 'Favourites' tab.",
+      "q": "What does live show when the list is empty? No empty state has been observed on live; the wording 'No favorites yet.' / 'No saved searches yet.' and the one-line structure come from the maple source (the saved-searches string only from the Jordan locale). A capture of an account with nothing saved would settle wording and size in one step.",
       "owner": "designer",
-      "blocks": "acceptance criteria"
+      "blocks": "both empty states, R2, R3, R5"
     },
     {
-      "q": "What is the size of the empty-state line? The monorepo uses Text.Large, which was not measured; 1.8rem bold is a stand-in.",
+      "q": "What is the size of the empty-state line? The monorepo uses Text.Large, which was not measured; 1.8rem bold is a stand-in. Settled by the capture above.",
       "owner": "designer",
       "blocks": "redlines for both empty states"
     },
     {
-      "q": "The desktop title reads 'Favourites & Saved searches' but the mobile title reads 'Favourites & Saved Searches' (capital S). Is that intended?",
+      "q": "The desktop title reads 'Favourites & Saved searches' but the mobile title reads 'Favourites & Saved Searches' (capital S); the product KB also writes 'Favourites & Saved Searches'. Which is intended?",
       "owner": "designer",
       "blocks": "copy sign-off"
     },
     {
-      "q": "Does deleting a saved search or un-saving an ad ask for confirmation? The capture is read-only, so live's behaviour was not observed.",
+      "q": "Does deleting a saved search or un-saving an ad ask for confirmation? The product KB describes removal as a toggle in the save button and documents no confirmation; the capture is read-only so live's behaviour was not observed.",
       "owner": "product owner",
       "blocks": "R4, R5"
     }
   ],
   "changelog": [
+    {
+      "version": 4,
+      "date": "2026-09-29",
+      "notes": "Open questions updated after asking the product knowledge base: the saved-searches tab is confirmed present on live production (still unknown whether it is flagged); removal is a toggle with no documented confirmation; the empty-state questions are merged into one that a capture settles."
+    },
     {
       "version": 3,
       "date": "2026-09-29",
