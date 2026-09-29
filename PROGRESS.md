@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states — items 52–54) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable — items 52–55) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -757,6 +757,20 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    `design-qa --scope favourites-revamp`: **PASS WITH WARNINGS** (one `par.copy`, sample content differs). Caveats: the
    monorepo can lag production; "No saved searches yet." is from the Jordan locale (Egypt's unverified); `Text.Large`
    size not measured (2rem stand-in); still no live capture of either page.
+
+55. **First real deliverable: `favourites-revamp` v1** (user: "make the deliverables"). Sources in
+   `design-kit/deliverables/favourites-revamp/` (`deliverable.json`, `flows.json`); the built file is
+   `dist/favourites-revamp-v1.html` (4.08 MB, single file, gitignored — rebuild with
+   `npm run deliverable -- --feature favourites-revamp`, after `npm run qa -- --scope favourites-revamp`).
+   Covers Favourites + Saved searches, desktop + mobile, both empty states: 13 of 18 sections (motion, dotLottie,
+   gestures, performance n/a with reasons), 6 testable rules, a desktop prototype (tab switch, delete → empty
+   state), stable node ids (ledger `design-kit/qa/ids.json`, committed). QA gate: PASS WITH WARNINGS.
+   Opened in headless Chrome: no console errors, no network requests, fits 1300 and 390 px.
+   **Intake answers were filled by me, not confirmed:** audience = engineer, EN only, sign-off = designer +
+   product owner. **4 open questions carried in the document** (Egypt saved-searches flag, US-spelling
+   "favorites", empty-state text size, saved-search row layout/delete confirmation). Bugs found and fixed while
+   building it: grid overflow at 1800px, tables on phones, back-hotspot target, `flw.orphan`.
+   Sections not covered: no mobile prototype flow; button states show declared, not rendered, states.
 
 ## 6. Next up
 

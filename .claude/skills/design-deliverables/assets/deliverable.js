@@ -101,7 +101,7 @@
       var d = fr.contentDocument;
       (flows.transitions || []).filter(function (t) { return t.from === cur && t.node; }).forEach(function (t) {
         var el = d.querySelector('[data-node-id="' + t.node + '"]'); if (!el) return;
-        el.addEventListener("click", function (e) { e.preventDefault(); if (t.kind === "back" || t.kind === "dismiss" || t.kind === "close") back(); else show(t.to, true); }, true);
+        el.addEventListener("click", function (e) { e.preventDefault(); if (t.kind === "back" || t.kind === "dismiss" || t.kind === "close") { if (flows.screens[t.to]) { var i = hist.lastIndexOf(t.to); hist = i >= 0 ? hist.slice(0, i) : hist; show(t.to, false); } else back(); } else show(t.to, true); }, true);
         el.style.cursor = "pointer";
         if (hot) { var r = el.getBoundingClientRect(), s = parseFloat(fr.style.transform.replace(/[^0-9.]/g, "")) || 1; var h = document.createElement("div"); h.className = "dd-spot"; h.style.cssText = "left:" + r.left * s + "px;top:" + r.top * s + "px;width:" + r.width * s + "px;height:" + r.height * s + "px"; box.appendChild(h); }
       });

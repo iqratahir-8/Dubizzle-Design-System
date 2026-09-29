@@ -1082,7 +1082,9 @@
     }
   },
   "features": {
-    "favourites-revamp": {}
+    "favourites-revamp": {
+      "flows": "design-kit/deliverables/favourites-revamp/flows.json"
+    }
   },
   "components": {
     "AccountMenu": {

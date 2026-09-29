@@ -1,0 +1,47 @@
+{
+  "entry": "list",
+  "screens": {
+    "list": {
+      "page": "favourites",
+      "platform": "web-desktop",
+      "kind": "page"
+    },
+    "saved": {
+      "page": "saved-searches",
+      "platform": "web-desktop",
+      "kind": "page"
+    },
+    "saved-empty": {
+      "page": "saved-searches",
+      "platform": "web-desktop",
+      "state": "empty",
+      "kind": "page"
+    }
+  },
+  "transitions": [
+    {
+      "from": "list",
+      "to": "saved",
+      "node": "1:47",
+      "kind": "forward"
+    },
+    {
+      "from": "saved",
+      "to": "list",
+      "node": "5:46",
+      "kind": "back"
+    },
+    {
+      "from": "saved",
+      "to": "saved-empty",
+      "node": "5:81",
+      "kind": "forward"
+    },
+    {
+      "from": "saved-empty",
+      "to": "list",
+      "node": "6:46",
+      "kind": "back"
+    }
+  ]
+}

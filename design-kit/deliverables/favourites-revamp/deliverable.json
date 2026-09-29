@@ -1,0 +1,108 @@
+{
+  "feature": "favourites-revamp",
+  "title": "Favourites and Saved searches",
+  "version": 1,
+  "audience": "engineer",
+  "platforms": [
+    "web-desktop",
+    "web-mobile"
+  ],
+  "locales": [
+    "en"
+  ],
+  "pages": [
+    "favourites",
+    "saved-searches"
+  ],
+  "classification": "internal",
+  "summary": {
+    "problem": "Favourites and Saved searches share one screen behind two tabs. The screens had no empty state and the saved-searches tab had no design at all.",
+    "scope": "Favourites and Saved searches on desktop and mobile web: the saved-ads list, the saved-searches list, and the empty state of each tab.",
+    "changed": ""
+  },
+  "signoff": {
+    "who": [
+      "designer",
+      "product owner"
+    ],
+    "meaning": "layout and copy are confirmed against live before build"
+  },
+  "sections": {
+    "exclude": {
+      "performance": "no performance budget declared"
+    }
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "text": "The tab strip has two tabs, 'Favourites' and 'Saved searches', with no counts. The Saved searches tab is shown only when the saved-searches feature is enabled for the market.",
+      "test": "With the feature off, only 'Favourites' renders; with it on, both render and neither label carries a number."
+    },
+    {
+      "id": "R2",
+      "text": "The Favourites empty state renders only when the list has loaded, contains zero ads, and is not loading. While loading, the list shows its loading placeholders instead.",
+      "test": "Mock a loaded empty response: 'No favorites yet.' shows. Mock a pending request: it does not."
+    },
+    {
+      "id": "R3",
+      "text": "The Favourites empty state is a single bold line with no image and no button.",
+      "test": "The empty-state container has one text node and no <img> or <button> descendants."
+    },
+    {
+      "id": "R4",
+      "text": "Each saved search shows its title and its filters as attribute chips, a 'View results' action and a delete action.",
+      "test": "Every row has exactly one 'View results' link and one button named 'Delete saved search'."
+    },
+    {
+      "id": "R5",
+      "text": "Deleting the last saved search shows the Saved searches empty state, 'No saved searches yet.'",
+      "test": "Delete the only row: the list is replaced by the empty-state line."
+    },
+    {
+      "id": "R6",
+      "text": "The Favourites and Saved searches tabs switch the list in place; the page title stays 'Favourites'.",
+      "test": "Click 'Saved searches': the list changes, the tab underline moves, the H1 still reads 'Favourites'."
+    }
+  ],
+  "motion": [],
+  "gestures": [],
+  "lottie": [],
+  "performance": null,
+  "acceptance": [
+    "Tab labels match the source strings exactly: 'Favourites', 'Saved searches'.",
+    "Both empty-state strings render verbatim, including the US spelling 'favorites' in 'No favorites yet.'"
+  ],
+  "edge_cases": [
+    "A saved search whose title is very long truncates with an ellipsis on one line (the row never wraps the title).",
+    "A saved search with many filters wraps its chips onto further lines."
+  ],
+  "open_questions": [
+    {
+      "q": "Is the Saved searches tab enabled in Egypt? The monorepo gates it behind isSavedSearchesEnabled(), and the empty-state string 'No saved searches yet.' was only found in the Jordan locale.",
+      "owner": "product owner",
+      "blocks": "R1, R5"
+    },
+    {
+      "q": "Confirm the empty-state wording against live. 'No favorites yet.' uses US spelling next to the 'Favourites' tab label; is that intended?",
+      "owner": "designer",
+      "blocks": "acceptance criteria"
+    },
+    {
+      "q": "What is the size of the empty-state line? The monorepo uses Text.Large, which was not measured; 2rem is a stand-in.",
+      "owner": "designer",
+      "blocks": "redlines for both empty states"
+    },
+    {
+      "q": "The saved-searches row (title, chips, View results, delete) is a proposal with no live reference. Does live have a different layout, and does delete ask for confirmation?",
+      "owner": "designer",
+      "blocks": "R4, R5"
+    }
+  ],
+  "changelog": [
+    {
+      "version": 1,
+      "date": "2026-09-29",
+      "notes": "First build. Favourites and Saved searches, desktop and mobile, with empty states. Copy and structure from the maple monorepo; not verified on live."
+    }
+  ]
+}

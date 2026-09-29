@@ -27,6 +27,9 @@ Report schema: v1
   A first version injected into every text node and blocked on a 200-character "Featured" badge.
 - Platforms are `web-desktop`, `web-mobile`, `portal-desktop`; 768px is the split.
 
+### Fixed after the first real feature run
+- `flw.orphan` compared page ids with flow *screen* ids; it now compares with the pages the flow's screens use.
+
 ### Known gaps
 - Empty/loading/error states are almost never captured on live, so every live page reports
   `cov.empty` as a note. Authored screens must draw them.
