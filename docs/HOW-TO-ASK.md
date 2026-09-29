@@ -181,6 +181,7 @@ Two skills, used in this order:
 | Say | What happens |
 |---|---|
 | "**QA** the favourites page" / "is this design ready?" / "check the states" | `design-qa`: builds the case matrix (states × platforms × breakpoints), shows it to you, then runs the checks and writes `design-kit/qa/report/report.html` — verdict PASS, PASS WITH WARNINGS or BLOCKED. `npm run qa -- --scope favourites` does the same. |
+| "**Design** a new feature" (any `feature-design` ask) | Ends with a **hand-off pack**: every screen and state registered, draft `flows.json` and `deliverable.json`, and a first QA verdict shown with the design — so "make the deliverable" afterwards is one step. |
 | "**Make the deliverable** for favourites" / "handoff for the devs" | `design-deliverables`: runs QA first and stops if it is BLOCKED; otherwise asks you a short intake table, then builds **one self-contained HTML file** (screens with redlines and stable node ids, state screens, tokens, accessibility, acceptance criteria, open questions) into `design-kit/deliverables/<feature>/dist/`. It is stamped INTERNAL — the fonts are licensed. |
 
 Things to know:

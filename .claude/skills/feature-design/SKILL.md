@@ -197,6 +197,31 @@ One agent doing both roles will otherwise just agree with itself. The tension be
 
 ---
 
+## Step 6 — Build the hand-off pack (last step, before you show anything)
+
+A design that ends as loose HTML makes `design-qa` and `design-deliverables` start from zero. Finish
+by leaving the feature ready for them, so hand-off is one command instead of a second project.
+
+1. **Registry entries for every screen and every state** — each platform (`web-desktop`,
+   `web-mobile`, `portal-desktop`) separately, `origin: "authored"`, `based_on`, `feature`, `states`
+   and `state_files` including **empty**. A state you drew but didn't register does not exist for QA.
+2. **Draft `design-kit/deliverables/<feature>/flows.json`** from the Step 2 inventory: `entries` per
+   platform, one screen per state, every transition with a trigger and a target, a back route on
+   each screen. Register it under `registry.features.<feature>.flows`.
+   Format: `.claude/skills/design-deliverables/references/flows.md`.
+3. **Draft `design-kit/deliverables/<feature>/deliverable.json`** per
+   `references/deliverable-json.md`: the rules (each one testable — say which check or which
+   screen tests it), the open questions from Step 1/5 **with an owner each**, and a sign-off block
+   left empty. Rules and questions come from your Step 1/5 notes; do not invent new ones here.
+4. **Run the first QA yourself** — `npm run qa -- --scope <feature>` — and fix blockers before the
+   user sees the design. Show the verdict line next to the design. Never present a design that
+   `design-qa` would block without saying so.
+
+Do **not** build the deliverable here. That is `design-deliverables`, and only when the user asks
+for a hand-off.
+
+---
+
 ## What you hand over
 
 1. The screens — kit HTML and/or React, both breakpoints, all states.
@@ -207,6 +232,8 @@ One agent doing both roles will otherwise just agree with itself. The tension be
 5. **Open questions and assumptions**, explicitly — not silently resolved.
 6. The Step 5 critique.
 7. The `design-qa` verdict line, and the registry entries for the new screens.
+8. The hand-off pack (Step 6): `flows.json` and `deliverable.json` drafts under
+   `design-kit/deliverables/<feature>/`, ready for `design-deliverables`.
 
 ---
 

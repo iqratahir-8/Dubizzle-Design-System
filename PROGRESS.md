@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–61) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–62; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -841,6 +841,12 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    the hand-built `favourites` templates were retired from git, so `favourites`, `saved-searches` and their empty states now exist
    only where the live capture has been run (local, like `my-ads`); a fresh clone needs `capture:account -- favourites saved-searches`
    then `node scripts/build-derived-states.mjs` before the deliverable can be rebuilt.
+
+62. **`feature-design` now ends with a hand-off pack (new Step 6)** — no new skill (decided with the user). After designing, the
+   agent must leave: registry entries for every screen and state (empty included), a draft `flows.json` registered under the
+   feature, a draft `deliverable.json` (testable rules, open questions each with an owner, empty sign-off), and a first
+   `npm run qa -- --scope <feature>` run whose verdict is shown with the design. "What you hand over" gained item 8. It does not
+   build the deliverable — that stays `design-deliverables`. If intake keeps going wrong, add a thin "brief" skill later.
 
 ## 6. Next up
 
