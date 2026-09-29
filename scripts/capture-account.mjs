@@ -31,7 +31,7 @@ const SCREENS = join(OUT, 'screens');
 
 export /* Screens whose images are public listing photos and icons, not account data: inline them so the template and
    any deliverable built from it work offline. Every other account screen keeps remote image URLs on purpose. */
-const INLINE_IMAGES = new Set(['favourites', 'saved-searches']);
+const INLINE_IMAGES = new Set(['favourites', 'saved-searches', 'favourites-empty', 'saved-searches-empty']);
 
 const ACCOUNT_SCREENS = {
   'my-ads': '/en/myads',
@@ -45,6 +45,10 @@ const ACCOUNT_SCREENS = {
      nothing saved to capture the empty states. */
   favourites: '/en/myfavorites',
   'saved-searches': '/en/savedsearches',
+  /* The same two URLs captured from an account with NOTHING saved, so the empty states are real. Saved under
+     their own names so they never overwrite the populated captures. */
+  'favourites-empty': '/en/myfavorites',
+  'saved-searches-empty': '/en/savedsearches',
 
   /* Agency portal (/en/agencyPortal — camelCase; every lowercase spelling 404s).
      Reachable only with an agency account; the nav lists these eight sections. */
