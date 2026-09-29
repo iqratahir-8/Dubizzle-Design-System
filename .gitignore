@@ -69,3 +69,6 @@ skills-lock.json
 design-kit/qa/report/
 # design-deliverables build output
 design-kit/deliverables/*/dist/
+
+__pycache__/
+*.pyc
