@@ -1,0 +1,1375 @@
+{
+  "registry_version": 1,
+  "pages": {
+    "ad-detail": {
+      "label": "Ad Detail",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/ad-detail.html",
+        "web-mobile": "design-kit/templates/mobile/ad-detail.html"
+      },
+      "kind": "page",
+      "vertical": "global"
+    },
+    "ad-detail-mobile-phone": {
+      "label": "Ad Detail Mobile Phone",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/ad-detail-mobile-phone.html",
+        "web-mobile": "design-kit/templates/mobile/ad-detail-mobile-phone.html"
+      },
+      "kind": "page",
+      "vertical": "global"
+    },
+    "ad-detail-property": {
+      "label": "Ad Detail Property",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/ad-detail-property.html",
+        "web-mobile": "design-kit/templates/mobile/ad-detail-property.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "ad-detail-property-rent": {
+      "label": "Ad Detail Property Rent",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/ad-detail-property-rent.html",
+        "web-mobile": "design-kit/templates/mobile/ad-detail-property-rent.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "agency-page": {
+      "label": "Agency Page",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/agency-page.html",
+        "web-mobile": "design-kit/templates/mobile/agency-page.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "car-comparison": {
+      "label": "Car Comparison",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/car-comparison.html",
+        "web-mobile": "design-kit/templates/mobile/car-comparison.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "car-comparison-result": {
+      "label": "Car Comparison Result",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/car-comparison-result.html",
+        "web-mobile": "design-kit/templates/mobile/car-comparison-result.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "car-finance": {
+      "label": "Car Finance",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/car-finance.html",
+        "web-mobile": "design-kit/templates/mobile/car-finance.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "car-finance-bank": {
+      "label": "Car Finance Bank",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/car-finance-bank.html",
+        "web-mobile": "design-kit/templates/mobile/car-finance-bank.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "dpv-details-expanded": {
+      "label": "Dpv Details Expanded",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/dpv-details-expanded.html",
+        "web-mobile": "design-kit/templates/mobile/dpv-details-expanded.html"
+      },
+      "kind": "overlay",
+      "vertical": "motors"
+    },
+    "dpv-gallery": {
+      "label": "Dpv Gallery",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/dpv-gallery.html"
+      },
+      "kind": "overlay",
+      "vertical": "motors"
+    },
+    "dpv-phone": {
+      "label": "Dpv Phone",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/dpv-phone.html"
+      },
+      "kind": "overlay",
+      "vertical": "motors"
+    },
+    "dpv-report": {
+      "label": "Dpv Report",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/dpv-report.html",
+        "web-mobile": "design-kit/templates/mobile/dpv-report.html"
+      },
+      "kind": "overlay",
+      "vertical": "motors"
+    },
+    "electric-cars": {
+      "label": "Electric Cars",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/electric-cars.html",
+        "web-mobile": "design-kit/templates/mobile/electric-cars.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "favourites": {
+      "label": "Favourites",
+      "origin": "authored",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/favourites.html",
+        "web-mobile": "design-kit/templates/mobile/favourites.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
+    "home": {
+      "label": "Home",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/home.html",
+        "web-mobile": "design-kit/templates/mobile/home.html"
+      },
+      "kind": "page",
+      "vertical": "global"
+    },
+    "location-dropdown": {
+      "label": "Location Dropdown",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/location-dropdown.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "login": {
+      "label": "Login",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/login.html",
+        "web-mobile": "design-kit/templates/mobile/login.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
+    "login-dialog": {
+      "label": "Login Dialog",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/login-dialog.html"
+      },
+      "kind": "overlay",
+      "vertical": "account"
+    },
+    "m-filters": {
+      "label": "M Filters",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-mobile": "design-kit/templates/mobile/m-filters.html"
+      },
+      "kind": "page",
+      "vertical": "global"
+    },
+    "m-location-page": {
+      "label": "M Location Page",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-mobile": "design-kit/templates/mobile/m-location-page.html"
+      },
+      "kind": "page",
+      "vertical": "global"
+    },
+    "m-search-overlay": {
+      "label": "M Search Overlay",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-mobile": "design-kit/templates/mobile/m-search-overlay.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "m-search-suggestions": {
+      "label": "M Search Suggestions",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-mobile": "design-kit/templates/mobile/m-search-suggestions.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "menu-electronics": {
+      "label": "Menu Electronics",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/menu-electronics.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "menu-furniture": {
+      "label": "Menu Furniture",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/menu-furniture.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "menu-jobs": {
+      "label": "Menu Jobs",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/menu-jobs.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "menu-mobiles": {
+      "label": "Menu Mobiles",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/menu-mobiles.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "menu-more-categories": {
+      "label": "Menu More Categories",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/menu-more-categories.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "menu-properties": {
+      "label": "Menu Properties",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/menu-properties.html"
+      },
+      "kind": "overlay",
+      "vertical": "property"
+    },
+    "menu-vehicles": {
+      "label": "Menu Vehicles",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/menu-vehicles.html"
+      },
+      "kind": "overlay",
+      "vertical": "motors"
+    },
+    "menu-vehicles-car-care": {
+      "label": "Menu Vehicles Car Care",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/menu-vehicles-car-care.html"
+      },
+      "kind": "overlay",
+      "vertical": "motors"
+    },
+    "motors": {
+      "label": "Motors",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/motors.html",
+        "web-mobile": "design-kit/templates/mobile/motors.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "new-cars": {
+      "label": "New Cars",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/new-cars.html",
+        "web-mobile": "design-kit/templates/mobile/new-cars.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "new-cars-brand": {
+      "label": "New Cars Brand",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/new-cars-brand.html",
+        "web-mobile": "design-kit/templates/mobile/new-cars-brand.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "new-cars-model": {
+      "label": "New Cars Model",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/new-cars-model.html",
+        "web-mobile": "design-kit/templates/mobile/new-cars-model.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "not-found": {
+      "label": "Not Found",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/not-found.html",
+        "web-mobile": "design-kit/templates/mobile/not-found.html"
+      },
+      "kind": "page",
+      "vertical": "global"
+    },
+    "payment": {
+      "label": "Payment",
+      "origin": "authored",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/payment.html",
+        "web-mobile": "design-kit/templates/mobile/payment.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
+    "properties": {
+      "label": "Properties",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/properties.html",
+        "web-mobile": "design-kit/templates/mobile/properties.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "property-agencies": {
+      "label": "Property Agencies",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/property-agencies.html",
+        "web-mobile": "design-kit/templates/mobile/property-agencies.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "property-area": {
+      "label": "Property Area",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/property-area.html",
+        "web-mobile": "design-kit/templates/mobile/property-area.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "property-compound": {
+      "label": "Property Compound",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/property-compound.html",
+        "web-mobile": "design-kit/templates/mobile/property-compound.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "property-landing": {
+      "label": "Property Landing",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/property-landing.html",
+        "web-mobile": "design-kit/templates/mobile/property-landing.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "save-search": {
+      "label": "Save Search",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/save-search.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "search": {
+      "label": "Search",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search.html",
+        "web-mobile": "design-kit/templates/mobile/search.html"
+      },
+      "kind": "page",
+      "vertical": "global"
+    },
+    "search-cars-model": {
+      "label": "Search Cars Model",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-cars-model.html",
+        "web-mobile": "design-kit/templates/mobile/search-cars-model.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "search-mobiles": {
+      "label": "Search Mobiles",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-mobiles.html",
+        "web-mobile": "design-kit/templates/mobile/search-mobiles.html"
+      },
+      "kind": "page",
+      "vertical": "global"
+    },
+    "search-motorcycles": {
+      "label": "Search Motorcycles",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-motorcycles.html",
+        "web-mobile": "design-kit/templates/mobile/search-motorcycles.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "search-property": {
+      "label": "Search Property",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-property.html",
+        "web-mobile": "design-kit/templates/mobile/search-property.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "search-property-commercial": {
+      "label": "Search Property Commercial",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-property-commercial.html",
+        "web-mobile": "design-kit/templates/mobile/search-property-commercial.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "search-property-land": {
+      "label": "Search Property Land",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-property-land.html",
+        "web-mobile": "design-kit/templates/mobile/search-property-land.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "search-property-rent": {
+      "label": "Search Property Rent",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-property-rent.html",
+        "web-mobile": "design-kit/templates/mobile/search-property-rent.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "search-property-vacation": {
+      "label": "Search Property Vacation",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-property-vacation.html",
+        "web-mobile": "design-kit/templates/mobile/search-property-vacation.html"
+      },
+      "kind": "page",
+      "vertical": "property"
+    },
+    "search-suggestions": {
+      "label": "Search Suggestions",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-suggestions.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "search-trucks": {
+      "label": "Search Trucks",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/search-trucks.html",
+        "web-mobile": "design-kit/templates/mobile/search-trucks.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    },
+    "seller-page": {
+      "label": "Seller Page",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/seller-page.html",
+        "web-mobile": "design-kit/templates/mobile/seller-page.html"
+      },
+      "kind": "page",
+      "vertical": "global"
+    },
+    "sort-menu": {
+      "label": "Sort Menu",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/sort-menu.html"
+      },
+      "kind": "overlay",
+      "vertical": "global"
+    },
+    "vehicles-listing": {
+      "label": "Vehicles Listing",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/vehicles-listing.html",
+        "web-mobile": "design-kit/templates/mobile/vehicles-listing.html"
+      },
+      "kind": "page",
+      "vertical": "motors"
+    }
+  },
+  "features": {},
+  "components": {
+    "AccountMenu": {
+      "css": [
+        "src/components/AccountMenu/AccountMenu.module.css"
+      ]
+    },
+    "ActionsMenu": {
+      "css": [
+        "src/components/ActionsMenu/ActionsMenu.module.css"
+      ]
+    },
+    "AdCard": {
+      "css": [
+        "src/components/AdCard/AdCard.module.css"
+      ]
+    },
+    "AdDescription": {
+      "css": [
+        "src/components/AdDescription/AdDescription.module.css"
+      ]
+    },
+    "AdDetailsTable": {
+      "css": [
+        "src/components/AdDetailsTable/AdDetailsTable.module.css"
+      ]
+    },
+    "AdGallery": {
+      "css": [
+        "src/components/AdGallery/AdGallery.module.css"
+      ]
+    },
+    "AdListCard": {
+      "css": [
+        "src/components/AdListCard/AdListCard.module.css"
+      ]
+    },
+    "AdLocation": {
+      "css": [
+        "src/components/AdLocation/AdLocation.module.css"
+      ]
+    },
+    "AdPriceHeader": {
+      "css": [
+        "src/components/AdPriceHeader/AdPriceHeader.module.css"
+      ]
+    },
+    "AdSpecsStrip": {
+      "css": [
+        "src/components/AdSpecsStrip/AdSpecsStrip.module.css"
+      ]
+    },
+    "AdState": {
+      "css": [
+        "src/components/AdState/AdState.module.css"
+      ]
+    },
+    "AdStateFilter": {
+      "css": [
+        "src/components/AdStateFilter/AdStateFilter.module.css"
+      ]
+    },
+    "AgencyPageHeading": {
+      "css": [
+        "src/components/AgencyPageHeading/AgencyPageHeading.module.css"
+      ]
+    },
+    "AgencyPortalTabSwitcher": {
+      "css": [
+        "src/components/AgencyPortalTabSwitcher/AgencyPortalTabSwitcher.module.css"
+      ]
+    },
+    "AnalyticsStats": {
+      "css": [
+        "src/components/AnalyticsStats/AnalyticsStats.module.css"
+      ]
+    },
+    "AppBanner": {
+      "css": [
+        "src/components/AppBanner/AppBanner.module.css"
+      ]
+    },
+    "AppPromoCard": {
+      "css": [
+        "src/components/AppPromoCard/AppPromoCard.module.css"
+      ]
+    },
+    "BottomNav": {
+      "css": [
+        "src/components/BottomNav/BottomNav.module.css"
+      ]
+    },
+    "Breadcrumbs": {
+      "css": [
+        "src/components/Breadcrumbs/Breadcrumbs.module.css"
+      ]
+    },
+    "Button": {
+      "css": [
+        "src/components/Button/Button.module.css"
+      ]
+    },
+    "CandidateCard": {
+      "css": [
+        "src/components/CandidateCard/CandidateCard.module.css"
+      ]
+    },
+    "ChatInbox": {
+      "css": [
+        "src/components/ChatInbox/ChatInbox.module.css"
+      ]
+    },
+    "ChatThread": {
+      "css": [
+        "src/components/ChatThread/ChatThread.module.css"
+      ]
+    },
+    "Checkbox": {
+      "css": [
+        "src/components/Checkbox/Checkbox.module.css"
+      ]
+    },
+    "Chip": {
+      "css": [
+        "src/components/Chip/Chip.module.css"
+      ]
+    },
+    "ContactBar": {
+      "css": [
+        "src/components/ContactBar/ContactBar.module.css"
+      ]
+    },
+    "ContactButton": {
+      "css": [
+        "src/components/ContactButton/ContactButton.module.css"
+      ]
+    },
+    "CreditsSummary": {
+      "css": [
+        "src/components/CreditsSummary/CreditsSummary.module.css"
+      ]
+    },
+    "Dialog": {
+      "css": [
+        "src/components/Dialog/Dialog.module.css"
+      ]
+    },
+    "DiscoverTabs": {
+      "css": [
+        "src/components/DiscoverTabs/DiscoverTabs.module.css"
+      ]
+    },
+    "ExploreTiles": {
+      "css": [
+        "src/components/ExploreTiles/ExploreTiles.module.css"
+      ]
+    },
+    "FeaturedBusinesses": {
+      "css": [
+        "src/components/FeaturedBusinesses/FeaturedBusinesses.module.css"
+      ]
+    },
+    "Footer": {
+      "css": [
+        "src/components/Footer/Footer.module.css"
+      ]
+    },
+    "Header": {
+      "css": [
+        "src/components/Header/Header.module.css"
+      ]
+    },
+    "Input": {
+      "css": [
+        "src/components/Input/Input.module.css"
+      ]
+    },
+    "JobCard": {
+      "css": [
+        "src/components/JobCard/JobCard.module.css"
+      ]
+    },
+    "LocationDropdown": {
+      "css": [
+        "src/components/LocationDropdown/LocationDropdown.module.css"
+      ]
+    },
+    "LoginDialog": {
+      "css": [
+        "src/components/LoginDialog/LoginDialog.module.css"
+      ]
+    },
+    "MegaMenu": {
+      "css": [
+        "src/components/MegaMenu/MegaMenu.module.css"
+      ]
+    },
+    "MobileFilters": {
+      "css": [
+        "src/components/MobileFilters/MobileFilters.module.css"
+      ]
+    },
+    "MobileFooter": {
+      "css": [
+        "src/components/MobileFooter/MobileFooter.module.css"
+      ]
+    },
+    "MobileHeader": {
+      "css": [
+        "src/components/MobileHeader/MobileHeader.module.css"
+      ]
+    },
+    "MobileLocationPage": {
+      "css": [
+        "src/components/MobileLocationPage/MobileLocationPage.module.css"
+      ]
+    },
+    "MobileSearchPage": {
+      "css": [
+        "src/components/MobileSearchPage/MobileSearchPage.module.css"
+      ]
+    },
+    "MoreFiltersPanel": {
+      "css": [
+        "src/components/MoreFiltersPanel/MoreFiltersPanel.module.css"
+      ]
+    },
+    "MultipleChoiceDropdown": {
+      "css": [
+        "src/components/MultipleChoiceDropdown/MultipleChoiceDropdown.module.css"
+      ]
+    },
+    "PageHead": {
+      "css": [
+        "src/components/PageHead/PageHead.module.css"
+      ]
+    },
+    "Pagination": {
+      "css": [
+        "src/components/Pagination/Pagination.module.css"
+      ]
+    },
+    "Pill": {
+      "css": [
+        "src/components/Pill/Pill.module.css"
+      ]
+    },
+    "PopularSearches": {
+      "css": [
+        "src/components/PopularSearches/PopularSearches.module.css"
+      ]
+    },
+    "PortalModal": {
+      "css": [
+        "src/components/PortalModal/PortalModal.module.css"
+      ]
+    },
+    "PortalSearchInput": {
+      "css": [
+        "src/components/PortalSearchInput/PortalSearchInput.module.css"
+      ]
+    },
+    "PortalSideMenu": {
+      "css": [
+        "src/components/PortalSideMenu/PortalSideMenu.module.css"
+      ]
+    },
+    "PrimeDealersRow": {
+      "css": [
+        "src/components/PrimeDealersRow/PrimeDealersRow.module.css"
+      ]
+    },
+    "QuickLinks": {
+      "css": [
+        "src/components/QuickLinks/QuickLinks.module.css"
+      ]
+    },
+    "Radio": {
+      "css": [
+        "src/components/Radio/Radio.module.css"
+      ]
+    },
+    "ReportAdDialog": {
+      "css": [
+        "src/components/ReportAdDialog/ReportAdDialog.module.css"
+      ]
+    },
+    "SearchSuggestions": {
+      "css": [
+        "src/components/SearchSuggestions/SearchSuggestions.module.css"
+      ]
+    },
+    "Select": {
+      "css": [
+        "src/components/Select/Select.module.css"
+      ]
+    },
+    "SideDialog": {
+      "css": [
+        "src/components/SideDialog/SideDialog.module.css"
+      ]
+    },
+    "SortBy": {
+      "css": [
+        "src/components/SortBy/SortBy.module.css"
+      ]
+    },
+    "SortMenu": {
+      "css": [
+        "src/components/SortMenu/SortMenu.module.css"
+      ]
+    },
+    "SortSaveBar": {
+      "css": [
+        "src/components/SortSaveBar/SortSaveBar.module.css"
+      ]
+    },
+    "Tabs": {
+      "css": [
+        "src/components/Tabs/Tabs.module.css"
+      ]
+    },
+    "Toast": {
+      "css": [
+        "src/components/Toast/Toast.module.css"
+      ]
+    },
+    "Toggle": {
+      "css": [
+        "src/components/Toggle/Toggle.module.css"
+      ]
+    },
+    "UserMenu": {
+      "css": [
+        "src/components/UserMenu/UserMenu.module.css"
+      ]
+    },
+    "VerticalNav": {
+      "css": [
+        "src/components/VerticalNav/VerticalNav.module.css"
+      ]
+    },
+    "VipLeadCard": {
+      "css": [
+        "src/components/VipLeadCard/VipLeadCard.module.css"
+      ]
+    },
+    "WeekRibbon": {
+      "css": [
+        "src/components/WeekRibbon/WeekRibbon.module.css"
+      ]
+    }
+  },
+  "live_regions": [
+    "header",
+    "footer",
+    ".header",
+    ".footer",
+    ".header-mobile",
+    ".bottom-nav",
+    ".mobile-footer",
+    "[data-live-partial]"
+  ]
+}

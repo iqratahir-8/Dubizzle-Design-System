@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "note": "Per-platform minimums for dubizzle Egypt. Configuration, not skill logic. Values come from RULES.md and design-kit/layout/layout.json: 768px is the real desktop/mobile split, targets are >=24px (WCAG 2.2 AA) and aim for 44px on mobile. A project can override any key in design-kit/qa/platforms.json.",
+  "canonical_breakpoints": [360, 480, 768, 950, 1280],
+  "platforms": {
+    "web-desktop": {
+      "label": "Web desktop (>=768px)",
+      "hit_target_min": 24,
+      "hit_target_aim": 24,
+      "adjacent_gap_min": 8,
+      "default_width": 1440,
+      "breakpoints": [768, 950, 1280, 1440],
+      "gestures": false,
+      "safe_area": false,
+      "focus_visible_required": true
+    },
+    "web-mobile": {
+      "label": "Web mobile (<768px)",
+      "hit_target_min": 24,
+      "hit_target_aim": 44,
+      "adjacent_gap_min": 8,
+      "default_width": 390,
+      "breakpoints": [360, 390, 480, 767],
+      "gestures": true,
+      "safe_area": true,
+      "focus_visible_required": false,
+      "notes": "24px is the blocking floor; below 44px is reported as a note. Bottom nav and sheets respect the safe-area inset."
+    },
+    "portal-desktop": {
+      "label": "Agency portal / dubizzle Pro (desktop only, D-012)",
+      "hit_target_min": 24,
+      "hit_target_aim": 24,
+      "adjacent_gap_min": 8,
+      "default_width": 1440,
+      "breakpoints": [1280, 1440],
+      "gestures": false,
+      "safe_area": false,
+      "focus_visible_required": true
+    }
+  }
+}

@@ -15,6 +15,8 @@
    `motion-design` (undefined), `imagery-illustration` (no illustration assets),
    `chart-data-viz` (no chart language), plus `npm run check:a11y`. Use them instead of
    improvising a value.
+   **Finished a design? Run `design-qa`** (gate: states, overflow, breakpoints, flows) and, to hand it
+   over, **`design-deliverables`** (one self-contained INTERNAL HTML document; refuses on QA blockers).
 6. **`docs/HOW-TO-ASK.md` is the user's guide to this system** — the screens they can name, what
    phrasing triggers what, how to re-capture. If they ask how to use the design agent, or seem
    unsure what exists, point them there (and keep it accurate when the system gains screens or

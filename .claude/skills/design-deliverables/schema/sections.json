@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "note": "Canonical section set for dubizzle deliverables. Stable string ids; display numbers are computed at render time from which sections apply. Never hardcode a display number, and never add a lettered id.",
+  "sections": {
+    "summary": {
+      "title": "Summary",
+      "order": 10,
+      "always": true,
+      "requires": [
+        "intake"
+      ],
+      "audience_varies": true,
+      "validator": "names the feature, the problem, the platforms, and what changed since the previous version"
+    },
+    "prototype": {
+      "title": "Interactive prototype",
+      "order": 20,
+      "always": false,
+      "applies_when": "prototype/flows.json exists for this feature",
+      "requires": [
+        "screens",
+        "ids",
+        "flows"
+      ],
+      "validator": "every transition resolves to an existing node id; entry screen reachable to all others; every screen has a route back"
+    },
+    "button-states": {
+      "title": "Button states",
+      "order": 30,
+      "always": false,
+      "applies_when": "the screens contain interactive components",
+      "requires": [
+        "design_system_registry"
+      ],
+      "generated_from": "component states declared in the design system registry",
+      "validator": "every interactive component in use shows default, hover, active, focus, disabled, loading"
+    },
+    "state-screens": {
+      "title": "State screens",
+      "order": 40,
+      "always": true,
+      "requires": [
+        "screens",
+        "qa_report"
+      ],
+      "generated_from": "registry states + qa findings with section_hint state-screens",
+      "validator": "every state in the registry is shown; empty state present regardless of whether the registry declared it"
+    },
+    "screens-redlines": {
+      "title": "Screens, states and redlines",
+      "order": 50,
+      "always": true,
+      "requires": [
+        "screens",
+        "ids"
+      ],
+      "validator": "every screen carries node ids; every id resolves in the ledger; the redline panel is inlined"
+    },
+    "rules": {
+      "title": "Rules",
+      "order": 60,
+      "always": true,
+      "requires": [
+        "intake"
+      ],
+      "validator": "each rule is testable \u2014 a reader can say whether an implementation satisfies it"
+    },
+    "motion": {
+      "title": "Interaction and motion",
+      "order": 70,
+      "always": false,
+      "applies_when": "the feature supplies motion values measured from live (motion is unmeasured in this design system)",
+      "requires": [
+        "flows"
+      ],
+      "validator": "every transition names a duration, an easing and a trigger; reduced-motion behaviour stated"
+    },
+    "dotlottie": {
+      "title": "dotLottie",
+      "order": 75,
+      "always": false,
+      "applies_when": "a lottie asset is referenced (the design system ships none \u2014 normally not applicable)",
+      "requires": [
+        "assets"
+      ],
+      "validator": "every referenced lottie exists in the asset manifest and is inlined in the bundle"
+    },
+    "gestures": {
+      "title": "Gestures and behaviours",
+      "order": 80,
+      "always": false,
+      "applies_when": "web-mobile is in scope and gestures are specified",
+      "requires": [
+        "screens"
+      ],
+      "validator": "every gesture names its target node id, its threshold, and what happens on failure"
+    },
+    "edge-cases": {
+      "title": "Edge cases and error states",
+      "order": 90,
+      "always": true,
+      "requires": [
+        "qa_report"
+      ],
+      "generated_from": "qa findings with section_hint edge-cases",
+      "validator": "covers content extremes, network failure, permission failure, and the empty-vs-error distinction"
+    },
+    "assets": {
+      "title": "Assets",
+      "order": 100,
+      "always": false,
+      "applies_when": "the feature ships icons, images, or animations",
+      "requires": [
+        "assets"
+      ],
+      "validator": "every asset has a name, a format, a size, and is inlined in the bundle"
+    },
+    "tokens": {
+      "title": "Tokens",
+      "order": 110,
+      "always": true,
+      "requires": [
+        "design_system_tokens"
+      ],
+      "generated_from": "tokens actually consumed by these screens, filtered from the design system",
+      "validator": "filtered view only; every token links back to the design system; no token restated that these screens do not use"
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "order": 120,
+      "always": true,
+      "requires": [
+        "qa_report"
+      ],
+      "generated_from": "qa findings with section_hint accessibility",
+      "validator": "contrast, hit targets, focus order, labels, RTL each addressed or explicitly out of scope"
+    },
+    "performance": {
+      "title": "Performance budget",
+      "order": 130,
+      "always": false,
+      "applies_when": "a runtime budget has been declared for this feature",
+      "requires": [
+        "intake"
+      ],
+      "validator": "states what is being budgeted and against what number; a budget with no source is not a budget"
+    },
+    "acceptance": {
+      "title": "Acceptance criteria",
+      "order": 140,
+      "always": true,
+      "requires": [
+        "qa_report",
+        "intake"
+      ],
+      "generated_from": "qa checks_run with status pass, plus intake rules",
+      "validator": "every criterion is objectively checkable and references a node id or a check id"
+    },
+    "platform-notes": {
+      "title": "Platform notes",
+      "order": 150,
+      "always": false,
+      "applies_when": "more than one platform is in scope",
+      "requires": [
+        "screens",
+        "design_system_registry"
+      ],
+      "validator": "every declared cross-platform difference has a reason; every undeclared difference is listed as an open question"
+    },
+    "open-questions": {
+      "title": "Open questions",
+      "order": 160,
+      "always": true,
+      "requires": [
+        "qa_report"
+      ],
+      "generated_from": "qa warnings, waived blockers, open [TBC] tokens, unanswered intake rows",
+      "validator": "each question names who can answer it and what is blocked until they do"
+    }
+  }
+}

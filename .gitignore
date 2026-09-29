@@ -60,3 +60,8 @@ design-kit/reference/live/screens/_live-check/
 .agents/
 skills-lock.json
 .claude/skills/remotion-*
+
+# design-qa run output (regenerate with the design-qa skill)
+design-kit/qa/report/
+# design-deliverables build output
+design-kit/deliverables/*/dist/

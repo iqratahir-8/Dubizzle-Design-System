@@ -55,7 +55,11 @@
     "check:prototype": "node scripts/check-prototype.mjs",
     "extract:portal-filters": "node scripts/extract-portal-filters.mjs",
     "check:live": "node scripts/check-live.mjs",
-    "check:rtl": "node scripts/check-rtl.mjs"
+    "check:rtl": "node scripts/check-rtl.mjs",
+    "qa:registry": "python3 .claude/skills/design-qa/scripts/build_registry.py",
+    "qa:matrix": "python3 .claude/skills/design-qa/scripts/matrix.py",
+    "qa": "python3 .claude/skills/design-qa/scripts/run.py",
+    "deliverable": "python3 .claude/skills/design-deliverables/scripts/build_deliverable.py"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

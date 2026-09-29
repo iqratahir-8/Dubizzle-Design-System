@@ -156,7 +156,17 @@ mode — see D-007 and D-011.
 ```bash
 npm run check:design -- <files>   # tokens, palette, radius, shadows, icons, copy
 npm run check:parity              # React and kit must agree
+npm run qa -- --scope <page|feature>   # design-qa: states, overflow, breakpoints, flows, parity → report.json
 ```
+
+**Register every screen you author** in `design-kit/qa/registry.json` (`origin: "authored"`,
+`based_on` the live template it started from, `feature`, and every state in `states` +
+`state_files`), and render each extra state inside its own file as `<section data-state="empty">…`
+so `design-qa` can find it. Mark user-generated text (titles, names, locations) with `data-ugc` so the
+content-extreme checks inject into the right nodes. `design-qa` will fail a screen with no **empty**
+state whether or not you declared one — draw it. A revamp is `authored`, never an edit to a `live`
+template that stays registered as `live`. Handing off? Use the `design-deliverables` skill — it runs QA
+first and refuses to build on blockers.
 
 The linter can't see these — check them yourself:
 
@@ -196,6 +206,7 @@ One agent doing both roles will otherwise just agree with itself. The tension be
 4. `PROPOSALS.md` rows for anything new.
 5. **Open questions and assumptions**, explicitly — not silently resolved.
 6. The Step 5 critique.
+7. The `design-qa` verdict line, and the registry entries for the new screens.
 
 ---
 

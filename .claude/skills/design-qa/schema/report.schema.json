@@ -1,0 +1,341 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dubizzle-design-system.schema/design-qa/report/v1",
+  "title": "dubizzle Design QA Report",
+  "description": "The contract between design-qa and any consumer. Consumers pin to schema_version, not to the skill version. Adding a field requires a minor schema bump; removing or changing the meaning of one requires a major bump.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "qa_skill_version",
+    "scope",
+    "verdict",
+    "counts",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1,
+      "description": "Independent of the skill version and moves more slowly."
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "qa_skill_version": {
+      "type": "string",
+      "description": "semver of the skill that produced this"
+    },
+    "ids_available": {
+      "type": "boolean",
+      "description": "False when screens carry no node ids; findings then use css_path instead of node."
+    },
+    "render_available": {
+      "type": "boolean",
+      "description": "False when no headless browser was available. When false, every render-dependent check is reported as skipped, and the verdict cannot be PASS."
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "platforms",
+        "locales"
+      ],
+      "properties": {
+        "feature": {
+          "type": "string"
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "locales": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "breakpoints": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "origins": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "authored",
+              "live"
+            ]
+          },
+          "description": "origins of the screens in scope. live = frozen production capture, findings capped at note"
+        }
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "properties": {
+        "counts": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "integer"
+            },
+            "required_if_differs": {
+              "type": "integer"
+            },
+            "sampled": {
+              "type": "integer"
+            },
+            "excluded": {
+              "type": "integer"
+            }
+          }
+        },
+        "cases_run": {
+          "type": "integer"
+        },
+        "cases_skipped": {
+          "type": "integer"
+        }
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "pass_with_warnings",
+        "blocked"
+      ],
+      "description": "blocked when any unwaived blocker exists, or when render_available is false and render-dependent checks were in scope."
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "blocker",
+        "warning",
+        "note"
+      ],
+      "properties": {
+        "blocker": {
+          "type": "integer"
+        },
+        "warning": {
+          "type": "integer"
+        },
+        "note": {
+          "type": "integer"
+        },
+        "waived": {
+          "type": "integer"
+        },
+        "skipped_checks": {
+          "type": "integer"
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "check",
+          "severity",
+          "screen",
+          "message"
+        ],
+        "properties": {
+          "check": {
+            "type": "string",
+            "description": "stable check id, e.g. a11y.contrast.body"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "blocker",
+              "warning",
+              "note"
+            ]
+          },
+          "screen": {
+            "type": "string"
+          },
+          "case": {
+            "type": "string",
+            "description": "matrix case id, when the finding is case-specific"
+          },
+          "node": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "node id, e.g. 3:147"
+          },
+          "css_path": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "fallback when ids_available is false"
+          },
+          "role": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "semantic role of the node"
+          },
+          "message": {
+            "type": "string"
+          },
+          "expected": {
+            "type": [
+              "string",
+              "number",
+              "null"
+            ]
+          },
+          "actual": {
+            "type": [
+              "string",
+              "number",
+              "null"
+            ]
+          },
+          "evidence": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "path to a screenshot or crop, relative to the report"
+          },
+          "waived": {
+            "type": "boolean",
+            "default": false
+          },
+          "waiver": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "reason": {
+                "type": "string"
+              },
+              "granted_by": {
+                "type": "string"
+              },
+              "granted_on": {
+                "type": "string"
+              },
+              "expires_on": {
+                "type": "string"
+              }
+            }
+          },
+          "section_hint": {
+            "type": "string",
+            "enum": [
+              "state-screens",
+              "edge-cases",
+              "accessibility",
+              "acceptance",
+              "open-questions"
+            ],
+            "description": "which deliverable section this finding feeds. Advisory \u2014 the consumer decides."
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "authored",
+              "live",
+              "component"
+            ],
+            "description": "origin of the screen the finding is on"
+          },
+          "capped_from": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "original severity when a live-origin cap lowered it"
+          },
+          "source": {
+            "type": "string",
+            "description": "native, or the wrapped repo command that produced it, e.g. npm:check:a11y"
+          }
+        }
+      }
+    },
+    "checks_run": {
+      "type": "array",
+      "description": "Every check id that executed, with its outcome. Lets a consumer build acceptance criteria from what passed, not only from what failed.",
+      "items": {
+        "type": "object",
+        "required": [
+          "check",
+          "status"
+        ],
+        "properties": {
+          "check": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "skipped"
+            ]
+          },
+          "skipped_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "cases": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "manual": {
+      "type": "object",
+      "description": "Results of the human checklist, same finding shape.",
+      "properties": {
+        "completed": {
+          "type": "boolean"
+        },
+        "completed_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

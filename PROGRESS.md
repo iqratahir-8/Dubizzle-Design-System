@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-24 (Arabic parked; ad-detail Location — items 50–51) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills — item 52) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -707,7 +707,43 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    rail is blocked on the same question as `SellerCard` — live sets the seller's name in
    **#12151b**, darker than --gray-06 and used nowhere else (docs/PROPOSALS.md).
 
+52. **`design-qa` and `design-deliverables` skills** (user, 2026-09-29: "create similar skills for the dubizzle
+   design system" from two sample skills built for another project). Both in `.claude/skills/`, data in
+   `design-kit/qa/`. Decisions (user): **wrap the existing checkers** rather than rewrite; audience is web
+   engineers + Pro portal engineers + stakeholders; **English only** (Arabic checks wired but off); one
+   self-contained HTML per deliverable, **INTERNAL-stamped** (licensed fonts).
+   - **`design-qa`** — case matrix (required / required-if-differs / sampled / excluded), then native checks
+     (`cov` coverage, `tok` inline/hex/px/var, `cpy` placeholder/voice/verbatim, `flw` flows, `par` parity),
+     render checks in headless Chrome (`brk`, `a11y.target`, `mot.reduced`, `ovf.long|longest_real|big_number`,
+     `ovf.clipped`) and wrapped `check:design|a11y|rtl|prototype|parity|live`. Emits `report.json` (schema v1) +
+     `report.html`. `npm run qa -- --scope <page|feature|all>`, `npm run qa:registry`, `npm run qa:matrix`.
+   - **The rule that makes it usable: `origin`.** `live` = frozen production capture → findings capped at note
+     (it can't be "fixed"; live wins); `authored` = ours → full checks, can block. Header/footer/bottom-nav
+     inside authored pages are treated as live (`registry.live_regions`). A revamp is registered `authored`.
+   - **`design-deliverables`** — gates on the QA report (also refuses a report that doesn't cover the pages),
+     assigns stable node ids `{screen}:{node}` (ledger `design-kit/qa/ids.json`, commit it), generates the
+     sections, bundles one file. `npm run deliverable -- --feature <f>` from `design-kit/deliverables/<f>/deliverable.json`.
+     Ids verified stable: inserting a row → 134 exact, 1 new. Built and opened in headless Chrome: no console errors,
+     no network requests, redline panel shows role/component, two-screen prototype clicked through.
+   - **Bugs fixed vs the sample skills:** its `--annotate` put ids on the wrong tags (now spliced by parser
+     position); `ovf` injected into every node and blocked on a "Featured" badge (now only `data-ugc` nodes can
+     block; heuristic matches warn); `url()` in a custom property (`--i:url(../icons/x.svg)`) resolves against
+     `patterns.css`, not the page — inlining it wrongly broke the bottom-nav icons.
+   - **Real findings on the first run** (not fixed — they are the user's designs to decide): `favourites` and
+     `payment` have **no empty state**; `favourites` **mobile clips its spec row** ("3 Beds" is 79% cut off at 390px,
+     the image column swallows the card); desktop/mobile `favourites` share only 47% of their strings.
+   - **Not done / catalogued as planned:** `a11y.contrast.*`, `focus*`, `cov.role`, `par.actions`, `tok.class`,
+     `brk.canonical`, `mot.budget` (no measured motion budget exists — none invented), remaining `ovf.*` extremes.
+     Never run against a real feature-design output yet; `product/{copy,flags,roles}.md` are seeds only.
+
 ## 6. Next up
+
+0c. **Use the new gate on real work** (item 52). Confirm with the user: (a) the flags and roles that change a
+   surface (`design-kit/qa/product/{flags,roles}.md` are seeds, not facts), (b) canonical strings for
+   `cpy.verbatim`, (c) whether to draw the missing `favourites` / `payment` empty states and fix the mobile
+   clipped spec row so the first deliverable can build without `--allow-blocked`. Then run the first real
+   `design-deliverables` build. `npm run qa:registry` after every `build:templates`. Planned checks are listed
+   in `.claude/skills/design-qa/references/checks.md`.
 
 0a. **Arabic is parked** (user, 2026-09-24: "we can skip the arabic for now"). The 76 `.ar`
    captures, the logical-property conversion and `npm run check:rtl` all stay — nothing regresses

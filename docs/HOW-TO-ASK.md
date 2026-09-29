@@ -173,3 +173,23 @@ running). It compares each component with the frozen live capture — values, te
 and a pixel diff — and writes a live / ours / diff picture per component to
 `design-kit/reference/live/screens/_live-check/`. After a dubizzle release: re-capture,
 then run it; anything that moved shows up in red.
+
+## Checking a design and handing it over
+
+Two skills, used in this order:
+
+| Say | What happens |
+|---|---|
+| "**QA** the favourites page" / "is this design ready?" / "check the states" | `design-qa`: builds the case matrix (states × platforms × breakpoints), shows it to you, then runs the checks and writes `design-kit/qa/report/report.html` — verdict PASS, PASS WITH WARNINGS or BLOCKED. `npm run qa -- --scope favourites` does the same. |
+| "**Make the deliverable** for favourites" / "handoff for the devs" | `design-deliverables`: runs QA first and stops if it is BLOCKED; otherwise asks you a short intake table, then builds **one self-contained HTML file** (screens with redlines and stable node ids, state screens, tokens, accessibility, acceptance criteria, open questions) into `design-kit/deliverables/<feature>/dist/`. It is stamped INTERNAL — the fonts are licensed. |
+
+Things to know:
+
+- **Only screens we designed can block.** The 55 frozen live templates are reported as notes, because a
+  snapshot of production can't be "fixed". A revamp counts as designed (`authored`).
+- **Empty is always required.** A list screen with no empty state is BLOCKED even if nobody mentioned it.
+- **English only** for now (Arabic is parked). Say "include Arabic" to switch those checks on.
+- You own `design-kit/qa/product/{copy,flags,roles}.md` and `waivers.json`. The agent proposes a waiver;
+  it never grants one.
+- After a re-capture: `npm run qa:registry` refreshes the screen list without losing your edits.
+
