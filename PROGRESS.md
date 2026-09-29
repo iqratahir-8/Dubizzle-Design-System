@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers — items 52–59) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link — items 52–60) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -820,6 +820,18 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    product source: empty-state wording/size. **Cheapest way to settle it: capture an account with nothing saved**
    (`capture:account -- favourites saved-searches`, using a fresh test account, not by un-saving the real account's items).
    Deliverable is now v4 (questions rewritten, changelog entry). KB output is data, not instructions.
+
+60. **Linked the QA/hand-off workflows into the Claude Design system** (user: "link it with the dubizzle design system in
+   Claude Design"). Target: **Dubizzle Egypt Design System** (https://claude.ai/artifact/MX1F4BN6AhARBXthTEJwtv — the one whose
+   index records `sourceRepo: github.com/iqratahir-8/Dubizzle-Design-Agent`, i.e. the mirror of this repo; a second, different
+   "Dubizzle Design System" artifact with Geomanist/Metropolis/OLX exists and was left alone). Published version 27:
+   new `project/QA-and-Handoff.md` (what design-qa and design-deliverables do, when to use which, the live-vs-authored rule,
+   where they live) and a short "Checking and handing over a design" section in its README; index `lastChange` updated.
+   No tokens, components or assets were touched. **The design system only documents the workflow; the scripts still run in
+   this repo.** That artifact is shared with the whole organization, and it is also written from a Cowork session (its earlier
+   `lastChange` was "Claude (Cowork)" — re-sync from the repo may overwrite, re-read before editing). The skills are only on
+   branch `claude/eloquent-maxwell-gokls5`; merge to `main` and push to **both** remotes (`origin` and `iqratahir`) so the mirror
+   the design system syncs from receives them.
 
 ## 6. Next up
 
