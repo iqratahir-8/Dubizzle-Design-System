@@ -36,10 +36,11 @@ export const ACCOUNT_SCREENS = {
   'settings-privacy': '/en/settings/privacy',
   'settings-notifications': '/en/settings/notifications',
   packages: '/en/payments/businesspackages/my-account',
-  /* Favourites — URL NOT VERIFIED (written without access to live). If the capture reports a 404 or the wrong
-     page, open Favourites in the signed-in browser, copy the address-bar path here, and re-run. Sign in with an
-     account that has nothing saved to get the empty state. */
-  favourites: '/en/favorites',
+  /* Favourites and Saved searches share one page (tab 0 / tab 1). Routes from the maple monorepo
+     (favouritesRoute.ts: ^/myfavorites, savedSearchesRoute.ts: ^/savedsearches). Sign in with an account that has
+     nothing saved to capture the empty states. */
+  favourites: '/en/myfavorites',
+  'saved-searches': '/en/savedsearches',
 
   /* Agency portal (/en/agencyPortal — camelCase; every lowercase spelling 404s).
      Reachable only with an agency account; the nav lists these eight sections. */
