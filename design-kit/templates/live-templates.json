@@ -451,6 +451,16 @@
       "capture": "portal-vip-purchase",
       "label": "Agency portal — VIP Leads, Purchase Lead confirmation (never confirmed: spends credits)",
       "account": true
+    },
+    "favourites": {
+      "capture": "favourites",
+      "label": "Favourites (saved ads)",
+      "account": true
+    },
+    "saved-searches": {
+      "capture": "saved-searches",
+      "label": "Saved searches",
+      "account": true
     }
   },
   "_states": "Templates whose capture is an interaction state (scripts/capture-states.mjs): the header mega menus, the location dropdown, the search suggestions, the mobile search/location overlays and the signed-in user menu. They are one viewport tall, not full pages."

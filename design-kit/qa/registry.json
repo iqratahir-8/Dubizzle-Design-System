@@ -270,31 +270,55 @@
       "vertical": "motors"
     },
     "favourites": {
-      "label": "Favourites",
-      "origin": "authored",
-      "states": [
-        "default",
-        "empty"
-      ],
-      "roles": [],
-      "role_differs": [],
-      "flags": [],
-      "no_list": false,
-      "unpaired": {},
+      "label": "Favourites (saved ads)",
+      "origin": "live",
+      "kind": "page",
+      "vertical": "account",
+      "feature": "favourites-revamp",
       "platforms": {
         "web-desktop": "design-kit/templates/desktop/favourites.html",
         "web-mobile": "design-kit/templates/mobile/favourites.html"
       },
-      "kind": "page",
-      "vertical": "account",
+      "states": [
+        "default",
+        "empty"
+      ],
       "state_files": {
         "empty": {
           "web-desktop": "design-kit/templates/desktop/favourites-empty.html",
           "web-mobile": "design-kit/templates/mobile/favourites-empty.html"
         }
       },
+      "roles": [
+        "signed-in"
+      ],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {}
+    },
+    "favourites-empty": {
+      "label": "Favourites — empty state",
+      "origin": "authored",
+      "kind": "page",
+      "vertical": "account",
       "feature": "favourites-revamp",
-      "based_on": "favourites"
+      "derived_from": "favourites",
+      "live_except_authored": true,
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/favourites-empty.html",
+        "web-mobile": "design-kit/templates/mobile/favourites-empty.html"
+      },
+      "states": [
+        "default"
+      ],
+      "roles": [
+        "signed-in"
+      ],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {}
     },
     "home": {
       "label": "Home",
@@ -804,31 +828,55 @@
       "vertical": "global"
     },
     "saved-searches": {
-      "label": "Saved Searches",
-      "origin": "authored",
-      "states": [
-        "default",
-        "empty"
-      ],
-      "roles": [],
-      "role_differs": [],
-      "flags": [],
-      "no_list": false,
-      "unpaired": {},
+      "label": "Saved searches",
+      "origin": "live",
+      "kind": "page",
+      "vertical": "account",
+      "feature": "favourites-revamp",
       "platforms": {
         "web-desktop": "design-kit/templates/desktop/saved-searches.html",
         "web-mobile": "design-kit/templates/mobile/saved-searches.html"
       },
-      "kind": "page",
-      "vertical": "global",
+      "states": [
+        "default",
+        "empty"
+      ],
       "state_files": {
         "empty": {
           "web-desktop": "design-kit/templates/desktop/saved-searches-empty.html",
           "web-mobile": "design-kit/templates/mobile/saved-searches-empty.html"
         }
       },
+      "roles": [
+        "signed-in"
+      ],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {}
+    },
+    "saved-searches-empty": {
+      "label": "Saved searches — empty state",
+      "origin": "authored",
+      "kind": "page",
+      "vertical": "account",
       "feature": "favourites-revamp",
-      "based_on": null
+      "derived_from": "saved-searches",
+      "live_except_authored": true,
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/saved-searches-empty.html",
+        "web-mobile": "design-kit/templates/mobile/saved-searches-empty.html"
+      },
+      "states": [
+        "default"
+      ],
+      "roles": [
+        "signed-in"
+      ],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {}
     },
     "search": {
       "label": "Search",

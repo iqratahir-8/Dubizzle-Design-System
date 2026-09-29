@@ -62,8 +62,8 @@ def main():
     state_targets = {pathlib.Path(v).name for pg in reg["pages"].values() for m in (pg.get("state_files") or {}).values() for v in m.values()}
     added, stale = [], []
     for stem, plats in sorted(found.items()):
-        if any(pathlib.Path(p).name in state_targets for p in plats.values()):
-            reg["pages"].pop(stem, None)      # a state of another page, registered under its state_files
+        if stem not in reg["pages"] and any(pathlib.Path(p).name in state_targets for p in plats.values()):
+            continue                          # a state of another page, registered under its state_files
             continue
         first = root / next(iter(plats.values()))
         e = reg["pages"].get(stem)

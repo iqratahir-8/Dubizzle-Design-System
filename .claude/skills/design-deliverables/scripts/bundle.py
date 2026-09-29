@@ -145,7 +145,8 @@ def main():
     meta = (f'<meta name="deliverable-feature" content="{a.feature}">\n<meta name="deliverable-version" content="{a.version}">\n'
             f'<meta name="deliverable-built" content="{built}">\n<meta name="classification" content="{a.classification}">\n')
     html = html.replace("</head>", meta + "</head>", 1)
-    remote = [r for r in re.findall(r'(?:src|href)=["\'](https?://[^"\']+)["\']', html) if not r.startswith("https://www.w3.org")]
+    # things that LOAD are network dependencies; an ordinary <a href="https://…"> link is not
+    remote = [r for r in re.findall(r'(?:\ssrc|\ssrcset|<link[^>]+href)=["\'](https?://[^"\']+)["\']', html) if not r.startswith("https://www.w3.org")]
     if remote and not a.allow_external:
         print("external references survived — the bundle would need the network:", file=sys.stderr)
         for r in sorted(set(remote))[:10]:

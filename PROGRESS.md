@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable + mobile prototype — items 52–56) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures — items 52–57) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -779,6 +779,29 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    no errors. **New finding, open question in the document:** mobile Favourites cards have **no heart**, so a
    saved ad can't be un-saved from the mobile list (desktop cards have one) — the mobile Favourites empty state is
    therefore unreachable in the flow. Version bumped to 2 with a changelog entry (v1 had already been sent).
+
+57. **Real Favourites and Saved searches captured; hand-built pages retired** (user: "use a page that is already captured,
+   if not then capture"). Neither was captured, so the user ran `capture:account -- favourites saved-searches` on their
+   Mac (real routes from the monorepo: `/en/myfavorites`, `/en/savedsearches`; `/en/favorites` was a 404). Registered as
+   account live templates `favourites` / `saved-searches` (**local only, gitignored** like `my-ads`; recapture after a
+   fresh clone). What live actually looks like (hand-built pages were wrong on all of it): breadcrumb "Profile", title
+   "Favourites & Saved searches" (mobile: "…Saved Searches", capital S), uppercase tabs without counts, photo cards with
+   seller logos and a heart **on mobile too**, saved searches as three bordered cards (title, label/value rows, trash),
+   no "View results" button. Retired: `_pages/favourites*`, `_pages/saved-searches*`, the invented `.saved-search`
+   pattern, the PROPOSALS rows for them, and my v2 open question "mobile cards have no heart" (an artefact of my page).
+   **Empty states are derived** from the live templates by `scripts/build-derived-states.mjs` (replaces only the list
+   block, wrapped in `<!--authored:start/end-->`; copy/structure from the maple source, not verified on live).
+   design-qa: registry has `favourites`/`saved-searches` (origin live) + `*-empty` (authored, `live_except_authored`);
+   token/copy checks run on the authored block only, render/a11y findings elsewhere are live-capped. QA: **0 blockers**.
+   Tooling: `capture-account` now bypasses the cache and inlines images for these two screens (they were remote URLs,
+   which a single-file deliverable can't have); the bundler's no-remote guard now covers `src`/`srcset`/stylesheet links,
+   not `<a href>`.
+   **GOTCHA — do not run `node scripts/build-live-templates.mjs` (or `npm run build:templates`) with a partial
+   `design-kit/reference/live`:** it prunes every shared CSS/asset file no built template references — 178 tracked files
+   vanished in the cloud sandbox and had to be restored with `git ls-files -d | xargs git checkout --`.
+   **Blocked on:** the re-capture with images inlined. Until then the deliverable build refuses (remote images), so
+   `favourites-revamp` v3 is written (`deliverable.json`) but not built; `flows.json` still holds v2's node ids and must
+   be regenerated from the new ledger after the first successful build.
 
 ## 6. Next up
 

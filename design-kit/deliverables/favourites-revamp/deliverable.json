@@ -1,7 +1,7 @@
 {
   "feature": "favourites-revamp",
   "title": "Favourites and Saved searches",
-  "version": 2,
+  "version": 3,
   "audience": "engineer",
   "platforms": [
     "web-desktop",
@@ -16,9 +16,9 @@
   ],
   "classification": "internal",
   "summary": {
-    "problem": "Favourites and Saved searches share one screen behind two tabs. The screens had no empty state and the saved-searches tab had no design at all.",
-    "scope": "Favourites and Saved searches on desktop and mobile web: the saved-ads list, the saved-searches list, and the empty state of each tab.",
-    "changed": "v2 adds the mobile prototype flow (Favourites tab, Saved searches tab, delete to empty state) and one open question: mobile Favourites cards have no way to un-save an ad."
+    "problem": "Favourites and Saved searches share one page behind two tabs. Live shows both populated, but no empty state for either has ever been captured or designed.",
+    "scope": "The real Favourites and Saved searches pages (captured from live, 2026-09-29) on desktop and mobile web, plus a proposed empty state for each tab. Everything except the list block of the empty states is an exact copy of production.",
+    "changed": "v3 replaces the hand-built pages with the live captures and derives the empty states from them. The hand-built pages had a different title, tabs with counts, and a saved-search layout that live does not use."
   },
   "signoff": {
     "who": [
@@ -29,18 +29,19 @@
   },
   "sections": {
     "exclude": {
-      "performance": "no performance budget declared"
+      "performance": "no performance budget declared",
+      "tokens": "the screens are frozen live captures; their CSS is production's own, not this system's token sheet"
     }
   },
   "rules": [
     {
       "id": "R1",
-      "text": "The tab strip has two tabs, 'Favourites' and 'Saved searches', with no counts. The Saved searches tab is shown only when the saved-searches feature is enabled for the market.",
-      "test": "With the feature off, only 'Favourites' renders; with it on, both render and neither label carries a number."
+      "text": "The tab strip has two tabs, 'Favourites' and 'Saved searches', with no counts (shown uppercase by CSS). The Saved searches tab is shown only when the saved-searches feature is enabled for the market.",
+      "test": "With the feature off only 'Favourites' renders; with it on both render and neither label carries a number."
     },
     {
       "id": "R2",
-      "text": "The Favourites empty state renders only when the list has loaded, contains zero ads, and is not loading. While loading, the list shows its loading placeholders instead.",
+      "text": "The Favourites empty state renders only when the list has loaded, contains zero ads, and is not loading. While loading, the list shows its loading placeholders.",
       "test": "Mock a loaded empty response: 'No favorites yet.' shows. Mock a pending request: it does not."
     },
     {
@@ -50,18 +51,18 @@
     },
     {
       "id": "R4",
-      "text": "Each saved search shows its title and its filters as attribute chips, a 'View results' action and a delete action.",
-      "test": "Every row has exactly one 'View results' link and one button named 'Delete saved search'."
+      "text": "A saved search is a bordered card: its title, one row per filter (label, then the value in bold), and a trash button at the top-right. There is no separate 'View results' button in the capture.",
+      "test": "Each card has exactly one title, at least one label/value row, and one button that deletes it."
     },
     {
       "id": "R5",
-      "text": "Deleting the last saved search shows the Saved searches empty state, 'No saved searches yet.'",
-      "test": "Delete the only row: the list is replaced by the empty-state line."
+      "text": "Deleting the last saved search shows 'No saved searches yet.'",
+      "test": "Delete the only card: the list is replaced by the empty-state line."
     },
     {
       "id": "R6",
-      "text": "The Favourites and Saved searches tabs switch the list in place; the page title stays 'Favourites'.",
-      "test": "Click 'Saved searches': the list changes, the tab underline moves, the H1 still reads 'Favourites'."
+      "text": "Switching tabs swaps the list in place. Desktop shows the breadcrumb 'Profile' and the title 'Favourites & Saved searches'; mobile shows a back arrow and 'Favourites & Saved Searches'.",
+      "test": "Click 'Saved searches': the list changes and the underline moves; the title stays."
     }
   ],
   "motion": [],
@@ -69,41 +70,46 @@
   "lottie": [],
   "performance": null,
   "acceptance": [
-    "Tab labels match the source strings exactly: 'Favourites', 'Saved searches'.",
-    "Both empty-state strings render verbatim, including the US spelling 'favorites' in 'No favorites yet.'"
+    "Tab labels match the source strings: 'Favourites', 'Saved searches'.",
+    "Both empty-state strings render verbatim, including the US spelling in 'No favorites yet.'"
   ],
   "edge_cases": [
-    "A saved search whose title is very long truncates with an ellipsis on one line (the row never wraps the title).",
-    "A saved search with many filters wraps its chips onto further lines."
+    "A saved-search title that is very long: check it against the card width (not verified on live).",
+    "A favourite ad with no seller logo and no specs (the iPhone in the capture) keeps the same row heights as its neighbours."
   ],
   "open_questions": [
     {
-      "q": "Is the Saved searches tab enabled in Egypt? The monorepo gates it behind isSavedSearchesEnabled(), and the empty-state string 'No saved searches yet.' was only found in the Jordan locale.",
+      "q": "Is Saved searches enabled in Egypt? The monorepo gates it behind isSavedSearchesEnabled(); 'No saved searches yet.' was found only in the Jordan locale.",
       "owner": "product owner",
       "blocks": "R1, R5"
     },
     {
-      "q": "Confirm the empty-state wording against live. 'No favorites yet.' uses US spelling next to the 'Favourites' tab label; is that intended?",
+      "q": "Confirm the empty-state wording on live. 'No favorites yet.' uses US spelling next to the 'Favourites' tab.",
       "owner": "designer",
       "blocks": "acceptance criteria"
     },
     {
-      "q": "What is the size of the empty-state line? The monorepo uses Text.Large, which was not measured; 2rem is a stand-in.",
+      "q": "What is the size of the empty-state line? The monorepo uses Text.Large, which was not measured; 1.8rem bold is a stand-in.",
       "owner": "designer",
       "blocks": "redlines for both empty states"
     },
     {
-      "q": "The saved-searches row (title, chips, View results, delete) is a proposal with no live reference. Does live have a different layout, and does delete ask for confirmation?",
+      "q": "The desktop title reads 'Favourites & Saved searches' but the mobile title reads 'Favourites & Saved Searches' (capital S). Is that intended?",
       "owner": "designer",
-      "blocks": "R4, R5"
+      "blocks": "copy sign-off"
     },
     {
-      "q": "Mobile Favourites cards have no heart, so a saved ad cannot be un-saved from the list on mobile (desktop cards have one). Is the remove action elsewhere (card menu, swipe, or the ad page)?",
-      "owner": "designer",
-      "blocks": "R2 on mobile (the only way to reach the empty state)"
+      "q": "Does deleting a saved search or un-saving an ad ask for confirmation? The capture is read-only, so live's behaviour was not observed.",
+      "owner": "product owner",
+      "blocks": "R4, R5"
     }
   ],
   "changelog": [
+    {
+      "version": 3,
+      "date": "2026-09-29",
+      "notes": "Screens are now the live captures of Favourites and Saved searches; the empty states are derived from them. Removed the hand-built pages, the saved-search layout I had invented, and the mobile 'no heart' question (a mistake in the hand-built page: live has the heart)."
+    },
     {
       "version": 2,
       "date": "2026-09-29",

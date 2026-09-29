@@ -3146,52 +3146,6 @@ ul {
 .attr-chip strong { font-weight: var(--weight-bold); color: var(--gray-06); }
 .attr-chip img { width: 1.6rem; height: 1.6rem; flex: none; }
 
-/* ── Saved search row (Favourites → Saved searches) ───────────────────────────
-   PROPOSED — not measured on live (no capture of the signed-in page exists). Built only from
-   existing tokens and .attr-chips/.btn; see docs/PROPOSALS.md. Kit-only: no React component yet. */
-.saved-search {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  padding: var(--space-4);
-  background: var(--white);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-card);
-  color: var(--gray-06);
-}
-
-.saved-search__body { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
-
-.saved-search__title {
-  margin: 0;
-  font-size: 1.6rem;
-  font-weight: var(--weight-bold);
-  line-height: 2.4rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.saved-search__actions { display: flex; align-items: center; gap: var(--space-3); flex: none; }
-
-.saved-search__delete {
-  display: grid;
-  place-items: center;
-  width: 4.4rem;
-  height: 4.4rem;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.saved-search__delete img { width: 2.4rem; height: 2.4rem; }
-
-@media (max-width: 768px) {
-  .saved-search { flex-direction: column; align-items: stretch; gap: var(--space-3); }
-  .saved-search__actions { justify-content: space-between; }
-}
-
 /* ── Promotion ribbons ────────────────────────────────────────────────────── */
 
 /* "Car of the Week" / "Property of the Week" — a red ribbon across the top-left

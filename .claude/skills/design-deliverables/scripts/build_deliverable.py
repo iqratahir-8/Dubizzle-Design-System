@@ -374,6 +374,10 @@ def main():
             + (f" Added: <code>{esc(', '.join(added[:15]))}</code>{' …' if len(added) > 15 else ''}" if added else "") + "</p>")
     secs.append('<section class="dd-sec" id="changelog"><h2><span class="n">◦</span>Changelog</h2>' + table(["version", "date", "notes"], cl_rows) + diff + "</section>")
     verdict = rep["verdict"]
+    seen_sheets, screen_sheets = set(), ""
+    for sh in css_sheets:
+        if sh.exists() and sh not in seen_sheets and "/design-kit/tokens/" not in str(sh) and "/design-kit/patterns/" not in str(sh):
+            seen_sheets.add(sh); screen_sheets += f'<link rel="stylesheet" href="{sh}">\n'
     flows_tag = ('<script type="application/json" id="__flows">' + json.dumps(flows_out).replace("</", "<\\/") + "</script>") if flows_out else ""
     cls = dj.get("classification", "internal")
     title = dj.get("title") or a.feature
@@ -383,6 +387,7 @@ def main():
 <link rel="stylesheet" href="../../../tokens/fonts.css">
 <link rel="stylesheet" href="../../../tokens/tokens.css">
 <link rel="stylesheet" href="../../../patterns/patterns.css">
+{screen_sheets}
 </head><body>
 <div class="dd-banner">{esc(cls)} — dubizzle Egypt design deliverable — do not share outside dubizzle{' — DRAFT: QA is BLOCKED' if draft else ''}</div>
 <header class="dd-head"><h1>{esc(title)}</h1>

@@ -123,6 +123,13 @@ def style_blocks(html):
     return "\n".join(re.findall(r"<style[^>]*>([\s\S]*?)</style>", html, flags=re.I))
 
 
+def authored_slice(html):
+    """A page that is a live capture plus a small authored block marks that block with
+    <!--authored:start--> … <!--authored:end-->. Token and copy checks run on the block only."""
+    parts = re.findall(r"<!--authored:start-->([\s\S]*?)<!--authored:end-->", html)
+    return "\n".join(parts) if parts else html
+
+
 def read(root, rel):
     return (root / rel).read_text(encoding="utf-8", errors="ignore")
 
@@ -216,7 +223,7 @@ def check_tokens_and_copy(rep, root, files, tokens):
     if copy_md.exists() and not canon_map:
         rep.skip("cpy.verbatim", "design-kit/qa/product/copy.md lists no canonical strings yet")
     for screen, plat, f in files:
-        html = read(root, f)
+        html = authored_slice(read(root, f))
         # tok.inline — style="" allowed only when it just sets custom properties
         rep.ran("tok.inline")
         for m in re.finditer(r'\sstyle="([^"]*)"', html):
@@ -320,7 +327,7 @@ def check_flows(rep, root, registry, pages):
 def check_parity(rep, root, pages, plats_in_scope):
     for pid, page in pages.items():
         plats = [p for p in (page.get("platforms") or {}) if p in ("web-desktop", "web-mobile")]
-        if page.get("origin") != "authored" or len(plats) < 2 or page.get("stale"):
+        if page.get("origin") != "authored" or len(plats) < 2 or page.get("stale") or page.get("live_except_authored"):
             continue
         rep.ran("par.states"); rep.ran("par.copy")
         sets = {}
@@ -394,7 +401,7 @@ def wrap_a11y(rep, root, pages, plats_in_scope, chrome, have_node):
             if plats_in_scope and plat not in plats_in_scope:
                 continue
             if (root / path).exists():
-                by_dir.setdefault(str(pathlib.Path(path).parent), {})[pathlib.Path(path).name] = (f"{plat}/{pid}", page.get("origin", "authored"), path)
+                by_dir.setdefault(str(pathlib.Path(path).parent), {})[pathlib.Path(path).name] = (f"{plat}/{pid}", "live" if page.get("live_except_authored") else page.get("origin", "authored"), path)
     for d, files in by_dir.items():
         paths = [v[2] for v in files.values()]
         for i in range(0, len(paths), 40):
@@ -459,7 +466,7 @@ def render_pass(rep, root, registry, matrix, pages, pcfg, chrome, out_dir):
         if c["class"] == "required" and c["width"] == pcfg["platforms"][c["platform"]]["default_width"]:
             checks += ["mot"] + (["ovf"] if authored else [])
         jobs.append({"id": c["id"], "screen": c["screen"], "platform": c["platform"], "file": str(root / f), "width": c["width"],
-                     "marker": marker, "origin": page.get("origin", "authored"), "checks": checks})
+                     "marker": marker, "origin": page.get("origin", "authored"), "liveAll": bool(page.get("live_except_authored")), "checks": checks})
     if not jobs:
         return True
     cfg = {"chrome": chrome, "longest": longest, "liveRegions": live_regions(registry),
@@ -577,7 +584,8 @@ def main():
     check_parity(rep, root, pages, plats)
 
     if not a.no_wrap:
-        wrap_design(rep, root, [(s, f) for s, _, f in files], have_node)
+        derived = {f for pg in pages.values() if pg.get("live_except_authored") for f in (pg.get("platforms") or {}).values()}
+        wrap_design(rep, root, [(s, f) for s, _, f in files if f not in derived], have_node)
         wrap_a11y(rep, root, pages, plats, chrome, have_node)
         if "ar" in locales:
             wrap_simple(rep, root, "rtl.physical", ["node", "scripts/check-rtl.mjs"], None, have_node=have_node)

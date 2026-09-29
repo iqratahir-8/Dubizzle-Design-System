@@ -27,7 +27,10 @@ const BIG = '999,999,999';
 /** page-side helpers, installed once per page */
 const HELPERS = `
 window.__qa = {
-  live(el) { return !!(window.__liveSel && el.closest(window.__liveSel)); },
+  live(el) {
+    if (window.__liveAll) return !el.closest('[data-authored]');   // live capture + a small authored block
+    return !!(window.__liveSel && el.closest(window.__liveSel));
+  },
   path(el) {
     const bits = [];
     for (let n = el; n && n.nodeType === 1 && bits.length < 4; n = n.parentElement) {
@@ -62,7 +65,7 @@ for (const job of cfg.jobs) {
     await page.goto(pathToFileURL(job.file).href, { waitUntil: 'load', timeout: 45000 });
     await new Promise((r) => setTimeout(r, 400));
     await page.evaluate(HELPERS);
-    await page.evaluate((s) => { window.__liveSel = s; }, LIVE_SEL);
+    await page.evaluate((s, all) => { window.__liveSel = s; window.__liveAll = all; }, LIVE_SEL, !!job.liveAll);
     if (job.marker) {
       // one file holding several states: show only the [data-state=marker] block
       await page.evaluate((m) => {
@@ -159,7 +162,7 @@ for (const job of cfg.jobs) {
       await page.reload({ waitUntil: 'load' });
       await new Promise((r) => setTimeout(r, 600));
       await page.evaluate(HELPERS);
-      await page.evaluate((s) => { window.__liveSel = s; }, LIVE_SEL);
+      await page.evaluate((s, all) => { window.__liveSel = s; window.__liveAll = all; }, LIVE_SEL, !!job.liveAll);
       const anim = await page.evaluate(() => document.getAnimations().filter((a) => {
         const t = a.effect && a.effect.getComputedTiming ? a.effect.getComputedTiming() : null;
         return a.playState === 'running' && t && t.duration > 0;

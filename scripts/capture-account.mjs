@@ -29,7 +29,11 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'design-kit/reference/live');
 const SCREENS = join(OUT, 'screens');
 
-export const ACCOUNT_SCREENS = {
+export /* Screens whose images are public listing photos and icons, not account data: inline them so the template and
+   any deliverable built from it work offline. Every other account screen keeps remote image URLs on purpose. */
+const INLINE_IMAGES = new Set(['favourites', 'saved-searches']);
+
+const ACCOUNT_SCREENS = {
   'my-ads': '/en/myads',
   chat: '/en/chat',
   'edit-profile': '/en/editProfile/info',
@@ -167,6 +171,8 @@ for (const name of selected) {
     try {
       await page.setUserAgent(userAgent);
       await page.setViewport(viewport);
+      // A persistent profile serves images from its cache, and the recorder only sees network responses.
+      await page.setCacheEnabled(false);
       const recorder = recordResponses(page);
       /* The agency portal holds long-poll connections open, so networkidle2 never
          fires and every page times out at 90s even though it rendered long before.
@@ -204,7 +210,7 @@ for (const name of selected) {
         await scrubContactsPage(page);
       }
       const counts = await redactPage(page, identity);
-      let html = sanitizeHtml(absolutize(await snapshotHtml(page, recorder, { inlineImages: false, restoreScroll: false }), ORIGIN), identity);
+      let html = sanitizeHtml(absolutize(await snapshotHtml(page, recorder, { inlineImages: INLINE_IMAGES.has(name), restoreScroll: false }), ORIGIN), identity);
       if (FIXTURE_SCREENS.has(name)) {
         html = scrubContactsHtml(html);
         const contacts = contactLeaks(html);

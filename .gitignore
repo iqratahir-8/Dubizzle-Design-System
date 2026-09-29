@@ -20,6 +20,10 @@ design-kit/reference/live/
 scripts/.tmp-*
 
 # Live templates built from redacted logged-in captures stay local, like the captures
+design-kit/templates/desktop/favourites*.html
+design-kit/templates/mobile/favourites*.html
+design-kit/templates/desktop/saved-searches*.html
+design-kit/templates/mobile/saved-searches*.html
 design-kit/templates/desktop/my-ads.html
 design-kit/templates/mobile/my-ads.html
 design-kit/templates/desktop/chat.html
