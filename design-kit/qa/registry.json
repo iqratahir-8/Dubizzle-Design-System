@@ -163,6 +163,24 @@
       "kind": "page",
       "vertical": "motors"
     },
+    "chat": {
+      "label": "Chat",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/chat.html",
+        "web-mobile": "design-kit/templates/mobile/chat.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
     "dpv-details-expanded": {
       "label": "Dpv Details Expanded",
       "origin": "live",
@@ -561,6 +579,24 @@
       "kind": "page",
       "vertical": "motors"
     },
+    "my-ads": {
+      "label": "My Ads",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/my-ads.html",
+        "web-mobile": "design-kit/templates/mobile/my-ads.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
     "new-cars": {
       "label": "New Cars",
       "origin": "live",
@@ -756,6 +792,24 @@
         "web-desktop": "design-kit/templates/desktop/save-search.html"
       },
       "kind": "overlay",
+      "vertical": "global"
+    },
+    "saved-searches": {
+      "label": "Saved Searches",
+      "origin": "authored",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/saved-searches.html",
+        "web-mobile": "design-kit/templates/mobile/saved-searches.html"
+      },
+      "kind": "page",
       "vertical": "global"
     },
     "search": {

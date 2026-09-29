@@ -126,7 +126,7 @@ filter, so they don't need their own capture.
 | Advertise with us (`/en/advertise`) | ⬜ not planned — marketing page, no product UI |
 | Sitemap (`/en/sitemap/most-popular`) | ⬜ not planned — link columns only |
 | Empty search result state | ⬜ worth capturing later (needs a query with no results) |
-| Favourites, saved searches | ⬜ hand-built templates; need logged-in captures |
+| Favourites, saved searches | ⬜ hand-built templates (`favourites`, `saved-searches`, desktop + mobile); need logged-in captures. Neither has an empty state; `saved-searches` layout is a proposal (PROPOSALS.md) |
 | Help centre (`/hc/…`) | out of scope — Zendesk, not dubizzle's design |
 
 ## Agency portal (dubizzle Pro) — desktop only

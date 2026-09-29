@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills — item 52) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches template — items 52–53) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -735,6 +735,16 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    - **Not done / catalogued as planned:** `a11y.contrast.*`, `focus*`, `cov.role`, `par.actions`, `tok.class`,
      `brk.canonical`, `mot.budget` (no measured motion budget exists — none invented), remaining `ovf.*` extremes.
      Never run against a real feature-design output yet; `product/{copy,flags,roles}.md` are seeds only.
+
+53. **`saved-searches` template** (user: "store the favourites and saved searches page templates"; chose "build the
+   saved-searches template"). `_pages/saved-searches.{desktop,mobile}.html` → templates (second tab of Favourites),
+   new `.saved-search` row in `patterns.css` from existing tokens, `.attr-chips`, `.btn`. **Layout, chip labels and
+   copy are invented** — no signed-in capture exists (PROPOSALS.md row). Kit-only, no React component. Rendered at
+   1440 and 390 and looked at. `design-qa`: only `cov.empty` blocks (no empty state yet). Built with
+   `node scripts/build-templates.mjs` (not `npm run build:templates`, whose live step needs `reference/live`).
+   **Blocked:** the cloud sandbox's egress proxy blocks `www.dubizzle.com.eg`, the maple monorepo isn't attached and
+   there is no browser tool, so the **favourites empty state was not drawn** — it needs a capture from the user's Mac
+   (`npm run capture:login`, then capture) or a session on that machine.
 
 ## 6. Next up
 

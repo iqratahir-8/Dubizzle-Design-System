@@ -62,6 +62,7 @@ Never describe an adopted or proposed value as something dubizzle "uses" — it 
 |---|---|---|---|---|
 | 2026-09-23 | colour | `rgba(245,245,245,.8)` over white ≈ `#f7f7f7` | the value cells of the ad-detail `Details` grid (`AdDetailsTable`) | Live paints the value cell one step lighter than `--gray-00` `#f6f6f6`. We ship `--gray-00`: the difference is a single level and invisible in the pixel diff (0.0%). Flagged in case the designer wants a real token for it. |
 | 2026-09-23 | colour | `#12151b` | the seller's name on the ad detail page (`SellerCard`, not yet built) | Darker than `--gray-06` `#23262a`, and used nowhere else in the captures. The seller card is deferred until this is settled. |
+| 2026-09-29 | layout | `.saved-search` row (title, attribute chips, View results, delete) | Favourites → Saved searches template (`saved-searches`, desktop + mobile) | No signed-in capture of live's saved-searches tab exists, so the row layout, the chip labels and the copy are **invented** from existing tokens, `.attr-chips` and `.btn`. No new colour, radius or shadow. Needs a real capture before it is treated as dubizzle. Kit-only — no React component. |
 | 2026-09-18 | colour | `#707ce9` `--ai-indigo` | AI surfaces in the design-system export (`AiChip`, `AiFlowSurface`, `AiStarBadge`) | Only colour in the export that is **not** in our measured palette, and it belongs to an AI feature that appears in none of the 142 live captures. Unshipped — needs designer confirmation before it enters the system. |
 
 ## Adopted

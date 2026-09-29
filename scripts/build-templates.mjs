@@ -156,6 +156,7 @@ const LABELS = {
   'my-ads': 'My ads',
   chat: 'Chat',
   favourites: 'Favourites',
+  'saved-searches': 'Saved searches (Favourites tab)',
   'seller-page': 'Seller / agency page',
   login: 'Login or signup',
   payment: 'Payment',
