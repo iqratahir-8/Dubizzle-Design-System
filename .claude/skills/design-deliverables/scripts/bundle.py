@@ -39,19 +39,31 @@ def resolve_imports(css, base, log, seen=None):
     return re.sub(r"@import\s+(?:url\(([^)]+)\)|(['\"][^'\"]+['\"]))\s*[^;]*;", repl, css)
 
 
+MAX_CSS_IMAGE_BYTES = 40_000
+PIXEL = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+
+
 def inline_css_urls(css, base, log):
+    """url() -> data URI. Fonts always; images only when small. A production stylesheet references dozens of
+    banners and backgrounds no screen here shows, and inlining them all blows the size limit — large ones
+    become a transparent pixel and are logged (a captured page's visible images are <img> tags, handled elsewhere)."""
     def repl(m):
         raw = m.group(1).strip("'\"")
         if raw.startswith(("data:", "#")):
             return m.group(0)
         if raw.startswith(("http://", "https://", "//")):
-            log.append(("external-css-url", raw)); return m.group(0)
+            log.append(("external-css-url", raw)); return f'url("{PIXEL}")' if not FONT_URL.search(raw) else m.group(0)
         p = (base / raw.split("?")[0].split("#")[0]).resolve()
         if not p.exists():
             log.append(("missing-css-asset", raw)); return m.group(0)
+        if p.suffix.lower() not in FONT_MIME and p.stat().st_size > MAX_CSS_IMAGE_BYTES:
+            log.append(("dropped-large-css-image", p.name)); return f'url("{PIXEL}")'
         log.append(("inlined", p.name))
         return f"url('{data_uri(p)}')"
     return re.sub(r"url\(([^)]+)\)", repl, css)
+
+
+FONT_URL = re.compile(r"\.(woff2?|ttf|otf|eot)(\?|#|$)", re.I)
 
 
 def prune_fonts(css, locales, log):
@@ -139,7 +151,8 @@ def main():
     for flag, el_id, label in ((a.ids, "__ids", "ids"), (a.qa_report, "__qa", "qa-report")):
         if flag and pathlib.Path(flag).exists():
             payload = pathlib.Path(flag).read_text(encoding="utf-8").replace("</", "<\\/")
-            html = html.replace("</body>", f'<script type="application/json" id="{el_id}">{payload}</script>\n</body>')
+            i = html.rfind("</body>")          # the DOCUMENT's </body>: screens embedded above each carry their own
+            html = html[:i] + f'<script type="application/json" id="{el_id}">{payload}</script>\n' + html[i:]
             log.append(("embedded", label))
     built = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
     meta = (f'<meta name="deliverable-feature" content="{a.feature}">\n<meta name="deliverable-version" content="{a.version}">\n'
@@ -167,11 +180,11 @@ def main():
     mb = out.stat().st_size / 1_048_576
     digest = hashlib.sha256(out.read_bytes()).hexdigest()[:16]
     inl = sum(1 for k, _ in log if k.startswith("inlined"))
-    warns = [f"{k}: {v}" for k, v in log if k.startswith(("missing", "dropped", "external"))]
+    warns = [f"{k}: {v}" for k, v in log if k.startswith(("missing", "dropped-import", "dropped-remote", "external"))]
     if a.manifest:
         pathlib.Path(a.manifest).write_text(json.dumps({"feature": a.feature, "version": a.version, "built": built, "file": str(out),
             "size_bytes": out.stat().st_size, "sha256_16": digest, "inlined": inl, "pruned_fonts": [v for k, v in log if k == "pruned-font"],
-            "warnings": warns, "classification": a.classification}, indent=2))
+            "warnings": warns, "dropped_large_css_images": sum(1 for k, _ in log if k == "dropped-large-css-image"), "classification": a.classification}, indent=2))
     print(f"wrote {out}  {mb:.2f} MB  sha {digest}\ninlined {inl} assets, 0 network requests")
     for w in warns:
         print("  ! " + w)

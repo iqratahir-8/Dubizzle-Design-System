@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures — items 52–57) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3 build — items 52–58) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -802,6 +802,16 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    **Blocked on:** the re-capture with images inlined. Until then the deliverable build refuses (remote images), so
    `favourites-revamp` v3 is written (`deliverable.json`) but not built; `flows.json` still holds v2's node ids and must
    be regenerated from the new ledger after the first successful build.
+
+58. **`favourites-revamp` v3 built** ("resolve the blocked items"). The re-capture with images inlined still needs the
+   user's Mac (pushed script change, not yet run), so v3 is built with `--placeholder-images`: remote listing photos
+   and site icons are grey/blank, and the document says so in its banner and summary. Layout, text and structure are
+   exact. `npm run deliverable -- --feature favourites-revamp --placeholder-images` (drop the flag after the recapture).
+   `flows.json` regenerated from the new ledger (desktop + mobile: tab switch, delete-last → empty, back); both walked in
+   headless Chrome, no console errors, no network requests. QA: **PASS** (0 blockers, 0 warnings). 11 of 18 sections.
+   **Bug found and fixed (affected v1 and v2):** the bundler inserted the ledger before every `</body>` and the document CSS
+   before every `</head>`, including those inside each embedded screen — see the deliverables CHANGELOG.
+   Still open: recapture with images; the four open questions in the document; `Text.Large` size; Egypt saved-searches flag.
 
 ## 6. Next up
 

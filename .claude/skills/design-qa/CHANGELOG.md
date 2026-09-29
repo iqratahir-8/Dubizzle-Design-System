@@ -32,6 +32,10 @@ Report schema: v1
 
 - `flw.reach` accepts `entries` (one per platform) and checks reachability from every one.
 
+- Pages that are a live capture plus a small authored block (`live_except_authored`, `derived_from`): token and copy checks
+  run on the `<!--authored:start/end-->` block only; render/a11y findings outside `[data-authored]` are live-capped;
+  `par.*` and `flw.orphan` skip them.
+
 ### Known gaps
 - Empty/loading/error states are almost never captured on live, so every live page reports
   `cov.empty` as a note. Authored screens must draw them.

@@ -105,9 +105,10 @@ def collect_screens(root, registry, dj):
     return out
 
 
-def prepare_screen(root, rel, marker, ledger, name, number, comps):
+def prepare_screen(root, rel, marker, ledger, name, number, comps, placeholders=None):
     html = (root / rel).read_text(encoding="utf-8")
     annotated, results, retired = assign_ids.assign(html, name, ledger, number, comps)
+    annotated = re.sub(r'<link\b(?![^>]*rel=["\']stylesheet["\'])[^>]*href=["\']https?://[^>]*>', '', annotated, flags=re.I)   # favicons, manifests, preloads
     sheets = re.findall(r'<link[^>]+rel=["\']stylesheet["\'][^>]*href=["\']([^"\']+)["\']', annotated, flags=re.I)
     annotated = re.sub(r'<link[^>]+rel=["\']stylesheet["\'][^>]*>', "", annotated, flags=re.I)
     base = (root / rel).parent
@@ -136,6 +137,16 @@ def prepare_screen(root, rel, marker, ledger, name, number, comps):
         mime = mimetypes.guess_type(p.name)[0] or "application/octet-stream"
         return f"url(data:{mime};base64,{base64.b64encode(p.read_bytes()).decode()})"
     annotated = re.sub(r"url\(\s*(['\"]?)([^)'\"]+)\1\s*\)", cssurl, annotated)
+    if placeholders is not None:          # --placeholder-images: remote images cannot ship in a single file
+        import base64 as _b
+        photo = "data:image/svg+xml;base64," + _b.b64encode(b'<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect width="400" height="300" fill="#e6e6e6"/></svg>').decode()
+        clear = "data:image/svg+xml;base64," + _b.b64encode(b'<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>').decode()
+        def swap(m):
+            placeholders.append(m.group(1))
+            return ' src="' + (clear if ".svg" in m.group(1).split("?")[0].lower() else photo) + '"'
+        annotated = re.sub(r'\ssrc=["\'](https?://[^"\']+)["\']', swap, annotated)
+        annotated = re.sub(r'\s(srcset|data-srcset)=["\'][^"\']*https?://[^"\']*["\']', "", annotated)
+        annotated = re.sub(r'<source\b[^>]*https?://[^>]*>', "", annotated)
     return annotated, [(base / s).resolve() for s in sheets], results
 
 
@@ -173,7 +184,8 @@ def button_states(patterns, screens_html):
     states = {"hover": r":hover", "active": r":active", "focus": r":focus", "disabled": r":disabled|\[disabled\]|--disabled|is-disabled",
               "loading": r"--loading|is-loading|\[aria-busy"}
     sels = re.findall(r"([^{}]+)\{", patterns)
-    for c in sorted(cls):
+    known = set(re.findall(r"\.([\w-]+)", "\n".join(re.findall(r"([^{}]+)\{", patterns))))
+    for c in sorted(cls & known):          # production's hashed classes (live captures) are not ours to report on
         have = {s: any(re.search(rf"\.{re.escape(c)}\b", sel) and re.search(rx, sel) for sel in sels) for s, rx in states.items()}
         rows.append((f"<code>.{esc(c)}</code>", "✓", *["✓" if have[s] else "—" for s in states]))
     return rows
@@ -230,6 +242,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--feature", required=True)
     ap.add_argument("--report", default="design-kit/qa/report/report.json")
+    ap.add_argument("--placeholder-images", action="store_true", help="replace remote images (a capture that did not inline them) with grey placeholders and say so in the document")
     ap.add_argument("--allow-blocked", action="store_true", help="debugging only; stamps the document DRAFT")
     a = ap.parse_args()
     root = repo_root()
@@ -263,10 +276,11 @@ def main():
     if not collected:
         sys.exit("no screen files found for the pages/platforms in deliverable.json")
     script_tags, screens_html, css_sheets = [], [], []
+    swapped = [] if a.placeholder_images else None
     for group, pid, plat, st, key, rel, marker in collected:
         page = registry["pages"][pid]
         html, sheets, _res = prepare_screen(root, rel, marker, ledger, f"{plat}/{pid}" if st == "default" else f"{plat}/{pid}#{st}",
-                                            None, comps)
+                                            None, comps, swapped)
         screens_html.append(html); css_sheets += sheets
         safe = html.replace("</script", "<\\/script")
         script_tags.append(f'<script type="text/html" data-key="{esc(key)}"' + (f' data-marker="{esc(marker)}"' if marker else "") + f">{safe}</script>")
@@ -299,7 +313,7 @@ def main():
         if sid in excl: ok, why = False, excl[sid]
         elif s.get("always"): ok = True
         elif sid == "prototype": ok, why = bool(flows), "no flows.json registered for this feature"
-        elif sid == "button-states": ok, why = bool(btn_rows), "no button-like component appears on these screens"
+        elif sid == "button-states": ok, why = bool(btn_rows), "the buttons on these screens are production's own classes from the live captures, not components this design system defines"
         elif sid == "motion": ok, why = bool(dj.get("motion")), "no motion specified — motion is unmeasured in this system (motion-design); nothing is invented here"
         elif sid == "dotlottie": ok, why = bool(dj.get("lottie")), "no dotLottie asset — the design system ships none"
         elif sid == "gestures": ok, why = bool(dj.get("gestures")) and "web-mobile" in dj["platforms"], "no gesture specified for a touch platform in scope"
@@ -319,6 +333,10 @@ def main():
                        f"<b>Audience.</b> {esc(dj.get('audience', ''))}</p>" +
                        (f"<p><b>What changed since v{prev[-1]['version']}.</b> {esc(sm.get('changed', ''))}</p>" if prev else "") +
                        (f"<p><b>Sign-off.</b> {esc(', '.join((dj.get('signoff') or {}).get('who', [])))} — {esc((dj.get('signoff') or {}).get('meaning', ''))}</p>" if dj.get("signoff") else ""))
+    if swapped:
+        body["summary"] += (f'<p style="border:1px solid var(--warn);padding:8px 12px"><b>Images.</b> {len(swapped)} remote image reference(s) in the captured pages '
+                            "(listing photos, site icons) could not be inlined and are shown as grey placeholders or blank. Layout and text are exact; "
+                            "re-capture with images inlined to include the real ones.</p>")
     if flows:
         pk = {}
         for sid, s in flows["screens"].items():
@@ -329,7 +347,7 @@ def main():
                              '<button class="dd-btn" id="dd-proto-reset">Reset</button><button class="dd-btn" id="dd-proto-hot" aria-pressed="false">Show hotspots</button>'
                              '<select id="dd-proto-plat" aria-label="platform"' + ('' if flows.get('entries') else ' hidden') + '></select><select id="dd-proto-pick" aria-label="jump to screen"></select></div><p class="dd-hint" id="dd-proto-title"></p>'
                              '<div class="dd-frame-box" id="dd-proto-box"></div></div><p class="dd-hint">Deep link: <code>?screen=&lt;screen id&gt;</code>. '
-                             'Transitions key on node ids, so a hotspot survives a re-layout.</p>')
+                             'Transitions key on node ids, so a hotspot survives a re-layout. A delete hotspot jumps straight to the empty state, as if it were the last item.</p>')
     else:
         flows_out = None
     body["button-states"] = ("<p>Declared in <code>design-kit/patterns/patterns.css</code> for the components on these screens. "
@@ -389,7 +407,7 @@ def main():
 <link rel="stylesheet" href="../../../patterns/patterns.css">
 {screen_sheets}
 </head><body>
-<div class="dd-banner">{esc(cls)} — dubizzle Egypt design deliverable — do not share outside dubizzle{' — DRAFT: QA is BLOCKED' if draft else ''}</div>
+<div class="dd-banner">{esc(cls)} — dubizzle Egypt design deliverable — do not share outside dubizzle{' — DRAFT: QA is BLOCKED' if draft else ''}{' — images are placeholders' if swapped else ''}</div>
 <header class="dd-head"><h1>{esc(title)}</h1>
 <div class="dd-meta"><span>v{version}</span><span>{esc(a.feature)}</span><span>{datetime.date.today().isoformat()}</span>
 <span>QA: <span class="dd-badge {esc(verdict)}">{esc(verdict.replace('_', ' '))}</span></span><span>{n_oq} open question(s)</span></div></header>
@@ -403,15 +421,18 @@ def main():
     (build / "deliverable.js").write_text((SKILL / "assets/deliverable.js").read_text(encoding="utf-8"), encoding="utf-8")
     css_doc = (SKILL / "assets/deliverable.css").read_text(encoding="utf-8")
     # the document's own stylesheet rides in the bundle as an extra <style> appended after the shared sheets
-    (build / "index.html").write_text((build / "index.html").read_text(encoding="utf-8").replace("</head>", f"<style id=\"__docstyle\">{css_doc}</style></head>"), encoding="utf-8")
+    (build / "index.html").write_text((build / "index.html").read_text(encoding="utf-8").replace("</head>", f"<style id=\"__docstyle\">{css_doc}</style></head>", 1), encoding="utf-8")
     tokens_dir, patterns_dir = root / "design-kit/tokens", root / "design-kit/patterns"
     html_final = (build / "index.html").read_text(encoding="utf-8")
     html_final = html_final.replace("../../../tokens/", str(tokens_dir) + "/").replace("../../../patterns/", str(patterns_dir) + "/")
     (build / "index.html").write_text(html_final, encoding="utf-8")
 
+    keep = {f"{plat}/{pid}" if st == "default" else f"{plat}/{pid}#{st}" for _g, pid, plat, st, *_ in collected}
+    slim = {"ledger_version": ledger["ledger_version"], "nodes": {i: m for i, m in ledger["nodes"].items() if m.get("screen") in keep and m.get("status") == "active"}}
+    slim_path = build / "ids.json"; slim_path.write_text(json.dumps(slim), encoding="utf-8")
     out = ddir / "dist" / f"{a.feature}-v{version}.html"
     cmd = [sys.executable, str(HERE / "bundle.py"), "--src", str(build), "--out", str(out), "--feature", a.feature, "--version", str(version),
-           "--ids", str(ledger_path), "--qa-report", str(root / a.report), "--manifest", str(ddir / "dist" / "manifest.json"),
+           "--ids", str(slim_path), "--qa-report", str(root / a.report), "--manifest", str(ddir / "dist" / "manifest.json"),
            "--locales", ",".join(dj.get("locales", ["en"])), "--classification", cls]
     r = subprocess.run(cmd, capture_output=True, text=True)
     sys.stdout.write(r.stdout); sys.stderr.write(r.stderr)

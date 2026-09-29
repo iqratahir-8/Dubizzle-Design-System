@@ -317,7 +317,7 @@ def check_flows(rep, root, registry, pages):
                 if screens[s_].get("kind") in ("modal", "drawer", "sheet", "dialog") and not [t for t in back if t.get("kind") in ("dismiss", "close")]:
                     rep.fail("flw.dismiss", feat, f"{screens[s_]['kind']} '{s_}' has no dismiss control")
         for pid, p in pages.items():
-            if p.get("feature") == feat and pid not in {v.get("page", k) for k, v in screens.items()} and p.get("kind") != "overlay":
+            if p.get("feature") == feat and pid not in {v.get("page", k) for k, v in screens.items()} and p.get("kind") != "overlay" and not p.get("derived_from"):
                 rep.fail("flw.orphan", pid, f"page '{pid}' is in feature '{feat}' but no flow references it")
     if not any_flow:
         for c in ("flw.dead", "flw.reach", "flw.back", "flw.dismiss"):

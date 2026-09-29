@@ -1,4 +1,8 @@
 {
+  "entries": {
+    "web-desktop": "list",
+    "web-mobile": "m-list"
+  },
   "screens": {
     "list": {
       "page": "favourites",
@@ -37,54 +41,52 @@
     {
       "from": "list",
       "to": "saved",
-      "node": "1:47",
+      "node": "1:1056",
       "kind": "forward"
     },
     {
       "from": "saved",
       "to": "list",
-      "node": "5:46",
+      "node": "5:1049",
       "kind": "back"
     },
     {
       "from": "saved",
       "to": "saved-empty",
-      "node": "5:81",
-      "kind": "forward"
+      "node": "5:1043",
+      "kind": "forward",
+      "note": "illustrative: deleting the last saved search"
     },
     {
       "from": "saved-empty",
       "to": "list",
-      "node": "6:46",
+      "node": "6:833",
       "kind": "back"
     },
     {
       "from": "m-list",
       "to": "m-saved",
-      "node": "3:6",
+      "node": "3:53",
       "kind": "forward"
     },
     {
       "from": "m-saved",
       "to": "m-list",
-      "node": "7:5",
+      "node": "7:60",
       "kind": "back"
     },
     {
       "from": "m-saved",
       "to": "m-saved-empty",
-      "node": "7:36",
-      "kind": "forward"
+      "node": "7:277",
+      "kind": "forward",
+      "note": "illustrative: deleting the last saved search"
     },
     {
       "from": "m-saved-empty",
       "to": "m-list",
-      "node": "8:5",
+      "node": "8:31",
       "kind": "back"
     }
-  ],
-  "entries": {
-    "web-desktop": "list",
-    "web-mobile": "m-list"
-  }
+  ]
 }

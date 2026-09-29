@@ -40,6 +40,19 @@ Accepts QA report schema: v1 · Node ledger version: 1
 ### Added after v1 of favourites-revamp
 - Flows may declare one entry per platform (`entries`); the runner has a platform switch (`?platform=web-mobile`).
 
+### Fixed / added building v3 on the live captures
+- **Serious, present since v1:** `str.replace` inserted the ledger JSON before *every* `</body>` and the document
+  stylesheet before *every* `</head>`, including the ones inside each embedded screen. Screens got the document's
+  chrome CSS injected into them and the ledger was embedded once per screen (27 MB instead of 5). Now only the
+  document's own tags are touched, and only this deliverable's nodes are embedded. v1 and v2 files carried this bug.
+- Screens' stylesheets (live captures link production CSS) are hoisted into the document once; favicon/manifest links
+  are dropped.
+- The no-remote guard checks what loads (`src`, `srcset`, stylesheet links), not `<a href>`.
+- CSS `url()`: fonts always, images only under 40 KB; larger decorative images become a transparent pixel and are logged.
+- `--placeholder-images`: remote images (a capture that did not inline them) become grey placeholders/blank and the
+  document says so in its banner and summary. For interim builds; a re-capture with images inlined replaces it.
+- Button states report only classes `patterns.css` defines; sections that would be empty are n/a with a reason.
+
 ### Known gaps
 - Built end to end only as a DRAFT of the hand-built `favourites` page (QA was blocked by its missing
   empty states and clipped mobile spec row, correctly), opened in headless Chrome: no console errors, no network
