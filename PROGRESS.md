@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–62; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–63; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -847,6 +847,11 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    feature, a draft `deliverable.json` (testable rules, open questions each with an owner, empty sign-off), and a first
    `npm run qa -- --scope <feature>` run whose verdict is shown with the design. "What you hand over" gained item 8. It does not
    build the deliverable — that stays `design-deliverables`. If intake keeps going wrong, add a thin "brief" skill later.
+
+63. **New `design-to-handoff` skill** — a thin orchestrator (intake → approved plan → `feature-design` → `design-qa` gate →
+   `design-deliverables` → summary). It holds no design/QA/bundling logic; the three stage skills stay separate and usable alone
+   (user asked "complete skill or keep separate" — answer: both). Added to CLAUDE.md rule 7 and HOW-TO-ASK. Untested on a fresh
+   feature; first real use is its test.
 
 ## 6. Next up
 

@@ -21,3 +21,6 @@
    phrasing triggers what, how to re-capture. If they ask how to use the design agent, or seem
    unsure what exists, point them there (and keep it accurate when the system gains screens or
    components).
+7. **Whole job, idea to hand-off? Use `design-to-handoff`.** It asks questions, gets a plan approved,
+   then runs `feature-design` → `design-qa` → `design-deliverables` with a gate between each. Use the
+   three skills directly when only one stage is wanted.
