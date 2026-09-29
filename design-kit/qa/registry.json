@@ -273,7 +273,8 @@
       "label": "Favourites",
       "origin": "authored",
       "states": [
-        "default"
+        "default",
+        "empty"
       ],
       "roles": [],
       "role_differs": [],
@@ -285,7 +286,15 @@
         "web-mobile": "design-kit/templates/mobile/favourites.html"
       },
       "kind": "page",
-      "vertical": "account"
+      "vertical": "account",
+      "state_files": {
+        "empty": {
+          "web-desktop": "design-kit/templates/desktop/favourites-empty.html",
+          "web-mobile": "design-kit/templates/mobile/favourites-empty.html"
+        }
+      },
+      "feature": "favourites-revamp",
+      "based_on": "favourites"
     },
     "home": {
       "label": "Home",
@@ -798,7 +807,8 @@
       "label": "Saved Searches",
       "origin": "authored",
       "states": [
-        "default"
+        "default",
+        "empty"
       ],
       "roles": [],
       "role_differs": [],
@@ -810,7 +820,15 @@
         "web-mobile": "design-kit/templates/mobile/saved-searches.html"
       },
       "kind": "page",
-      "vertical": "global"
+      "vertical": "global",
+      "state_files": {
+        "empty": {
+          "web-desktop": "design-kit/templates/desktop/saved-searches-empty.html",
+          "web-mobile": "design-kit/templates/mobile/saved-searches-empty.html"
+        }
+      },
+      "feature": "favourites-revamp",
+      "based_on": null
     },
     "search": {
       "label": "Search",
@@ -1063,7 +1081,9 @@
       "vertical": "motors"
     }
   },
-  "features": {},
+  "features": {
+    "favourites-revamp": {}
+  },
   "components": {
     "AccountMenu": {
       "css": [

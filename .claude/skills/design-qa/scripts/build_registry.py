@@ -59,8 +59,12 @@ def main():
             p = "portal-desktop" if stem.startswith("portal-") else plat
             found.setdefault(stem, {})[p] = str(fp.relative_to(root))
 
+    state_targets = {pathlib.Path(v).name for pg in reg["pages"].values() for m in (pg.get("state_files") or {}).values() for v in m.values()}
     added, stale = [], []
     for stem, plats in sorted(found.items()):
+        if any(pathlib.Path(p).name in state_targets for p in plats.values()):
+            reg["pages"].pop(stem, None)      # a state of another page, registered under its state_files
+            continue
         first = root / next(iter(plats.values()))
         e = reg["pages"].get(stem)
         if e is None:
@@ -79,7 +83,7 @@ def main():
         e.pop("stale", None); e.pop("screen", None)
         reg["pages"][stem] = e
     for stem, e in reg["pages"].items():
-        if stem not in found:
+        if stem not in found and stem not in {k for k in reg["pages"] if False}:
             e["stale"] = True; stale.append(stem)
 
     reg.setdefault("live_regions", LIVE_REGIONS_DEFAULT)

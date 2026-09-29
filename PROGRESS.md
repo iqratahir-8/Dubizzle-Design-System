@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches template — items 52–53) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states — items 52–54) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -746,13 +746,24 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    there is no browser tool, so the **favourites empty state was not drawn** — it needs a capture from the user's Mac
    (`npm run capture:login`, then capture) or a session on that machine.
 
+54. **Favourites and Saved searches empty states, from the maple monorepo.** The cloud sandbox can't reach the user's
+   `dubizzle-maple-master`, live, or a browser, so the user ran one copy-and-push command on their Mac; the source is now
+   in `design-kit/reference/maple/favourites/` (reference only). What it showed: **the favourites empty state is one bold
+   `Text.Large` line — "No favorites yet." — with no image and no button** (the image, `emptyAd.png`, belongs to My Ads);
+   the tabs are labelled "Favourites" / "Saved searches" with **no counts**. Built `favourites-empty` and
+   `saved-searches-empty` (desktop + mobile) from `.empty-state`; registered as `states: [default, empty]` on
+   `favourites` and `saved-searches`; corrected the tab labels on all four pages; `build_registry.py` now skips files
+   named in `state_files`. Also fixed the clipped mobile favourites card (missing `ad-list-card--mobile` modifier).
+   `design-qa --scope favourites-revamp`: **PASS WITH WARNINGS** (one `par.copy`, sample content differs). Caveats: the
+   monorepo can lag production; "No saved searches yet." is from the Jordan locale (Egypt's unverified); `Text.Large`
+   size not measured (2rem stand-in); still no live capture of either page.
+
 ## 6. Next up
 
-0c. **Use the new gate on real work** (item 52). Confirm with the user: (a) the flags and roles that change a
+0c. **Use the new gate on real work** (items 52–54; favourites now passes QA). Confirm with the user: (a) the flags and roles that change a
    surface (`design-kit/qa/product/{flags,roles}.md` are seeds, not facts), (b) canonical strings for
-   `cpy.verbatim`, (c) whether to draw the missing `favourites` / `payment` empty states and fix the mobile
-   clipped spec row so the first deliverable can build without `--allow-blocked`. Then run the first real
-   `design-deliverables` build. `npm run qa:registry` after every `build:templates`. Planned checks are listed
+   `cpy.verbatim`, (c) `payment` still has no empty-state decision (it is not a list — set `no_list` if so). Then run the first real
+   `design-deliverables` build on `favourites-revamp` (needs a `deliverable.json`). `npm run qa:registry` after every `build:templates`. Planned checks are listed
    in `.claude/skills/design-qa/references/checks.md`.
 
 0a. **Arabic is parked** (user, 2026-09-24: "we can skip the arabic for now"). The 76 `.ar`
