@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–66; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–67; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -871,6 +871,13 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    Tested: unzipped outside the repo, `matrix.py` and `build_deliverable.py` run from the repo root. NOT tested: upload to claude.ai,
    or running scripts inside Claude Design (unknown whether it has a shell). Correction: Claude Design does list account-uploaded
    skills on `/`; the Claude Code plugin does not reach it.
+
+67. **Single skill made dubizzle-only and routed to the account's other skills.** The account's `design-qa`, `design-deliverables` and
+   `apps-design-deliverable-sop` are generic/other-product skills (user confirmed) and STAY; ours (`dubizzle-design-handoff` v1.1.0) now
+   leads its description with "DUBIZZLE EGYPT ONLY" and has a "Related skills" routing table (agency-portal design agent, apps SOP,
+   Egypt foundations, sync skill). **Default assumed, not yet confirmed by the user:** where the account's `dubizzle-egypt-design-skill`
+   disagrees with `RULES.md` / `design-kit/tokens`, the repo wins. Known disagreements: it says "no card shadows" and 12px cards; repo has a
+   list-card shadow and 8px ad-card radius. It also links to `dubizzle-egypt-typography/-spacing/-radius`, which are not on the account.
 
 ## 6. Next up
 

@@ -33,6 +33,22 @@ def retarget(text, skill, folder):
     return text
 
 
+RELATED = """
+## Related skills on the account — route, don't duplicate
+
+This skill is for **dubizzle Egypt** only. Other skills on the account cover other work; send people there instead of stretching this one:
+
+| Work | Use |
+|---|---|
+| Agency Portal (Pro) **design** in the Jira / product-agent pipeline | `design-agent-dubizzle-agencyportal`. This skill's QA and deliverable stages can still be run on portal screens afterwards. |
+| iOS / Android app hand-off deliverables | `apps-design-deliverable-sop` |
+| Any **other product** (not dubizzle Egypt) needing generic QA or a deliverable | `design-qa` and `design-deliverables` — these are generic and were built for another product; do not use them for dubizzle Egypt |
+| Consumer-site foundations (colour, type, layout) | `dubizzle-egypt-design-skill` and its foundation skills. **If it disagrees with this repo's `RULES.md` or `design-kit/tokens`, the repo wins** (measured from live captures) and the difference goes to `docs/PROPOSALS.md`. |
+| Syncing the Claude Design system from the repo | `sync-dubizzle-design-system` |
+
+"""
+
+
 MAP = ("> **Single-skill package.** The other stages are files in this skill, not separate skills: "
        "design = `stages/1-design.md`, QA = `stages/2-qa.md`, deliverable = `stages/3-deliverable.md`. "
        "Where a stage says \"invoke `design-qa`\" or \"use the `design-deliverables` skill\", read that file. "
@@ -59,13 +75,14 @@ def main():
                      ("Invoke `design-deliverables`.", "Follow `stages/3-deliverable.md`.")):
         orch = orch.replace(old, new)
     fm = ("---\nname: %s\ndescription: >-\n"
-          "  Run the whole dubizzle Egypt design job end to end, step by step: intake questions, a written plan\n"
-          "  the user approves, then design, QA against every state/platform/breakpoint, and one self-contained\n"
-          "  INTERNAL hand-off HTML document, stopping at each gate. Use for \"design this and hand it over\",\n"
-          "  \"do the whole thing\", \"end to end\", \"design QA\", \"is this design ready\", \"make the deliverable\",\n"
-          "  \"hand-off for the devs\". Needs the dubizzle-design-system repo checked out to run its scripts.\n"
-          "version: 1.0.0\n---\n\n" % NAME)
-    (stage / "SKILL.md").write_text(fm + MAP + orch, encoding="utf-8")
+          "  DUBIZZLE EGYPT ONLY (dubizzle.com.eg consumer site and Pro portal screens; not other products, not iOS/Android apps).\n"
+          "  Run the whole dubizzle Egypt design job end to end: intake questions, a written plan the user approves,\n"
+          "  then design, QA against every state/platform/breakpoint, and one self-contained INTERNAL hand-off HTML\n"
+          "  document, stopping at each gate. Use for \"design this dubizzle feature and hand it over\", \"do the whole\n"
+          "  thing for dubizzle\", \"dubizzle design QA\", \"is this dubizzle screen ready\", \"dubizzle deliverable / hand-off\".\n"
+          "  Needs the dubizzle-design-system repo checked out to run its scripts.\n"
+          "version: 1.1.0\n---\n\n" % NAME)
+    (stage / "SKILL.md").write_text(fm + MAP + orch + RELATED, encoding="utf-8")
 
     d = body(SK / "feature-design" / "SKILL.md")
     d = d.replace(".claude/skills/design-deliverables/", "deliverables/").replace(".claude/skills/design-qa/", "qa/")
