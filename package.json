@@ -60,7 +60,8 @@
     "qa:matrix": "python3 .claude/skills/design-qa/scripts/matrix.py",
     "qa": "python3 .claude/skills/design-qa/scripts/run.py",
     "deliverable": "python3 .claude/skills/design-deliverables/scripts/build_deliverable.py",
-    "package:skill": "python3 scripts/package-single-skill.py"
+    "package:skill": "python3 scripts/package-single-skill.py",
+    "localize:assets": "node scripts/localize-remote-assets.mjs"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

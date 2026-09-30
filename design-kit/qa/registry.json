@@ -295,7 +295,8 @@
       "role_differs": [],
       "flags": [],
       "no_list": false,
-      "unpaired": {}
+      "unpaired": {},
+      "stale": true
     },
     "favourites-empty": {
       "label": "Favourites — empty state",
@@ -719,6 +720,576 @@
       },
       "kind": "page",
       "vertical": "account"
+    },
+    "portal-ad-agent": {
+      "label": "Portal Ad Agent",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ad-agent.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ad-assign-agent": {
+      "label": "Portal Ad Assign Agent",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ad-assign-agent.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ad-chats": {
+      "label": "Portal Ad Chats",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ad-chats.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ad-info": {
+      "label": "Portal Ad Info",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ad-info.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ad-overview": {
+      "label": "Portal Ad Overview",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ad-overview.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ad-promo": {
+      "label": "Portal Ad Promo",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ad-promo.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ads": {
+      "label": "Portal Ads",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ads.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ads-actions": {
+      "label": "Portal Ads Actions",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ads-actions.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ads-credits": {
+      "label": "Portal Ads Credits",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ads-credits.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ads-more-filters": {
+      "label": "Portal Ads More Filters",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ads-more-filters.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-ads-request-brand": {
+      "label": "Portal Ads Request Brand",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-ads-request-brand.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-agents": {
+      "label": "Portal Agents",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-agents.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-agents-actions": {
+      "label": "Portal Agents Actions",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-agents-actions.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-agents-invite": {
+      "label": "Portal Agents Invite",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-agents-invite.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-agents-sort": {
+      "label": "Portal Agents Sort",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-agents-sort.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-candidate-detail": {
+      "label": "Portal Candidate Detail",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-candidate-detail.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-candidates": {
+      "label": "Portal Candidates",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-candidates.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-credit": {
+      "label": "Portal Credit",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-credit.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-credit-agents": {
+      "label": "Portal Credit Agents",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-credit-agents.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-credit-self": {
+      "label": "Portal Credit Self",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-credit-self.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-dashboard": {
+      "label": "Portal Dashboard",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-dashboard.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-insights": {
+      "label": "Portal Insights",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-insights.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-leads": {
+      "label": "Portal Leads",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-leads.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-leads-daterange": {
+      "label": "Portal Leads Daterange",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-leads-daterange.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-leads-export": {
+      "label": "Portal Leads Export",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-leads-export.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-leads-phone": {
+      "label": "Portal Leads Phone",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-leads-phone.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-leads-sms": {
+      "label": "Portal Leads Sms",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-leads-sms.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-leads-whatsapp": {
+      "label": "Portal Leads Whatsapp",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-leads-whatsapp.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-vip": {
+      "label": "Portal Vip",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-vip.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
+    },
+    "portal-vip-purchase": {
+      "label": "Portal Vip Purchase",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": false,
+      "unpaired": {
+        "web-mobile": "dubizzle Pro has no mobile layout (D-012)"
+      },
+      "platforms": {
+        "portal-desktop": "design-kit/templates/desktop/portal-vip-purchase.html"
+      },
+      "kind": "page",
+      "vertical": "portal"
     },
     "properties": {
       "label": "Properties",

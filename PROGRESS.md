@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–70; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–71; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -902,6 +902,19 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    inlined; raw captures are still only on the LFS branch (a blanket `git lfs pull` of ALL captures was refused by the sandbox's
    safety classifier — not retried); portal pages are NOT yet in `design-kit/qa/registry.json`, so QA does not cover them; `templates/index.html`
    was not regenerated.
+
+71. **Portal pages registered for QA; image-inlining tool written (not yet run for real).**
+   (a) `python3 .claude/skills/design-qa/scripts/build_registry.py` added the 30 `portal-*` pages to `design-kit/qa/registry.json` as `origin: live`,
+   platform `portal-desktop` (no mobile, D-012); authored entries kept, favourites-revamp still PASS. `run.py --scope portal-dashboard` = PASS
+   (0 blockers, 2 notes). Live pages cap findings at note, so this proves they render and load, not that they are correct.
+   (b) `scripts/localize-remote-assets.mjs` (`npm run localize:assets`) downloads every `www/images.dubizzle.com.eg` asset the portal pages
+   reference (65 urls: icons, logo, coins, avatars, empty-chat art, ad thumbnails, favicons), stores them content-hashed in
+   `design-kit/templates/_live/assets/`, rewrites the pages, drops third-party preconnect hints and records url -> file in
+   `design-kit/templates/remote-assets.json`. Tested against a local mock server (30 pages rewritten, 0 remote refs left, idempotent,
+   `--offline` rerun is a no-op). **It has NOT been run against production: the cloud sandbox cannot reach dubizzle.com.eg.**
+   Run it on the Mac, commit `design-kit/templates/` and the manifest, then re-run it after every `build:templates` (the build writes the remote urls
+   back). Until then `design-deliverables` refuses portal pages (remote images). Exact bytes matter, so no look-alike icons from
+   `design-kit/illustrations` were substituted.
 
 ## 6. Next up
 
