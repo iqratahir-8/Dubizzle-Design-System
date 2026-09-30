@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–68; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–69; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -884,6 +884,10 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    is the source and the account skill is a second one to compare. **Gap:** `portal-*` pages are not in `design-kit/qa/registry.json`, so QA and the
    deliverable builder cannot cover them. Fix on a machine with the portal templates: `npm run qa:registry`, then check the `portal-desktop` platform
    rows and run `npm run qa -- --scope <portal page>`. Not done from the cloud sandbox (templates are not here).
+
+69. **User removed the account skill `design-agent-dubizzle-agencyportal`.** The single skill no longer refers to it; this repo is the only source for
+   portal designs. Its DOM-extracted values (side-menu 8rem/25rem, active `#e00000`, drawers 37rem/65rem, etc.) were never compared with the repo's
+   `portal-*` captures, so if someone asks, treat the repo as truth and log differences in `docs/PROPOSALS.md`.
 
 ## 6. Next up
 

@@ -40,7 +40,7 @@ This skill is for **dubizzle Egypt** only. Other skills on the account cover oth
 
 | Work | Use |
 |---|---|
-| Agency Portal (Pro) | **This repo has the portal designs** — eight captured `portal-*` screens plus drawers and modals (desktop only, D-012), local-only because they hold fixtured people data (D-011). Design from them with `stages/1-design.md`. They are **not in the QA registry yet**: run `npm run qa:registry` on a machine that has the portal templates before QA or a deliverable covers portal pages. `design-agent-dubizzle-agencyportal` is a second source (its own DOM-extracted templates, Jira pipeline): use it for Jira-ticket work, and compare its values against the repo's before trusting either. |
+| Agency Portal (Pro) | **This repo has the portal designs** — eight captured `portal-*` screens plus drawers and modals (desktop only, D-012), local-only because they hold fixtured people data (D-011). Design from them with `stages/1-design.md`. They are **not in the QA registry yet**: run `npm run qa:registry` on a machine that has the portal templates before QA or a deliverable covers portal pages. |
 | iOS / Android app hand-off deliverables | `apps-design-deliverable-sop` |
 | Any **other product** (not dubizzle Egypt) needing generic QA or a deliverable | `design-qa` and `design-deliverables` — these are generic and were built for another product; do not use them for dubizzle Egypt |
 | Consumer-site foundations (colour, type, layout) | `dubizzle-egypt-design-skill` and its foundation skills. **If it disagrees with this repo's `RULES.md` or `design-kit/tokens`, the repo wins** (measured from live captures) and the difference goes to `docs/PROPOSALS.md`. |
