@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–69; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–70; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -888,6 +888,20 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 69. **User removed the account skill `design-agent-dubizzle-agencyportal`.** The single skill no longer refers to it; this repo is the only source for
    portal designs. Its DOM-extracted values (side-menu 8rem/25rem, active `#e00000`, drawers 37rem/65rem, etc.) were never compared with the repo's
    `portal-*` captures, so if someone asks, treat the repo as truth and log differences in `docs/PROPOSALS.md`.
+
+70. **Agency portal prototype pages are now in the repo** (owner's request: "I need complete agency portal prototype htmls in my repo").
+   30 pages `design-kit/templates/desktop/portal-*.html` (dashboard, ads + actions/credits/more-filters/request-brand, ad-overview/info/
+   agent/assign-agent/chats/promo, agents + invite/sort/actions, candidates + detail, credit + self/agents, insights, leads +
+   phone/sms/whatsapp/export/daterange, VIP + purchase), built with `build-templates.mjs` + `build-live-templates.mjs` from the 30
+   `portal-*` captures in branch `origin/claude/live-captures-lfs` (Git LFS; `apt-get install git-lfs` works in the sandbox, and
+   `git lfs pull --include="design-kit/reference/live/portal-*"` fetched them). Built in a THROWAWAY worktree so the prune GOTCHA (item 57)
+   could not touch the repo; only the 30 new pages were copied in (the 12 shared stylesheets and 60 assets they use were already tracked,
+   byte-identical). `.gitignore` no longer ignores `portal-*.html`. Size 1.9 MB. PII scan (emails, Egyptian mobiles): 0 hits in captures and in
+   built pages; text shows the test agency and a fixture user. **Known limits:** images such as the logo, header icons, banner and credit
+   coin are remote (`dubizzle.com.eg/assets/…`) so the pages are not offline-safe and `design-deliverables` will refuse them until
+   inlined; raw captures are still only on the LFS branch (a blanket `git lfs pull` of ALL captures was refused by the sandbox's
+   safety classifier — not retried); portal pages are NOT yet in `design-kit/qa/registry.json`, so QA does not cover them; `templates/index.html`
+   was not regenerated.
 
 ## 6. Next up
 

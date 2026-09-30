@@ -137,6 +137,8 @@ subdomains do not resolve, and there is **no public entry point**: the only rout
 
 **Desktop only** — dubizzle Pro has no mobile layout (D-012).
 
+**Prototype pages are tracked** (since 2026-09-30): `design-kit/templates/desktop/portal-*.html`, 30 files — the 8 screens above plus their drawers, modals and filter states. Raw captures: branch `claude/live-captures-lfs` (Git LFS).
+
 | Screen | URL | Capture |
 |---|---|---|
 | Dashboard | `/en/agencyPortal` | ✅ `portal-dashboard` |
