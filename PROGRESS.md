@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–67; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–68; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -878,6 +878,12 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    Egypt foundations, sync skill). **Default assumed, not yet confirmed by the user:** where the account's `dubizzle-egypt-design-skill`
    disagrees with `RULES.md` / `design-kit/tokens`, the repo wins. Known disagreements: it says "no card shadows" and 12px cards; repo has a
    list-card shadow and 8px ad-card radius. It also links to `dubizzle-egypt-typography/-spacing/-radius`, which are not on the account.
+
+68. **Correction: the repo DOES have the Agency Portal designs** (8 `portal-*` screens + drawers/modals, desktop only, local-only per D-011, also in
+   Storybook). The single skill's routing row wrongly sent portal design to the account's `design-agent-dubizzle-agencyportal`; it now says the repo
+   is the source and the account skill is a second one to compare. **Gap:** `portal-*` pages are not in `design-kit/qa/registry.json`, so QA and the
+   deliverable builder cannot cover them. Fix on a machine with the portal templates: `npm run qa:registry`, then check the `portal-desktop` platform
+   rows and run `npm run qa -- --scope <portal page>`. Not done from the cloud sandbox (templates are not here).
 
 ## 6. Next up
 
