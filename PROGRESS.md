@@ -946,7 +946,8 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    `.claude-plugin/plugin.json` ships it; `RULES.md` Iconography starts with "use the `icons` skill"; the skill's
    `schema/sources.json` is cut to the three packs RULES allows (Material Symbols, Lucide, Font Awesome Free Regular), and
    `icons/style.json` allows only their licences (ISC, Apache-2.0, CC-BY-4.0); `ATTRIBUTIONS.md` credits the 7 Material Symbols
-   settings icons and notes the skill came with no licence file. Merged to `main` on 2026-10-01 (user: "merge to main").
+   settings icons and notes the skill came with no licence file. Also listed in the plugin install notes (`docs/HOW-TO-ASK.md`) and as an
+   optional specialist in the claude.ai single-skill package (`scripts/package-single-skill.py`). Merged to `main` on 2026-10-01 (user: "merge to main").
 
 75. **Settings icons checked against live and rebuilt (user, 2026-10-01: "okay do it").** The captures are on remote branches:
    `settings-notifications.desktop` (html + screenshot) on `alert-capture`, `settings-privacy.desktop` on `claude/live-captures-lfs`

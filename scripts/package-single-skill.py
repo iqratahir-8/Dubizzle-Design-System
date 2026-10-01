@@ -53,7 +53,7 @@ MAP = ("> **Single-skill package.** The other stages are files in this skill, no
        "design = `stages/1-design.md`, QA = `stages/2-qa.md`, deliverable = `stages/3-deliverable.md`. "
        "Where a stage says \"invoke `design-qa`\" or \"use the `design-deliverables` skill\", read that file. "
        "Scripts run from the **repo root** (they need `design-kit/`): `python3 <this skill's folder>/qa/scripts/run.py …`. "
-       "Specialist skills (`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`) "
+       "Specialist skills (`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`, `icons`) "
        "are optional and not in this package.\n\n")
 
 

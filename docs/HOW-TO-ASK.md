@@ -220,7 +220,7 @@ The skills call this repo's scripts, so **clone the repo and run `npm install` f
 ```
 
 That gives `design-to-handoff`, `feature-design`, `design-qa`, `design-deliverables` and the specialist skills
-(`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`) in every folder. Inside the repo
+(`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`, `icons`) in every folder. Inside the repo
 they already load from `.claude/skills/` without the plugin. Update later with `/plugin marketplace update dubizzle`.
 The plugin definition is `.claude-plugin/` (it points at `.claude/skills`, so nothing is duplicated).
 
