@@ -31,6 +31,11 @@ Requires the licence notice to be carried with any distribution.
 
 > Material Symbols by Google, licensed under the Apache License, Version 2.0.
 
+In use (2026-10-01): the seven new settings icons in `icons/svg/` — `privacy`,
+`notification-settings`, `manage-account`, `recommendations`, `offers-communications`,
+`logout-all-devices`, `delete-account`. Source and licence per icon: `icons/registry.json`.
+The `icons` skill records the licence of everything it adds there.
+
 ---
 
 ## Agent skills
@@ -47,6 +52,9 @@ repository for its licence terms.
 
 MIT requires the copyright and permission notice to travel with the software, which is
 why the licence text is kept at `.claude/skills/animate/LICENSE-emil`.
+
+**icons** — uploaded by the user as `icons.skill` (v1.0.0, 2026-09-29), extended here to v1.1.0.
+No licence file came with it; ask its author before redistributing it outside this repo.
 
 ## Where the credit has to appear
 

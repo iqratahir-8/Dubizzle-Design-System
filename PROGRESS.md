@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–72; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (icons skill + settings icon set, items 73–74, merged to main; agency-portal deliverable v1, item 72) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -927,7 +927,32 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    run `npm run localize:assets` on the Mac and rebuild without `--placeholder-images`. **Check privacy:** the header shows a user "Ahmed H." — confirm it is a
    fixture name, not a real person (CLAUDE.md rule 3).
 
+73. **Icons skill installed; settings icon set made (user, 2026-10-01: "read the icons skill and produce icons for all the settings").**
+   (a) The uploaded `icons.skill` is in `.claude/skills/icons/` (v1.1.0). Two changes, logged in its CHANGELOG: an `npm` source
+   adapter (api.iconify.design is blocked from the cloud sandbox, npm is not) and a fix for `audit.py` dropping same-named glyphs
+   from different folders. Known gap: auto-pick ignores the pinned variant, so pick `-outline-rounded` names by hand.
+   (b) Project setup lives in **`icons/`** at the repo root, not `design-kit/icons/` (`sync:icons` deletes that folder).
+   `icons/registry.json` = audit of all 546 house glyphs (21 duplicate groups in `audit-duplicates.json`). `icons/style.json` is
+   **locked**: Material Symbols Rounded 400, 24 grid, shown at 20px, currentColor, measured from the account-menu icons (they
+   match glyph for glyph). The whole house set audits as mixed (95 grids), so this pin covers the account/settings family.
+   (c) `icons/sets/settings.json`: 12 icons. 5 house icons (settings, phone-number, language, help, logout) and 7 new ones
+   (privacy, notification-settings, manage-account, recommendations, offers-communications, logout-all-devices, delete-account).
+   SVG in `icons/svg/`, 144 PNGs in `icons/png/` (#23262A baked in), preview `icons/settings.html`, reasons and rejected options in
+   `icons/concepts.json`. The new 7 are in `docs/PROPOSALS.md`.
+   **Unverified:** the rows inside the settings tabs and the whole Manage account section were written from memory, not from
+   a capture (the captures are gitignored). Check them against `design-kit/reference/live/settings-*.html` on the Mac.
+
+74. **Icons skill wired into the system (user, 2026-10-01: "yes" to fixing the gaps).** `CLAUDE.md` rule 5 names `icons`;
+   `.claude-plugin/plugin.json` ships it; `RULES.md` Iconography starts with "use the `icons` skill"; the skill's
+   `schema/sources.json` is cut to the three packs RULES allows (Material Symbols, Lucide, Font Awesome Free Regular), and
+   `icons/style.json` allows only their licences (ISC, Apache-2.0, CC-BY-4.0); `ATTRIBUTIONS.md` credits the 7 Material Symbols
+   settings icons and notes the skill came with no licence file. Merged to `main` on 2026-10-01 (user: "merge to main").
+
 ## 6. Next up
+
+0e. **Settings icons (item 73): confirm with the user.** (1) The settings rows match live (check the captures on the Mac). (2) Bell
+   and manage-accounts: use the new weight-400 versions, or the house files. (3) Any picks they want swapped; `icons/settings.html`
+   shows the rejected options. Then decide whether the 7 become React icons (`scripts/build-component-icons.mjs`) and kit icons.
 
 0d. **Favourites/Saved searches re-capture (user will do it later, 2026-09-29).** Deliverable `favourites-revamp` v4 is built
    and sent, with grey placeholder images and derived (unverified) empty states.

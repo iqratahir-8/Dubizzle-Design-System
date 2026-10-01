@@ -1,0 +1,88 @@
+{
+  "settings-privacy": {
+    "chosen": "material-symbols:shield-person-outline-rounded",
+    "rejected": [
+      "material-symbols:privacy-tip-outline-rounded",
+      "material-symbols:shield-lock-outline-rounded",
+      "material-symbols:lock-person-outline-rounded",
+      "project:status/protected-info"
+    ],
+    "reason": "Privacy here means who sees your personal details (the 'show my phone number' toggle). Shield-with-person says personal data is protected. privacy-tip reads as an info tip; shield-lock and lock read as security/password, and the lock is already used for protected-info."
+  },
+  "settings-notifications": {
+    "chosen": "material-symbols:notifications-outline-rounded",
+    "rejected": [
+      "project:action/user-notifications",
+      "project:action/notifications"
+    ],
+    "reason": "Same bell as the house action/user-notifications, but at weight 400. The house file is weight 300 with a baked #464C55 fill, so beside the other 400-weight settings icons it reads lighter, as if disabled. action/notifications is a 1024-grid legacy glyph."
+  },
+  "settings-manage-account": {
+    "chosen": "material-symbols:manage-accounts-outline-rounded",
+    "rejected": [
+      "project:user/manage-accounts"
+    ],
+    "reason": "Same glyph as the house user/manage-accounts at weight 400; the house file is drawn heavier (about 600) and is the darkest icon in the row."
+  },
+  "settings-recommendations": {
+    "chosen": "material-symbols:thumb-up-outline-rounded",
+    "rejected": [
+      "material-symbols:auto-awesome-outline-rounded",
+      "material-symbols:recommend-outline-rounded",
+      "material-symbols:lightbulb-outline-rounded"
+    ],
+    "reason": "The toggle is 'recommendations based on your activity'. Sparkles are dubizzle's AI mark (misc/sparkle, gemini-stars), so they would promise AI. recommend-outline is a solid disc, the heaviest glyph in the list. Lightbulb means tips (listing-tip)."
+  },
+  "settings-offers": {
+    "chosen": "material-symbols:campaign-outline-rounded",
+    "rejected": [
+      "material-symbols:sell-outline-rounded",
+      "material-symbols:loyalty-outline-rounded",
+      "material-symbols:redeem-rounded"
+    ],
+    "reason": "The toggle covers communications as well as offers: updates, surveys, promotions. A megaphone covers both. A price tag reads as Sell/price on a marketplace; gift and loyalty-heart promise rewards that do not exist."
+  },
+  "settings-logout-all-devices": {
+    "chosen": "material-symbols:devices-outline-rounded",
+    "rejected": [
+      "material-symbols:devices-off-outline-rounded",
+      "material-symbols:phonelink-erase-rounded",
+      "project:brand/logout"
+    ],
+    "reason": "The row label carries the verb; the icon says 'all your devices'. Re-using the logout arrow would make it look like a duplicate of Logout. A crossed-out glyph reads as 'disabled'."
+  },
+  "settings-delete-account": {
+    "chosen": "material-symbols:person-remove-outline-rounded",
+    "rejected": [
+      "material-symbols:delete-outline-rounded",
+      "material-symbols:no-accounts-outline-rounded",
+      "material-symbols:person-off-outline-rounded"
+    ],
+    "reason": "Removes you, not a thing. The bin is already 'delete ad' (action/delete), so it would make deleting an account look as light as deleting a listing. no-accounts and person-off read as blocked/banned."
+  },
+  "settings-show-phone": {
+    "chosen": "project:action/phone-number",
+    "rejected": [],
+    "reason": "Reused, found in the registry first. House icon; it is Material Symbols 'call' rounded, so it already matches. Used for the 'Show my phone number in ads' toggle."
+  },
+  "settings-language": {
+    "chosen": "project:misc/language",
+    "rejected": [],
+    "reason": "Reused, found in the registry first. House icon (account menu 'Change language'). Translate glyph, kept rather than a globe so it stays the one the live menu ships."
+  },
+  "settings-help": {
+    "chosen": "project:misc/help",
+    "rejected": [],
+    "reason": "Reused, found in the registry first. House icon (account menu 'Help & Support')."
+  },
+  "settings-logout": {
+    "chosen": "project:brand/logout",
+    "rejected": [],
+    "reason": "Reused, found in the registry first. House icon (account menu 'Logout')."
+  },
+  "settings-entry": {
+    "chosen": "project:action/settings",
+    "rejected": [],
+    "reason": "Reused, found in the registry first. House icon (account menu 'Settings'). Material Symbols Rounded 400 at 20px; matches the set."
+  }
+}

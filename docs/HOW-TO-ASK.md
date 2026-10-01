@@ -174,6 +174,20 @@ and a pixel diff — and writes a live / ours / diff picture per component to
 `design-kit/reference/live/screens/_live-check/`. After a dubizzle release: re-capture,
 then run it; anything that moved shows up in red.
 
+## Icons
+
+The `icons` skill finds an icon by checking what dubizzle already has first, and only then
+fetching from a style-matched set. The style is pinned in `icons/style.json`: Material Symbols
+Rounded, weight 400, shown at 20px, the same family as the live account menu.
+
+| Say | What happens |
+|---|---|
+| "Which **icon** for <thing>?" / "do we have an icon for <thing>?" | Checks `icons/registry.json` (all 546 house glyphs), then `icons/concepts.json` (earlier decisions), then searches Material Symbols. Shows candidates as images, not names. |
+| "**Icons for <screen/area>**" | Produces a set like `icons/sets/settings.json`, with SVG in `icons/svg/`, PNG at 16/20/24/32 × @1–3 in `icons/png/`, and a preview page like `icons/settings.html`. |
+| "Why this icon?" | `icons/concepts.json` has the pick, what was rejected, and why. |
+
+New icons go in `docs/PROPOSALS.md` until a designer signs them off.
+
 ## Checking a design and handing it over
 
 Two skills, used in this order:

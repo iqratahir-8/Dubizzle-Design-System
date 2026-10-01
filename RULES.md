@@ -202,6 +202,10 @@ how to use them.)
 
 **Iconography**
 - ✗ Emoji as icons. Ever. Not in UI, not in labels, not in empty states.
+- ✓ **Use the `icons` skill for any icon need.** It applies the order below mechanically: the
+  house registry (`icons/registry.json`) first, then earlier decisions (`icons/concepts.json`),
+  then the pinned pack (`icons/style.json`: Material Symbols Rounded, outlined, weight 400,
+  shown at 20px). Every pick records what it beat and why. New icons go in `docs/PROPOSALS.md`.
 - ✓ **`design-kit/icons/` first** — 587 real dubizzle icons, and they match each other.
 - ✓ **Then Material Symbols (Google Fonts), Font Awesome, or Lucide**, resolved by name: if
   the design asks for an icon the kit doesn't have, take it from whichever pack has it rather
