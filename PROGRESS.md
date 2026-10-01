@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-01 (7 craft/review skills written from web research, item 76; settings icons item 75; icons skill 73–74) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (live copy audit + canonical strings, item 77; craft skills item 76) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -969,6 +969,14 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    GOV.UK/WCAG/APG/Polaris/Mailchimp/MDN/web.dev were read from their GitHub sources and NN/g, Baymard, Material numbers are second-hand.
    Findings worth acting on: `Input` has no hint slot and its error isn't linked by `aria-describedby`; live uses both "Favourites" and
    "Favorites". The other 11 user `.skill` files were not seen — names only; if uploaded, compare with the repo versions.
+
+77. **Live copy audit (user, 2026-10-01: "yes" to a deeper UX-copy pass).** Extracted every UI string from the 82 committed English
+   templates and 10 Arabic captures (LFS, `claude/live-captures-lfs`) → `.claude/skills/design-copy/references/dubizzle-voice.md`.
+   `design-kit/qa/product/copy.md` now lists 45 canonical strings (only ones live writes one way — QA verdicts unchanged, 0 `cpy.*`
+   findings on favourites-revamp and agency-portal); two-form strings are a non-enforced table. Findings: live uses `!`, `Oops!`,
+   "begin your journey"; specs are lowercase (`3 beds`) → RULES.md §4 corrected; Arabic mixes MSA (UI) and Egyptian (safety, "Sell
+   now"), Western-digit prices with `ج.م` after, Arabic-Indic mileage in the same card, and wrong plurals (`منذ 2 أيام`).
+   Deeper research (books, platform guides, Arabic UX writing, marketplace trust copy) still running — fold into `design-copy` next.
 
 ## 6. Next up
 

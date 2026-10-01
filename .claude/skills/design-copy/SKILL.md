@@ -110,7 +110,7 @@ searches yet.`) are recorded in `docs/PROPOSALS.md` as unverified — check befo
 - Prices: `EGP 3,200,000` — prefix, commas, no decimals, never `3.2M`, never `$` (`RULES.md` §4).
 - Numerals, not words (`5 ads`). Ranges with an en dash `EGP 500,000–750,000`; open ranges
   `EGP 500,000 and up` (not `+`, `>`).
-- Specs: `3 Beds · 2 Baths · 150 m²`.
+- Specs: `3 beds · 2 baths · 150 m²` (lowercase, as live writes them — `references/dubizzle-voice.md`).
 - Time: relative when recent (`2 hours ago`), absolute after (`12 Mar 2026`). Never `03/04`.
 - **Arabic digits and currency order are an open question** (Western vs Arabic-Indic, `EGP`
   vs `ج.م`): read them from the `.ar` captures, see `rtl-arabic`. Don't guess.
