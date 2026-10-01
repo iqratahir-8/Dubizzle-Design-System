@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–71; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–72; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -915,6 +915,17 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    Run it on the Mac, commit `design-kit/templates/` and the manifest, then re-run it after every `build:templates` (the build writes the remote urls
    back). Until then `design-deliverables` refuses portal pages (remote images). Exact bytes matter, so no look-alike icons from
    `design-kit/illustrations` were substituted.
+
+72. **Agency portal added to the deliverable flow.** Feature `agency-portal` (registry `features.agency-portal`, all 30 `portal-*` pages tagged),
+   `design-kit/deliverables/agency-portal/{deliverable.json,flows.json}`, node ids allocated in the ledger (screens 9–16 for the 8 mains).
+   QA `--scope agency-portal`: **PASS WITH WARNINGS** (0 blockers; 22 `flw.orphan` warnings = the 22 drawer/modal/filter pages not wired into the prototype;
+   100 notes from live-origin findings). v1 built with `--placeholder-images`: `dist/agency-portal-v1.html`, 19.9 MB (**over the 12 MB soft
+   budget**, under the 25 MB hard limit), 10 sections, 27 open questions (5 authored + 22 carried warnings). Opens in headless Chrome, INTERNAL banner present.
+   Rules R1–R4 are facts from D-011/D-012, PAGE-COVERAGE and measurements (rail 80px, 8 entries, 56px items on a 60px pitch). **Open:**
+   which control opens each of the 22 states (not recorded in the captures, so only the 8 mains are clickable); Agent-role view, empty states, which
+   sidebar entries depend on account settings, and Arabic are all uncaptured. 69 `dubizzle.com.eg` urls remain inside shared CSS (backgrounds/fonts):
+   run `npm run localize:assets` on the Mac and rebuild without `--placeholder-images`. **Check privacy:** the header shows a user "Ahmed H." — confirm it is a
+   fixture name, not a real person (CLAUDE.md rule 3).
 
 ## 6. Next up
 

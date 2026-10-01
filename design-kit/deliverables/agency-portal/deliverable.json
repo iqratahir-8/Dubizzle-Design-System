@@ -91,7 +91,7 @@
   "performance": null,
   "acceptance": [
     "Clicking any of the eight sidebar entries on any portal screen opens that screen.",
-    "Every drawer, modal and filter state listed on a main screen appears as its own state screen in this document."
+    "Every drawer, modal and filter state captured for a main screen appears in this document as its own state screen (22 states). They are not yet wired into the clickable prototype: which control opens each one has not been recorded."
   ],
   "edge_cases": [
     "The captured account is an owner. What an Agent (non-owner) sees is not captured, so it is not documented here.",
@@ -117,6 +117,11 @@
       "q": "Is there an Arabic portal? Arabic was never captured, so right-to-left behaviour of the rail, drawers and tables is unknown.",
       "owner": "designer",
       "blocks": "R2"
+    },
+    {
+      "q": "Which control opens each of the 22 drawer, modal and filter states (for example the row menu on Agency Ads, More filters, Invite agent)? The captures are separate files and do not record the trigger, so the prototype links only the 8 main screens.",
+      "owner": "designer",
+      "blocks": "acceptance criteria"
     }
   ],
   "changelog": [
