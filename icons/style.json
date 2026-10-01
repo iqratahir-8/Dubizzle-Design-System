@@ -12,10 +12,9 @@
   "style": "filled",
   "style_note": "Material Symbols draws an outlined look as filled paths, so there is no stroke to retarget. 'filled' here is the geometry type, not the look.",
   "allowed_licenses": [
-    "MIT",
     "ISC",
     "Apache-2.0",
-    "CC0"
+    "CC-BY-4.0"
   ],
   "png_sizes": [
     16,
@@ -31,5 +30,6 @@
   "png_color": "#23262A",
   "locked": true,
   "established": "2026-10-01. Measured, not asked: the account-menu icons in design-kit/icons (action/settings, misc/help, action/edit-profile, brand/logout) match Material Symbols Rounded weight 400 glyph for glyph, drawn at the 20px optical size. The whole set audits as mixed (95 grids), so this pins the account/settings family deliberately rather than inheriting the most common value.",
-  "source_note": "api.iconify.design is blocked from the cloud sandbox; the npm registry is not. Use fetch.py --source npm there."
+  "source_note": "api.iconify.design is blocked from the cloud sandbox; the npm registry is not. Use fetch.py --source npm there.",
+  "allowed_licenses_note": "The three packs RULES.md allows: Lucide (ISC), Material Symbols (Apache-2.0), Font Awesome Free (CC-BY-4.0). Every one needs the credit in ATTRIBUTIONS.md."
 }

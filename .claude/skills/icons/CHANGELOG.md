@@ -11,6 +11,12 @@ Registry schema: v1 · Sources schema: v1
   pinned primary and fallback sets, because each set is a whole download.
   `add --source npm` records the set's SPDX licence automatically.
 
+### Changed (dubizzle)
+- `schema/sources.json` now lists only the three packs `RULES.md` allows: Material
+  Symbols, Lucide, Font Awesome Free Regular (`fa6-regular`). Heroicons, Feather,
+  Phosphor, Iconoir, Bootstrap and the rest are gone, so they cannot be searched.
+  CC-BY-4.0 is allowed for Font Awesome Free, credited in `ATTRIBUTIONS.md`.
+
 ### Fixed
 - `audit.py` lost icons when two different glyphs shared a file name in
   different folders (`action/search.svg`, `mobile/search.svg`): the second

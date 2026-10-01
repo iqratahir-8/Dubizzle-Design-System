@@ -147,6 +147,10 @@ there, and the registry ossifies around whatever was chosen in week one.
 
 ## Adding a source
 
+**In this repo (dubizzle):** `RULES.md` allows exactly three external packs — Material
+Symbols (Rounded, outlined), Font Awesome Free (Regular) and Lucide — and `schema/sources.json`
+lists only those. Don't add a set here without changing `RULES.md` first.
+
 `schema/sources.json`, not the script. Iconify ships as primary because it
 aggregates 150+ sets behind one stable API with search — one adapter instead
 of one scraper per site, and it is self-hostable if you would rather not depend

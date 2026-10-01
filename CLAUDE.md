@@ -13,7 +13,8 @@
    in `docs/PROPOSALS.md` and gets said out loud.
 5. **Specialist skills exist for the weak spots** — `rtl-arabic` (never verified),
    `motion-design` (undefined), `imagery-illustration` (no illustration assets),
-   `chart-data-viz` (no chart language), plus `npm run check:a11y`. Use them instead of
+   `chart-data-viz` (no chart language), `icons` (any icon need: house set first, then one
+   style-matched pack, with a recorded reason), plus `npm run check:a11y`. Use them instead of
    improvising a value.
    **Finished a design? Run `design-qa`** (gate: states, overflow, breakpoints, flows) and, to hand it
    over, **`design-deliverables`** (one self-contained INTERNAL HTML document; refuses on QA blockers).

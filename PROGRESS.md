@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-01 (icons skill installed; settings icon set, item 72) · branch `claude/compassionate-maxwell-wziq1r` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (icons skill wired into CLAUDE.md, RULES.md, plugin, ATTRIBUTIONS; item 73) · branch `claude/compassionate-maxwell-wziq1r` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -930,6 +930,12 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    `icons/concepts.json`. The new 7 are in `docs/PROPOSALS.md`.
    **Unverified:** the rows inside the settings tabs and the whole Manage account section were written from memory, not from
    a capture (the captures are gitignored). Check them against `design-kit/reference/live/settings-*.html` on the Mac.
+
+73. **Icons skill wired into the system (user, 2026-10-01: "yes" to fixing the gaps).** `CLAUDE.md` rule 5 names `icons`;
+   `.claude-plugin/plugin.json` ships it; `RULES.md` Iconography starts with "use the `icons` skill"; the skill's
+   `schema/sources.json` is cut to the three packs RULES allows (Material Symbols, Lucide, Font Awesome Free Regular), and
+   `icons/style.json` allows only their licences (ISC, Apache-2.0, CC-BY-4.0); `ATTRIBUTIONS.md` credits the 7 Material Symbols
+   settings icons and notes the skill came with no licence file. Still on the branch only — not merged to `main`.
 
 ## 6. Next up
 
