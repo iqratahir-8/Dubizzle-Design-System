@@ -16,6 +16,10 @@
    `chart-data-viz` (no chart language), `icons` (any icon need: house set first, then one
    style-matched pack, with a recorded reason), plus `npm run check:a11y`. Use them instead of
    improvising a value.
+   **Craft skills** — `design-copy`, `design-forms`, `design-typography`, `design-grid`,
+   `design-interaction`, `design-inspiration` — apply web best practice *through* the measured
+   system (live wins where they disagree). **`design-review`** is the anti-slop critique: run it on
+   new work before `design-qa`.
    **Finished a design? Run `design-qa`** (gate: states, overflow, breakpoints, flows) and, to hand it
    over, **`design-deliverables`** (one self-contained INTERNAL HTML document; refuses on QA blockers).
 6. **`docs/HOW-TO-ASK.md` is the user's guide to this system** — the screens they can name, what

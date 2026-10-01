@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-01 (settings icons re-checked against live and rebuilt, item 75; icons skill items 73–74; agency-portal deliverable item 72) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (7 craft/review skills written from web research, item 76; settings icons item 75; icons skill 73–74) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -958,7 +958,22 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    (ms chat-info-outline-rounded); reused house `my-ads` and `nav-chat`. Set = 13 icons (6 house, 7 new), 156 PNGs, preview
    `icons/settings.html` now drawn on the live page structure. Weight-400 bell kept (the house bell is weight 300).
 
+76. **Seven craft + review skills (user, 2026-10-01: "make these skills, search the web for the content").** The user has 18 `.skill`
+   files on the Mac (design-accessibility … design-typography, icons); 6 had no repo equivalent. Written here, from three web-research
+   passes, each grounded in the measured system: **`design-review`** (anti-slop critique, `rev.*` gates P0–P3 + Nielsen score; lists the
+   borrowed rules that impose another taste and are ignored), **`design-copy`**, **`design-forms`**, **`design-typography`**,
+   **`design-grid`**, **`design-interaction`**, **`design-inspiration`**. Wired into CLAUDE.md rule 5, RULES.md §5 checklist, the plugin,
+   the `feature-design` specialist table ("run design-review before design-qa"), HOW-TO-ASK, ATTRIBUTIONS, the single-skill package note.
+   **Where web and live disagree, live wins** (body 14px not 16, radius ≤1.2rem, casing copied verbatim — live mixes Title and sentence case).
+   Research gaps, stated in each skill's Sources: the sandbox proxy blocked nngroup, baymard, gov.uk site, material.io, w3.org site, so
+   GOV.UK/WCAG/APG/Polaris/Mailchimp/MDN/web.dev were read from their GitHub sources and NN/g, Baymard, Material numbers are second-hand.
+   Findings worth acting on: `Input` has no hint slot and its error isn't linked by `aria-describedby`; live uses both "Favourites" and
+   "Favorites". The other 11 user `.skill` files were not seen — names only; if uploaded, compare with the repo versions.
+
 ## 6. Next up
+
+0f. **Craft skills (item 76):** try `design-review` on a real design (favourites-revamp or the agency portal) and tune the gates;
+   fix `Input` (hint slot + `aria-describedby`) via `design-forms`; ask the user for the 11 other `.skill` files to compare.
 
 0e. **Settings icons (items 73, 75):** labels now verified against live. Still the user's call: the weight-400 bell vs the house
    bell, and any pick to swap (`icons/settings.html` shows the rejected options). Then decide whether the 7 new ones become React

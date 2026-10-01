@@ -56,6 +56,14 @@ why the licence text is kept at `.claude/skills/animate/LICENSE-emil`.
 **icons** — uploaded by the user as `icons.skill` (v1.0.0, 2026-09-29), extended here to v1.1.0.
 No licence file came with it; ask its author before redistributing it outside this repo.
 
+**Craft skills** `design-review`, `design-copy`, `design-forms`, `design-typography`, `design-grid`,
+`design-interaction`, `design-inspiration` — written here (2026-10-01). Their rules are paraphrased
+and adapted from public guidance, not copied: GOV.UK Design System (MIT / OGL), WCAG and WAI-ARIA
+APG (W3C), Shopify Polaris, Mailchimp Content Style Guide, web.dev, MDN (CC-BY-SA), Apple HIG, W3C
+alreq, Vercel Web Interface Guidelines, Anthropic frontend-design, Hallmark (Nutlope), Impeccable
+(pbakaus), Anti UI Slop (UIZZE, via github/awesome-copilot), Owl-Listener designer-skills,
+petekp typography. Each skill lists its sources and which were read first-hand.
+
 ## Where the credit has to appear
 
 A product that ships any Lucide, Font Awesome or Material Symbols icon carries a visible

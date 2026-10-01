@@ -460,6 +460,7 @@ built from guessed colours will not match the one screen that already ships one.
 - [ ] Frosted surfaces use `.glass-chip` / `.glass-panel` and have a solid `@supports` fallback
 - [ ] Icons come from `design-kit/icons/` (or `src/assets/live-icons`, glyphs extracted from live) first; external ones are Material Symbols Rounded / Font Awesome Free Regular / Lucide — rounded and outlined, ideally one pack per screen
 - [ ] No emoji anywhere
+- [ ] `design-review` run on new work: no P0/P1 findings left (specificity, invented content, template structure, states, density)
 - [ ] Nothing scales or bounces on hover
 - [ ] Content reads like real Egyptian listings, with real prices and real place names
 - [ ] The densest reasonable layout was chosen, not the airiest

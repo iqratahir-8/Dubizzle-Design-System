@@ -16,6 +16,13 @@
     "./.claude/skills/motion-design",
     "./.claude/skills/imagery-illustration",
     "./.claude/skills/chart-data-viz",
-    "./.claude/skills/icons"
+    "./.claude/skills/icons",
+    "./.claude/skills/design-review",
+    "./.claude/skills/design-copy",
+    "./.claude/skills/design-forms",
+    "./.claude/skills/design-typography",
+    "./.claude/skills/design-grid",
+    "./.claude/skills/design-interaction",
+    "./.claude/skills/design-inspiration"
   ]
 }

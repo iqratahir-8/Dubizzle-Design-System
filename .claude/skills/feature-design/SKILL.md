@@ -142,6 +142,16 @@ improvising:
 | Charts, metrics, dashboards | `chart-data-viz` | One chart ships; no chart language exists |
 | A landing / campaign / marketing page | `design-taste-frontend` | Composition is a real choice there; brand values still binding |
 | Contrast, targets, names | `npm run check:a11y` | 14 of 24 palette pairings fail AA |
+| Any icon | `icons` | House set first, one pinned pack, recorded reasons |
+| Words on the screen — labels, errors, empty states | `design-copy` | Generic copy is the second-fastest tell |
+| Any input or multi-step flow | `design-forms` | Validation, input types, control choice |
+| Hierarchy, truncation, prices, Arabic type | `design-typography` | Applies the closed scale, never extends it |
+| Layout, spacing, columns, RTL | `design-grid` | `layout.json` is the grid |
+| States, loading, dialogs, destructive actions | `design-interaction` | A control with only default + hover is unfinished |
+| How other products solve it | `design-inspiration` | Structure, never look; captures first |
+
+**Before `design-qa`, run `design-review`** — the anti-slop critique against the measured system
+(specificity, invented content, template structure, states, density). Fix its P0/P1 findings first.
 
 **Anything with no measured basis gets logged in `docs/PROPOSALS.md` and flagged to the
 user for designer sign-off.** New colour, new gradient, new frosted surface, new motion,
