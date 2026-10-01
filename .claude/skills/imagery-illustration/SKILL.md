@@ -68,6 +68,13 @@ Only two empty states have ever been captured (404, portal Leads). Before design
 check whether live has it: `grep -ril "empty\|no results\|oops" design-kit/reference/live/`.
 If it exists on live and isn't captured, capture it — that is a measurement, not an invention.
 
+## Generated photos for banners and heroes
+
+When a **composed surface** (campaign, landing, seasonal, app-download) needs a photo that no capture
+has, use **`design-prompt-images`**: Egypt-realistic prompts without the glossy AI look, text-free
+plates with HTML copy, the 1280×180 / 390×150 crops, an AI-look review checklist and provenance.
+Everything above still holds — never listing photos, illustrations, logos, real people or plates.
+
 ## The rule
 
 Photography comes from captures. Illustration comes from captures. Anything you cannot

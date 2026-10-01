@@ -23,6 +23,7 @@
     "./.claude/skills/design-typography",
     "./.claude/skills/design-grid",
     "./.claude/skills/design-interaction",
-    "./.claude/skills/design-inspiration"
+    "./.claude/skills/design-inspiration",
+    "./.claude/skills/design-prompt-images"
   ]
 }

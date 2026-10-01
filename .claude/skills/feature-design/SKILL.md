@@ -149,6 +149,7 @@ improvising:
 | Layout, spacing, columns, RTL | `design-grid` | `layout.json` is the grid |
 | States, loading, dialogs, destructive actions | `design-interaction` | A control with only default + hover is unfinished |
 | How other products solve it | `design-inspiration` | Structure, never look; captures first |
+| A generated photo for a banner or hero | `design-prompt-images` | Prompts that don't look AI-made; never listing photos or illustrations |
 
 **Before `design-qa`, run `design-review`** — the anti-slop critique against the measured system
 (specificity, invented content, template structure, states, density). Fix its P0/P1 findings first.

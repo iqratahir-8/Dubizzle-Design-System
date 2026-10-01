@@ -203,6 +203,7 @@ live dubizzle disagree, live wins (body text stays 14px, cards stay ≤1.2rem ra
 | "**Spacing**, columns, responsive layout" | `design-grid` |
 | "What are the **states**?" / "loading" / "confirm or undo?" | `design-interaction` |
 | "Find **inspiration** / how do OLX or Bayut do it?" | `design-inspiration` (uses Mobbin) |
+| "**Generate** a banner / hero photo" / "write an image prompt" / "make it not look AI" | `design-prompt-images` — composed surfaces only; needs the Higgsfield MCP reconnected or the CLI signed in |
 
 ## Checking a design and handing it over
 
@@ -237,7 +238,7 @@ The skills call this repo's scripts, so **clone the repo and run `npm install` f
 
 That gives `design-to-handoff`, `feature-design`, `design-qa`, `design-deliverables` and the specialist skills
 (`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`, `icons`, and the craft skills `design-review`, `design-copy`, `design-forms`, `design-typography`,
-`design-grid`, `design-interaction`, `design-inspiration`) in every folder. Inside the repo
+`design-grid`, `design-interaction`, `design-inspiration`, `design-prompt-images`) in every folder. Inside the repo
 they already load from `.claude/skills/` without the plugin. Update later with `/plugin marketplace update dubizzle`.
 The plugin definition is `.claude-plugin/` (it points at `.claude/skills`, so nothing is duplicated).
 

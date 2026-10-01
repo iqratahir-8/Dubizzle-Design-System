@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-01 (D-020: Western digits in Arabic, item 80; Emil skills checked up to date) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (design-prompt-images skill, item 81) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -998,7 +998,18 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    and match upstream (2026-09-24) line for line apart from the "SCOPED FOR DUBIZZLE" headers added here; **don't re-run the installer**,
    it would overwrite those headers. `animate-expo` and `write-swift` stay uninstalled (no native app work).
 
+81. **`design-prompt-images` (user: "Build it. It's the biggest gap").** Prompts for generated photos that don't look AI-made, for
+   composed surfaces only (campaign/landing heroes, promo-banner mock plates, app-download) — never listing photos, illustrations,
+   logos, real people or plates (imagery-illustration still wins). 9-slot template, banned glossy vocabulary (stunning/8K/cinematic…,
+   which most online prompting skills add), no text in pixels (HTML overlay, RTL plate), crops for 1280×180 / 390×150 (GPT Image caps
+   at 3:1 → crop, Nano Banana 2/Pro do 4:1/8:1), references: AI-look checklist, Egypt realism cues, model notes. Research read the
+   OpenAI and Gemini cookbooks and BFL FLUX.2 first-hand; Google/Midjourney/Seedream docs second-hand. **Higgsfield MCP needs the user to
+   reconnect it** (claude.ai connectors) before anything can be generated; the CLI is the user's to install. Not yet tested end to end.
+
 ## 6. Next up
+
+0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner
+   plate (EN + RTL), run the AI-look checklist, log both in PROPOSALS.md.
 
 0f. **Craft skills (item 76):** try `design-review` on a real design (favourites-revamp or the agency portal) and tune the gates;
    fix `Input` (hint slot + `aria-describedby`) via `design-forms`; ask the user for the 11 other `.skill` files to compare.

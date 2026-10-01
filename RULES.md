@@ -436,7 +436,7 @@ user gave it. None of those need a spring.
   illustration the system doesn't have, say so and propose the nearest captured one.
 - Avatars are initials on `--red-02` when there is no photo. Logos keep their own colour.
 
-Use the `imagery-illustration` skill.
+Use the `imagery-illustration` skill; for a generated banner or hero photo on a composed surface, `design-prompt-images`.
 
 ---
 

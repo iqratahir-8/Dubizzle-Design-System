@@ -57,12 +57,13 @@ why the licence text is kept at `.claude/skills/animate/LICENSE-emil`.
 No licence file came with it; ask its author before redistributing it outside this repo.
 
 **Craft skills** `design-review`, `design-copy`, `design-forms`, `design-typography`, `design-grid`,
-`design-interaction`, `design-inspiration` — written here (2026-10-01). Their rules are paraphrased
+`design-interaction`, `design-inspiration`, `design-prompt-images` — written here (2026-10-01). Their rules are paraphrased
 and adapted from public guidance, not copied: GOV.UK Design System (MIT / OGL), WCAG and WAI-ARIA
 APG (W3C), Shopify Polaris, Mailchimp Content Style Guide, web.dev, MDN (CC-BY-SA), Apple HIG, W3C
 alreq, Vercel Web Interface Guidelines, Anthropic frontend-design, Hallmark (Nutlope), Impeccable
 (pbakaus), Anti UI Slop (UIZZE, via github/awesome-copilot), Owl-Listener designer-skills,
-petekp typography. Each skill lists its sources and which were read first-hand.
+petekp typography; for images, the OpenAI and Gemini cookbooks, BFL FLUX.2, and the prompting skills it
+reviews (wuyoscar, sanky369, runcomfy, inference-sh). Each skill lists its sources and which were read first-hand.
 
 ## Where the credit has to appear
 

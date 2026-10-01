@@ -17,7 +17,8 @@
    style-matched pack, with a recorded reason), plus `npm run check:a11y`. Use them instead of
    improvising a value.
    **Craft skills** — `design-copy`, `design-forms`, `design-typography`, `design-grid`,
-   `design-interaction`, `design-inspiration` — apply web best practice *through* the measured
+   `design-interaction`, `design-inspiration`, `design-prompt-images` (generated photos for banners and
+   heroes that don't look AI-made; never listing photos or illustrations) — apply web best practice *through* the measured
    system (live wins where they disagree). **`design-review`** is the anti-slop critique: run it on
    new work before `design-qa`.
    **Finished a design? Run `design-qa`** (gate: states, overflow, breakpoints, flows) and, to hand it
