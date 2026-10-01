@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–72; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–73; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -924,8 +924,11 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    Rules R1–R4 are facts from D-011/D-012, PAGE-COVERAGE and measurements (rail 80px, 8 entries, 56px items on a 60px pitch). **Open:**
    which control opens each of the 22 states (not recorded in the captures, so only the 8 mains are clickable); Agent-role view, empty states, which
    sidebar entries depend on account settings, and Arabic are all uncaptured. 69 `dubizzle.com.eg` urls remain inside shared CSS (backgrounds/fonts):
-   run `npm run localize:assets` on the Mac and rebuild without `--placeholder-images`. **Check privacy:** the header shows a user "Ahmed H." — confirm it is a
-   fixture name, not a real person (CLAUDE.md rule 3).
+   run `npm run localize:assets` on the Mac and rebuild without `--placeholder-images`. (Privacy: the header user "Ahmed H." is a test account — see item 73.)
+
+73. **Privacy check closed: "Ahmed H." in the portal captures is a test account** (user confirmed). Not a real person; no redaction needed. The
+   other fixture names in the portal pages ("Test Agency Agency", fixture people-rows) are likewise test data. CLAUDE.md rule 3 still applies to the
+   account holder's own name.
 
 ## 6. Next up
 
