@@ -16,6 +16,22 @@ description: >-
 **A string that exists on live is copied verbatim, never rewritten.** Pull it from
 `design-kit/reference/live/` captures. Only new strings are written with the rules below.
 
+| Reference | What it holds |
+|---|---|
+| `references/dubizzle-voice.md` | **What live actually says** — English and Arabic strings, formats, live defects, open questions |
+| `references/principles.md` | The research: Podmajersky, Winters, Yifrah, GOV.UK, Apple, Microsoft, marketplace trust copy |
+| `references/arabic.md` | Register, button grammar, gender, plurals, digits, bidi, length |
+
+## How to write a new string
+
+1. **Write the conversation first** — what would a helpful person at dubizzle say here? Then cut it down.
+2. **Front-load** the word the user is looking for.
+3. **Score it** on the four standards — purposeful, concise, conversational, clear — and fix
+   anything weak (`references/principles.md`).
+4. **Tone follows stakes:** light on an empty favourites list, plain and serious on payment,
+   deletion and scam warnings. Voice never changes.
+5. Check it against the live voice (`dubizzle-voice.md`) and the rules below.
+
 ## Voice
 
 Direct, second person, imperative, short. dubizzle is a utility people use to buy and sell
@@ -24,8 +40,11 @@ quickly — copy gets out of the way. (`RULES.md` §4.)
 - Verbs that do the job: `Post Your Ad`, `Call`, `Chat`, `Save search`, `Show packages`.
 - Never: Get Started, Discover, Unlock, Elevate, Seamless, Effortless, Empower, Leverage,
   Revolutionise, "your journey", "the power of", delve, pivotal.
-- No emoji in UI. No exclamation marks in system copy (never in an error). No jokes in
-  errors, payment, deletion or account loss.
+- No emoji in UI. No **new** exclamation marks (never in an error). Live has some
+  (`Your safety matters to us!`, `No notifications yet!`, promo lines) — keep those verbatim,
+  don't extend the pattern. No jokes in errors, payment, deletion or account loss.
+- Live breaks a few of these itself (`Oops!`, `Sign in to begin your journey`) — the list of
+  live exceptions is in `dubizzle-voice.md`; copy them verbatim, never imitate them.
 - No invented claims or social proof ("Join 10M+ sellers", "98% sell faster"). Real, sourced
   numbers or nothing.
 
@@ -94,6 +113,23 @@ Say what will appear here + one action to fill it. A different message per kind 
 The live favourites and saved-searches empty strings (`No favorites yet.`, `No saved
 searches yet.`) are recorded in `docs/PROPOSALS.md` as unverified — check before reusing.
 
+## Errors that aren't the user's to fix
+
+Moderation, permissions, eligibility, outages: **not red errors.** A calm status that says why,
+what happens next and when (`Your ad is in review. We'll let you know within …` — confirm the real
+time). Service down: say what is safe (`Your ad and chats are safe`) and when it's back.
+
+## Safety and trust copy
+
+- Reuse live's safety tips verbatim (English and the Egyptian-Arabic versions).
+- **Name the scam**, not "be careful": advance payment or "shipping fee" before meeting, a payment
+  or courier link on WhatsApp, a buyer offering more than the asking price.
+- **Show it at the risky moment** — a payment word or link in chat, first contact, moving to
+  WhatsApp — short and specific. Generic banners get ignored; just-in-time warnings work.
+- "We will never ask you for your card details / OTP" only if dubizzle can truly promise it.
+- Keep warning styling for real triggers (alarm fatigue) — the icons skill already rejected a red
+  triangle for the Chat Safety Tips toggle for this reason.
+
 ## Confirmations, toasts, success
 
 - Prefer **undo** over a confirm dialog for reversible actions (`design-interaction` §5).
@@ -112,10 +148,16 @@ searches yet.`) are recorded in `docs/PROPOSALS.md` as unverified — check befo
   `EGP 500,000 and up` (not `+`, `>`).
 - Specs: `3 beds · 2 baths · 150 m²` (lowercase, as live writes them — `references/dubizzle-voice.md`).
 - Time: relative when recent (`2 hours ago`), absolute after (`12 Mar 2026`). Never `03/04`.
-- **Arabic digits and currency order are an open question** (Western vs Arabic-Indic, `EGP`
-  vs `ج.م`): read them from the `.ar` captures, see `rtl-arabic`. Don't guess.
+- Arabic, as live writes it: price `990,000 ج.م` (Western digits, currency **after**), area
+  `220 م٢`, time `منذ …`. Live also shows Arabic-Indic mileage (`١٦٬٠٠٠ كم`) in the same card —
+  which digit system is the rule is an **open question** for the user (`references/arabic.md`).
 
-## Writing for translation (Arabic)
+## Writing for translation (Arabic) — full rules in `references/arabic.md`
+
+Headlines: Modern Standard Arabic for controls, Egyptian colloquial for prompts and safety (live's
+split); one register per string; avoid gender (verbal nouns, impersonal forms); six plural forms,
+never a formula (live's `منذ 2 أيام` is wrong); pin `ar-EG-u-nu-latn` if digits are Western;
+`<bdi>` around every inserted value.
 
 - Whole sentences with reorderable placeholders: `{count} photos`, never stitched fragments.
 - Plurals through a plural-aware format — Arabic has six plural forms.
@@ -135,9 +177,11 @@ searches yet.`) are recorded in `docs/PROPOSALS.md` as unverified — check befo
 
 ## Sources
 
-Read first-hand (from the publishers' GitHub sources): GOV.UK Design System (error message,
-error summary, text input, button, check answers, problem pages) · Shopify Polaris content
-(error messages, fundamentals, grammar and mechanics) · Mailchimp Content Style Guide
-(voice, web elements, translation) · Impeccable `reference/clarify.md` · Owl-Listener
-designer-skills `ux-writing`. Via search only: NN/g error-message rubric and empty states,
-Material snackbars, Microsoft style guide, Atlassian messages, W3C/IBM text expansion.
+Full source lists with read/snippet marks are in `references/principles.md` and
+`references/arabic.md`. First-hand: GOV.UK Design System (error message, error summary, text input,
+button, check answers, problem pages) · Shopify Polaris content · Mailchimp Content Style Guide ·
+Apple HIG Writing · Microsoft Style Guide · Arabic Content Style Guide (UX-Writing) · AOSP Arabic
+strings · Unicode CLDR · W3C i18n bidi articles · Impeccable `clarify` · Owl-Listener and
+content-designer UX-writing skills. Second-hand (sites blocked): Podmajersky, Winters, Yifrah,
+Metts & Welfle, NN/g, Material, marketplace safety pages and warning-effectiveness studies.
+Live evidence: 82 English templates and 10 Arabic captures, audited 2026-10-01.

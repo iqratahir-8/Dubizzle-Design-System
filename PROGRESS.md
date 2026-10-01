@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-01 (live copy audit + canonical strings, item 77; craft skills item 76) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (design-copy deepened: principles + Arabic references, item 78) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -977,6 +977,15 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    "begin your journey"; specs are lowercase (`3 beds`) → RULES.md §4 corrected; Arabic mixes MSA (UI) and Egyptian (safety, "Sell
    now"), Western-digit prices with `ج.م` after, Arabic-Indic mileage in the same card, and wrong plurals (`منذ 2 أيام`).
    Deeper research (books, platform guides, Arabic UX writing, marketplace trust copy) still running — fold into `design-copy` next.
+
+78. **design-copy deepened (second research pass).** New `references/principles.md` (Podmajersky's four standards and three error
+   types, Winters' reading-age and front-loading, Yifrah's value-led buttons, Apple HIG Writing and Microsoft Style Guide read in full,
+   marketplace trust copy: name the scam, warn at the risky moment) and `references/arabic.md` (MSA for controls / Egyptian for
+   prompts and safety, verbal noun vs imperative, gender-neutral forms, CLDR six plurals, `ar-EG` defaults to Arabic-Indic digits so pin
+   `ar-EG-u-nu-latn`, bidi isolation, ~30% width budget). SKILL.md gained "how to write a new string", non-fixable errors, safety copy.
+   **Open questions for the user** (in `arabic.md` and `dubizzle-voice.md`): Arabic button grammar, digit system, register split,
+   `عذرًا`/`يُرجى`, casing rule, `Login or Signup`/`Favourites` spellings. No MENA company publishes a content guideline — register rules
+   are inferred from live.
 
 ## 6. Next up
 
