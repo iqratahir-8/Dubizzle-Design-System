@@ -1,0 +1,35 @@
+{
+  "primary_set": "material-symbols",
+  "fallback_set": null,
+  "variant": "outline-rounded",
+  "variant_note": "Use the '-outline-rounded' name (or '-rounded' where the glyph has no outline form). Never sharp, never the plain filled form for a default state.",
+  "weight": 400,
+  "grid": 24,
+  "display_size": 20,
+  "stroke": null,
+  "cap": "round",
+  "join": "round",
+  "style": "filled",
+  "style_note": "Material Symbols draws an outlined look as filled paths, so there is no stroke to retarget. 'filled' here is the geometry type, not the look.",
+  "allowed_licenses": [
+    "MIT",
+    "ISC",
+    "Apache-2.0",
+    "CC0"
+  ],
+  "png_sizes": [
+    16,
+    20,
+    24,
+    32
+  ],
+  "png_scales": [
+    1,
+    2,
+    3
+  ],
+  "png_color": "#23262A",
+  "locked": true,
+  "established": "2026-10-01. Measured, not asked: the account-menu icons in design-kit/icons (action/settings, misc/help, action/edit-profile, brand/logout) match Material Symbols Rounded weight 400 glyph for glyph, drawn at the 20px optical size. The whole set audits as mixed (95 grids), so this pins the account/settings family deliberately rather than inheriting the most common value.",
+  "source_note": "api.iconify.design is blocked from the cloud sandbox; the npm registry is not. Use fetch.py --source npm there."
+}

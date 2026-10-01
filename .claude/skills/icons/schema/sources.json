@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "note": "Icon sources and the published style of each set. Adding a source is a config edit, not a code change. Iconify is primary because it aggregates 150+ sets behind one stable API with search — one adapter instead of one scraper per site. Set metadata is used to gate searches by style, which is what stops a project ending up with five visual languages.",
+
+  "iconify": {
+    "api": "https://api.iconify.design",
+    "fallback_apis": ["https://api.simplesvg.com", "https://api.unisvg.com"],
+    "browse": "https://icon-sets.iconify.design/",
+    "self_hostable": true,
+    "notes": "SVG endpoint is /{prefix}/{name}.svg with width, height, color, rotate and flip params. Search endpoint is /search?query=&prefixes=&limit=."
+  },
+
+  "sets": {
+    "lucide":           { "grid": 24, "stroke": 2,    "style": "outline", "license": "ISC",        "variable_stroke": true },
+    "tabler":           { "grid": 24, "stroke": 2,    "style": "outline", "license": "MIT",        "variable_stroke": true },
+    "feather":          { "grid": 24, "stroke": 2,    "style": "outline", "license": "MIT" },
+    "heroicons":        { "grid": 24, "stroke": 1.5,  "style": "both",    "license": "MIT" },
+    "heroicons-solid":  { "grid": 24, "stroke": null, "style": "filled",  "license": "MIT" },
+    "ph":               { "grid": 256,"stroke": 16,   "style": "both",    "license": "MIT",        "variable_stroke": true, "notes": "Phosphor ships six weights" },
+    "material-symbols": { "grid": 24, "stroke": null, "style": "both",    "license": "Apache-2.0", "variable_stroke": true },
+    "mdi":              { "grid": 24, "stroke": null, "style": "filled",  "license": "Apache-2.0" },
+    "ri":               { "grid": 24, "stroke": null, "style": "both",    "license": "Apache-2.0" },
+    "bi":               { "grid": 16, "stroke": null, "style": "both",    "license": "MIT" },
+    "carbon":           { "grid": 32, "stroke": 2,    "style": "outline", "license": "Apache-2.0" },
+    "fluent":           { "grid": 24, "stroke": null, "style": "both",    "license": "MIT" },
+    "iconoir":          { "grid": 24, "stroke": 1.5,  "style": "outline", "license": "MIT" },
+    "solar":            { "grid": 24, "stroke": 1.5,  "style": "both",    "license": "CC-BY-4.0",  "notes": "attribution required" },
+    "fa6-solid":        { "grid": 512,"stroke": null, "style": "filled",  "license": "CC-BY-4.0",  "notes": "attribution required" }
+  },
+
+  "license_policy": {
+    "note": "Most sets are MIT or Apache. Some are CC-BY and need attribution; a few are commercial. An icon that lands in a product without a licence check is a problem discovered late, so the default allow-list is permissive-only.",
+    "default_allowed": ["MIT", "Apache-2.0", "ISC", "CC0", "Unlicense"],
+    "requires_attribution": ["CC-BY-4.0", "CC-BY-3.0"],
+    "never_without_signoff": ["CC-BY-NC", "proprietary", "commercial"]
+  }
+}

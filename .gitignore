@@ -72,3 +72,7 @@ design-kit/deliverables/*/dist/
 
 __pycache__/
 *.pyc
+
+# icons skill: cached @iconify-json packages and candidate lists
+icons/.npm-sets/
+icons/candidates.json

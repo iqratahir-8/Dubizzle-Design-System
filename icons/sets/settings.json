@@ -1,0 +1,117 @@
+{
+  "set": "settings",
+  "display_size": 20,
+  "style": "icons/style.json",
+  "generated": "2026-10-01",
+  "verified": "Labels with '(live)' come from the measured account menu or the captured routes. The rows inside each settings tab, and the whole Manage account section, are from memory of the live page and have not been checked against a capture in this container (the captures are gitignored). Confirm them against design-kit/reference/live/settings-*.html on the Mac.",
+  "items": [
+    {
+      "label": "Settings",
+      "level": "entry",
+      "concept": "settings-entry",
+      "icon": "settings",
+      "origin": "project",
+      "where": "Account menu row 'Settings \u00b7 Privacy and manage accounts' (live)",
+      "svg": "icons/svg/settings.svg"
+    },
+    {
+      "label": "Privacy",
+      "level": "section",
+      "concept": "settings-privacy",
+      "icon": "privacy",
+      "origin": "new",
+      "where": "Settings tab (live route /en/settings/privacy)",
+      "svg": "icons/svg/privacy.svg"
+    },
+    {
+      "label": "Show my phone number in ads",
+      "level": "row",
+      "concept": "settings-show-phone",
+      "icon": "phone-number",
+      "origin": "project",
+      "where": "Privacy toggle",
+      "svg": "icons/svg/phone-number.svg"
+    },
+    {
+      "label": "Notifications",
+      "level": "section",
+      "concept": "settings-notifications",
+      "icon": "notification-settings",
+      "origin": "new",
+      "where": "Settings tab (live route /en/settings/notifications)",
+      "svg": "icons/svg/notification-settings.svg"
+    },
+    {
+      "label": "Recommendations",
+      "level": "row",
+      "concept": "settings-recommendations",
+      "icon": "recommendations",
+      "origin": "new",
+      "where": "Notifications toggle",
+      "svg": "icons/svg/recommendations.svg"
+    },
+    {
+      "label": "Special communications & offers",
+      "level": "row",
+      "concept": "settings-offers",
+      "icon": "offers-communications",
+      "origin": "new",
+      "where": "Notifications toggle",
+      "svg": "icons/svg/offers-communications.svg"
+    },
+    {
+      "label": "Manage account",
+      "level": "section",
+      "concept": "settings-manage-account",
+      "icon": "manage-account",
+      "origin": "new",
+      "where": "'manage accounts' in the account-menu subtitle",
+      "svg": "icons/svg/manage-account.svg"
+    },
+    {
+      "label": "Log out of all devices",
+      "level": "row",
+      "concept": "settings-logout-all-devices",
+      "icon": "logout-all-devices",
+      "origin": "new",
+      "where": "Manage account",
+      "svg": "icons/svg/logout-all-devices.svg"
+    },
+    {
+      "label": "Delete account",
+      "level": "row",
+      "concept": "settings-delete-account",
+      "icon": "delete-account",
+      "origin": "new",
+      "where": "Manage account",
+      "svg": "icons/svg/delete-account.svg"
+    },
+    {
+      "label": "Change language",
+      "level": "row",
+      "concept": "settings-language",
+      "icon": "language",
+      "origin": "project",
+      "where": "Account menu (live)",
+      "svg": "icons/svg/language.svg"
+    },
+    {
+      "label": "Help & Support",
+      "level": "row",
+      "concept": "settings-help",
+      "icon": "help",
+      "origin": "project",
+      "where": "Account menu (live)",
+      "svg": "icons/svg/help.svg"
+    },
+    {
+      "label": "Logout",
+      "level": "row",
+      "concept": "settings-logout",
+      "icon": "logout",
+      "origin": "project",
+      "where": "Account menu (live)",
+      "svg": "icons/svg/logout.svg"
+    }
+  ]
+}
