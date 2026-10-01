@@ -1,0 +1,129 @@
+{
+  "feature": "agency-portal",
+  "title": "Agency portal (dubizzle Pro) — as captured",
+  "version": 1,
+  "audience": "engineer",
+  "platforms": [
+    "portal-desktop"
+  ],
+  "locales": [
+    "en"
+  ],
+  "pages": [
+    "portal-ad-agent",
+    "portal-ad-assign-agent",
+    "portal-ad-chats",
+    "portal-ad-info",
+    "portal-ad-overview",
+    "portal-ad-promo",
+    "portal-ads",
+    "portal-ads-actions",
+    "portal-ads-credits",
+    "portal-ads-more-filters",
+    "portal-ads-request-brand",
+    "portal-agents",
+    "portal-agents-actions",
+    "portal-agents-invite",
+    "portal-agents-sort",
+    "portal-candidate-detail",
+    "portal-candidates",
+    "portal-credit",
+    "portal-credit-agents",
+    "portal-credit-self",
+    "portal-dashboard",
+    "portal-insights",
+    "portal-leads",
+    "portal-leads-daterange",
+    "portal-leads-export",
+    "portal-leads-phone",
+    "portal-leads-sms",
+    "portal-leads-whatsapp",
+    "portal-vip",
+    "portal-vip-purchase"
+  ],
+  "classification": "internal",
+  "summary": {
+    "problem": "The agency portal has no hand-off document: engineers and PMs working on dubizzle Pro have only live production and a folder of captures to learn what exists.",
+    "scope": "The 8 portal screens (Dashboard, Agency Ads, Candidates, Leads, VIP Leads, Agency Management, Insights, Credit Info) plus their drawers, modals and filter states: 30 captured pages, desktop only.",
+    "changed": "Nothing is redesigned. This is a record of production as captured from a test agency account (owner view, English), with people-rows replaced by fixtures. v1 is the first build."
+  },
+  "signoff": {
+    "who": [
+      "designer",
+      "product owner"
+    ],
+    "meaning": "the document matches live production; it is not a new design"
+  },
+  "sections": {
+    "exclude": {
+      "performance": "no performance budget declared",
+      "tokens": "the screens are frozen live captures; their CSS is production's own, not this system's token sheet",
+      "motion": "no motion was measured on the portal",
+      "gestures": "desktop only; no touch gestures",
+      "platform-notes": "one platform"
+    }
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "text": "The portal is desktop only. There is no mobile layout and none is to be designed (decision D-012).",
+      "test": "The registry lists the portal pages on portal-desktop only; every page records 'dubizzle Pro has no mobile layout (D-012)' as its unpaired mobile reason."
+    },
+    {
+      "id": "R2",
+      "text": "Navigation is a collapsed icon rail 80px wide with eight entries, in this order: Dashboard, Agency Ads, Candidates, Leads, VIP Leads, Agency Management, Insights, Credit Info. Each entry is 56px tall on a 60px pitch (4px gap).",
+      "test": "On portal-dashboard at 1440px the eight sidebar links render in that order, 56px tall, starting 76px from the top."
+    },
+    {
+      "id": "R3",
+      "text": "The portal URL space is /en/agencyPortal, camelCase. Lowercase spellings do not exist and there is no public entry point: the way in is 'Partner with dubizzle' in the signed-in user menu, with an agency account.",
+      "test": "Each page's source route matches the route table in docs/PAGE-COVERAGE.md."
+    },
+    {
+      "id": "R4",
+      "text": "Tables that list people (Leads, VIP Leads, Candidates, Agency Management, Dashboard lists) contain fixture rows only in anything committed or shared. A real phone number reached disk once (D-011).",
+      "test": "The captured pages contain no email address and no Egyptian mobile number; the build's scan reports zero hits."
+    }
+  ],
+  "motion": [],
+  "gestures": [],
+  "lottie": [],
+  "performance": null,
+  "acceptance": [
+    "Clicking any of the eight sidebar entries on any portal screen opens that screen.",
+    "Every drawer, modal and filter state listed on a main screen appears as its own state screen in this document."
+  ],
+  "edge_cases": [
+    "The captured account is an owner. What an Agent (non-owner) sees is not captured, so it is not documented here.",
+    "Credit Info > Agents with no consumption shows 'Nothing to show yet' in the Consumption Log (the only portal empty state captured)."
+  ],
+  "open_questions": [
+    {
+      "q": "What does an Agent (non-owner) see? Which sidebar entries and pages are hidden for agents? Only the owner view was captured.",
+      "owner": "product owner",
+      "blocks": "R2"
+    },
+    {
+      "q": "What do Agency Ads, Leads, VIP Leads, Candidates and Agency Management show with zero rows? The only empty state in the captures is the Credit Info > Agents consumption log ('Nothing to show yet').",
+      "owner": "product owner",
+      "blocks": "acceptance criteria"
+    },
+    {
+      "q": "Which sidebar entries depend on account settings (for example Insights, VIP Leads, Candidates)? The capture shows all eight for this test agency.",
+      "owner": "product owner",
+      "blocks": "R2"
+    },
+    {
+      "q": "Is there an Arabic portal? Arabic was never captured, so right-to-left behaviour of the rail, drawers and tables is unknown.",
+      "owner": "designer",
+      "blocks": "R2"
+    }
+  ],
+  "changelog": [
+    {
+      "version": 1,
+      "date": "2026-10-01",
+      "notes": "First build: record of the 30 captured portal pages (owner view, English, desktop). No redesign."
+    }
+  ]
+}

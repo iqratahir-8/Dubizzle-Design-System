@@ -738,7 +738,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ad-agent.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ad-assign-agent": {
       "label": "Portal Ad Assign Agent",
@@ -757,7 +758,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ad-assign-agent.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ad-chats": {
       "label": "Portal Ad Chats",
@@ -776,7 +778,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ad-chats.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ad-info": {
       "label": "Portal Ad Info",
@@ -795,7 +798,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ad-info.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ad-overview": {
       "label": "Portal Ad Overview",
@@ -814,7 +818,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ad-overview.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ad-promo": {
       "label": "Portal Ad Promo",
@@ -833,7 +838,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ad-promo.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ads": {
       "label": "Portal Ads",
@@ -852,7 +858,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ads.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ads-actions": {
       "label": "Portal Ads Actions",
@@ -871,7 +878,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ads-actions.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ads-credits": {
       "label": "Portal Ads Credits",
@@ -890,7 +898,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ads-credits.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ads-more-filters": {
       "label": "Portal Ads More Filters",
@@ -909,7 +918,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ads-more-filters.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-ads-request-brand": {
       "label": "Portal Ads Request Brand",
@@ -928,7 +938,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-ads-request-brand.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-agents": {
       "label": "Portal Agents",
@@ -947,7 +958,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-agents.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-agents-actions": {
       "label": "Portal Agents Actions",
@@ -966,7 +978,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-agents-actions.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-agents-invite": {
       "label": "Portal Agents Invite",
@@ -985,7 +998,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-agents-invite.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-agents-sort": {
       "label": "Portal Agents Sort",
@@ -1004,7 +1018,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-agents-sort.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-candidate-detail": {
       "label": "Portal Candidate Detail",
@@ -1023,7 +1038,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-candidate-detail.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-candidates": {
       "label": "Portal Candidates",
@@ -1042,7 +1058,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-candidates.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-credit": {
       "label": "Portal Credit",
@@ -1061,7 +1078,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-credit.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-credit-agents": {
       "label": "Portal Credit Agents",
@@ -1080,7 +1098,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-credit-agents.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-credit-self": {
       "label": "Portal Credit Self",
@@ -1099,7 +1118,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-credit-self.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-dashboard": {
       "label": "Portal Dashboard",
@@ -1118,7 +1138,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-dashboard.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-insights": {
       "label": "Portal Insights",
@@ -1137,7 +1158,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-insights.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-leads": {
       "label": "Portal Leads",
@@ -1156,7 +1178,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-leads.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-leads-daterange": {
       "label": "Portal Leads Daterange",
@@ -1175,7 +1198,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-leads-daterange.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-leads-export": {
       "label": "Portal Leads Export",
@@ -1194,7 +1218,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-leads-export.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-leads-phone": {
       "label": "Portal Leads Phone",
@@ -1213,7 +1238,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-leads-phone.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-leads-sms": {
       "label": "Portal Leads Sms",
@@ -1232,7 +1258,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-leads-sms.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-leads-whatsapp": {
       "label": "Portal Leads Whatsapp",
@@ -1251,7 +1278,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-leads-whatsapp.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-vip": {
       "label": "Portal Vip",
@@ -1270,7 +1298,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-vip.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "portal-vip-purchase": {
       "label": "Portal Vip Purchase",
@@ -1289,7 +1318,8 @@
         "portal-desktop": "design-kit/templates/desktop/portal-vip-purchase.html"
       },
       "kind": "page",
-      "vertical": "portal"
+      "vertical": "portal",
+      "feature": "agency-portal"
     },
     "properties": {
       "label": "Properties",
@@ -1703,6 +1733,9 @@
   "features": {
     "favourites-revamp": {
       "flows": "design-kit/deliverables/favourites-revamp/flows.json"
+    },
+    "agency-portal": {
+      "flows": "design-kit/deliverables/agency-portal/flows.json"
     }
   },
   "components": {

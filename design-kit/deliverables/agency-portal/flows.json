@@ -1,0 +1,257 @@
+{
+  "entries": {
+    "portal-desktop": "dashboard"
+  },
+  "screens": {
+    "ad-agent": {
+      "page": "portal-ad-agent",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ad-assign-agent": {
+      "page": "portal-ad-assign-agent",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ad-chats": {
+      "page": "portal-ad-chats",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ad-info": {
+      "page": "portal-ad-info",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ad-overview": {
+      "page": "portal-ad-overview",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ad-promo": {
+      "page": "portal-ad-promo",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ads": {
+      "page": "portal-ads",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ads-actions": {
+      "page": "portal-ads-actions",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ads-credits": {
+      "page": "portal-ads-credits",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ads-more-filters": {
+      "page": "portal-ads-more-filters",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "ads-request-brand": {
+      "page": "portal-ads-request-brand",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "agents": {
+      "page": "portal-agents",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "agents-actions": {
+      "page": "portal-agents-actions",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "agents-invite": {
+      "page": "portal-agents-invite",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "agents-sort": {
+      "page": "portal-agents-sort",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "candidate-detail": {
+      "page": "portal-candidate-detail",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "candidates": {
+      "page": "portal-candidates",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "credit": {
+      "page": "portal-credit",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "credit-agents": {
+      "page": "portal-credit-agents",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "credit-self": {
+      "page": "portal-credit-self",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "dashboard": {
+      "page": "portal-dashboard",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "insights": {
+      "page": "portal-insights",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "leads": {
+      "page": "portal-leads",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "leads-daterange": {
+      "page": "portal-leads-daterange",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "leads-export": {
+      "page": "portal-leads-export",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "leads-phone": {
+      "page": "portal-leads-phone",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "leads-sms": {
+      "page": "portal-leads-sms",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "leads-whatsapp": {
+      "page": "portal-leads-whatsapp",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "vip": {
+      "page": "portal-vip",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "vip-purchase": {
+      "page": "portal-vip-purchase",
+      "platform": "portal-desktop",
+      "kind": "page"
+    }
+  },
+  "transitions": [
+    {
+      "from": "dashboard",
+      "to": "ads",
+      "node": "9:13",
+      "kind": "forward",
+      "note": "sidebar"
+    },
+    {
+      "from": "dashboard",
+      "to": "candidates",
+      "node": "9:17",
+      "kind": "forward",
+      "note": "sidebar"
+    },
+    {
+      "from": "dashboard",
+      "to": "leads",
+      "node": "9:21",
+      "kind": "forward",
+      "note": "sidebar"
+    },
+    {
+      "from": "dashboard",
+      "to": "vip",
+      "node": "9:25",
+      "kind": "forward",
+      "note": "sidebar"
+    },
+    {
+      "from": "dashboard",
+      "to": "agents",
+      "node": "9:29",
+      "kind": "forward",
+      "note": "sidebar"
+    },
+    {
+      "from": "dashboard",
+      "to": "insights",
+      "node": "9:33",
+      "kind": "forward",
+      "note": "sidebar"
+    },
+    {
+      "from": "dashboard",
+      "to": "credit",
+      "node": "9:37",
+      "kind": "forward",
+      "note": "sidebar"
+    },
+    {
+      "from": "ads",
+      "to": "dashboard",
+      "node": "10:9",
+      "kind": "back",
+      "note": "sidebar: Dashboard"
+    },
+    {
+      "from": "candidates",
+      "to": "dashboard",
+      "node": "11:9",
+      "kind": "back",
+      "note": "sidebar: Dashboard"
+    },
+    {
+      "from": "leads",
+      "to": "dashboard",
+      "node": "12:9",
+      "kind": "back",
+      "note": "sidebar: Dashboard"
+    },
+    {
+      "from": "vip",
+      "to": "dashboard",
+      "node": "13:9",
+      "kind": "back",
+      "note": "sidebar: Dashboard"
+    },
+    {
+      "from": "agents",
+      "to": "dashboard",
+      "node": "14:9",
+      "kind": "back",
+      "note": "sidebar: Dashboard"
+    },
+    {
+      "from": "insights",
+      "to": "dashboard",
+      "node": "15:9",
+      "kind": "back",
+      "note": "sidebar: Dashboard"
+    },
+    {
+      "from": "credit",
+      "to": "dashboard",
+      "node": "16:9",
+      "kind": "back",
+      "note": "sidebar: Dashboard"
+    }
+  ]
+}
