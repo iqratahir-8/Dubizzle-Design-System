@@ -48,7 +48,7 @@ primary action) · **P1** looks generated or off-system · **P2** polish · **P3
 | `rev.specific` | Could an unrelated product use this screen unchanged? If yes, it is not designed for dubizzle — rework. | P0 |
 | `rev.metrics` | No invented numbers: "50,000+ sellers", "10× faster", star ratings, "trusted by". Real data or a visibly labelled placeholder. | P0 |
 | `rev.content` | Real Egyptian content (`RULES.md` §4, `design-kit/content/fixtures.json`): `EGP 3,200,000`, Maadi, messy seller titles. No lorem, `John Doe`, `Product Name`, `$`. | P1 |
-| `rev.copy` | dubizzle voice — imperative, specific verbs (`Post Your Ad`, `Call`). None of: Unlock, Elevate, Seamless, Discover, Get Started. Run `design-copy`. | P1 |
+| `rev.copy` | dubizzle voice — imperative, specific verbs (`Post Your Ad`, `Call`). None of: Unlock, Elevate, Seamless, Discover, Get Started. New headings and buttons in Title Case (D-019). Run `design-copy`. | P1 |
 | `rev.brief` | Every requirement in the brief is on screen and findable in seconds. | P1 |
 
 ## B. Structure

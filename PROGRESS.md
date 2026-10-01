@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-01 (design-copy deepened: principles + Arabic references, item 78) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (D-019: Title Case for headings and buttons, item 79) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -986,6 +986,11 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    **Open questions for the user** (in `arabic.md` and `dubizzle-voice.md`): Arabic button grammar, digit system, register split,
    `عذرًا`/`يُرجى`, casing rule, `Login or Signup`/`Favourites` spellings. No MENA company publishes a content guideline — register rules
    are inferred from live.
+
+79. **D-019 — headings and button labels use Title Case (user decision, 2026-10-01).** Sentences (errors, hints, toasts, descriptions)
+   stay sentence case; field labels, tabs, links, chips, menu items follow live; live strings still verbatim; a heading/button live writes
+   both ways uses the Title Case form. Applied to design-copy (+ references), design-interaction, design-review, copy.md table, RULES.md §4.
+   Remaining copy decisions: Arabic button grammar, digit system, `Login or Signup`/`Favourites` spellings, `عذرًا`.
 
 ## 6. Next up
 

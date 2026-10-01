@@ -306,7 +306,7 @@ Fake content is the fastest way to make a real design look generated. Use `desig
 - **Property specs:** `3 beds · 2 baths · 150 m²` — lowercase as live writes them (audited 2026-10-01 across 82 templates; this line previously said `3 Beds`), middot separated, `m²` not `sqm`. Arabic: `3 غرف نوم` / `220 م٢` — see `design-copy` for Arabic plural rules.
 - **Time:** relative when recent (`2 hours ago`, `منذ ساعتين`), absolute when older.
 - **Categories:** the real ones — Vehicles, Properties, Mobiles & Tablets, Electronics & Appliances, Jobs, Furniture & Decor, Fashion & Beauty, Pets, Kids & Babies, Business & Industrial, Services.
-- **Copy voice:** see the `design-copy` skill and its live audit (`references/dubizzle-voice.md`). In short: direct, second person, imperative. `Post Your Ad`, `Sell`, `Chat`, `Call`. Never `Get Started`, `Discover`, `Unlock`, `Elevate`, `Seamless`, `Effortless`.
+- **Copy voice:** see the `design-copy` skill and its live audit (`references/dubizzle-voice.md`). In short: direct, second person, imperative. **Headings and button labels in Title Case** (D-019); sentences in sentence case; live strings verbatim. `Post Your Ad`, `Sell`, `Chat`, `Call`. Never `Get Started`, `Discover`, `Unlock`, `Elevate`, `Seamless`, `Effortless`.
 - **No lorem ipsum.** No `Product Name`. No `$99.99`. No `John Doe` — use `Ahmed H.`, `Mona S.`
 
 ---

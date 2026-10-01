@@ -37,7 +37,7 @@ description: >-
 Direct, second person, imperative, short. dubizzle is a utility people use to buy and sell
 quickly — copy gets out of the way. (`RULES.md` §4.)
 
-- Verbs that do the job: `Post Your Ad`, `Call`, `Chat`, `Save search`, `Show packages`.
+- Verbs that do the job: `Post Your Ad`, `Call`, `Chat`, `Save Search`, `Show packages` (live, verbatim).
 - Never: Get Started, Discover, Unlock, Elevate, Seamless, Effortless, Empower, Leverage,
   Revolutionise, "your journey", "the power of", delve, pivotal.
 - No emoji in UI. No **new** exclamation marks (never in an error). Live has some
@@ -48,23 +48,30 @@ quickly — copy gets out of the way. (`RULES.md` §4.)
 - No invented claims or social proof ("Join 10M+ sellers", "98% sell faster"). Real, sourced
   numbers or nothing.
 
-## Casing — follow live, don't impose
+## Casing — Title Case for headings and buttons (user decision, 2026-10-01, D-019)
 
-Live mixes Title Case (`Post Your Ad`, `My Ads`, `Help & Support`) and sentence case
-(`Change password`, `Special communications & offers`, `My ads settings`). The web's
-"always sentence case" rule does **not** override that.
+**New headings and button labels use Title Case:** `Save Search`, `Delete Ad`,
+`Clear All Filters`, `Sell Similar Item`, `Popular Searches`, `Featured Businesses`.
 
-- Existing string → exactly as live has it.
-- New string on a surface → match that surface's existing pattern (a settings page in
-  sentence case, the header/nav in Title Case).
-- Record any new canonical string in `design-kit/qa/product/copy.md`.
-- Flag the inconsistency to the user as a content question; don't "fix" live strings.
+- Capitalise every major word. Lowercase **a, an, the, and, or, but, for, of, in, on, to, at,
+  by, with** unless first or last (`Post Your Ad`, `Login or Signup`, `Pay at Any Fawry Outlet`).
+- Keep brand and product casing as written: `dubizzle Pro`, `WhatsApp`, `iPhone`, `m²`.
+- **Everything else is not covered by the rule** — field labels, tabs, links, chips, menu items:
+  match what live does on that surface (`Show phone number`, `Privacy`, `Notifications`).
+- **Sentences stay sentences** — errors, hints, descriptions, toasts, empty-state body text:
+  `Enter a price`, `Receive recommendations based on your activity`, `Ad saved`.
+- **Existing live strings are still copied verbatim**, including live's sentence-case headings and
+  buttons (`Change password`, `My ads settings`, `Invite agent`, `Show phone number`). Don't "fix"
+  them in a design; list them for the content team.
+- Where live has the same heading or button in both cases, use the Title Case form (`View All`,
+  `View More`, `Related Ads`, `Assign Agent`, `Use Current Location`).
+- Arabic has no case — English only.
 
 ## Buttons
 
-1. Verb + object: `Delete ad`, `Save search`, `Call seller` — not `Submit`, `OK`, `Yes`, `Confirm`.
-2. 1–3 words; add a word when it removes doubt (`Add another photo`).
-3. Dialog buttons repeat the verb: `Delete ad` / `Keep ad` (people answer buttons without
+1. Verb + object, Title Case: `Delete Ad`, `Save Search`, `Call Seller` — not `Submit`, `OK`, `Yes`, `Confirm`.
+2. 1–3 words; add a word when it removes doubt (`Add Another Photo`).
+3. Dialog buttons repeat the verb: `Delete Ad` / `Keep Ad` (people answer buttons without
    reading the question).
 4. One primary per view (`RULES.md` §3). Many CTAs means the screen needs simplifying.
 5. Same concept, same word everywhere — **ad** (not listing/post), **Chats**, **My Ads**. Keep
@@ -104,10 +111,10 @@ Say what will appear here + one action to fill it. A different message per kind 
 
 | Kind | Example |
 |---|---|
-| first use | `No saved searches yet. Save a search to get alerts when new cars are posted` + `Browse cars` |
-| no results | `No results for "corolla 2026" in Maadi` + `Remove filters` / `Search all of Cairo` |
+| first use | `No saved searches yet. Save a search to get alerts when new cars are posted` + `Browse Cars` |
+| no results | `No results for "corolla 2026" in Maadi` + `Remove Filters` / `Search All of Cairo` |
 | filters too narrow | name the filters, offer to clear them |
-| failed to load | what failed + `Try again` |
+| failed to load | what failed + `Try Again` |
 | no permission (portal) | who can do it, how to get access |
 
 The live favourites and saved-searches empty strings (`No favorites yet.`, `No saved
@@ -171,7 +178,7 @@ never a formula (live's `منذ 2 أيام` is wrong); pin `ar-EG-u-nu-latn` if 
 - [ ] Every live string verbatim; new canonical strings added to `copy.md`
 - [ ] No banned words, emoji, exclamation marks, invented numbers
 - [ ] Every error says what and how; every empty state has an action
-- [ ] Buttons are verbs; dialog buttons repeat the verb
+- [ ] Buttons and headings in Title Case; buttons are verbs; dialog buttons repeat the verb; sentences stay sentence case
 - [ ] Prices, dates, specs in the formats above
 - [ ] Anything unverified (limits, review times, Arabic) is flagged, not invented
 

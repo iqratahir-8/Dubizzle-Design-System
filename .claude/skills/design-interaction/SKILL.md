@@ -70,7 +70,7 @@ Interaction states raise contrast relative to rest, never lower it.
   immediately, show a toast with **Undo**.
 - **Irreversible** (delete ad, delete account, remove agent in the portal): confirmation
   dialog that restates the consequence in a sentence, buttons named by the verb
-  (`Delete ad` / `Cancel`, never `OK` / `Yes`), initial focus on the **safe** action.
+  (`Delete Ad` / `Cancel`, never `OK` / `Yes`), initial focus on the **safe** action.
   Type-to-confirm only for account deletion.
 - Use `Dialog` / `PortalModal` (measured) — don't style a new one.
 

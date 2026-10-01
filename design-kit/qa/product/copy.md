@@ -58,18 +58,18 @@ Arabic strings and the full voice audit: `.claude/skills/design-copy/references/
 
 ## Live inconsistencies — content questions, not enforced
 
-Live shows these in two forms. Copy each surface verbatim; for a **new** surface use the left
-column (the more frequent form) and raise the question with the user. Kept as a table so
+Live shows these in two forms. Copy each surface verbatim; for a **new** heading or button use the
+left column — the Title Case form where the difference is casing (D-019), otherwise the more frequent one. Kept as a table so
 `cpy.verbatim` does not enforce either form.
 
 | More frequent | Also on live | Where |
 |---|---|---|
 | Login or Signup (51) | Login or Sign up (30) | header |
 | Favourites (header) | Favorites (account menu) | header vs account menu |
-| View More (most) | View more | rails, lists |
+| View More | View more | rails, lists |
 | View All | View all | rails |
-| My Ads (header, menu) | My ads (portal) | header vs portal |
-| Related ads | Related Ads | ad detail |
+| My Ads | My ads (portal) | header vs portal |
+| Related Ads | Related ads | ad detail |
 | Assign Agent | Assign agent | portal |
 | Use Current Location | Use current location | location dropdown vs mobile page |
 

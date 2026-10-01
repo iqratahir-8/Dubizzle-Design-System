@@ -526,3 +526,22 @@ anti-centre defaults are overridden in its dubizzle preamble.
 **proposal** until the designer confirms it and it becomes a token — and Claude must say so
 in the response. Purple/indigo/teal have no tokens yet: the designer needs to add a
 primitive ramp (`01…07`) and semantic roles for each.
+
+## D-019 — Headings and button labels use Title Case (2026-10-01)
+
+**User decision:** "Keep the Title case … for heading and button labels." Live mixes Title Case
+(`Post Your Ad`, `Save Search`, `Clear All Filters`, `Popular Searches`) and sentence case
+(`Show phone number`, `Change password`, portal buttons); web guides (GOV.UK, Polaris, Microsoft)
+recommend sentence case.
+
+**Rule:** new **headings and button labels** use Title Case (minor words — a, an, the, and, or,
+for, of, in, on, to, at, by, with — lowercase unless first or last; brand casing kept). Field
+labels, tabs, links, chips and menu items are not covered: they follow live on their surface.
+Sentences — errors, hints, descriptions, toasts, empty-state body — stay sentence case. Existing
+live strings are still copied verbatim; a heading or button live writes both ways uses its Title
+Case form. English only.
+
+**Changed:** `design-copy` (casing section, examples), `design-interaction`, `design-review`,
+`design-copy/references/{principles,dubizzle-voice}.md`, `design-kit/qa/product/copy.md` table,
+`RULES.md` §4.
+

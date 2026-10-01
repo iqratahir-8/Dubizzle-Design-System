@@ -14,7 +14,7 @@ Score each new string 0–10 on all four; fix anything under 7. [read, via a ski
 | **Purposeful** | Serves the user's goal *and* dubizzle's; says what's in it for the user |
 | **Concise** | Every word has a job; the key word comes first |
 | **Conversational** | Sounds natural read aloud; active voice; small words kept |
-| **Clear** | The accurate verb (`Delete` when it's permanent, `Save` not `OK`); one term per concept |
+| **Clear** | The accurate verb (`Delete` when it's permanent, `Save` not `OK`). Headings and buttons in Title Case (D-019); one term per concept |
 
 **Write the conversation first:** draft the exchange as two people talking ("I want to sell my
 car." "OK — what make is it?"), then compress it into UI. [snippet]
@@ -29,7 +29,7 @@ on a scam warning or a failed payment. [snippet]
 **Errors — three kinds** (Podmajersky) [read]:
 - **Inline** — next to the field, names the fix: `Enter a year between 1980 and 2027`.
 - **Detour** — a task can't complete: title + what happened + the fix action.
-  `Payment didn't go through` / `Your card was declined. Check the details or use another card.` / `Update card`.
+  `Payment didn't go through` / `Your card was declined. Check the details or use another card.` / `Update Card`.
 - **Blocking** — the service is down: say what is safe and when it's back.
   `Your ad and chats are safe. Posting is back in a few minutes.`
 
@@ -70,7 +70,7 @@ toggles already do: `Receive recommendations based on your activity`.
 ## Conversion microcopy (Yifrah, *Microcopy*) [snippet / read via the Arabic guide]
 
 - Buttons that convert say **value + relevance** — what the user gets here, not the mechanism
-  (`Show packages` beats `Continue`; `Sell faster` beats `Upgrade`).
+  (`Show packages` beats `Continue`; `Sell Faster` beats `Upgrade`).
 - **Prevent friction before it happens:** answer the doubt next to the decision ("Free to post",
   "You can edit later", "Your number stays hidden").
 - Errors: what happened, why (so it doesn't recur), what to do; never blame; frame as service.

@@ -120,7 +120,7 @@ fields — consistent with "placeholder is never the label".
 
 ## Open content questions for the user
 
-1. Casing: Title Case vs sentence case — which is the rule for new consumer-surface strings?
+1. ~~Casing~~ — **decided 2026-10-01 (D-019): Title Case for new headings and buttons**, sentences stay sentence case, live strings verbatim.
 2. `Login or Signup` vs `Login or Sign up`; `Favourites` vs `Favorites`.
 3. Arabic digits: Western everywhere (as prices do) or Arabic-Indic (as mileage does)?
 4. Arabic register: keep MSA for UI and Egyptian for persuasion/safety (live's split), or one register?
