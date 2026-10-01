@@ -156,14 +156,14 @@ time). Service down: say what is safe (`Your ad and chats are safe`) and when it
 - Specs: `3 beds · 2 baths · 150 m²` (lowercase, as live writes them — `references/dubizzle-voice.md`).
 - Time: relative when recent (`2 hours ago`), absolute after (`12 Mar 2026`). Never `03/04`.
 - Arabic, as live writes it: price `990,000 ج.م` (Western digits, currency **after**), area
-  `220 م٢`, time `منذ …`. Live also shows Arabic-Indic mileage (`١٦٬٠٠٠ كم`) in the same card —
-  which digit system is the rule is an **open question** for the user (`references/arabic.md`).
+  `220 م٢`, time `منذ …`. **Western digits everywhere in Arabic (D-020)** — format with
+  `ar-EG-u-nu-latn`; live's Arabic-Indic mileage (`١٦٬٠٠٠ كم`) is a defect, not a pattern.
 
 ## Writing for translation (Arabic) — full rules in `references/arabic.md`
 
 Headlines: Modern Standard Arabic for controls, Egyptian colloquial for prompts and safety (live's
 split); one register per string; avoid gender (verbal nouns, impersonal forms); six plural forms,
-never a formula (live's `منذ 2 أيام` is wrong); pin `ar-EG-u-nu-latn` if digits are Western;
+never a formula (live's `منذ 2 أيام` is wrong); Western digits, always formatted with `ar-EG-u-nu-latn` (D-020);
 `<bdi>` around every inserted value.
 
 - Whole sentences with reorderable placeholders: `{count} photos`, never stitched fragments.

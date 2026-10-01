@@ -67,10 +67,12 @@ Accept a masculine imperative only when no neutral form reads naturally. **Never
 - **Plurals have six forms** (CLDR `ar`: zero, one, two, few 3–10, many 11–99, other 100+).
   Never build them with a formula — live's `منذ 2 أيام` should be `منذ يومين`, `منذ 17 ساعات` →
   `منذ 17 ساعة`, `2 حمامات` → `حمامين`. Use ICU MessageFormat / `Intl.PluralRules('ar')`.
-- **Digits:** CLDR `ar-EG` defaults to **Arabic-Indic** — `Intl.NumberFormat('ar-EG', {style:
-  'currency', currency: 'EGP'})` → `١٬٢٥٠٬٠٠٠٫٠٠ ج.م.‏`. Live prices are **Western** (`990,000 ج.م`)
-  while live mileage is Arabic-Indic. If Western is chosen, **pin `ar-EG-u-nu-latn`** or the
-  formatter silently switches. The choice is the user's (open question).
+- **Digits: Western (0–9) everywhere in Arabic — user decision 2026-10-01 (D-020).** Prices,
+  mileage, area, counts, time, phone numbers. CLDR `ar-EG` defaults to **Arabic-Indic**
+  (`Intl.NumberFormat('ar-EG', {style:'currency', currency:'EGP'})` → `١٬٢٥٠٬٠٠٠٫٠٠ ج.م.‏`), so
+  **always format with `ar-EG-u-nu-latn`** → `990,000 ج.م`. Western comma as the thousands
+  separator, not `٬`. Live's Arabic-Indic mileage (`١٦٬٠٠٠ كم`) is a defect to report, not a pattern.
+  Digits typed by sellers inside titles stay as they wrote them.
 - **Price:** number then `ج.م`, Western comma for 6–7 digits (`990,000 ج.م`), no decimals.
 - **Dates:** Gregorian Egyptian month names (`١ أكتوبر` / `1 أكتوبر`), not Levantine
   (`تشرين الأول`); order `الخميس، 16 أبريل`. Prefer `اليوم` / `أمس`. Relative time: live uses
@@ -96,7 +98,7 @@ Budget ~30% extra width on buttons, chips and tabs; nothing may wrap to two line
 ## Open questions (for the user)
 
 1. Verbal noun vs imperative on buttons (recommendation above).
-2. Western vs Arabic-Indic digits — one system per surface.
+2. ~~Digits~~ — **decided: Western (D-020).**
 3. Keep the MSA-controls / Egyptian-people split (recommended), or one register?
 4. `عذرًا` / `يُرجى` — allowed once for system faults (recommended) or never?
 5. Opt-in feminine Arabic: out of scope unless product asks.

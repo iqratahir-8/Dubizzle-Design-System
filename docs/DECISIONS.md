@@ -545,3 +545,17 @@ Case form. English only.
 `design-copy/references/{principles,dubizzle-voice}.md`, `design-kit/qa/product/copy.md` table,
 `RULES.md` §4.
 
+## D-020 — Arabic uses Western digits (2026-10-01)
+
+**User decision:** "Arabic digits: Western." Live already writes prices, area and time in Western
+digits (`990,000 ج.م`, `220 م٢`, `منذ 2 أيام`) but card mileage in Arabic-Indic (`١٦٬٠٠٠ كم`), and
+CLDR's `ar-EG` locale defaults to Arabic-Indic.
+
+**Rule:** every number in the Arabic UI uses Western digits 0–9 with a Western comma separator —
+prices, mileage, area, counts, time, phone numbers. Code formats with `ar-EG-u-nu-latn`, never bare
+`ar-EG`. Live's Arabic-Indic mileage is a defect to report. Seller-typed digits inside titles are
+user content and stay as written.
+
+**Changed:** `design-copy` (+ `references/arabic.md`, `dubizzle-voice.md`), `design-typography`,
+`design-qa` checklist, `PROGRESS.md` open items.
+

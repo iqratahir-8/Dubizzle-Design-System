@@ -92,7 +92,7 @@ body is 14px (1.4rem) and that is what ships. Guides allow display type to 6rem;
 - No italics, no caps, no kashida stretching. Emphasis by weight.
 - Mixed content: `dir="auto"` / `<bdi>` for user titles; phone numbers, plates, codes in
   `dir="ltr"`.
-- Digits: Western vs Arabic-Indic is **an open question** — read the live Arabic pages; don't decide it here.
+- Digits: **Western (0–9) in Arabic too** (D-020). `tabular-nums` works the same; format with `ar-EG-u-nu-latn`.
 - Font stack falls back within the script: GESS → a system Arabic face → system UI. Arabic must
   never fall into a Latin-only face.
 - Run `rtl-arabic` for any Arabic screen.

@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-01 (D-019: Title Case for headings and buttons, item 79) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (D-020: Western digits in Arabic, item 80; Emil skills checked up to date) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -990,7 +990,13 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 79. **D-019 — headings and button labels use Title Case (user decision, 2026-10-01).** Sentences (errors, hints, toasts, descriptions)
    stay sentence case; field labels, tabs, links, chips, menu items follow live; live strings still verbatim; a heading/button live writes
    both ways uses the Title Case form. Applied to design-copy (+ references), design-interaction, design-review, copy.md table, RULES.md §4.
-   Remaining copy decisions: Arabic button grammar, digit system, `Login or Signup`/`Favourites` spellings, `عذرًا`.
+   Remaining copy decisions: Arabic button grammar, `Login or Signup`/`Favourites` spellings, `عذرًا`.
+
+80. **D-020 — Arabic uses Western digits (user decision, 2026-10-01).** Format with `ar-EG-u-nu-latn`; live's Arabic-Indic mileage is a
+   defect. Applied to design-copy (+ arabic.md, dubizzle-voice.md), design-typography, design-qa checklist.
+   Also: user pointed at `npx skills add emilkowalski/skill` — all nine listed skills (plus ask-sonner, mobile-native) are already installed
+   and match upstream (2026-09-24) line for line apart from the "SCOPED FOR DUBIZZLE" headers added here; **don't re-run the installer**,
+   it would overwrite those headers. `animate-expo` and `write-swift` stay uninstalled (no native app work).
 
 ## 6. Next up
 
@@ -1025,7 +1031,7 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 0a. **Arabic is parked** (user, 2026-09-24: "we can skip the arabic for now"). The 76 `.ar`
    captures, the logical-property conversion and `npm run check:rtl` all stay — nothing regresses
    — but the follow-ups wait: live specs against the `.ar` captures, GESS metrics in the type
-   scale, and the Western vs Arabic-Indic digits question. Pick it up before any Arabic release.
+   scale (digits are settled: Western, D-020). Pick it up before any Arabic release.
 
 0. **Every component needs a `check:live` spec.** 42 exist (all passing); still missing for
    Tabs, Select, Checkbox, Toggle, Radio, Pill, AccountMenu, MegaMenu (see item 43) and most of

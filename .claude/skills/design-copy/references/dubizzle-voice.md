@@ -113,8 +113,8 @@ fields — consistent with "placeholder is never the label".
   11+ → singular. Live writes `منذ 2 أيام` (should be `منذ يومين`), `منذ 17 ساعات` (`منذ 17 ساعة`),
   `منذ 18 دقائق` (`منذ 18 دقيقة`), `2 حمامات` (`حمامين`). Use CLDR plural categories for `ar`
   (zero, one, two, few, many, other).
-- **Mixed digit systems** in one card (Western price, Arabic-Indic mileage). Pick one per surface
-  — the decision belongs to the user; Western dominates on live.
+- **Mixed digit systems** in one card (Western price, Arabic-Indic mileage). **Decided: Western
+  everywhere (D-020)** — the Arabic-Indic mileage is a live defect.
 - **Spelling variants:** `العودة إلى الأعلى` / `الاعلى`, `الحد الأقصى` / `حد اقصى`, `المحادثه`
   (ه for ة). Use the correct form in new strings; flag the live ones.
 
@@ -122,6 +122,6 @@ fields — consistent with "placeholder is never the label".
 
 1. ~~Casing~~ — **decided 2026-10-01 (D-019): Title Case for new headings and buttons**, sentences stay sentence case, live strings verbatim.
 2. `Login or Signup` vs `Login or Sign up`; `Favourites` vs `Favorites`.
-3. Arabic digits: Western everywhere (as prices do) or Arabic-Indic (as mileage does)?
+3. ~~Arabic digits~~ — **decided 2026-10-01 (D-020): Western everywhere.**
 4. Arabic register: keep MSA for UI and Egyptian for persuasion/safety (live's split), or one register?
 5. Fix the Arabic plural defects at the source (a product bug, not a design one).
