@@ -7,7 +7,7 @@
       "material-symbols:lock-person-outline-rounded",
       "project:status/protected-info"
     ],
-    "reason": "Privacy here means who sees your personal details (the 'show my phone number' toggle). Shield-with-person says personal data is protected. privacy-tip reads as an info tip; shield-lock and lock read as security/password, and the lock is already used for protected-info."
+    "reason": "Live: settings tab 'Privacy', which holds 'My ads settings' (how buyers can contact you: phone, chat or both) and 'Change password'. Shield-with-person says your personal details are protected. privacy-tip reads as an info tip; shield-lock and lock read as security or password only, and the lock is already used for protected-info."
   },
   "settings-notifications": {
     "chosen": "material-symbols:notifications-outline-rounded",
@@ -15,14 +15,15 @@
       "project:action/user-notifications",
       "project:action/notifications"
     ],
-    "reason": "Same bell as the house action/user-notifications, but at weight 400. The house file is weight 300 with a baked #464C55 fill, so beside the other 400-weight settings icons it reads lighter, as if disabled. action/notifications is a 1024-grid legacy glyph."
+    "reason": "Live: settings tab 'Notifications'. Same bell as the house action/user-notifications, but at weight 400. The house file is weight 300 with a baked #464C55 fill, so beside the other 400-weight settings icons it reads lighter, as if disabled. action/notifications is a 1024-grid legacy glyph."
   },
   "settings-manage-account": {
     "chosen": "material-symbols:manage-accounts-outline-rounded",
     "rejected": [
       "project:user/manage-accounts"
     ],
-    "reason": "Same glyph as the house user/manage-accounts at weight 400; the house file is drawn heavier (about 600) and is the darkest icon in the row."
+    "reason": "Same glyph as the house user/manage-accounts at weight 400; the house file is drawn heavier (about 600) and is the darkest icon in the row.",
+    "retired": "2026-10-01: not on the live settings page (checked against the settings-privacy and settings-notifications captures). Kept as a record; the glyph is removed from icons/svg."
   },
   "settings-recommendations": {
     "chosen": "material-symbols:thumb-up-outline-rounded",
@@ -31,7 +32,7 @@
       "material-symbols:recommend-outline-rounded",
       "material-symbols:lightbulb-outline-rounded"
     ],
-    "reason": "The toggle is 'recommendations based on your activity'. Sparkles are dubizzle's AI mark (misc/sparkle, gemini-stars), so they would promise AI. recommend-outline is a solid disc, the heaviest glyph in the list. Lightbulb means tips (listing-tip)."
+    "reason": "Live: Notifications toggle 'Recommendations - Receive recommendations based on your activity'. The toggle is 'recommendations based on your activity'. Sparkles are dubizzle's AI mark (misc/sparkle, gemini-stars), so they would promise AI. recommend-outline is a solid disc, the heaviest glyph in the list. Lightbulb means tips (listing-tip)."
   },
   "settings-offers": {
     "chosen": "material-symbols:campaign-outline-rounded",
@@ -40,7 +41,7 @@
       "material-symbols:loyalty-outline-rounded",
       "material-symbols:redeem-rounded"
     ],
-    "reason": "The toggle covers communications as well as offers: updates, surveys, promotions. A megaphone covers both. A price tag reads as Sell/price on a marketplace; gift and loyalty-heart promise rewards that do not exist."
+    "reason": "Live: Notifications toggle 'Special communications & offers - Receive updates, offers and more'. The toggle covers communications as well as offers: updates, surveys, promotions. A megaphone covers both. A price tag reads as Sell/price on a marketplace; gift and loyalty-heart promise rewards that do not exist."
   },
   "settings-logout-all-devices": {
     "chosen": "material-symbols:devices-outline-rounded",
@@ -49,7 +50,8 @@
       "material-symbols:phonelink-erase-rounded",
       "project:brand/logout"
     ],
-    "reason": "The row label carries the verb; the icon says 'all your devices'. Re-using the logout arrow would make it look like a duplicate of Logout. A crossed-out glyph reads as 'disabled'."
+    "reason": "The row label carries the verb; the icon says 'all your devices'. Re-using the logout arrow would make it look like a duplicate of Logout. A crossed-out glyph reads as 'disabled'.",
+    "retired": "2026-10-01: not on the live settings page (checked against the settings-privacy and settings-notifications captures). Kept as a record; the glyph is removed from icons/svg."
   },
   "settings-delete-account": {
     "chosen": "material-symbols:person-remove-outline-rounded",
@@ -58,12 +60,14 @@
       "material-symbols:no-accounts-outline-rounded",
       "material-symbols:person-off-outline-rounded"
     ],
-    "reason": "Removes you, not a thing. The bin is already 'delete ad' (action/delete), so it would make deleting an account look as light as deleting a listing. no-accounts and person-off read as blocked/banned."
+    "reason": "Removes you, not a thing. The bin is already 'delete ad' (action/delete), so it would make deleting an account look as light as deleting a listing. no-accounts and person-off read as blocked/banned.",
+    "retired": "2026-10-01: not on the live settings page (checked against the settings-privacy and settings-notifications captures). Kept as a record; the glyph is removed from icons/svg."
   },
   "settings-show-phone": {
     "chosen": "project:action/phone-number",
     "rejected": [],
-    "reason": "Reused, found in the registry first. House icon; it is Material Symbols 'call' rounded, so it already matches. Used for the 'Show my phone number in ads' toggle."
+    "reason": "Reused, found in the registry first. House icon; it is Material Symbols 'call' rounded, so it already matches. Used for the 'Show my phone number in ads' toggle.",
+    "retired": "2026-10-01: live has no 'show my phone number' toggle. The phone glyph now serves settings-contact-phone."
   },
   "settings-language": {
     "chosen": "project:misc/language",
@@ -84,5 +88,39 @@
     "chosen": "project:action/settings",
     "rejected": [],
     "reason": "Reused, found in the registry first. House icon (account menu 'Settings'). Material Symbols Rounded 400 at 20px; matches the set."
+  },
+  "settings-change-password": {
+    "chosen": "material-symbols:password-rounded",
+    "rejected": [
+      "material-symbols:lock-reset-rounded",
+      "material-symbols:key-outline-rounded",
+      "material-symbols:lock-outline-rounded"
+    ],
+    "reason": "Live: Privacy tab, 'Change password' card (current / new / confirm fields). The masked-dots glyph reads as a password field. lock-reset reads as 'forgot password', a key reads as sign-in, a lock reads as 'locked'."
+  },
+  "settings-chat-safety-tips": {
+    "chosen": "material-symbols:chat-info-outline-rounded",
+    "rejected": [
+      "project:misc/safety-tips",
+      "material-symbols:warning-outline-rounded",
+      "material-symbols:shield-with-heart-outline-rounded",
+      "material-symbols:verified-user-outline-rounded"
+    ],
+    "reason": "Live: Notifications toggle 'Chat Safety Tips - Receive safety tips based on your chat activity'. A chat bubble with 'i' says 'tips about chat'. The house misc/safety-tips is a red-filled warning triangle: off-style, and alarming beside a toggle. A shield with a tick would read as dubizzle's verified badge."
+  },
+  "settings-my-ads": {
+    "chosen": "project:misc/my-ads",
+    "rejected": [],
+    "reason": "Reused, found in the registry first. Live: Privacy tab, 'My ads settings' card. The same glyph as the header's My Ads, so the setting points at the thing it controls."
+  },
+  "settings-contact-phone": {
+    "chosen": "project:action/phone-number",
+    "rejected": [],
+    "reason": "Reused, found in the registry first. Live: Contact Method option 'Phone Number'. House glyph, already Material Symbols 'call' rounded."
+  },
+  "settings-contact-chat": {
+    "chosen": "project:mobile/nav-chat",
+    "rejected": [],
+    "reason": "Reused, found in the registry first. Live: Contact Method option 'Dubizzle Chat'. The same bubble as Chats in the nav. The 'Both' option takes no icon."
   }
 }

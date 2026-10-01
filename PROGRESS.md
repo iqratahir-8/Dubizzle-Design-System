@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-01 (icons skill + settings icon set, items 73–74, merged to main; agency-portal deliverable v1, item 72) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (settings icons re-checked against live and rebuilt, item 75; icons skill items 73–74; agency-portal deliverable item 72) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -948,11 +948,20 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    `icons/style.json` allows only their licences (ISC, Apache-2.0, CC-BY-4.0); `ATTRIBUTIONS.md` credits the 7 Material Symbols
    settings icons and notes the skill came with no licence file. Merged to `main` on 2026-10-01 (user: "merge to main").
 
+75. **Settings icons checked against live and rebuilt (user, 2026-10-01: "okay do it").** The captures are on remote branches:
+   `settings-notifications.desktop` (html + screenshot) on `alert-capture`, `settings-privacy.desktop` on `claude/live-captures-lfs`
+   (an LFS pointer; `git lfs smudge` fetches it). Live structure: **Privacy** = "My ads settings" (Contact Method: Phone Number /
+   Dubizzle Chat / Both) + "Change password"; **Notifications** = Special communications & offers, Recommendations, **Chat Safety
+   Tips**. No "show my phone number", no Manage account. So: retired `manage-account`, `logout-all-devices`, `delete-account`
+   (svg/png/registry removed, concepts kept with `retired`); added `change-password` (ms password-rounded) and `chat-safety-tips`
+   (ms chat-info-outline-rounded); reused house `my-ads` and `nav-chat`. Set = 13 icons (6 house, 7 new), 156 PNGs, preview
+   `icons/settings.html` now drawn on the live page structure. Weight-400 bell kept (the house bell is weight 300).
+
 ## 6. Next up
 
-0e. **Settings icons (item 73): confirm with the user.** (1) The settings rows match live (check the captures on the Mac). (2) Bell
-   and manage-accounts: use the new weight-400 versions, or the house files. (3) Any picks they want swapped; `icons/settings.html`
-   shows the rejected options. Then decide whether the 7 become React icons (`scripts/build-component-icons.mjs`) and kit icons.
+0e. **Settings icons (items 73, 75):** labels now verified against live. Still the user's call: the weight-400 bell vs the house
+   bell, and any pick to swap (`icons/settings.html` shows the rejected options). Then decide whether the 7 new ones become React
+   icons (`scripts/build-component-icons.mjs`) and kit icons. Live shows no icons on these pages; they are proposals.
 
 0d. **Favourites/Saved searches re-capture (user will do it later, 2026-09-29).** Deliverable `favourites-revamp` v4 is built
    and sent, with grey placeholder images and derived (unverified) empty states.

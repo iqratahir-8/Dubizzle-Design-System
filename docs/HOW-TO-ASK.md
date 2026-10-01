@@ -183,7 +183,7 @@ Rounded, weight 400, shown at 20px, the same family as the live account menu.
 | Say | What happens |
 |---|---|
 | "Which **icon** for <thing>?" / "do we have an icon for <thing>?" | Checks `icons/registry.json` (all 546 house glyphs), then `icons/concepts.json` (earlier decisions), then searches Material Symbols. Shows candidates as images, not names. |
-| "**Icons for <screen/area>**" | Produces a set like `icons/sets/settings.json`, with SVG in `icons/svg/`, PNG at 16/20/24/32 × @1–3 in `icons/png/`, and a preview page like `icons/settings.html`. |
+| "**Icons for <screen/area>**" | Produces a set like `icons/sets/settings.json` (13 icons, labels checked against the live settings pages), with SVG in `icons/svg/`, PNG at 16/20/24/32 × @1–3 in `icons/png/`, and a preview page like `icons/settings.html`. |
 | "Why this icon?" | `icons/concepts.json` has the pick, what was rejected, and why. |
 
 New icons go in `docs/PROPOSALS.md` until a designer signs them off.

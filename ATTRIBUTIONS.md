@@ -32,8 +32,8 @@ Requires the licence notice to be carried with any distribution.
 > Material Symbols by Google, licensed under the Apache License, Version 2.0.
 
 In use (2026-10-01): the seven new settings icons in `icons/svg/` — `privacy`,
-`notification-settings`, `manage-account`, `recommendations`, `offers-communications`,
-`logout-all-devices`, `delete-account`. Source and licence per icon: `icons/registry.json`.
+`notification-settings`, `change-password`, `offers-communications`, `recommendations`,
+`chat-safety-tips` (six glyphs; the bell counts once). Source and licence per icon: `icons/registry.json`.
 The `icons` skill records the licence of everything it adds there.
 
 ---
