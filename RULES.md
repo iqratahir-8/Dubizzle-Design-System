@@ -34,8 +34,8 @@ Only the palette. `--red-01…07`, `--gray-00…08`, `--blue-01…09`, `--yellow
 | Body text | `--text-primary` | `#23262a` |
 | Secondary text, labels | `--text-secondary` | `#464c55` |
 | Placeholder, disabled, meta | `--text-tertiary` | `#919395` |
-| Page background | `--surface-page` | `#ffffff` |
-| Section background | `--surface-subtle` | `#f6f6f6` |
+| Page background (web) | `--surface-page` | `#ffffff` |
+| Section background | `--surface-subtle` | `#f6f6f6` — **not** a web page background: `#f6f6f6` as the whole page is **apps only** (D-021) |
 | Muted background | `--surface-muted` | `#f0f0f0` |
 | Borders | `--border-default` | `#e0e0e0` |
 | Input borders | `--border-input` | `#dadbdb` |

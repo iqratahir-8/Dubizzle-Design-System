@@ -1043,7 +1043,7 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 
 87. **D-021 (user, 2026-10-02): "Page background `#f6f6f6` is for app specific."** On web the page is white; `#f6f6f6` is a section/header-band colour on web and the page
    colour only on the apps. The account skill `dubizzle-egypt-colors` was wrong on this for web. Recorded in `docs/DECISIONS.md`, RECONCILIATION.md row 2 and the token
-   table; package rebuilt. **Not done:** RULES.md still does not say "apps only" and I did not check whether the repo has app-platform tokens for it.
+   table; package rebuilt. RULES.md §1 colour table now says it (2026-10-02). **Not checked:** whether the repo has app-platform tokens for it.
 
 ## 6. Next up
 
