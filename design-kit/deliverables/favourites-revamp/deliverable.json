@@ -1,7 +1,7 @@
 {
   "feature": "favourites-revamp",
   "title": "Favourites and Saved searches",
-  "version": 4,
+  "version": 5,
   "audience": "engineer",
   "platforms": [
     "web-desktop",
@@ -18,7 +18,7 @@
   "summary": {
     "problem": "Favourites and Saved searches share one page behind two tabs. Live shows both populated, but no empty state for either has ever been captured or designed.",
     "scope": "The real Favourites and Saved searches pages (captured from live, 2026-09-29) on desktop and mobile web, plus a proposed empty state for each tab. Everything except the list block of the empty states is an exact copy of production.",
-    "changed": "v3 replaces the hand-built pages with the live captures and derives the empty states from them. The hand-built pages had a different title, tabs with counts, and a saved-search layout that live does not use."
+    "changed": "v5: the real listing photos are embedded (v4 had placeholders) and the prototype runner is fixed. Layout, copy and rules are unchanged."
   },
   "signoff": {
     "who": [
@@ -124,6 +124,11 @@
       "version": 1,
       "date": "2026-09-29",
       "notes": "First build. Favourites and Saved searches, desktop and mobile, with empty states. Copy and structure from the maple monorepo; not verified on live."
+    },
+    {
+      "version": 5,
+      "date": "2026-10-02",
+      "notes": "Rebuilt from the recapture with the photos inlined (v4 used grey placeholders), with the fixed prototype runner and the smaller build. No design change."
     }
   ]
 }

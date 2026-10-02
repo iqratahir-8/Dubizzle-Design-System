@@ -1077,6 +1077,14 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    38/38 click-through steps still pass. Also tried and DROPPED a browser-based "remove CSS rules that match nothing" pass (also pixel-identical, but only ~0.7 MB more, needs Chrome, blind to
    script-added classes). Remaining levers if ever needed: image data URIs repeat across screens (~2.9 MB). Documented in `references/bundling.md`. The 2 unfetchable ad thumbnails are still placeholders.
 
+92. **Favourites deliverable rebuilt as v5 from the user's recapture** (the "captures aren't in this sandbox" note in item 90 was wrong: they were already on `origin/favourites-capture`,
+   commit `6ba955c`, "Recapture with images"). Built safely in a throwaway worktree (no prune risk): `build-templates.mjs` + `build-live-templates.mjs` -> 4 live templates, then
+   `build-derived-states.mjs` (needs `CHROME_PATH`) -> 4 derived empty states; the 8 templates + 12 new shared css/asset files were copied into the working tree. **They stay local/untracked**
+   (account templates are gitignored; the 12 shared files were deliberately not committed). Photos are inlined (the only remote refs are navigation `href`s), so the build ran **without**
+   `--placeholder-images`. QA `--scope favourites-revamp`: PASS (0 blockers, 0 warnings, 25 notes). `dist/favourites-revamp-v5.html` = 3.3 MB (v4 was 5.2 MB with placeholders), runner fix + dedupe
+   included; **8/8 prototype transitions land on the right screen, 0 page errors**; real listing photos render. Empty states are still DERIVED (Part B open). v5 changelog entry added.
+   A fresh clone cannot rebuild it until `git fetch origin favourites-capture` + the steps above are repeated.
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner
@@ -1089,9 +1097,8 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    bell, and any pick to swap (`icons/settings.html` shows the rejected options). Then decide whether the 7 new ones become React
    icons (`scripts/build-component-icons.mjs`) and kit icons. Live shows no icons on these pages; they are proposals.
 
-0d. **Favourites/Saved searches re-capture (user will do it later, 2026-09-29).** Deliverable `favourites-revamp` v4 is built
-   and sent, with grey placeholder images and derived (unverified) empty states.
-   - **Part A (recommended, one command):** on the Mac, signed in: `git checkout claude/eloquent-maxwell-gokls5 && git pull
+0d. **Favourites/Saved searches re-capture.** **Part A is DONE** (the user's recapture was already on `origin/favourites-capture`; rebuilt 2026-10-02, item 92). Part B (real empty-account captures) is still open. Original plan kept below for the record.
+   - **Part A (done):** on the Mac, signed in: `git checkout claude/eloquent-maxwell-gokls5 && git pull
      origin claude/eloquent-maxwell-gokls5 && npm run capture:account -- favourites saved-searches` (images now inline). Then
      `git checkout -B favourites-capture && git add -f design-kit/reference/live/favourites.* design-kit/reference/live/saved-searches.*
      design-kit/reference/live/screens/favourites.* design-kit/reference/live/screens/saved-searches.* && git commit -m "Recapture"
