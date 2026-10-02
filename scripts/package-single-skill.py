@@ -25,6 +25,15 @@ SPECIALISTS = ["design-review", "design-copy", "design-forms", "design-grid", "d
                "token-check", "rtl-arabic", "motion-design", "imagery-illustration", "chart-data-viz"]
 
 
+EXT = ROOT / ".claude" / "external-skills" / "dubizzle-egypt"
+EXTERNAL = [  # (folder, row description) — account skills copied into the repo, not live repo skills
+    ("egypt-foundations", "Colour, components and layout foundations written on 2026-08-12 for the consumer site, plus the "
+     "page archetypes and RTL mirror list. **Read its precedence rules first: the repo's RULES.md and tokens win** — it lists every difference."),
+    ("sync-design-system", "Sync the Claude Design system artifact with the `iqratahir-8/Dubizzle-Design-Agent` repo: rebuild the component bundle "
+     "from the latest commit, keep `tokens.json`, re-check every preview, publish. Never overwrite `lastChange` wholesale."),
+]
+
+
 def short_desc(path, limit=230):
     t = path.read_text(encoding="utf-8")
     m = re.match(r"---\n(.*?)\n---\n", t, flags=re.S)
@@ -49,18 +58,20 @@ def retarget(text, skill, folder):
 
 
 RELATED = """
-## Related skills on the account — route, don't duplicate
+## Everything dubizzle Egypt is in this skill
 
-This skill is for **dubizzle Egypt** only. Other skills on the account cover other work; send people there instead of stretching this one:
+The earlier account skills `dubizzle-egypt-design-skill`, `dubizzle-egypt-colors`, `-components` and `-layout`, and
+`sync-dubizzle-design-system`, are bundled under `specialists/` (`egypt-foundations`, `sync-design-system`). **Use this skill, not the
+loose copies.** If an older copy is still on the account, delete it so only one answers.
 
-| Work | Use |
-|---|---|
-| Agency Portal (Pro) | **This repo has the portal designs** — eight captured `portal-*` screens plus drawers and modals (desktop only, D-012), local-only because they hold fixtured people data (D-011). Design from them with `stages/1-design.md`. They are **not in the QA registry yet**: run `npm run qa:registry` on a machine that has the portal templates before QA or a deliverable covers portal pages. |
-| iOS / Android app hand-off deliverables | `apps-design-deliverable-sop` |
-| Any **other product** (not dubizzle Egypt) needing generic QA or a deliverable | `design-qa` and `design-deliverables` — these are generic and were built for another product; do not use them for dubizzle Egypt |
-| Consumer-site foundations (colour, type, layout) | `dubizzle-egypt-design-skill` and its foundation skills. **If it disagrees with this repo's `RULES.md` or `design-kit/tokens`, the repo wins** (measured from live captures) and the difference goes to `docs/PROPOSALS.md`. |
-| Syncing the Claude Design system from the repo | `sync-dubizzle-design-system` |
+**Precedence for any dubizzle Egypt design question:** (1) this repo's `RULES.md`, `design-kit/tokens` and live captures;
+(2) the specialist guides; (3) `specialists/egypt-foundations/original/` only where the repo is silent. Differences go to
+`docs/PROPOSALS.md`.
 
+Not part of this skill, because they are other products or other jobs: the generic `design-qa` and `design-deliverables`
+(built for another product — do not use them for dubizzle Egypt), `apps-design-deliverable-sop` (iOS/Android hand-offs),
+the MyZameen and OLX PK skills, and the product-agent skills (ticket writing). The Agency Portal is designed from this repo's
+captured `portal-*` pages; there is no separate portal design agent.
 """
 
 
@@ -94,12 +105,14 @@ def main():
         orch = orch.replace(old, new)
     fm = ("---\nname: %s\ndescription: >-\n"
           "  DUBIZZLE EGYPT ONLY (dubizzle.com.eg consumer site and the Pro agency portal; not other products, not iOS/Android apps).\n"
+          "  The single entry point for ALL dubizzle Egypt design work: colours, type, spacing, layout, components, copy, forms, icons,\n"
+          "  screens, flows, review, QA and hand-off.\n"
           "  Run the whole dubizzle Egypt design job end to end: intake questions, a written plan the user approves,\n"
           "  then design, QA against every state/platform/breakpoint, and one self-contained INTERNAL hand-off HTML\n"
           "  document, stopping at each gate. Use for \"design this dubizzle feature and hand it over\", \"do the whole\n"
           "  thing for dubizzle\", \"dubizzle design QA\", \"is this dubizzle screen ready\", \"dubizzle deliverable / hand-off\".\n"
           "  Needs the dubizzle-design-system repo checked out to run its scripts.\n"
-          "version: 1.1.0\n---\n\n" % NAME)
+          "version: 1.2.0\n---\n\n" % NAME)
     (stage / "SKILL.md").write_text(fm + MAP + orch + RELATED, encoding="utf-8")
 
     d = body(SK / "feature-design" / "SKILL.md")
@@ -123,6 +136,24 @@ def main():
             if md.name != "GUIDE.md":
                 md.write_text(md.read_text(encoding="utf-8").replace(f".claude/skills/{name}/", f"specialists/{name}/"), encoding="utf-8")
         rows.append(f"| `{name}` | {short_desc(src / 'SKILL.md')} | `specialists/{name}/GUIDE.md` |")
+    # account skills that were copied into the repo (see .claude/external-skills/dubizzle-egypt/README.md)
+    eg = stage / "specialists" / "egypt-foundations"
+    (eg / "original").mkdir(parents=True)
+    for n in ("dubizzle-egypt-design-skill", "dubizzle-egypt-colors", "dubizzle-egypt-components", "dubizzle-egypt-layout"):
+        (eg / "original" / f"{n}.md").write_text(body(EXT / "original" / f"{n}.md"), encoding="utf-8")
+    (eg / "GUIDE.md").write_text(
+        "# Egypt foundations (account skills, reconciled with this repo)\n\n"
+        + (EXT / "RECONCILIATION.md").read_text(encoding="utf-8").split("\n", 1)[1]
+        + "\n## The originals\n\nVerbatim, for what the repo is silent on. Their links to `references/*` and to the typography, spacing and "
+          "radius skills are dead (never uploaded).\n\n"
+          "- `original/dubizzle-egypt-design-skill.md` — conductor, 6-phase workflow, 20-point quality gate\n"
+          "- `original/dubizzle-egypt-colors.md`\n- `original/dubizzle-egypt-components.md`\n- `original/dubizzle-egypt-layout.md`\n",
+        encoding="utf-8")
+    sy = stage / "specialists" / "sync-design-system"
+    sy.mkdir(parents=True)
+    (sy / "GUIDE.md").write_text(body(EXT / "original" / "sync-dubizzle-design-system.md"), encoding="utf-8")
+    for name, desc in EXTERNAL:
+        rows.append(f"| `{name}` | {desc} | `specialists/{name}/GUIDE.md` |")
     index = ("\n\n## Specialist guides (read the one you need, not all of them)\n\n"
              "| Skill | Use when | Read |\n|---|---|---|\n" + "\n".join(rows) + "\n")
     sk = (stage / "SKILL.md")

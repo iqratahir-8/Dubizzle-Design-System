@@ -245,7 +245,7 @@ The plugin definition is `.claude-plugin/` (it points at `.claude/skills`, so no
 ## One skill for claude.ai upload
 
 The repo keeps four separate skills. For claude.ai (where names like `design-qa` can clash with skills already on the account)
-run `npm run package:skill`: it stitches them, plus 14 specialist guides (copy, forms, grid, typography, interaction, review, icons, RTL, motion, imagery, charts, tokens, inspiration, image prompts), into **one** skill, `dubizzle-design-handoff`, at
+run `npm run package:skill`: it stitches them, plus 16 specialist guides (copy, forms, grid, typography, interaction, review, icons, RTL, motion, imagery, charts, tokens, inspiration, image prompts, the Egypt foundations and the design-system sync), into **one** skill, `dubizzle-design-handoff`, at
 `dist/skills/dubizzle-design-handoff.skill` (gitignored). Upload it at Settings → Capabilities → Skills. The scripts still need
 the repo checked out and are run from its root, so use it for the process in Claude Design and Claude Code in the repo for real runs.
 

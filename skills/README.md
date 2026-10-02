@@ -4,7 +4,7 @@
 It bundles the whole dubizzle Egypt design workflow:
 
 - **Stages:** design (`feature-design`) → review → QA (`design-qa`) → internal hand-off HTML (`design-deliverables`), run by an orchestrator that asks questions and waits for your plan approval.
-- **14 specialist guides:** `design-review`, `design-copy`, `design-forms`, `design-grid`, `design-interaction`, `design-typography`, `design-inspiration`, `design-prompt-images`, `icons`, `token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`.
+- **16 specialist guides:** `design-review`, `design-copy`, `design-forms`, `design-grid`, `design-interaction`, `design-typography`, `design-inspiration`, `design-prompt-images`, `icons`, `token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`, plus **`egypt-foundations`** and **`sync-design-system`** — the dubizzle Egypt skills that used to live loose on the claude.ai account (colours, components, layout, design-system sync), reconciled with this repo. Sources and provenance: `.claude/external-skills/dubizzle-egypt/`.
 
 How to use it: **`docs/USING-THE-SKILLS.md`**.
 

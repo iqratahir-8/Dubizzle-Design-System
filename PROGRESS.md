@@ -1031,6 +1031,16 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    review. Fixed: new **Stage 2.5 — Review** (design-review + design-copy + design-forms; no open P0/P1 before QA). Not done: design-qa has no check for
    D-019 Title Case or D-020 digits (a `cpy.case` check would be the follow-up); I did not re-verify their copy audit or icon set against live.
 
+86. **Clubbed the account's dubizzle Egypt skills into the single skill (user: "club all the skills … no more confusion which one to use").**
+   Found on the account: `dubizzle-egypt-design-skill`, `-colors`, `-components`, `-layout` (each ONE file; `-typography`, `-spacing`, `-radius` and all
+   `references/*` were never uploaded, so their links are dead) and `sync-dubizzle-design-system`. Copied verbatim to `.claude/external-skills/dubizzle-egypt/original/`
+   (NOT under `.claude/skills/`, so Claude Code does not load them) with `README.md` (provenance) and **`RECONCILIATION.md`**: repo wins; 10 differences, 7 verified
+   against RULES.md/tokens.css — input border `#919395` vs repo `#dadbdb` (**open question**), page bg, status colours (repo defines them), card shadow (repo: list card
+   has one), card radius, focus rings, active state — plus a token-name translation table. Packager now adds `specialists/egypt-foundations/` and
+   `specialists/sync-design-system/`: **16 specialist guides**, 70 files, 210 KB, skill v1.2.0, description claims all dubizzle Egypt design triggers. **User still has to
+   delete the five loose account skills** after uploading the new file (list in `docs/USING-THE-SKILLS.md`). Left outside on purpose: generic design-qa/design-deliverables,
+   apps SOP, MyZameen/OLX PK, product agents. Not checked: items 8–10 in RECONCILIATION.md (container width, header/mobile band heights, codebase paths).
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner

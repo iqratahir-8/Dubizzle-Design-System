@@ -43,7 +43,15 @@ Say "just design", "just QA" or "just the deliverable" to run one stage.
 - Deliverables are **INTERNAL** (licensed fonts): never share them outside dubizzle.
 - Nothing unmeasured is presented as fact; gaps go to `docs/PROPOSALS.md` and are said out loud.
 - No real names, phones or emails in designs or captures.
-- If an account skill such as `dubizzle-egypt-design-skill` disagrees with `RULES.md` or `design-kit/tokens`, the repo wins and the difference is logged.
+- If the bundled Egypt foundations disagree with `RULES.md` or `design-kit/tokens`, the repo wins and the difference is logged in `docs/PROPOSALS.md`.
+
+## One skill, no loose copies
+
+Everything dubizzle Egypt is in `dubizzle-design-handoff`, including the older account skills
+`dubizzle-egypt-design-skill`, `-colors`, `-components`, `-layout` and `sync-dubizzle-design-system` (now `specialists/`). After uploading the
+new file, **delete those five from the account** so only one skill answers. Leave alone: the generic `design-qa` / `design-deliverables`
+(another product), `apps-design-deliverable-sop`, the MyZameen and OLX PK skills, and the product-agent skills.
+Where the old Egypt guidance disagrees with this repo, the repo wins (`.claude/external-skills/dubizzle-egypt/RECONCILIATION.md`).
 
 ## Updating
 
@@ -60,4 +68,4 @@ Say "just design", "just QA" or "just the deliverable" to run one stage.
 | "cannot find the repo root" | Run scripts from the repo root (they need `package.json` and `design-kit/`) |
 | QA says render checks skipped | No Chrome found — set `CHROME_PATH` |
 | Deliverable refuses ("remote images") | Run `npm run localize:assets` on a machine that can reach dubizzle.com.eg, rebuild, or use `--placeholder-images` for a draft |
-| Two skills answer "design QA" | An older generic `design-qa` from another product is on the account. Ours says "dubizzle" in its trigger; name the skill, or remove the old one |
+| Two skills answer "design QA" or "Dubizzle Egypt colours" | An older loose copy is still on the account. Delete `dubizzle-egypt-*` and `sync-dubizzle-design-system`; the generic `design-qa` belongs to another product, so say "dubizzle" or name the skill |
