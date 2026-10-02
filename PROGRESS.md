@@ -1022,6 +1022,15 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    `sync-dubizzle-design-system` skill reads; restored to `github.com/iqratahir-8/Dubizzle-Design-Agent` @ `3643123` (the last value seen — if a
    later sync ran, the true commit may be newer, so let that skill re-sync). Never overwrite `lastChange` wholesale; update `by/at/via/note` only.
 
+85. **Final skill added to the repo + guide for others (user: "add the final design system skill to the skills folder … give me the way how others will be able to use that").**
+   `skills/dubizzle-design-handoff.skill` (generated, committed; source stays `.claude/skills/`, so no double-loading) + `skills/README.md` +
+   `docs/USING-THE-SKILLS.md` (four routes: Claude Code in the repo, plugin, claude.ai upload, send the file; prerequisites, phrasing, first-run check,
+   updating, troubleshooting) + CLAUDE.md rule 8. **Review of the other session's work (2026-10-01):** 9 new skills (design-review/copy/forms/grid/
+   interaction/typography/inspiration/prompt-images, icons) are well-formed (frontmatter, names, local references resolve; the two "missing" refs are
+   citations of an external skill) and are wired into `feature-design`, CLAUDE.md and RULES.md — but NOT into `design-to-handoff`, so the full flow skipped
+   review. Fixed: new **Stage 2.5 — Review** (design-review + design-copy + design-forms; no open P0/P1 before QA). Not done: design-qa has no check for
+   D-019 Title Case or D-020 digits (a `cpy.case` check would be the follow-up); I did not re-verify their copy audit or icon set against live.
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner

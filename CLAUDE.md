@@ -30,3 +30,6 @@
 7. **Whole job, idea to hand-off? Use `design-to-handoff`.** It asks questions, gets a plan approved,
    then runs `feature-design` → `design-qa` → `design-deliverables` with a gate between each. Use the
    three skills directly when only one stage is wanted.
+8. **How others use the skills:** `docs/USING-THE-SKILLS.md`. The distributable single file is `skills/dubizzle-design-handoff.skill`
+   (generated: `npm run package:skill`, then copy to `skills/`). Rebuild and commit it whenever a skill changes.
+

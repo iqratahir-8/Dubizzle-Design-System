@@ -87,7 +87,10 @@ def main():
                         "each stage is a file in this skill (`stages/`).")
     for old, new in (("Invoke `feature-design`.", "Follow `stages/1-design.md`."),
                      ("Invoke `design-qa`", "Follow `stages/2-qa.md`"),
-                     ("Invoke `design-deliverables`.", "Follow `stages/3-deliverable.md`.")):
+                     ("Invoke `design-deliverables`.", "Follow `stages/3-deliverable.md`."),
+                     ("Invoke `design-review`", "Follow `specialists/design-review/GUIDE.md`"),
+                     ("through `design-copy`", "through `specialists/design-copy/GUIDE.md`"),
+                     ("through `design-forms`", "through `specialists/design-forms/GUIDE.md`")):
         orch = orch.replace(old, new)
     fm = ("---\nname: %s\ndescription: >-\n"
           "  DUBIZZLE EGYPT ONLY (dubizzle.com.eg consumer site and the Pro agency portal; not other products, not iOS/Android apps).\n"

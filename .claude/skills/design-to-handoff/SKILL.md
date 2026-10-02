@@ -64,6 +64,17 @@ pass, Step 5 critique, and **Step 6, which builds the hand-off pack** (registry 
 
 **Gate:** registry entries exist for every screen and state; the critique is written.
 
+## Stage 2.5 — Review (before QA)
+
+Invoke `design-review` on the new screens: a senior-designer critique with P0–P3 findings and the
+"does it look AI-made" check. Words on the screens also go through `design-copy` (Title Case headings
+and buttons per D-019, Western digits per D-020), and any input through `design-forms`.
+Craft skills for the specific gaps — `design-grid`, `design-typography`, `design-interaction` — are
+used when the review names them.
+
+**Gate:** no open P0 or P1. Fix them (back to Stage 2) or have the user accept them in writing; list
+what was accepted in the Stage 5 summary.
+
 ## Stage 3 — QA
 
 Invoke `design-qa` with the agreed scope (`--scope <feature>`), show the matrix first, run it, state
