@@ -559,3 +559,16 @@ user content and stay as written.
 **Changed:** `design-copy` (+ `references/arabic.md`, `dubizzle-voice.md`), `design-typography`,
 `design-qa` checklist, `PROGRESS.md` open items.
 
+## D-021 — `#f6f6f6` as a page background belongs to the apps, not the web (2026-10-02)
+
+**User decision:** "Page background `#f6f6f6` is for app specific."
+
+**Rule:** on web (desktop and mobile web) the page background is white (`--surface-page`). `#f6f6f6`
+(`--surface-subtle`) is a section or band colour on web — the header top row, section backgrounds — and is
+the page background only on the apps (iOS / Android). A web design never uses it for the whole page.
+
+**Why recorded:** the account skill `dubizzle-egypt-colors` says "page = `#F6F6F6`", which is wrong for web
+by this decision. It is now flagged in `.claude/external-skills/dubizzle-egypt/RECONCILIATION.md` (row 2).
+
+**Not checked:** whether the repo defines separate app-platform tokens for it; RULES.md does not yet say "apps only".
+

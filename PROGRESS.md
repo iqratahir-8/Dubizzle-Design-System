@@ -1041,6 +1041,10 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    delete the five loose account skills** after uploading the new file (list in `docs/USING-THE-SKILLS.md`). Left outside on purpose: generic design-qa/design-deliverables,
    apps SOP, MyZameen/OLX PK, product agents. Not checked: items 8–10 in RECONCILIATION.md (container width, header/mobile band heights, codebase paths).
 
+87. **D-021 (user, 2026-10-02): "Page background `#f6f6f6` is for app specific."** On web the page is white; `#f6f6f6` is a section/header-band colour on web and the page
+   colour only on the apps. The account skill `dubizzle-egypt-colors` was wrong on this for web. Recorded in `docs/DECISIONS.md`, RECONCILIATION.md row 2 and the token
+   table; package rebuilt. **Not done:** RULES.md still does not say "apps only" and I did not check whether the repo has app-platform tokens for it.
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner

@@ -12,7 +12,7 @@ difference in `docs/PROPOSALS.md` instead of silently picking one.
 | # | Topic | Account skills say | This repo says | Decision |
 |---|---|---|---|---|
 | 1 ✔ | Input border | `--border-input` = `#919395` ("deliberately darker") | `--border-input` = `#dadbdb` (RULES §1) | Repo. **Open question:** the account value was measured on the header search group; confirm whether the search-group select is a separate token |
-| 2 ✔ | Page background | page = `#F6F6F6` | `--surface-page` = `#ffffff`; `#f6f6f6` is `--surface-subtle` (section background) | Repo |
+| 2 ✔ | Page background | page = `#F6F6F6` | `--surface-page` = `#ffffff`; `#f6f6f6` is `--surface-subtle` (section background) | **Repo, confirmed by the owner (D-021):** `#f6f6f6` as a *page* background is app-specific; on web the page is white |
 | 3 ✔ | Status colours | "open gap, do not invent" | `--color-success #059e00`, `--color-warning #ffba3c`, `--color-error #e00000` | Repo (defined and measured, incl. portal ad-state pills) |
 | 4 ✔ | Card shadow | "no card shadows, ever" | Grid card flat; **list card has `--shadow-card`**; `--shadow-card-hover` on hover | Repo |
 | 5 ✔ | Card radius | cards 12, listing image 4 | `--radius-lg` = `--ad-card-border-radius` = 0.8rem (grid); list card 1.2rem desktop / 0.8rem mobile | Repo |
@@ -42,7 +42,7 @@ button and input radius 6px (0.6rem), breakpoints 768 / 950 / 1280 / 480 / 360, 
 | `--border-light` | (same hex as `--gray-03`) | `#dadbdb` — **repo's `--border-input`** |
 | `--border-input` (`#919395`) | no equivalent — see row 1 | — |
 | `--bg-surface` | `--surface-page` / card surface | `#ffffff` |
-| `--bg-page` | `--surface-subtle` | `#f6f6f6` |
+| `--bg-page` | web: `--surface-page` (`#ffffff`); `--surface-subtle` (`#f6f6f6`) is a section band, and the page colour on **apps only** (D-021) | `#ffffff` on web |
 | `--bg-muted` | `--surface-muted` | `#f0f0f0` |
 
 Never write the account names (`--brand-*`, `--bg-*`) in repo code: `check:design` only knows the repo's tokens.
