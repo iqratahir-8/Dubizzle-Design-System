@@ -18,6 +18,21 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 SK = ROOT / ".claude" / "skills"
 NAME = "dubizzle-design-handoff"
 SUB = ("references", "assets", "schema", "scripts")
+# Craft and specialist skills bundled under specialists/<name>/ (SKILL.md is shipped as GUIDE.md so the
+# package has exactly one SKILL.md). Kept in sync with .claude-plugin/plugin.json by the check below.
+SPECIALISTS = ["design-review", "design-copy", "design-forms", "design-grid", "design-interaction",
+               "design-typography", "design-inspiration", "design-prompt-images", "icons",
+               "token-check", "rtl-arabic", "motion-design", "imagery-illustration", "chart-data-viz"]
+
+
+def short_desc(path, limit=230):
+    t = path.read_text(encoding="utf-8")
+    m = re.match(r"---\n(.*?)\n---\n", t, flags=re.S)
+    fm = m.group(1) if m else ""
+    d = re.search(r"^description:\s*(.*?)(?=^\w[\w-]*:|\Z)", fm, flags=re.S | re.M)
+    txt = re.sub(r"\s+", " ", re.sub(r"^[>|][-+]?\s*", "", d.group(1).strip())).strip(" \"'") if d else ""
+    return txt if len(txt) <= limit else txt[: limit].rsplit(" ", 1)[0] + " …"
+
 
 
 def body(p):
@@ -53,8 +68,8 @@ MAP = ("> **Single-skill package.** The other stages are files in this skill, no
        "design = `stages/1-design.md`, QA = `stages/2-qa.md`, deliverable = `stages/3-deliverable.md`. "
        "Where a stage says \"invoke `design-qa`\" or \"use the `design-deliverables` skill\", read that file. "
        "Scripts run from the **repo root** (they need `design-kit/`): `python3 <this skill's folder>/qa/scripts/run.py …`. "
-       "Specialist skills (`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`, `icons`, and the `design-*` craft and review skills) "
-       "are optional and not in this package.\n\n")
+       "The specialist skills (copy, forms, grid, typography, interaction, review, icons, RTL, motion, imagery, charts, tokens) "
+       "are guides under `specialists/` — see the index at the end of this file.\n\n")
 
 
 def main():
@@ -92,6 +107,23 @@ def main():
         (stage / "stages" / fname).write_text(MAP + retarget(body(SK / src / "SKILL.md"), src, folder), encoding="utf-8")
         shutil.copytree(SK / src, stage / folder,
                         ignore=shutil.ignore_patterns("SKILL.md", "__pycache__", "*.pyc"))
+
+    rows = []
+    for name in SPECIALISTS:
+        src = SK / name
+        if not (src / "SKILL.md").exists():
+            raise SystemExit(f"specialist skill missing: {name}")
+        dst = stage / "specialists" / name
+        shutil.copytree(src, dst, ignore=shutil.ignore_patterns("SKILL.md", "__pycache__", "*.pyc"))
+        (dst / "GUIDE.md").write_text(retarget(body(src / "SKILL.md"), name, f"specialists/{name}"), encoding="utf-8")
+        for md in dst.rglob("*.md"):                      # other files: only rewrite repo-skill paths
+            if md.name != "GUIDE.md":
+                md.write_text(md.read_text(encoding="utf-8").replace(f".claude/skills/{name}/", f"specialists/{name}/"), encoding="utf-8")
+        rows.append(f"| `{name}` | {short_desc(src / 'SKILL.md')} | `specialists/{name}/GUIDE.md` |")
+    index = ("\n\n## Specialist guides (read the one you need, not all of them)\n\n"
+             "| Skill | Use when | Read |\n|---|---|---|\n" + "\n".join(rows) + "\n")
+    sk = (stage / "SKILL.md")
+    sk.write_text(sk.read_text(encoding="utf-8") + index, encoding="utf-8")
 
     out.mkdir(parents=True, exist_ok=True)
     target = out / f"{NAME}.skill"

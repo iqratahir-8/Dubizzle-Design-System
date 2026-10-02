@@ -1009,6 +1009,13 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    other fixture names in the portal pages ("Test Agency Agency", fixture people-rows) are likewise test data. CLAUDE.md rule 3 still applies to the
    account holder's own name.
 
+83. **Single-skill package now bundles the 14 specialist skills** (user: "yes" to bundling the new skills). `npm run package:skill` copies
+   design-review, design-copy, design-forms, design-grid, design-interaction, design-typography, design-inspiration, design-prompt-images, icons,
+   token-check, rtl-arabic, motion-design, imagery-illustration and chart-data-viz into `specialists/<name>/` (their SKILL.md ships as `GUIDE.md`
+   so the package has exactly one SKILL.md; paths rewritten) and appends an index table to the orchestrator `SKILL.md`. 188 KB, 64 files. Adding a
+   new specialist skill = add its name to `SPECIALISTS` in `scripts/package-single-skill.py` (the plugin lists skills separately in
+   `.claude-plugin/plugin.json`). Tested: unzipped outside the repo, `matrix.py` and `icons/scripts/audit.py --help` run. Not tested: upload to claude.ai.
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner
