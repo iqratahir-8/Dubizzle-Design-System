@@ -30,6 +30,23 @@ Soft budget 12 MB, hard limit 25 MB. Screens dominate: a frozen live capture is 
 is one reason live captures are not deliverable screens. If a document cannot fit, split by
 platform rather than dropping assets — two honest documents beat one with missing pieces.
 
+**What the build already does to stay small (all lossless):**
+- `prune_fonts` — only the weights and locales the screens use.
+- `dedupe_css` — a live capture splits one page's CSS into many overlapping hashed files; concatenated, the
+  same rules repeat hundreds of times. Identical top-level rules are dropped, **keeping the last copy**, which
+  cannot change the cascade (an earlier copy is always overridden by, or equal to, its own later copy). The
+  scanner honours backslash escapes — a captured rule such as `[*|\:has\(\%3e]` once unbalanced the
+  parenthesis counter and hid all of this. On the agency portal: 10.2 MB of CSS became 1.8 MB.
+- The embedded node ledger carries only `kind, role, component, pair` (what the redline panel reads), not each
+  node's structural path and fingerprint: 6.2 MB became 0.8 MB.
+Together the 30-screen agency portal went from 21.5 MB to 8.2 MB and all 30 screens render pixel-identically
+(compared screen by screen in headless Chrome).
+
+**Not done, and why:** removing CSS rules that match no element (a live capture's stylesheet is ~97% unused by
+the pages) saves only about 0.7 MB more once duplicates are gone, needs a browser at build time, and cannot see
+rules a script would apply later — so it was tried and dropped. Still available if ever needed: image data URIs
+repeat across screens (~2.9 MB on the portal); sharing them through one stylesheet would remove that.
+
 ## Privacy net
 
 Account captures are redacted before they reach disk (`scripts/lib/redact.mjs`). `bundle.py` is the

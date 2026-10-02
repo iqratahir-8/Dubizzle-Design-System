@@ -429,7 +429,9 @@ def main():
     (build / "index.html").write_text(html_final, encoding="utf-8")
 
     keep = {f"{plat}/{pid}" if st == "default" else f"{plat}/{pid}#{st}" for _g, pid, plat, st, *_ in collected}
-    slim = {"ledger_version": ledger["ledger_version"], "nodes": {i: m for i, m in ledger["nodes"].items() if m.get("screen") in keep and m.get("status") == "active"}}
+    # the redline panel reads only these four fields; path/fingerprint/dates are 80% of the ledger's size
+    slim = {"ledger_version": ledger["ledger_version"], "nodes": {i: {k: m[k] for k in ("kind", "role", "component", "pair") if m.get(k)}
+                                                                 for i, m in ledger["nodes"].items() if m.get("screen") in keep and m.get("status") == "active"}}
     slim_path = build / "ids.json"; slim_path.write_text(json.dumps(slim), encoding="utf-8")
     out = ddir / "dist" / f"{a.feature}-v{version}.html"
     cmd = [sys.executable, str(HERE / "bundle.py"), "--src", str(build), "--out", str(out), "--feature", a.feature, "--version", str(version),

@@ -81,6 +81,43 @@ def prune_fonts(css, locales, log):
     return re.sub(r"@font-face\s*\{[^}]*\}", repl, css)
 
 
+def dedupe_css(css):
+    """Drop repeated identical top-level rules, keeping the LAST copy of each.
+
+    Cascade-safe: an earlier copy of a rule is always overridden by (or equal to) its own later copy, so
+    removing it cannot change which declaration wins. Whole at-rules (@media, @font-face, @keyframes) are
+    compared as one unit. Live captures split one page's CSS into many hashed files that overlap heavily,
+    so concatenated they repeat the same rules hundreds of times (7 MB of 8.7 MB on the agency portal)."""
+    units, i, n, start = [], 0, len(css), 0
+    depth, quote, paren = 0, None, 0
+    while i < n:
+        c = css[i]
+        if quote:
+            if c == "\\": i += 1
+            elif c == quote: quote = None
+        elif c == "\\": i += 1                      # an escaped character (\( \: \%) is never structure
+        elif c in "\"'": quote = c
+        elif css.startswith("/*", i):
+            j = css.find("*/", i + 2); i = (j + 1) if j >= 0 else n
+        elif c == "(": paren += 1
+        elif c == ")": paren = max(0, paren - 1)
+        elif paren == 0:
+            if c == "{": depth += 1
+            elif c == "}":
+                depth = max(0, depth - 1)
+                if depth == 0: units.append(css[start:i + 1]); start = i + 1
+            elif c == ";" and depth == 0:                      # @import / @charset / @namespace
+                units.append(css[start:i + 1]); start = i + 1
+        i += 1
+    if css[start:].strip(): units.append(css[start:])
+    last = {}
+    for idx, u in enumerate(units):
+        k = u.strip()
+        if k and not k.startswith(("@import", "@charset", "@namespace")): last[k] = idx
+    return "\n".join(u.strip() for idx, u in enumerate(units)
+                     if not u.strip() or u.strip().startswith(("@import", "@charset", "@namespace")) or last.get(u.strip()) == idx)
+
+
 def inline_html(html, base, log, locales):
     sheets = []
     def link_repl(m):
@@ -96,7 +133,9 @@ def inline_html(html, base, log, locales):
     html = re.sub(r'<link[^>]+rel=["\']stylesheet["\'][^>]*href=["\']([^"\']+)["\'][^>]*>', link_repl, html, flags=re.I)
     html = re.sub(r'<link[^>]+href=["\']([^"\']+)["\'][^>]*rel=["\']stylesheet["\'][^>]*>', link_repl, html, flags=re.I)
     html = re.sub(r'<link[^>]+rel=["\'](preconnect|dns-prefetch)["\'][^>]*>', "", html, flags=re.I)
-    combined = prune_fonts("\n".join(sheets), locales, log)
+    before = sum(len(x) for x in sheets)
+    combined = dedupe_css(prune_fonts("\n".join(sheets), locales, log))
+    log.append(("css-deduped", f"{before / 1e6:.2f} MB -> {len(combined) / 1e6:.2f} MB"))
     first = True
     def sheet_repl(_m):
         nonlocal first

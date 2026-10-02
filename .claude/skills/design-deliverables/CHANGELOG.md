@@ -3,6 +3,12 @@
 Three versions move independently: this skill, each deliverable document, and the QA report
 schema this skill consumes.
 
+## [1.0.2] — 2026-10-02
+### Changed
+- Smaller documents, no visual change: identical CSS rules are deduplicated (last copy kept, so the cascade is
+  unchanged) and the embedded ledger keeps only the four fields the redline panel reads. Agency portal:
+  21.5 MB -> 8.2 MB; all 30 screens pixel-identical.
+
 ## [1.0.1] — 2026-10-02
 ### Fixed
 - Prototype runner: a click now fires only the innermost trigger (listeners are capture-phase, so each

@@ -1070,6 +1070,13 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    Confirming buttons (Submit, Apply product, Purchase, Send) still go nowhere, as in the captures. deliverable v3 (21.5 MB). The favourites deliverable was not rebuilt after the runner change
    (its captures are not in the sandbox) — rebuild it on the Mac before sending it again.
 
+91. **Portal deliverable shrunk 21.5 MB -> 8.2 MB, lossless (user: "how to reduce size").** Measured first: 10.2 MB shared CSS, 6.2 MB embedded node ledger, ~6 MB screens.
+   Two build fixes in design-deliverables 1.0.2: (1) `dedupe_css` in `bundle.py` drops identical top-level rules keeping the LAST copy (cascade-safe) — 10.2 -> 1.8 MB; the first version
+   did nothing because the scanner mis-parsed a captured rule with escaped parentheses (`[*|\:has\(\%3e]`) and swallowed 8.5 MB into one "rule" — it now honours backslash escapes;
+   (2) the embedded ledger keeps only `kind, role, component, pair` — 6.2 -> 0.8 MB. **Verified: all 30 screens pixel-identical to the 21.5 MB build** (screenshot hashes, headless Chrome) and
+   38/38 click-through steps still pass. Also tried and DROPPED a browser-based "remove CSS rules that match nothing" pass (also pixel-identical, but only ~0.7 MB more, needs Chrome, blind to
+   script-added classes). Remaining levers if ever needed: image data URIs repeat across screens (~2.9 MB). Documented in `references/bundling.md`. The 2 unfetchable ad thumbnails are still placeholders.
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner
