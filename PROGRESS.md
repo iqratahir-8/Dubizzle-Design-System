@@ -1016,6 +1016,12 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    new specialist skill = add its name to `SPECIALISTS` in `scripts/package-single-skill.py` (the plugin lists skills separately in
    `.claude-plugin/plugin.json`). Tested: unzipped outside the repo, `matrix.py` and `icons/scripts/audit.py --help` run. Not tested: upload to claude.ai.
 
+84. **Claude Design system docs updated (artifact v30).** `project/QA-and-Handoff.md` now lists the craft/review skills, the two documents built (favourites,
+   agency portal) and how to upload the single bundled skill; the earlier claim that Claude Design shows no skills was wrong and is corrected (it lists
+   account-uploaded skills). **Fixed a regression I caused in v28:** I had replaced `lastChange` and dropped `sourceRepo` / `sourceCommit`, which the
+   `sync-dubizzle-design-system` skill reads; restored to `github.com/iqratahir-8/Dubizzle-Design-Agent` @ `3643123` (the last value seen — if a
+   later sync ran, the true commit may be newer, so let that skill re-sync). Never overwrite `lastChange` wholesale; update `by/at/via/note` only.
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner
