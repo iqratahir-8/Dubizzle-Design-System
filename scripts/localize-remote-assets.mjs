@@ -10,6 +10,7 @@
  *
  *   node scripts/localize-remote-assets.mjs                 # portal-*.html, fetch what is missing
  *   node scripts/localize-remote-assets.mjs --offline       # only use remote-assets.json
+ *   node scripts/localize-remote-assets.mjs --allow-failed  # exit 0 even if some downloads 403/404 (they stay remote)
  *   node scripts/localize-remote-assets.mjs --dry-run       # list what would be fetched
  *   node scripts/localize-remote-assets.mjs --glob 'desktop/home*.html'
  *   node scripts/localize-remote-assets.mjs --base http://127.0.0.1:8123   # test mirror for the hosts
@@ -28,7 +29,7 @@ const MANIFEST = join(TPL, 'remote-assets.json');
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(n);
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
-const OFFLINE = flag('--offline'), DRY = flag('--dry-run'), BASE = opt('--base', null);
+const OFFLINE = flag('--offline'), DRY = flag('--dry-run'), ALLOW_FAILED = flag('--allow-failed'), BASE = opt('--base', null);
 const GLOB = opt('--glob', 'desktop/portal-*.html');
 const HOSTS = /^https:\/\/(www\.dubizzle\.com\.eg|images\.dubizzle\.com\.eg)\//;
 const TYPES = { '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.json': 'application/json', '.woff2': 'font/woff2' };
@@ -39,10 +40,16 @@ const [dir, pat] = GLOB.split('/');
 const rx = new RegExp('^' + pat.replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*') + '$');
 const files = readdirSync(join(TPL, dir)).filter((f) => rx.test(f)).map((f) => join(TPL, dir, f));
 
+// Shared stylesheets the pages link (../_live-css/*.css) hold url(...) backgrounds and fonts: localize those too.
+// Only /assets/ urls inside them — selectors such as a[href="https://…/agencyPortal/…"] are not resources.
+const cssFiles = new Set();
+for (const f of files) for (const m of readFileSync(f, 'utf8').matchAll(/\.\.\/_live-css\/([\w.\-]+\.css)/g)) cssFiles.add(join(TPL, '_live-css', m[1]));
+const ASSET_ONLY = /^https:\/\/www\.dubizzle\.com\.eg\/assets\//;
 const urls = new Set();
 for (const f of files) for (const u of readFileSync(f, 'utf8').match(re) || []) if (HOSTS.test(u)) urls.add(u);
+for (const f of cssFiles) if (existsSync(f)) for (const u of readFileSync(f, 'utf8').match(re) || []) if (ASSET_ONLY.test(u)) urls.add(u);
 const todo = [...urls].filter((u) => !manifest[u]);
-console.log(`${files.length} pages · ${urls.size} remote urls · ${todo.length} not yet local`);
+console.log(`${files.length} pages + ${cssFiles.size} stylesheets · ${urls.size} remote urls · ${todo.length} not yet local`);
 if (DRY) { todo.forEach((u) => console.log('  ' + u)); process.exit(0); }
 
 mkdirSync(ASSETS, { recursive: true });
@@ -71,6 +78,13 @@ for (const f of files) {
   if (t !== before) { writeFileSync(f, t); rewritten++; }
   left += (t.match(re) || []).filter((u) => HOSTS.test(u)).length;
 }
-console.log(`rewrote ${rewritten} pages · ${left} remote references left${failed.length ? ' · ' + failed.length + ' downloads failed' : ''}`);
+for (const f of cssFiles) {
+  if (!existsSync(f)) continue;
+  const before = readFileSync(f, 'utf8');
+  const after = before.replace(re, (u) => (ASSET_ONLY.test(u) && manifest[u] ? `../_live/assets/${manifest[u]}` : u));
+  if (after !== before) { writeFileSync(f, after); rewritten++; }
+  left += (after.match(re) || []).filter((u) => ASSET_ONLY.test(u)).length;
+}
+console.log(`rewrote ${rewritten} files · ${left} remote references left${failed.length ? ' · ' + failed.length + ' downloads failed' : ''}`);
 failed.slice(0, 15).forEach((x) => console.log('  ! ' + x));
-process.exit(left || failed.length ? 1 : 0);
+process.exit(ALLOW_FAILED ? 0 : (left || failed.length ? 1 : 0));

@@ -1045,6 +1045,13 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    colour only on the apps. The account skill `dubizzle-egypt-colors` was wrong on this for web. Recorded in `docs/DECISIONS.md`, RECONCILIATION.md row 2 and the token
    table; package rebuilt. RULES.md §1 colour table now says it (2026-10-02). **Not checked:** whether the repo has app-platform tokens for it.
 
+88. **Portal images inlined on the Mac (user ran `localize-remote-assets.mjs`, branch `portal-assets`, merged here).** 63 of 65 assets downloaded; 2 ad thumbnails
+   (`images.dubizzle.com.eg/thumbnails/185098594-240x180.webp` and `-400x300.webp`) returned HTTP 403 and stay remote. Pages are clean; **the 12 shared stylesheets
+   still referenced 6 more `/assets/` urls** — the tool now also localizes `url(...)` inside the stylesheets the pages link (`--allow-failed` makes known 403s non-fatal).
+   Tested on a mock server (10 files rewritten, 0 left, idempotent). **Needs one more run on the Mac** (the sandbox cannot reach production), then rebuild the portal
+   deliverable. Sandbox network policy still blocks dubizzle.com.eg (user chose to run it on the Mac). The user's local `main` on the Mac is the old `legacy-main` history
+   (preserved on `origin/legacy-main` and `iqratahir/legacy-main`); fix with `git checkout main && git reset --hard origin/main`.
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner
