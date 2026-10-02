@@ -56,7 +56,7 @@ finding shape the automated checks use, `check: "manual.<area>.<item>"`, so the 
 
 ## Arabic (only when `ar` is in scope — parked by default)
 
-- [ ] `rtl-arabic` skill run; digits decision (Western vs Arabic-Indic) recorded
+- [ ] `rtl-arabic` skill run; digits are Western (D-020), formatted with `ar-EG-u-nu-latn`
 - [ ] Directional icons mirrored, numbers and currency read correctly
 
 ## Recording

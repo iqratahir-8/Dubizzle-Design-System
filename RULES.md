@@ -202,6 +202,10 @@ how to use them.)
 
 **Iconography**
 - ✗ Emoji as icons. Ever. Not in UI, not in labels, not in empty states.
+- ✓ **Use the `icons` skill for any icon need.** It applies the order below mechanically: the
+  house registry (`icons/registry.json`) first, then earlier decisions (`icons/concepts.json`),
+  then the pinned pack (`icons/style.json`: Material Symbols Rounded, outlined, weight 400,
+  shown at 20px). Every pick records what it beat and why. New icons go in `docs/PROPOSALS.md`.
 - ✓ **`design-kit/icons/` first** — 587 real dubizzle icons, and they match each other.
 - ✓ **Then Material Symbols (Google Fonts), Font Awesome, or Lucide**, resolved by name: if
   the design asks for an icon the kit doesn't have, take it from whichever pack has it rather
@@ -299,10 +303,10 @@ Fake content is the fastest way to make a real design look generated. Use `desig
 - **Prices:** `EGP 3,200,000` — currency prefix, comma separators, no decimals. Never `$`, never `3.2M`.
 - **Titles:** written by real sellers — uneven length, sometimes ALL CAPS, sometimes with a phone number or "urgent". e.g. `Apartment for sale in Zamalek 200m fully finished`. Not `Beautiful Modern Apartment`.
 - **Locations:** real Egyptian ones — Maadi, Zamalek, Nasr City, Sheikh Zayed, New Cairo, Heliopolis, 6th of October, Alexandria, Mansoura, Sohag.
-- **Property specs:** `3 Beds · 2 Baths · 150 m²` — middot separated, `m²` not `sqm`.
+- **Property specs:** `3 beds · 2 baths · 150 m²` — lowercase as live writes them (audited 2026-10-01 across 82 templates; this line previously said `3 Beds`), middot separated, `m²` not `sqm`. Arabic: `3 غرف نوم` / `220 م٢` — see `design-copy` for Arabic plural rules.
 - **Time:** relative when recent (`2 hours ago`, `منذ ساعتين`), absolute when older.
 - **Categories:** the real ones — Vehicles, Properties, Mobiles & Tablets, Electronics & Appliances, Jobs, Furniture & Decor, Fashion & Beauty, Pets, Kids & Babies, Business & Industrial, Services.
-- **Copy voice:** direct, second person, imperative. `Post Your Ad`, `Sell`, `Chat`, `Call`. Never `Get Started`, `Discover`, `Unlock`, `Elevate`, `Seamless`, `Effortless`.
+- **Copy voice:** see the `design-copy` skill and its live audit (`references/dubizzle-voice.md`). In short: direct, second person, imperative. **Headings and button labels in Title Case** (D-019); sentences in sentence case; live strings verbatim. `Post Your Ad`, `Sell`, `Chat`, `Call`. Never `Get Started`, `Discover`, `Unlock`, `Elevate`, `Seamless`, `Effortless`.
 - **No lorem ipsum.** No `Product Name`. No `$99.99`. No `John Doe` — use `Ahmed H.`, `Mona S.`
 
 ---
@@ -432,7 +436,7 @@ user gave it. None of those need a spring.
   illustration the system doesn't have, say so and propose the nearest captured one.
 - Avatars are initials on `--red-02` when there is no photo. Logos keep their own colour.
 
-Use the `imagery-illustration` skill.
+Use the `imagery-illustration` skill; for a generated banner or hero photo on a composed surface, `design-prompt-images`.
 
 ---
 
@@ -456,6 +460,7 @@ built from guessed colours will not match the one screen that already ships one.
 - [ ] Frosted surfaces use `.glass-chip` / `.glass-panel` and have a solid `@supports` fallback
 - [ ] Icons come from `design-kit/icons/` (or `src/assets/live-icons`, glyphs extracted from live) first; external ones are Material Symbols Rounded / Font Awesome Free Regular / Lucide — rounded and outlined, ideally one pack per screen
 - [ ] No emoji anywhere
+- [ ] `design-review` run on new work: no P0/P1 findings left (specificity, invented content, template structure, states, density)
 - [ ] Nothing scales or bounces on hover
 - [ ] Content reads like real Egyptian listings, with real prices and real place names
 - [ ] The densest reasonable layout was chosen, not the airiest

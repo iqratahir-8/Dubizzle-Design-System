@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-09-29 (design-qa + design-deliverables skills; saved-searches + favourites empty states; first deliverable, mobile prototype, live captures, v3/v4 builds, product-KB answers, Claude Design link, merged to main — items 52–73; feature-design Step 6 hand-off pack) · branch `claude/keen-hypatia-ftrhz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-01 (design-prompt-images skill, item 81; agency-portal pages, QA registry and deliverable, items 70–72; test-account note, item 82) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -926,11 +926,100 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    sidebar entries depend on account settings, and Arabic are all uncaptured. 69 `dubizzle.com.eg` urls remain inside shared CSS (backgrounds/fonts):
    run `npm run localize:assets` on the Mac and rebuild without `--placeholder-images`. (Privacy: the header user "Ahmed H." is a test account — see item 73.)
 
-73. **Privacy check closed: "Ahmed H." in the portal captures is a test account** (user confirmed). Not a real person; no redaction needed. The
+73. **Icons skill installed; settings icon set made (user, 2026-10-01: "read the icons skill and produce icons for all the settings").**
+   (a) The uploaded `icons.skill` is in `.claude/skills/icons/` (v1.1.0). Two changes, logged in its CHANGELOG: an `npm` source
+   adapter (api.iconify.design is blocked from the cloud sandbox, npm is not) and a fix for `audit.py` dropping same-named glyphs
+   from different folders. Known gap: auto-pick ignores the pinned variant, so pick `-outline-rounded` names by hand.
+   (b) Project setup lives in **`icons/`** at the repo root, not `design-kit/icons/` (`sync:icons` deletes that folder).
+   `icons/registry.json` = audit of all 546 house glyphs (21 duplicate groups in `audit-duplicates.json`). `icons/style.json` is
+   **locked**: Material Symbols Rounded 400, 24 grid, shown at 20px, currentColor, measured from the account-menu icons (they
+   match glyph for glyph). The whole house set audits as mixed (95 grids), so this pin covers the account/settings family.
+   (c) `icons/sets/settings.json`: 12 icons. 5 house icons (settings, phone-number, language, help, logout) and 7 new ones
+   (privacy, notification-settings, manage-account, recommendations, offers-communications, logout-all-devices, delete-account).
+   SVG in `icons/svg/`, 144 PNGs in `icons/png/` (#23262A baked in), preview `icons/settings.html`, reasons and rejected options in
+   `icons/concepts.json`. The new 7 are in `docs/PROPOSALS.md`.
+   **Unverified:** the rows inside the settings tabs and the whole Manage account section were written from memory, not from
+   a capture (the captures are gitignored). Check them against `design-kit/reference/live/settings-*.html` on the Mac.
+
+74. **Icons skill wired into the system (user, 2026-10-01: "yes" to fixing the gaps).** `CLAUDE.md` rule 5 names `icons`;
+   `.claude-plugin/plugin.json` ships it; `RULES.md` Iconography starts with "use the `icons` skill"; the skill's
+   `schema/sources.json` is cut to the three packs RULES allows (Material Symbols, Lucide, Font Awesome Free Regular), and
+   `icons/style.json` allows only their licences (ISC, Apache-2.0, CC-BY-4.0); `ATTRIBUTIONS.md` credits the 7 Material Symbols
+   settings icons and notes the skill came with no licence file. Also listed in the plugin install notes (`docs/HOW-TO-ASK.md`) and as an
+   optional specialist in the claude.ai single-skill package (`scripts/package-single-skill.py`). Merged to `main` on 2026-10-01 (user: "merge to main").
+
+75. **Settings icons checked against live and rebuilt (user, 2026-10-01: "okay do it").** The captures are on remote branches:
+   `settings-notifications.desktop` (html + screenshot) on `alert-capture`, `settings-privacy.desktop` on `claude/live-captures-lfs`
+   (an LFS pointer; `git lfs smudge` fetches it). Live structure: **Privacy** = "My ads settings" (Contact Method: Phone Number /
+   Dubizzle Chat / Both) + "Change password"; **Notifications** = Special communications & offers, Recommendations, **Chat Safety
+   Tips**. No "show my phone number", no Manage account. So: retired `manage-account`, `logout-all-devices`, `delete-account`
+   (svg/png/registry removed, concepts kept with `retired`); added `change-password` (ms password-rounded) and `chat-safety-tips`
+   (ms chat-info-outline-rounded); reused house `my-ads` and `nav-chat`. Set = 13 icons (6 house, 7 new), 156 PNGs, preview
+   `icons/settings.html` now drawn on the live page structure. Weight-400 bell kept (the house bell is weight 300).
+
+76. **Seven craft + review skills (user, 2026-10-01: "make these skills, search the web for the content").** The user has 18 `.skill`
+   files on the Mac (design-accessibility … design-typography, icons); 6 had no repo equivalent. Written here, from three web-research
+   passes, each grounded in the measured system: **`design-review`** (anti-slop critique, `rev.*` gates P0–P3 + Nielsen score; lists the
+   borrowed rules that impose another taste and are ignored), **`design-copy`**, **`design-forms`**, **`design-typography`**,
+   **`design-grid`**, **`design-interaction`**, **`design-inspiration`**. Wired into CLAUDE.md rule 5, RULES.md §5 checklist, the plugin,
+   the `feature-design` specialist table ("run design-review before design-qa"), HOW-TO-ASK, ATTRIBUTIONS, the single-skill package note.
+   **Where web and live disagree, live wins** (body 14px not 16, radius ≤1.2rem, casing copied verbatim — live mixes Title and sentence case).
+   Research gaps, stated in each skill's Sources: the sandbox proxy blocked nngroup, baymard, gov.uk site, material.io, w3.org site, so
+   GOV.UK/WCAG/APG/Polaris/Mailchimp/MDN/web.dev were read from their GitHub sources and NN/g, Baymard, Material numbers are second-hand.
+   Findings worth acting on: `Input` has no hint slot and its error isn't linked by `aria-describedby`; live uses both "Favourites" and
+   "Favorites". The other 11 user `.skill` files were not seen — names only; if uploaded, compare with the repo versions.
+
+77. **Live copy audit (user, 2026-10-01: "yes" to a deeper UX-copy pass).** Extracted every UI string from the 82 committed English
+   templates and 10 Arabic captures (LFS, `claude/live-captures-lfs`) → `.claude/skills/design-copy/references/dubizzle-voice.md`.
+   `design-kit/qa/product/copy.md` now lists 45 canonical strings (only ones live writes one way — QA verdicts unchanged, 0 `cpy.*`
+   findings on favourites-revamp and agency-portal); two-form strings are a non-enforced table. Findings: live uses `!`, `Oops!`,
+   "begin your journey"; specs are lowercase (`3 beds`) → RULES.md §4 corrected; Arabic mixes MSA (UI) and Egyptian (safety, "Sell
+   now"), Western-digit prices with `ج.م` after, Arabic-Indic mileage in the same card, and wrong plurals (`منذ 2 أيام`).
+   Deeper research (books, platform guides, Arabic UX writing, marketplace trust copy) still running — fold into `design-copy` next.
+
+78. **design-copy deepened (second research pass).** New `references/principles.md` (Podmajersky's four standards and three error
+   types, Winters' reading-age and front-loading, Yifrah's value-led buttons, Apple HIG Writing and Microsoft Style Guide read in full,
+   marketplace trust copy: name the scam, warn at the risky moment) and `references/arabic.md` (MSA for controls / Egyptian for
+   prompts and safety, verbal noun vs imperative, gender-neutral forms, CLDR six plurals, `ar-EG` defaults to Arabic-Indic digits so pin
+   `ar-EG-u-nu-latn`, bidi isolation, ~30% width budget). SKILL.md gained "how to write a new string", non-fixable errors, safety copy.
+   **Open questions for the user** (in `arabic.md` and `dubizzle-voice.md`): Arabic button grammar, digit system, register split,
+   `عذرًا`/`يُرجى`, casing rule, `Login or Signup`/`Favourites` spellings. No MENA company publishes a content guideline — register rules
+   are inferred from live.
+
+79. **D-019 — headings and button labels use Title Case (user decision, 2026-10-01).** Sentences (errors, hints, toasts, descriptions)
+   stay sentence case; field labels, tabs, links, chips, menu items follow live; live strings still verbatim; a heading/button live writes
+   both ways uses the Title Case form. Applied to design-copy (+ references), design-interaction, design-review, copy.md table, RULES.md §4.
+   Remaining copy decisions: Arabic button grammar, `Login or Signup`/`Favourites` spellings, `عذرًا`.
+
+80. **D-020 — Arabic uses Western digits (user decision, 2026-10-01).** Format with `ar-EG-u-nu-latn`; live's Arabic-Indic mileage is a
+   defect. Applied to design-copy (+ arabic.md, dubizzle-voice.md), design-typography, design-qa checklist.
+   Also: user pointed at `npx skills add emilkowalski/skill` — all nine listed skills (plus ask-sonner, mobile-native) are already installed
+   and match upstream (2026-09-24) line for line apart from the "SCOPED FOR DUBIZZLE" headers added here; **don't re-run the installer**,
+   it would overwrite those headers. `animate-expo` and `write-swift` stay uninstalled (no native app work).
+
+81. **`design-prompt-images` (user: "Build it. It's the biggest gap").** Prompts for generated photos that don't look AI-made, for
+   composed surfaces only (campaign/landing heroes, promo-banner mock plates, app-download) — never listing photos, illustrations,
+   logos, real people or plates (imagery-illustration still wins). 9-slot template, banned glossy vocabulary (stunning/8K/cinematic…,
+   which most online prompting skills add), no text in pixels (HTML overlay, RTL plate), crops for 1280×180 / 390×150 (GPT Image caps
+   at 3:1 → crop, Nano Banana 2/Pro do 4:1/8:1), references: AI-look checklist, Egypt realism cues, model notes. Research read the
+   OpenAI and Gemini cookbooks and BFL FLUX.2 first-hand; Google/Midjourney/Seedream docs second-hand. **Higgsfield MCP needs the user to
+   reconnect it** (claude.ai connectors) before anything can be generated; the CLI is the user's to install. Not yet tested end to end.
+
+82. **Privacy check closed: "Ahmed H." in the portal captures is a test account** (user confirmed). Not a real person; no redaction needed. The
    other fixture names in the portal pages ("Test Agency Agency", fixture people-rows) are likewise test data. CLAUDE.md rule 3 still applies to the
    account holder's own name.
 
 ## 6. Next up
+
+0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner
+   plate (EN + RTL), run the AI-look checklist, log both in PROPOSALS.md.
+
+0f. **Craft skills (item 76):** try `design-review` on a real design (favourites-revamp or the agency portal) and tune the gates;
+   fix `Input` (hint slot + `aria-describedby`) via `design-forms`; ask the user for the 11 other `.skill` files to compare.
+
+0e. **Settings icons (items 73, 75):** labels now verified against live. Still the user's call: the weight-400 bell vs the house
+   bell, and any pick to swap (`icons/settings.html` shows the rejected options). Then decide whether the 7 new ones become React
+   icons (`scripts/build-component-icons.mjs`) and kit icons. Live shows no icons on these pages; they are proposals.
 
 0d. **Favourites/Saved searches re-capture (user will do it later, 2026-09-29).** Deliverable `favourites-revamp` v4 is built
    and sent, with grey placeholder images and derived (unverified) empty states.
@@ -956,7 +1045,7 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 0a. **Arabic is parked** (user, 2026-09-24: "we can skip the arabic for now"). The 76 `.ar`
    captures, the logical-property conversion and `npm run check:rtl` all stay — nothing regresses
    — but the follow-ups wait: live specs against the `.ar` captures, GESS metrics in the type
-   scale, and the Western vs Arabic-Indic digits question. Pick it up before any Arabic release.
+   scale (digits are settled: Western, D-020). Pick it up before any Arabic release.
 
 0. **Every component needs a `check:live` spec.** 42 exist (all passing); still missing for
    Tabs, Select, Checkbox, Toggle, Radio, Pill, AccountMenu, MegaMenu (see item 43) and most of

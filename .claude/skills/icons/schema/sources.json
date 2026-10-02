@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "note": "Icon sources and the published style of each set. Adding a source is a config edit, not a code change. Iconify is primary because it aggregates 150+ sets behind one stable API with search \u2014 one adapter instead of one scraper per site. Set metadata is used to gate searches by style, which is what stops a project ending up with five visual languages.",
+  "iconify": {
+    "api": "https://api.iconify.design",
+    "fallback_apis": [
+      "https://api.simplesvg.com",
+      "https://api.unisvg.com"
+    ],
+    "browse": "https://icon-sets.iconify.design/",
+    "self_hostable": true,
+    "notes": "SVG endpoint is /{prefix}/{name}.svg with width, height, color, rotate and flip params. Search endpoint is /search?query=&prefixes=&limit=."
+  },
+  "sets": {
+    "material-symbols": {
+      "grid": 24,
+      "stroke": null,
+      "style": "both",
+      "license": "Apache-2.0",
+      "variable_stroke": true,
+      "notes": "RULES.md: Rounded family, outlined (FILL 0), weight 300-400, never Sharp, not filled by default. Pick '-outline-rounded' names."
+    },
+    "lucide": {
+      "grid": 24,
+      "stroke": 2,
+      "style": "outline",
+      "license": "ISC",
+      "variable_stroke": true,
+      "notes": "RULES.md: round caps and joins, stroke 1.5-1.75 at 24px (2 reads heavy next to the kit)."
+    },
+    "fa6-regular": {
+      "grid": 512,
+      "stroke": null,
+      "style": "outline",
+      "license": "CC-BY-4.0",
+      "notes": "Font Awesome Free, Regular style only. Never Solid for UI icons, never Pro. Credit required (ATTRIBUTIONS.md)."
+    }
+  },
+  "license_policy": {
+    "note": "Most sets are MIT or Apache. Some are CC-BY and need attribution; a few are commercial. An icon that lands in a product without a licence check is a problem discovered late, so the default allow-list is permissive-only. dubizzle: CC-BY-4.0 is allowed for Font Awesome Free only, because RULES.md allows it and ATTRIBUTIONS.md carries the credit.",
+    "default_allowed": [
+      "MIT",
+      "Apache-2.0",
+      "ISC",
+      "CC0",
+      "CC-BY-4.0"
+    ],
+    "requires_attribution": [
+      "CC-BY-4.0",
+      "CC-BY-3.0"
+    ],
+    "never_without_signoff": [
+      "CC-BY-NC",
+      "proprietary",
+      "commercial"
+    ]
+  },
+  "sets_note": "dubizzle RULES.md (Iconography) allows exactly three external packs: Material Symbols, Font Awesome Free (Regular) and Lucide. Heroicons, Feather, Bootstrap Icons, Phosphor, Iconoir and the rest are banned, so they are not listed here and can never be searched. Change RULES.md first, then this file."
+}

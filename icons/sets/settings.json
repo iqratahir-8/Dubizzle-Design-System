@@ -1,0 +1,147 @@
+{
+  "set": "settings",
+  "display_size": 20,
+  "style": "icons/style.json",
+  "generated": "2026-10-01",
+  "verified": "Checked 2026-10-01 against the live captures settings-privacy.desktop (branch claude/live-captures-lfs, LFS) and settings-notifications.desktop (branch alert-capture). Every label here is on the live page or in the live account menu. Live shows no icons on these pages; the icons are proposals (docs/PROPOSALS.md).",
+  "live_structure": {
+    "Privacy": {
+      "My ads settings": {
+        "Contact Method": [
+          "Phone Number",
+          "Dubizzle Chat",
+          "Both"
+        ]
+      },
+      "Change password": [
+        "Current password",
+        "New password",
+        "Confirm new password"
+      ]
+    },
+    "Notifications": [
+      "Special communications & offers",
+      "Recommendations",
+      "Chat Safety Tips"
+    ]
+  },
+  "items": [
+    {
+      "label": "Settings",
+      "level": "entry",
+      "concept": "settings-entry",
+      "icon": "settings",
+      "origin": "project",
+      "where": "Account menu row 'Settings \u00b7 Privacy and manage accounts'",
+      "svg": "icons/svg/settings.svg"
+    },
+    {
+      "label": "Privacy",
+      "level": "tab",
+      "concept": "settings-privacy",
+      "icon": "privacy",
+      "origin": "new",
+      "where": "Settings tab",
+      "svg": "icons/svg/privacy.svg"
+    },
+    {
+      "label": "My ads settings",
+      "level": "card",
+      "concept": "settings-my-ads",
+      "icon": "my-ads",
+      "origin": "project",
+      "where": "Privacy tab, card title",
+      "svg": "icons/svg/my-ads.svg"
+    },
+    {
+      "label": "Phone Number",
+      "level": "option",
+      "concept": "settings-contact-phone",
+      "icon": "phone-number",
+      "origin": "project",
+      "where": "Contact Method option",
+      "svg": "icons/svg/phone-number.svg"
+    },
+    {
+      "label": "Dubizzle Chat",
+      "level": "option",
+      "concept": "settings-contact-chat",
+      "icon": "nav-chat",
+      "origin": "project",
+      "where": "Contact Method option ('Both' takes no icon)",
+      "svg": "icons/svg/nav-chat.svg"
+    },
+    {
+      "label": "Change password",
+      "level": "card",
+      "concept": "settings-change-password",
+      "icon": "change-password",
+      "origin": "new",
+      "where": "Privacy tab, card title",
+      "svg": "icons/svg/change-password.svg"
+    },
+    {
+      "label": "Notifications",
+      "level": "tab",
+      "concept": "settings-notifications",
+      "icon": "notification-settings",
+      "origin": "new",
+      "where": "Settings tab",
+      "svg": "icons/svg/notification-settings.svg"
+    },
+    {
+      "label": "Special communications & offers",
+      "level": "row",
+      "concept": "settings-offers",
+      "icon": "offers-communications",
+      "origin": "new",
+      "where": "Notifications toggle",
+      "svg": "icons/svg/offers-communications.svg"
+    },
+    {
+      "label": "Recommendations",
+      "level": "row",
+      "concept": "settings-recommendations",
+      "icon": "recommendations",
+      "origin": "new",
+      "where": "Notifications toggle",
+      "svg": "icons/svg/recommendations.svg"
+    },
+    {
+      "label": "Chat Safety Tips",
+      "level": "row",
+      "concept": "settings-chat-safety-tips",
+      "icon": "chat-safety-tips",
+      "origin": "new",
+      "where": "Notifications toggle",
+      "svg": "icons/svg/chat-safety-tips.svg"
+    },
+    {
+      "label": "Change language",
+      "level": "menu",
+      "concept": "settings-language",
+      "icon": "language",
+      "origin": "project",
+      "where": "Account menu, settings group",
+      "svg": "icons/svg/language.svg"
+    },
+    {
+      "label": "Help & Support",
+      "level": "menu",
+      "concept": "settings-help",
+      "icon": "help",
+      "origin": "project",
+      "where": "Account menu, settings group",
+      "svg": "icons/svg/help.svg"
+    },
+    {
+      "label": "Logout",
+      "level": "menu",
+      "concept": "settings-logout",
+      "icon": "logout",
+      "origin": "project",
+      "where": "Account menu, settings group",
+      "svg": "icons/svg/logout.svg"
+    }
+  ]
+}

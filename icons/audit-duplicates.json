@@ -1,0 +1,277 @@
+[
+  {
+    "canonical": "logo-mini",
+    "hash": "ff0c14f78915fc24",
+    "copies": 3,
+    "names": [
+      "logo-mini",
+      "logo-mini-mono",
+      "logo-tiny"
+    ],
+    "files": [
+      "brand/logo-mini-mono.svg",
+      "brand/logo-mini.svg",
+      "brand/logo-tiny.svg"
+    ]
+  },
+  {
+    "canonical": "electronics",
+    "hash": "9b89e4d1662818b3",
+    "copies": 2,
+    "names": [
+      "electronics",
+      "lectronics"
+    ],
+    "files": [
+      "category/electronics.svg",
+      "misc/lectronics.svg"
+    ]
+  },
+  {
+    "canonical": "contact-support",
+    "hash": "4cccd665fdf03770",
+    "copies": 2,
+    "names": [
+      "contact-support",
+      "info-icon"
+    ],
+    "files": [
+      "status/info-icon.svg",
+      "user/contact-support.svg"
+    ]
+  },
+  {
+    "canonical": "landing-tiktok",
+    "hash": "cfdac7b933ca0931",
+    "copies": 2,
+    "names": [
+      "landing-tiktok",
+      "landing-youtube"
+    ],
+    "files": [
+      "social/landing-tiktok.svg",
+      "social/landing-youtube.svg"
+    ]
+  },
+  {
+    "canonical": "photo-count-black",
+    "hash": "1e042de0742e4664",
+    "copies": 2,
+    "names": [
+      "photo-count-black",
+      "photo-mobile-tab-switcher"
+    ],
+    "files": [
+      "media/photo-count-black.svg",
+      "navigation/photo-mobile-tab-switcher.svg"
+    ]
+  },
+  {
+    "canonical": "brand-logo",
+    "hash": "30373c1415b1e709",
+    "copies": 2,
+    "names": [
+      "brand-logo",
+      "logo-with-text"
+    ],
+    "files": [
+      "brand/brand-logo.svg",
+      "brand/logo-with-text.svg"
+    ]
+  },
+  {
+    "canonical": "brand-icon-login",
+    "hash": "2b4eafc748317170",
+    "copies": 2,
+    "names": [
+      "brand-icon-login",
+      "logo"
+    ],
+    "files": [
+      "brand/brand-icon-login.svg",
+      "brand/logo.svg"
+    ]
+  },
+  {
+    "canonical": "add-photo",
+    "hash": "a196b5b859f60bb5",
+    "copies": 2,
+    "names": [
+      "add-photo",
+      "camera"
+    ],
+    "files": [
+      "action/add-photo.svg",
+      "media/camera.svg"
+    ]
+  },
+  {
+    "canonical": "xcircle-blue",
+    "hash": "5bce624f4bf09658",
+    "copies": 2,
+    "names": [
+      "xcircle-blue",
+      "xcircle-red"
+    ],
+    "files": [
+      "misc/xcircle-blue.svg",
+      "misc/xcircle-red.svg"
+    ]
+  },
+  {
+    "canonical": "insights",
+    "hash": "b001e91d722d756e",
+    "copies": 2,
+    "names": [
+      "insights",
+      "insights-inverted"
+    ],
+    "files": [
+      "misc/insights-inverted.svg",
+      "misc/insights.svg"
+    ]
+  },
+  {
+    "canonical": "crown-vipsection",
+    "hash": "524739b9f191ba0f",
+    "copies": 2,
+    "names": [
+      "crown-vipsection",
+      "crown-vipsection-inverted"
+    ],
+    "files": [
+      "misc/crown-vipsection-inverted.svg",
+      "misc/crown-vipsection.svg"
+    ]
+  },
+  {
+    "canonical": "location-icon",
+    "hash": "3a2bdb7a843e9fc3",
+    "copies": 2,
+    "names": [
+      "location-icon",
+      "location-pin-red"
+    ],
+    "files": [
+      "location/location-pin-red.svg",
+      "mobile/location-pin.svg"
+    ]
+  },
+  {
+    "canonical": "evaluations",
+    "hash": "4a509528e1fd0592",
+    "copies": 2,
+    "names": [
+      "evaluations",
+      "evaluations-inverted"
+    ],
+    "files": [
+      "payment/evaluations-inverted.svg",
+      "payment/evaluations.svg"
+    ]
+  },
+  {
+    "canonical": "dots",
+    "hash": "736c977e6856e7ba",
+    "copies": 2,
+    "names": [
+      "dots",
+      "more-actions"
+    ],
+    "files": [
+      "action/dots.svg",
+      "action/more-actions.svg"
+    ]
+  },
+  {
+    "canonical": "download-count",
+    "hash": "5e957492dae0670c",
+    "copies": 2,
+    "names": [
+      "download-count",
+      "downloads"
+    ],
+    "files": [
+      "action/download-count.svg",
+      "action/downloads.svg"
+    ]
+  },
+  {
+    "canonical": "chat",
+    "hash": "996e6741738848a2",
+    "copies": 2,
+    "names": [
+      "chat",
+      "chat-icon"
+    ],
+    "files": [
+      "action/chat-icon.svg",
+      "action/chat.svg"
+    ]
+  },
+  {
+    "canonical": "favorite-unselected",
+    "hash": "73b62ff6423905e2",
+    "copies": 2,
+    "names": [
+      "favorite-unselected",
+      "favourite"
+    ],
+    "files": [
+      "action/favorite-unselected.svg",
+      "action/favourite.svg"
+    ]
+  },
+  {
+    "canonical": "featured",
+    "hash": "673d39d484ac4297",
+    "copies": 2,
+    "names": [
+      "featured",
+      "featured-en"
+    ],
+    "files": [
+      "status/featured-en.svg",
+      "status/featured.svg"
+    ]
+  },
+  {
+    "canonical": "tick-double",
+    "hash": "9c8cd3f709152a69",
+    "copies": 2,
+    "names": [
+      "tick-double",
+      "tick-double-blue"
+    ],
+    "files": [
+      "status/tick-double-blue.svg",
+      "status/tick-double.svg"
+    ]
+  },
+  {
+    "canonical": "rating-star",
+    "hash": "a4f3d968d93e636f",
+    "copies": 2,
+    "names": [
+      "rating-star",
+      "star-rating"
+    ],
+    "files": [
+      "status/rating-star.svg",
+      "status/star-rating.svg"
+    ]
+  },
+  {
+    "canonical": "check-thick",
+    "hash": "923d44be2f100265",
+    "copies": 2,
+    "names": [
+      "check-thick",
+      "promo-check"
+    ],
+    "files": [
+      "mobile/promo-check.svg",
+      "status/check-thick.svg"
+    ]
+  }
+]

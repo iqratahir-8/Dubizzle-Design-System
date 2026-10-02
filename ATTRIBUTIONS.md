@@ -31,6 +31,11 @@ Requires the licence notice to be carried with any distribution.
 
 > Material Symbols by Google, licensed under the Apache License, Version 2.0.
 
+In use (2026-10-01): the seven new settings icons in `icons/svg/` — `privacy`,
+`notification-settings`, `change-password`, `offers-communications`, `recommendations`,
+`chat-safety-tips` (six glyphs; the bell counts once). Source and licence per icon: `icons/registry.json`.
+The `icons` skill records the licence of everything it adds there.
+
 ---
 
 ## Agent skills
@@ -47,6 +52,18 @@ repository for its licence terms.
 
 MIT requires the copyright and permission notice to travel with the software, which is
 why the licence text is kept at `.claude/skills/animate/LICENSE-emil`.
+
+**icons** — uploaded by the user as `icons.skill` (v1.0.0, 2026-09-29), extended here to v1.1.0.
+No licence file came with it; ask its author before redistributing it outside this repo.
+
+**Craft skills** `design-review`, `design-copy`, `design-forms`, `design-typography`, `design-grid`,
+`design-interaction`, `design-inspiration`, `design-prompt-images` — written here (2026-10-01). Their rules are paraphrased
+and adapted from public guidance, not copied: GOV.UK Design System (MIT / OGL), WCAG and WAI-ARIA
+APG (W3C), Shopify Polaris, Mailchimp Content Style Guide, web.dev, MDN (CC-BY-SA), Apple HIG, W3C
+alreq, Vercel Web Interface Guidelines, Anthropic frontend-design, Hallmark (Nutlope), Impeccable
+(pbakaus), Anti UI Slop (UIZZE, via github/awesome-copilot), Owl-Listener designer-skills,
+petekp typography; for images, the OpenAI and Gemini cookbooks, BFL FLUX.2, and the prompting skills it
+reviews (wuyoscar, sanky369, runcomfy, inference-sh). Each skill lists its sources and which were read first-hand.
 
 ## Where the credit has to appear
 

@@ -41,7 +41,7 @@ Mirroring is not "flip everything". Work through these:
 | Layout direction | `dir="rtl"` on the root. Everything else follows from logical properties. |
 | Spacing / position | `margin-inline-start`, `padding-inline-end`, `inset-inline-start`. **Never** `left` / `right` / `margin-left`. |
 | Icons | Directional ones mirror (chevrons, back arrows, breadcrumb separators). Non-directional ones do **not** (clock, camera, phone, logos, brand marks). |
-| Numbers | Prices and specs stay LTR inside RTL text. `EGP 3,190,000` does not reverse. Check for Eastern Arabic numerals (٣) vs Western (3) — match what live does, don't choose. |
+| Numbers | Prices and specs stay LTR inside RTL text. `EGP 3,190,000` does not reverse. **Western digits (3, not ٣) everywhere — decided D-020**; format with `ar-EG-u-nu-latn` (plain `ar-EG` produces Arabic-Indic). Live's Arabic-Indic card mileage is a defect. |
 | Mixed strings | A title like `Mercedes-Benz E300 موديل 2018` is bidirectional. This is where rendering usually breaks — verify against the capture. |
 | Typography | `--font-arabic` (GESS). Arabic has different vertical metrics: line-height tuned for Proxima Nova often clips ascenders or looks cramped. **Measure the Arabic line-height; don't reuse the Latin one.** |
 | Text length | Arabic strings are frequently shorter than English, sometimes much longer. Buttons sized to English copy can look wrong either way. |

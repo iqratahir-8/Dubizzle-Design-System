@@ -174,6 +174,37 @@ and a pixel diff — and writes a live / ours / diff picture per component to
 `design-kit/reference/live/screens/_live-check/`. After a dubizzle release: re-capture,
 then run it; anything that moved shows up in red.
 
+## Icons
+
+The `icons` skill finds an icon by checking what dubizzle already has first, and only then
+fetching from a style-matched set. The style is pinned in `icons/style.json`: Material Symbols
+Rounded, weight 400, shown at 20px, the same family as the live account menu.
+
+| Say | What happens |
+|---|---|
+| "Which **icon** for <thing>?" / "do we have an icon for <thing>?" | Checks `icons/registry.json` (all 546 house glyphs), then `icons/concepts.json` (earlier decisions), then searches Material Symbols. Shows candidates as images, not names. |
+| "**Icons for <screen/area>**" | Produces a set like `icons/sets/settings.json` (13 icons, labels checked against the live settings pages), with SVG in `icons/svg/`, PNG at 16/20/24/32 × @1–3 in `icons/png/`, and a preview page like `icons/settings.html`. |
+| "Why this icon?" | `icons/concepts.json` has the pick, what was rejected, and why. |
+
+New icons go in `docs/PROPOSALS.md` until a designer signs them off.
+
+## Craft skills and the anti-slop review
+
+Seven skills apply web best practice (GOV.UK, WCAG, WAI-ARIA, Polaris, Mailchimp, Apple HIG, W3C
+Arabic layout, Hallmark, Impeccable…) **through** dubizzle's measured system — where the web and
+live dubizzle disagree, live wins (body text stays 14px, cards stay ≤1.2rem radius).
+
+| Say | Skill |
+|---|---|
+| "**Review** this design" / "does this look AI-made?" / "critique" | `design-review` — P0–P3 findings and a Ship / Fix / Rework verdict. Run before QA. |
+| "Write the **error / empty state / button** copy" | `design-copy` |
+| "Design the **form**" / "which control?" / "validation" | `design-forms` |
+| "Fix the **type** / hierarchy / truncation" | `design-typography` |
+| "**Spacing**, columns, responsive layout" | `design-grid` |
+| "What are the **states**?" / "loading" / "confirm or undo?" | `design-interaction` |
+| "Find **inspiration** / how do OLX or Bayut do it?" | `design-inspiration` (uses Mobbin) |
+| "**Generate** a banner / hero photo" / "write an image prompt" / "make it not look AI" | `design-prompt-images` — composed surfaces only; needs the Higgsfield MCP reconnected or the CLI signed in |
+
 ## Checking a design and handing it over
 
 Two skills, used in this order:
@@ -206,7 +237,8 @@ The skills call this repo's scripts, so **clone the repo and run `npm install` f
 ```
 
 That gives `design-to-handoff`, `feature-design`, `design-qa`, `design-deliverables` and the specialist skills
-(`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`) in every folder. Inside the repo
+(`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`, `icons`, and the craft skills `design-review`, `design-copy`, `design-forms`, `design-typography`,
+`design-grid`, `design-interaction`, `design-inspiration`, `design-prompt-images`) in every folder. Inside the repo
 they already load from `.claude/skills/` without the plugin. Update later with `/plugin marketplace update dubizzle`.
 The plugin definition is `.claude-plugin/` (it points at `.claude/skills`, so nothing is duplicated).
 

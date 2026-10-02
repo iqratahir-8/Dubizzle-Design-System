@@ -526,3 +526,36 @@ anti-centre defaults are overridden in its dubizzle preamble.
 **proposal** until the designer confirms it and it becomes a token — and Claude must say so
 in the response. Purple/indigo/teal have no tokens yet: the designer needs to add a
 primitive ramp (`01…07`) and semantic roles for each.
+
+## D-019 — Headings and button labels use Title Case (2026-10-01)
+
+**User decision:** "Keep the Title case … for heading and button labels." Live mixes Title Case
+(`Post Your Ad`, `Save Search`, `Clear All Filters`, `Popular Searches`) and sentence case
+(`Show phone number`, `Change password`, portal buttons); web guides (GOV.UK, Polaris, Microsoft)
+recommend sentence case.
+
+**Rule:** new **headings and button labels** use Title Case (minor words — a, an, the, and, or,
+for, of, in, on, to, at, by, with — lowercase unless first or last; brand casing kept). Field
+labels, tabs, links, chips and menu items are not covered: they follow live on their surface.
+Sentences — errors, hints, descriptions, toasts, empty-state body — stay sentence case. Existing
+live strings are still copied verbatim; a heading or button live writes both ways uses its Title
+Case form. English only.
+
+**Changed:** `design-copy` (casing section, examples), `design-interaction`, `design-review`,
+`design-copy/references/{principles,dubizzle-voice}.md`, `design-kit/qa/product/copy.md` table,
+`RULES.md` §4.
+
+## D-020 — Arabic uses Western digits (2026-10-01)
+
+**User decision:** "Arabic digits: Western." Live already writes prices, area and time in Western
+digits (`990,000 ج.م`, `220 م٢`, `منذ 2 أيام`) but card mileage in Arabic-Indic (`١٦٬٠٠٠ كم`), and
+CLDR's `ar-EG` locale defaults to Arabic-Indic.
+
+**Rule:** every number in the Arabic UI uses Western digits 0–9 with a Western comma separator —
+prices, mileage, area, counts, time, phone numbers. Code formats with `ar-EG-u-nu-latn`, never bare
+`ar-EG`. Live's Arabic-Indic mileage is a defect to report. Seller-typed digits inside titles are
+user content and stay as written.
+
+**Changed:** `design-copy` (+ `references/arabic.md`, `dubizzle-voice.md`), `design-typography`,
+`design-qa` checklist, `PROGRESS.md` open items.
+
