@@ -1058,6 +1058,18 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    headless Chrome with logo, banner, coin and header icons rendered. `deliverable.json` bumped to v2 with a changelog entry. Still open: the 22 state pages are not clickable
    (their trigger controls are not recorded); size is over the soft budget (the shared stylesheets are 8.7 MB); the 2 thumbnails.
 
+90. **The 22 portal state pages are now clickable (user: "Make the 22 state pages clickable").** The trigger for each state was already recorded in the repo:
+   `PORTAL_HOTSPOTS` in `scripts/lib/prototype.mjs` (button text, a screen box, or click-outside; checked by `npm run check:prototype`) plus the `<a data-proto-link>` links on the pages.
+   New `scripts/build-portal-flows.py` (+ `scripts/resolve-portal-triggers.mjs`) renders each page in headless Chrome, finds the element behind every trigger and maps it to its
+   stable node id, then writes `design-kit/deliverables/agency-portal/flows.json`: **30 screens (14 pages, 10 modals/menus, 6 drawers), 142 transitions** (More filters, the ad
+   row menu, credits chip, request brand, ad-row -> drawer + 5 drawer tabs, Assign agent, Invite agent, Sort, agent menu, Leads tabs/date range/export, VIP purchase, credit tabs,
+   candidate detail, and the sidebar between all 8 main screens). Validated: 0 unknown nodes, all reachable from the dashboard, every state has a way back, every modal/drawer has a dismiss.
+   "Click outside" targets the page heading behind the dialog (a wrapper element would contain the dialog and swallow clicks). Re-run the script after any portal rebuild.
+   **Runner fix (design-deliverables 1.0.1):** listeners are capture-phase, so a ⋯ icon inside a row link fired the row too; each handler now acts only if it is the innermost trigger, and a null guard
+   stops errors when a frame is swapped mid-load. **Tested in headless Chrome: 38/38 click-through steps behave as expected, 0 page errors** (after the fix; before it 32/38).
+   Confirming buttons (Submit, Apply product, Purchase, Send) still go nowhere, as in the captures. deliverable v3 (21.5 MB). The favourites deliverable was not rebuilt after the runner change
+   (its captures are not in the sandbox) — rebuild it on the Mac before sending it again.
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner

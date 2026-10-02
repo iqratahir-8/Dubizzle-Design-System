@@ -3,13 +3,83 @@
     "portal-desktop": "dashboard"
   },
   "screens": {
+    "ad-agent": {
+      "page": "portal-ad-agent",
+      "platform": "portal-desktop",
+      "kind": "drawer"
+    },
+    "ad-assign-agent": {
+      "page": "portal-ad-assign-agent",
+      "platform": "portal-desktop",
+      "kind": "modal"
+    },
+    "ad-chats": {
+      "page": "portal-ad-chats",
+      "platform": "portal-desktop",
+      "kind": "drawer"
+    },
+    "ad-info": {
+      "page": "portal-ad-info",
+      "platform": "portal-desktop",
+      "kind": "drawer"
+    },
+    "ad-overview": {
+      "page": "portal-ad-overview",
+      "platform": "portal-desktop",
+      "kind": "drawer"
+    },
+    "ad-promo": {
+      "page": "portal-ad-promo",
+      "platform": "portal-desktop",
+      "kind": "drawer"
+    },
     "ads": {
       "page": "portal-ads",
       "platform": "portal-desktop",
       "kind": "page"
     },
+    "ads-actions": {
+      "page": "portal-ads-actions",
+      "platform": "portal-desktop",
+      "kind": "modal"
+    },
+    "ads-credits": {
+      "page": "portal-ads-credits",
+      "platform": "portal-desktop",
+      "kind": "modal"
+    },
+    "ads-more-filters": {
+      "page": "portal-ads-more-filters",
+      "platform": "portal-desktop",
+      "kind": "modal"
+    },
+    "ads-request-brand": {
+      "page": "portal-ads-request-brand",
+      "platform": "portal-desktop",
+      "kind": "modal"
+    },
     "agents": {
       "page": "portal-agents",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "agents-actions": {
+      "page": "portal-agents-actions",
+      "platform": "portal-desktop",
+      "kind": "modal"
+    },
+    "agents-invite": {
+      "page": "portal-agents-invite",
+      "platform": "portal-desktop",
+      "kind": "drawer"
+    },
+    "agents-sort": {
+      "page": "portal-agents-sort",
+      "platform": "portal-desktop",
+      "kind": "modal"
+    },
+    "candidate-detail": {
+      "page": "portal-candidate-detail",
       "platform": "portal-desktop",
       "kind": "page"
     },
@@ -20,6 +90,16 @@
     },
     "credit": {
       "page": "portal-credit",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "credit-agents": {
+      "page": "portal-credit-agents",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "credit-self": {
+      "page": "portal-credit-self",
       "platform": "portal-desktop",
       "kind": "page"
     },
@@ -38,110 +118,1023 @@
       "platform": "portal-desktop",
       "kind": "page"
     },
+    "leads-daterange": {
+      "page": "portal-leads-daterange",
+      "platform": "portal-desktop",
+      "kind": "modal"
+    },
+    "leads-export": {
+      "page": "portal-leads-export",
+      "platform": "portal-desktop",
+      "kind": "modal"
+    },
+    "leads-phone": {
+      "page": "portal-leads-phone",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "leads-sms": {
+      "page": "portal-leads-sms",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
+    "leads-whatsapp": {
+      "page": "portal-leads-whatsapp",
+      "platform": "portal-desktop",
+      "kind": "page"
+    },
     "vip": {
       "page": "portal-vip",
       "platform": "portal-desktop",
       "kind": "page"
+    },
+    "vip-purchase": {
+      "page": "portal-vip-purchase",
+      "platform": "portal-desktop",
+      "kind": "modal"
     }
   },
   "transitions": [
+    {
+      "from": "ad-agent",
+      "to": "ads",
+      "node": "17:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "ad-agent",
+      "to": "ad-assign-agent",
+      "node": "17:825",
+      "kind": "forward",
+      "note": "'Assign Agent'"
+    },
+    {
+      "from": "ad-agent",
+      "to": "ad-overview",
+      "node": "17:187",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-agent",
+      "to": "ad-info",
+      "node": "17:730",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-agent",
+      "to": "ad-promo",
+      "node": "17:732",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-agent",
+      "to": "ad-chats",
+      "node": "17:736",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-assign-agent",
+      "to": "ad-agent",
+      "node": "18:863",
+      "kind": "dismiss"
+    },
+    {
+      "from": "ad-assign-agent",
+      "to": "ad-agent",
+      "node": "18:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "ad-chats",
+      "to": "ads",
+      "node": "19:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "ad-chats",
+      "to": "ad-overview",
+      "node": "19:187",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-chats",
+      "to": "ad-info",
+      "node": "19:730",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-chats",
+      "to": "ad-promo",
+      "node": "19:732",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-chats",
+      "to": "ad-agent",
+      "node": "19:734",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-info",
+      "to": "ads",
+      "node": "20:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "ad-info",
+      "to": "ad-overview",
+      "node": "20:187",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-info",
+      "to": "ad-promo",
+      "node": "20:732",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-info",
+      "to": "ad-agent",
+      "node": "20:734",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-info",
+      "to": "ad-chats",
+      "node": "20:736",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-overview",
+      "to": "ads",
+      "node": "21:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "ad-overview",
+      "to": "ad-info",
+      "node": "21:730",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-overview",
+      "to": "ad-promo",
+      "node": "21:732",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-overview",
+      "to": "ad-agent",
+      "node": "21:734",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-overview",
+      "to": "ad-chats",
+      "node": "21:736",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-promo",
+      "to": "ads",
+      "node": "22:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "ad-promo",
+      "to": "ad-overview",
+      "node": "22:187",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-promo",
+      "to": "ad-info",
+      "node": "22:730",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-promo",
+      "to": "ad-agent",
+      "node": "22:734",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ad-promo",
+      "to": "ad-chats",
+      "node": "22:736",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ads",
+      "to": "ads-more-filters",
+      "node": "10:164",
+      "kind": "forward",
+      "note": "'More Filters'"
+    },
+    {
+      "from": "ads",
+      "to": "ads-request-brand",
+      "node": "10:91",
+      "kind": "forward",
+      "note": "'Request to add Brand/Model'"
+    },
+    {
+      "from": "ads",
+      "to": "ads-credits",
+      "node": "10:95",
+      "kind": "forward"
+    },
+    {
+      "from": "ads",
+      "to": "ads-actions",
+      "node": "10:240",
+      "kind": "forward"
+    },
+    {
+      "from": "ads",
+      "to": "ad-overview",
+      "node": "10:188",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "ads-actions",
+      "to": "ads",
+      "node": "23:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "ads-credits",
+      "to": "ads",
+      "node": "24:94",
+      "kind": "dismiss"
+    },
+    {
+      "from": "ads-more-filters",
+      "to": "ads",
+      "node": "25:187",
+      "kind": "dismiss"
+    },
+    {
+      "from": "ads-more-filters",
+      "to": "ads",
+      "node": "25:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "ads-request-brand",
+      "to": "ads",
+      "node": "26:712",
+      "kind": "dismiss"
+    },
+    {
+      "from": "ads-request-brand",
+      "to": "ads",
+      "node": "26:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "agents",
+      "to": "agents-invite",
+      "node": "14:117",
+      "kind": "forward",
+      "note": "'Invite agent'"
+    },
+    {
+      "from": "agents",
+      "to": "agents-sort",
+      "node": "14:111",
+      "kind": "forward",
+      "note": "'Sort by'"
+    },
+    {
+      "from": "agents",
+      "to": "agents-actions",
+      "node": "14:149",
+      "kind": "forward"
+    },
+    {
+      "from": "agents-actions",
+      "to": "agents",
+      "node": "27:87",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "agents-invite",
+      "to": "agents",
+      "node": "28:188",
+      "kind": "dismiss"
+    },
+    {
+      "from": "agents-invite",
+      "to": "agents",
+      "node": "28:87",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "agents-sort",
+      "to": "agents",
+      "node": "29:110",
+      "kind": "dismiss"
+    },
+    {
+      "from": "agents-sort",
+      "to": "agents",
+      "node": "29:87",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "candidates",
+      "to": "candidate-detail",
+      "node": "11:407",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "credit",
+      "to": "credit-self",
+      "node": "16:92",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "credit",
+      "to": "credit-agents",
+      "node": "16:94",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "credit-agents",
+      "to": "credit-self",
+      "node": "31:92",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "credit-self",
+      "to": "credit-agents",
+      "node": "32:94",
+      "kind": "forward",
+      "note": "link"
+    },
+    {
+      "from": "leads",
+      "to": "leads-phone",
+      "node": "12:96",
+      "kind": "forward",
+      "note": "'Phone'"
+    },
+    {
+      "from": "leads",
+      "to": "leads-sms",
+      "node": "12:98",
+      "kind": "forward",
+      "note": "'SMS'"
+    },
+    {
+      "from": "leads",
+      "to": "leads-whatsapp",
+      "node": "12:100",
+      "kind": "forward",
+      "note": "'WhatsApp'"
+    },
+    {
+      "from": "leads",
+      "to": "leads-daterange",
+      "node": "12:119",
+      "kind": "forward",
+      "note": "'Date Range'"
+    },
+    {
+      "from": "leads",
+      "to": "leads-export",
+      "node": "12:138",
+      "kind": "forward",
+      "note": "'Export Leads'"
+    },
+    {
+      "from": "leads-daterange",
+      "to": "leads",
+      "node": "33:118",
+      "kind": "dismiss"
+    },
+    {
+      "from": "leads-daterange",
+      "to": "leads",
+      "node": "33:143",
+      "kind": "dismiss"
+    },
+    {
+      "from": "leads-daterange",
+      "to": "leads",
+      "node": "33:141",
+      "kind": "dismiss"
+    },
+    {
+      "from": "leads-daterange",
+      "to": "leads",
+      "node": "33:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "leads-export",
+      "to": "leads",
+      "node": "34:471",
+      "kind": "dismiss"
+    },
+    {
+      "from": "leads-export",
+      "to": "leads",
+      "node": "34:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
+    {
+      "from": "leads-phone",
+      "to": "leads",
+      "node": "35:93",
+      "kind": "back",
+      "note": "tab: All"
+    },
+    {
+      "from": "leads-phone",
+      "to": "leads-sms",
+      "node": "35:97",
+      "kind": "forward",
+      "note": "'SMS'"
+    },
+    {
+      "from": "leads-phone",
+      "to": "leads-whatsapp",
+      "node": "35:99",
+      "kind": "forward",
+      "note": "'WhatsApp'"
+    },
+    {
+      "from": "leads-phone",
+      "to": "leads",
+      "node": "35:136",
+      "kind": "back",
+      "note": "tab: Clear All Filters"
+    },
+    {
+      "from": "leads-phone",
+      "to": "leads-daterange",
+      "node": "35:118",
+      "kind": "forward",
+      "note": "'Date Range'"
+    },
+    {
+      "from": "leads-phone",
+      "to": "leads-export",
+      "node": "35:139",
+      "kind": "forward",
+      "note": "'Export Leads'"
+    },
+    {
+      "from": "leads-sms",
+      "to": "leads",
+      "node": "36:93",
+      "kind": "back",
+      "note": "tab: All"
+    },
+    {
+      "from": "leads-sms",
+      "to": "leads-phone",
+      "node": "36:95",
+      "kind": "forward",
+      "note": "'Phone'"
+    },
+    {
+      "from": "leads-sms",
+      "to": "leads-whatsapp",
+      "node": "36:99",
+      "kind": "forward",
+      "note": "'WhatsApp'"
+    },
+    {
+      "from": "leads-sms",
+      "to": "leads",
+      "node": "36:136",
+      "kind": "back",
+      "note": "tab: Clear All Filters"
+    },
+    {
+      "from": "leads-sms",
+      "to": "leads-daterange",
+      "node": "36:118",
+      "kind": "forward",
+      "note": "'Date Range'"
+    },
+    {
+      "from": "leads-sms",
+      "to": "leads-export",
+      "node": "36:139",
+      "kind": "forward",
+      "note": "'Export Leads'"
+    },
+    {
+      "from": "leads-whatsapp",
+      "to": "leads",
+      "node": "37:93",
+      "kind": "back",
+      "note": "tab: All"
+    },
+    {
+      "from": "leads-whatsapp",
+      "to": "leads-phone",
+      "node": "37:95",
+      "kind": "forward",
+      "note": "'Phone'"
+    },
+    {
+      "from": "leads-whatsapp",
+      "to": "leads-sms",
+      "node": "37:97",
+      "kind": "forward",
+      "note": "'SMS'"
+    },
+    {
+      "from": "leads-whatsapp",
+      "to": "leads",
+      "node": "37:136",
+      "kind": "back",
+      "note": "tab: Clear All Filters"
+    },
+    {
+      "from": "leads-whatsapp",
+      "to": "leads-daterange",
+      "node": "37:118",
+      "kind": "forward",
+      "note": "'Date Range'"
+    },
+    {
+      "from": "leads-whatsapp",
+      "to": "leads-export",
+      "node": "37:139",
+      "kind": "forward",
+      "note": "'Export Leads'"
+    },
+    {
+      "from": "vip",
+      "to": "vip-purchase",
+      "node": "13:182",
+      "kind": "forward",
+      "note": "'Purchase'"
+    },
+    {
+      "from": "vip-purchase",
+      "to": "vip",
+      "node": "38:86",
+      "kind": "dismiss",
+      "note": "click outside"
+    },
     {
       "from": "dashboard",
       "to": "ads",
       "node": "9:13",
       "kind": "forward",
-      "note": "sidebar"
+      "note": "sidebar: ads"
     },
     {
       "from": "dashboard",
       "to": "candidates",
       "node": "9:17",
       "kind": "forward",
-      "note": "sidebar"
+      "note": "sidebar: candidates"
     },
     {
       "from": "dashboard",
       "to": "leads",
       "node": "9:21",
       "kind": "forward",
-      "note": "sidebar"
+      "note": "sidebar: leads"
     },
     {
       "from": "dashboard",
       "to": "vip",
       "node": "9:25",
       "kind": "forward",
-      "note": "sidebar"
+      "note": "sidebar: vip"
     },
     {
       "from": "dashboard",
       "to": "agents",
       "node": "9:29",
       "kind": "forward",
-      "note": "sidebar"
+      "note": "sidebar: agents"
     },
     {
       "from": "dashboard",
       "to": "insights",
       "node": "9:33",
       "kind": "forward",
-      "note": "sidebar"
+      "note": "sidebar: insights"
     },
     {
       "from": "dashboard",
       "to": "credit",
       "node": "9:37",
       "kind": "forward",
-      "note": "sidebar"
+      "note": "sidebar: credit"
     },
     {
       "from": "ads",
       "to": "dashboard",
       "node": "10:9",
       "kind": "back",
-      "note": "sidebar: Dashboard"
+      "note": "sidebar: dashboard"
+    },
+    {
+      "from": "ads",
+      "to": "candidates",
+      "node": "10:17",
+      "kind": "forward",
+      "note": "sidebar: candidates"
+    },
+    {
+      "from": "ads",
+      "to": "leads",
+      "node": "10:21",
+      "kind": "forward",
+      "note": "sidebar: leads"
+    },
+    {
+      "from": "ads",
+      "to": "vip",
+      "node": "10:25",
+      "kind": "forward",
+      "note": "sidebar: vip"
+    },
+    {
+      "from": "ads",
+      "to": "agents",
+      "node": "10:29",
+      "kind": "forward",
+      "note": "sidebar: agents"
+    },
+    {
+      "from": "ads",
+      "to": "insights",
+      "node": "10:33",
+      "kind": "forward",
+      "note": "sidebar: insights"
+    },
+    {
+      "from": "ads",
+      "to": "credit",
+      "node": "10:37",
+      "kind": "forward",
+      "note": "sidebar: credit"
     },
     {
       "from": "candidates",
       "to": "dashboard",
       "node": "11:9",
       "kind": "back",
-      "note": "sidebar: Dashboard"
+      "note": "sidebar: dashboard"
+    },
+    {
+      "from": "candidates",
+      "to": "ads",
+      "node": "11:13",
+      "kind": "forward",
+      "note": "sidebar: ads"
+    },
+    {
+      "from": "candidates",
+      "to": "leads",
+      "node": "11:21",
+      "kind": "forward",
+      "note": "sidebar: leads"
+    },
+    {
+      "from": "candidates",
+      "to": "vip",
+      "node": "11:25",
+      "kind": "forward",
+      "note": "sidebar: vip"
+    },
+    {
+      "from": "candidates",
+      "to": "agents",
+      "node": "11:29",
+      "kind": "forward",
+      "note": "sidebar: agents"
+    },
+    {
+      "from": "candidates",
+      "to": "insights",
+      "node": "11:33",
+      "kind": "forward",
+      "note": "sidebar: insights"
+    },
+    {
+      "from": "candidates",
+      "to": "credit",
+      "node": "11:37",
+      "kind": "forward",
+      "note": "sidebar: credit"
     },
     {
       "from": "leads",
       "to": "dashboard",
       "node": "12:9",
       "kind": "back",
-      "note": "sidebar: Dashboard"
+      "note": "sidebar: dashboard"
+    },
+    {
+      "from": "leads",
+      "to": "ads",
+      "node": "12:13",
+      "kind": "forward",
+      "note": "sidebar: ads"
+    },
+    {
+      "from": "leads",
+      "to": "candidates",
+      "node": "12:17",
+      "kind": "forward",
+      "note": "sidebar: candidates"
+    },
+    {
+      "from": "leads",
+      "to": "vip",
+      "node": "12:25",
+      "kind": "forward",
+      "note": "sidebar: vip"
+    },
+    {
+      "from": "leads",
+      "to": "agents",
+      "node": "12:29",
+      "kind": "forward",
+      "note": "sidebar: agents"
+    },
+    {
+      "from": "leads",
+      "to": "insights",
+      "node": "12:33",
+      "kind": "forward",
+      "note": "sidebar: insights"
+    },
+    {
+      "from": "leads",
+      "to": "credit",
+      "node": "12:37",
+      "kind": "forward",
+      "note": "sidebar: credit"
     },
     {
       "from": "vip",
       "to": "dashboard",
       "node": "13:9",
       "kind": "back",
-      "note": "sidebar: Dashboard"
+      "note": "sidebar: dashboard"
+    },
+    {
+      "from": "vip",
+      "to": "ads",
+      "node": "13:13",
+      "kind": "forward",
+      "note": "sidebar: ads"
+    },
+    {
+      "from": "vip",
+      "to": "candidates",
+      "node": "13:17",
+      "kind": "forward",
+      "note": "sidebar: candidates"
+    },
+    {
+      "from": "vip",
+      "to": "leads",
+      "node": "13:21",
+      "kind": "forward",
+      "note": "sidebar: leads"
+    },
+    {
+      "from": "vip",
+      "to": "agents",
+      "node": "13:29",
+      "kind": "forward",
+      "note": "sidebar: agents"
+    },
+    {
+      "from": "vip",
+      "to": "insights",
+      "node": "13:33",
+      "kind": "forward",
+      "note": "sidebar: insights"
+    },
+    {
+      "from": "vip",
+      "to": "credit",
+      "node": "13:37",
+      "kind": "forward",
+      "note": "sidebar: credit"
     },
     {
       "from": "agents",
       "to": "dashboard",
       "node": "14:9",
       "kind": "back",
-      "note": "sidebar: Dashboard"
+      "note": "sidebar: dashboard"
+    },
+    {
+      "from": "agents",
+      "to": "ads",
+      "node": "14:13",
+      "kind": "forward",
+      "note": "sidebar: ads"
+    },
+    {
+      "from": "agents",
+      "to": "candidates",
+      "node": "14:17",
+      "kind": "forward",
+      "note": "sidebar: candidates"
+    },
+    {
+      "from": "agents",
+      "to": "leads",
+      "node": "14:21",
+      "kind": "forward",
+      "note": "sidebar: leads"
+    },
+    {
+      "from": "agents",
+      "to": "vip",
+      "node": "14:25",
+      "kind": "forward",
+      "note": "sidebar: vip"
+    },
+    {
+      "from": "agents",
+      "to": "insights",
+      "node": "14:33",
+      "kind": "forward",
+      "note": "sidebar: insights"
+    },
+    {
+      "from": "agents",
+      "to": "credit",
+      "node": "14:37",
+      "kind": "forward",
+      "note": "sidebar: credit"
     },
     {
       "from": "insights",
       "to": "dashboard",
       "node": "15:9",
       "kind": "back",
-      "note": "sidebar: Dashboard"
+      "note": "sidebar: dashboard"
+    },
+    {
+      "from": "insights",
+      "to": "ads",
+      "node": "15:13",
+      "kind": "forward",
+      "note": "sidebar: ads"
+    },
+    {
+      "from": "insights",
+      "to": "candidates",
+      "node": "15:17",
+      "kind": "forward",
+      "note": "sidebar: candidates"
+    },
+    {
+      "from": "insights",
+      "to": "leads",
+      "node": "15:21",
+      "kind": "forward",
+      "note": "sidebar: leads"
+    },
+    {
+      "from": "insights",
+      "to": "vip",
+      "node": "15:25",
+      "kind": "forward",
+      "note": "sidebar: vip"
+    },
+    {
+      "from": "insights",
+      "to": "agents",
+      "node": "15:29",
+      "kind": "forward",
+      "note": "sidebar: agents"
+    },
+    {
+      "from": "insights",
+      "to": "credit",
+      "node": "15:37",
+      "kind": "forward",
+      "note": "sidebar: credit"
     },
     {
       "from": "credit",
       "to": "dashboard",
       "node": "16:9",
       "kind": "back",
-      "note": "sidebar: Dashboard"
+      "note": "sidebar: dashboard"
+    },
+    {
+      "from": "credit",
+      "to": "ads",
+      "node": "16:13",
+      "kind": "forward",
+      "note": "sidebar: ads"
+    },
+    {
+      "from": "credit",
+      "to": "candidates",
+      "node": "16:17",
+      "kind": "forward",
+      "note": "sidebar: candidates"
+    },
+    {
+      "from": "credit",
+      "to": "leads",
+      "node": "16:21",
+      "kind": "forward",
+      "note": "sidebar: leads"
+    },
+    {
+      "from": "credit",
+      "to": "vip",
+      "node": "16:25",
+      "kind": "forward",
+      "note": "sidebar: vip"
+    },
+    {
+      "from": "credit",
+      "to": "agents",
+      "node": "16:29",
+      "kind": "forward",
+      "note": "sidebar: agents"
+    },
+    {
+      "from": "credit",
+      "to": "insights",
+      "node": "16:33",
+      "kind": "forward",
+      "note": "sidebar: insights"
+    },
+    {
+      "from": "candidate-detail",
+      "to": "candidates",
+      "node": "30:17",
+      "kind": "back",
+      "note": "sidebar"
+    },
+    {
+      "from": "credit-agents",
+      "to": "credit",
+      "node": "31:37",
+      "kind": "back",
+      "note": "sidebar"
+    },
+    {
+      "from": "credit-self",
+      "to": "credit",
+      "node": "32:37",
+      "kind": "back",
+      "note": "sidebar"
     }
   ]
 }

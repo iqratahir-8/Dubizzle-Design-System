@@ -101,10 +101,16 @@
       box.__mounted = false; box.__onload = wire; mount(box);
     }
     function wire(fr) {
-      var d = fr.contentDocument;
+      var d = fr.contentDocument; if (!d) return;          /* frame swapped out before it finished loading */
+      var trigEls = [];
+      (flows.transitions || []).filter(function (t) { return t.from === cur && t.node; }).forEach(function (t) { var x = d.querySelector('[data-node-id="' + t.node + '"]'); if (x) trigEls.push(x); });
       (flows.transitions || []).filter(function (t) { return t.from === cur && t.node; }).forEach(function (t) {
         var el = d.querySelector('[data-node-id="' + t.node + '"]'); if (!el) return;
-        el.addEventListener("click", function (e) { e.preventDefault(); if (t.kind === "back" || t.kind === "dismiss" || t.kind === "close") { if (flows.screens[t.to]) { var i = hist.lastIndexOf(t.to); hist = i >= 0 ? hist.slice(0, i) : hist; show(t.to, false); } else back(); } else show(t.to, true); }, true);
+        el.addEventListener("click", function (e) {
+          /* innermost trigger wins: a menu icon inside a row link must not also fire the row (these listeners run in the capture phase, outer first) */
+          var n = e.target; while (n && n !== d && trigEls.indexOf(n) < 0) n = n.parentElement; if (n !== el) return;
+          e.preventDefault(); e.stopPropagation();
+          if (t.kind === "back" || t.kind === "dismiss" || t.kind === "close") { if (flows.screens[t.to]) { var i = hist.lastIndexOf(t.to); hist = i >= 0 ? hist.slice(0, i) : hist; show(t.to, false); } else back(); } else show(t.to, true); }, true);
         el.style.cursor = "pointer";
         if (hot) { var r = el.getBoundingClientRect(), s = parseFloat(fr.style.transform.replace(/[^0-9.]/g, "")) || 1; var h = document.createElement("div"); h.className = "dd-spot"; h.style.cssText = "left:" + r.left * s + "px;top:" + r.top * s + "px;width:" + r.width * s + "px;height:" + r.height * s + "px"; box.appendChild(h); }
       });

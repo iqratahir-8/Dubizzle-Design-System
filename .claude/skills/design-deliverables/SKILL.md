@@ -10,7 +10,7 @@ description: >-
   team once screens exist. Runs design-qa first as a gate and refuses to build on unresolved
   blockers. Covers web desktop, web mobile and the desktop-only agency portal (dubizzle Pro).
   Never invents content to fill a section and never changes a token, a screen or a stylesheet.
-version: 1.0.0
+version: 1.0.1
 ---
 
 # Design Deliverables — dubizzle Egypt

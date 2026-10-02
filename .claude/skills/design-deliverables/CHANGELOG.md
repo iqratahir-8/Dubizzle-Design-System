@@ -3,6 +3,13 @@
 Three versions move independently: this skill, each deliverable document, and the QA report
 schema this skill consumes.
 
+## [1.0.1] — 2026-10-02
+### Fixed
+- Prototype runner: a click now fires only the innermost trigger (listeners are capture-phase, so each
+  one checks it is the deepest trigger under the click). A control nested inside another trigger — a ⋯ menu
+  icon inside a row link — no longer also fires the outer one.
+- Prototype runner: no `null` error when a frame is swapped before it has loaded.
+
 ## [1.0.0] — 2026-09-29
 Accepts QA report schema: v1 · Node ledger version: 1
 

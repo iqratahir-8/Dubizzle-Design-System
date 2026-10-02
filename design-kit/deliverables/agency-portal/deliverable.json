@@ -1,7 +1,7 @@
 {
   "feature": "agency-portal",
   "title": "Agency portal (dubizzle Pro) — as captured",
-  "version": 2,
+  "version": 3,
   "audience": "engineer",
   "platforms": [
     "portal-desktop"
@@ -45,7 +45,7 @@
   "summary": {
     "problem": "The agency portal has no hand-off document: engineers and PMs working on dubizzle Pro have only live production and a folder of captures to learn what exists.",
     "scope": "The 8 portal screens (Dashboard, Agency Ads, Candidates, Leads, VIP Leads, Agency Management, Insights, Credit Info) plus their drawers, modals and filter states: 30 captured pages, desktop only.",
-    "changed": "v2: images are real. The icons, logo, coins, avatars and ad photos are embedded (63 of 65 remote assets); two ad thumbnails that production returned 403 for are still placeholders. Nothing is redesigned."
+    "changed": "v3: all 30 pages are in the clickable prototype. The 22 drawer, modal and menu states open from the control that opens them on production (More filters, the row menu, Invite agent, Export leads, the drawer tabs…) and close on Cancel, the toggle or a click outside. v2 made the images real; two ad thumbnails are still placeholders. Nothing is redesigned."
   },
   "signoff": {
     "who": [
@@ -91,7 +91,7 @@
   "performance": null,
   "acceptance": [
     "Clicking any of the eight sidebar entries on any portal screen opens that screen.",
-    "Every drawer, modal and filter state captured for a main screen appears in this document as its own state screen (22 states). They are not yet wired into the clickable prototype: which control opens each one has not been recorded."
+    "Every drawer, modal and menu state captured for a main screen opens from its trigger in the prototype and closes again (Cancel, the toggle, or a click outside)."
   ],
   "edge_cases": [
     "The captured account is an owner. What an Agent (non-owner) sees is not captured, so it is not documented here.",
@@ -117,11 +117,6 @@
       "q": "Is there an Arabic portal? Arabic was never captured, so right-to-left behaviour of the rail, drawers and tables is unknown.",
       "owner": "designer",
       "blocks": "R2"
-    },
-    {
-      "q": "Which control opens each of the 22 drawer, modal and filter states (for example the row menu on Agency Ads, More filters, Invite agent)? The captures are separate files and do not record the trigger, so the prototype links only the 8 main screens.",
-      "owner": "designer",
-      "blocks": "acceptance criteria"
     }
   ],
   "changelog": [
@@ -134,6 +129,11 @@
       "version": 2,
       "date": "2026-10-02",
       "notes": "Inlined the remote images (icons, logo, coins, avatars, ad photos, stylesheet backgrounds). Two ad thumbnails (listing 185098594) returned HTTP 403 and stay as placeholders. No design change."
+    },
+    {
+      "version": 3,
+      "date": "2026-10-02",
+      "notes": "Wired the 22 state pages into the prototype (109 transitions, from the repo's own prototype definitions and the page links). Triggers are by stable node id. Confirming buttons (Submit, Apply product, Purchase, Send) still go nowhere, as on the captures."
     }
   ]
 }
