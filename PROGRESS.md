@@ -1052,6 +1052,12 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    deliverable. Sandbox network policy still blocks dubizzle.com.eg (user chose to run it on the Mac). The user's local `main` on the Mac is the old `legacy-main` history
    (preserved on `origin/legacy-main` and `iqratahir/legacy-main`); fix with `git checkout main && git reset --hard origin/main`.
 
+89. **Agency portal deliverable v2 built with real images** (after the user's second Mac run, commit `5ab8caf`). All 30 pages and the 12 shared stylesheets are inlined except 2 ad
+   thumbnails (`185098594-240x180` / `-400x300`, HTTP 403) which stay placeholders. QA `--scope agency-portal` re-run: PASS WITH WARNINGS (0 blockers, 22 `flw.orphan`
+   warnings for the 22 unwired state pages — unchanged). `dist/agency-portal-v2.html` = **21.5 MB** (hard limit 25 MB, soft 12 MB), 150 assets inlined, 0 network requests, opens in
+   headless Chrome with logo, banner, coin and header icons rendered. `deliverable.json` bumped to v2 with a changelog entry. Still open: the 22 state pages are not clickable
+   (their trigger controls are not recorded); size is over the soft budget (the shared stylesheets are 8.7 MB); the 2 thumbnails.
+
 ## 6. Next up
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner
