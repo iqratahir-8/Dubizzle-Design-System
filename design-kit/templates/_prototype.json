@@ -615,6 +615,20 @@
       ],
       "representative": null
      },
+     "edit-profile": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Post Your Ad"
+      ],
+      "representative": null
+     },
      "new-cars": {
       "count": 3,
       "texts": [
@@ -665,7 +679,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 37
+    "neutralised": 35
    },
    "car-comparison-result": {
     "section": "motors",
@@ -689,6 +703,20 @@
       "count": 1,
       "texts": [
        "Property"
+      ],
+      "representative": null
+     },
+     "edit-profile": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Post Your Ad"
       ],
       "representative": null
      },
@@ -739,7 +767,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 30
+    "neutralised": 28
    },
    "car-finance": {
     "section": "motors",
@@ -764,6 +792,20 @@
       "count": 1,
       "texts": [
        "Property"
+      ],
+      "representative": null
+     },
+     "edit-profile": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Post Your Ad"
       ],
       "representative": null
      },
@@ -807,7 +849,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 30
+    "neutralised": 28
    },
    "car-finance-bank": {
     "section": "motors",
@@ -831,6 +873,20 @@
       "count": 1,
       "texts": [
        "Property"
+      ],
+      "representative": null
+     },
+     "edit-profile": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Post Your Ad"
       ],
       "representative": null
      },
@@ -874,7 +930,139 @@
      }
     },
     "hotspots": [],
-    "neutralised": 30
+    "neutralised": 28
+   },
+   "chat": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 21,
+      "texts": [
+       "Chats",
+       "M Mona S. Apartment for sale in Zamalek 200m Is ",
+       "K Karim M. iPhone 15 Pro Max 256GB التمن قابل لل",
+       "N Nile Realty Hyundai Elantra 2019 Can you send "
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 58,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Fiat"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 195,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 1
    },
    "dpv-details-expanded": {
     "section": "ad-detail",
@@ -1433,6 +1621,432 @@
     ],
     "neutralised": 31
    },
+   "dpv-report-form": {
+    "section": "ad-detail",
+    "links": {
+     "home": {
+      "count": 2,
+      "texts": [
+       "Logo",
+       "Home"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 2,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 64,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Hyundai"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 195,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "search-cars-model": {
+      "count": 1,
+      "texts": [
+       "Mercedes-Benz"
+      ],
+      "representative": "a brand + model listing shows the captured Mercedes C180 list"
+     },
+     "seller-page": {
+      "count": 2,
+      "texts": [
+       "View More Ads",
+       "Posted by Smart Car Member Since 2021 Active Ads"
+      ],
+      "representative": "every seller profile shows the captured Smart Car page"
+     },
+     "ad-detail": {
+      "count": 9,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail"
+     }
+    },
+    "hotspots": [
+     {
+      "key": "Escape",
+      "go": "ad-detail"
+     }
+    ],
+    "neutralised": 31
+   },
+   "dpv-report-in": {
+    "section": "ad-detail",
+    "links": {
+     "home": {
+      "count": 2,
+      "texts": [
+       "Logo",
+       "Home"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 2,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 64,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Hyundai"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 195,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "search-cars-model": {
+      "count": 1,
+      "texts": [
+       "Mercedes-Benz"
+      ],
+      "representative": "a brand + model listing shows the captured Mercedes C180 list"
+     },
+     "seller-page": {
+      "count": 2,
+      "texts": [
+       "View More Ads",
+       "Posted by Smart Car Member Since 2021 Active Ads"
+      ],
+      "representative": "every seller profile shows the captured Smart Car page"
+     },
+     "ad-detail": {
+      "count": 9,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail"
+     }
+    },
+    "hotspots": [
+     {
+      "key": "Escape",
+      "go": "ad-detail"
+     }
+    ],
+    "neutralised": 31
+   },
+   "edit-profile": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 2,
+      "texts": [
+       "Logo",
+       "Discard"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 58,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Fiat"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 195,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 25
+   },
    "electric-cars": {
     "section": "motors",
     "links": {
@@ -1456,6 +2070,21 @@
       "count": 1,
       "texts": [
        "Property"
+      ],
+      "representative": null
+     },
+     "edit-profile": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 2,
+      "texts": [
+       "Post Your Ad",
+       "Sell Now"
       ],
       "representative": null
      },
@@ -1519,7 +2148,146 @@
      }
     },
     "hotspots": [],
-    "neutralised": 31
+    "neutralised": 28
+   },
+   "favourites": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 2,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 58,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Hyundai"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 196,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "ad-detail-property": {
+      "count": 3,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail property"
+     },
+     "ad-detail-mobile-phone": {
+      "count": 1,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail mobile phone"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 27
    },
    "home": {
     "section": "home",
@@ -1632,6 +2400,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 35,
       "texts": [],
@@ -1728,7 +2501,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "location-dropdown": {
     "section": "home",
@@ -1841,6 +2614,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-mobile-phone": {
       "count": 11,
       "texts": [],
@@ -1881,7 +2659,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "login": {
     "section": "home",
@@ -2129,6 +2907,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail": {
       "count": 76,
       "texts": [],
@@ -2164,7 +2947,7 @@
       "go": "home"
      }
     ],
-    "neutralised": 31
+    "neutralised": 30
    },
    "menu-electronics": {
     "section": "home",
@@ -2277,6 +3060,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 46,
       "texts": [],
@@ -2377,7 +3165,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "menu-furniture": {
     "section": "home",
@@ -2490,6 +3278,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 46,
       "texts": [],
@@ -2590,7 +3383,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "menu-jobs": {
     "section": "home",
@@ -2703,6 +3496,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 45,
       "texts": [],
@@ -2803,7 +3601,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "menu-mobiles": {
     "section": "home",
@@ -2916,6 +3714,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 5,
       "texts": [],
@@ -3016,7 +3819,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "menu-more-categories": {
     "section": "home",
@@ -3129,6 +3932,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 47,
       "texts": [],
@@ -3229,7 +4037,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "menu-properties": {
     "section": "home",
@@ -3342,6 +4150,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 48,
       "texts": [],
@@ -3442,7 +4255,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "menu-vehicles": {
     "section": "home",
@@ -3555,6 +4368,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 48,
       "texts": [],
@@ -3663,7 +4481,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "menu-vehicles-car-care": {
     "section": "home",
@@ -3776,6 +4594,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 45,
       "texts": [],
@@ -3876,7 +4699,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "motors": {
     "section": "motors",
@@ -3900,6 +4723,21 @@
       "count": 1,
       "texts": [
        "Property"
+      ],
+      "representative": null
+     },
+     "edit-profile": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 2,
+      "texts": [
+       "Post Your Ad",
+       "Post an Ad"
       ],
       "representative": null
      },
@@ -3977,7 +4815,166 @@
      }
     },
     "hotspots": [],
-    "neutralised": 38
+    "neutralised": 35
+   },
+   "my-ads": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 4,
+      "texts": [
+       "My Ads",
+       "2",
+       "3"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 58,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Fiat"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 195,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "ad-detail-mobile-phone": {
+      "count": 3,
+      "texts": [
+       "آيفون 17 برو ماكس للبيع - in Mobile Phones EGP 5",
+       "Iphone 12 for sale in CAIRO - in Mobile Phones E",
+       "آيفون 17 برو ماكس للبيع في القاهرة - in Mobile P"
+      ],
+      "representative": "every ad in this vertical opens the captured ad detail mobile phone"
+     },
+     "ad-detail": {
+      "count": 12,
+      "texts": [
+       "EZ-GO 4 Seater Golf Cart for sale - in Heavy Tru",
+       "Yutong Bus for sale - in Heavy Trucks, Buses &am",
+       "تويوتا كورولا هايبرد 2019 - in Cars for Sale EGP",
+       "Vivo V60 للبيع في القاهرة - in Mobile Phones EGP"
+      ],
+      "representative": "every ad in this vertical opens the captured ad detail"
+     },
+     "ad-detail-property": {
+      "count": 5,
+      "texts": [
+       "Stand alone villa for sale - in Villas For Sale ",
+       "Apartment for sale in Alexandria - in Apartments",
+       "Apartment for sale in CAIRO - in Apartments for "
+      ],
+      "representative": "every ad in this vertical opens the captured ad detail property"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 25
    },
    "new-cars": {
     "section": "motors",
@@ -4002,6 +4999,20 @@
       "count": 1,
       "texts": [
        "Property"
+      ],
+      "representative": null
+     },
+     "edit-profile": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Post Your Ad"
       ],
       "representative": null
      },
@@ -4093,7 +5104,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 37
+    "neutralised": 35
    },
    "new-cars-brand": {
     "section": "motors",
@@ -4117,6 +5128,20 @@
       "count": 1,
       "texts": [
        "Property"
+      ],
+      "representative": null
+     },
+     "edit-profile": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Post Your Ad"
       ],
       "representative": null
      },
@@ -4188,7 +5213,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 30
+    "neutralised": 28
    },
    "new-cars-model": {
     "section": "motors",
@@ -4212,6 +5237,20 @@
       "count": 1,
       "texts": [
        "Property"
+      ],
+      "representative": null
+     },
+     "edit-profile": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Post Your Ad"
       ],
       "representative": null
      },
@@ -4269,7 +5308,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 48
+    "neutralised": 46
    },
    "not-found": {
     "section": "home",
@@ -4379,9 +5418,79 @@
     "hotspots": [],
     "neutralised": 24
    },
+   "packages": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 0
+   },
    "payment": {
     "section": "account",
     "links": {},
+    "hotspots": [],
+    "neutralised": 0
+   },
+   "post-ad": {
+    "section": "post-ad",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 2
+   },
+   "post-ad-category": {
+    "section": "post-ad",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 0
+   },
+   "post-ad-filled": {
+    "section": "post-ad",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 2
+   },
+   "post-ad-subcategory": {
+    "section": "post-ad",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     }
+    },
     "hotspots": [],
     "neutralised": 0
    },
@@ -4499,6 +5608,13 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "properties": {
       "count": 8,
       "texts": [
@@ -4541,7 +5657,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    },
    "property-agencies": {
     "section": "property",
@@ -5145,6 +6261,13 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "seller-page": {
       "count": 18,
       "texts": [
@@ -5195,7 +6318,7 @@
       "go": "search"
      }
     ],
-    "neutralised": 28
+    "neutralised": 27
    },
    "search": {
     "section": "listings",
@@ -5303,6 +6426,13 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "seller-page": {
       "count": 18,
       "texts": [
@@ -5344,7 +6474,7 @@
       "go": "save-search"
      }
     ],
-    "neutralised": 28
+    "neutralised": 27
    },
    "search-cars-model": {
     "section": "listings",
@@ -5452,6 +6582,13 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "search-cars-model": {
       "count": 100,
       "texts": [
@@ -5479,7 +6616,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 32
+    "neutralised": 31
    },
    "search-mobiles": {
     "section": "listings",
@@ -5586,6 +6723,13 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "seller-page": {
       "count": 3,
       "texts": [
@@ -5602,7 +6746,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    },
    "search-motorcycles": {
     "section": "listings",
@@ -5712,6 +6856,13 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "ad-detail": {
       "count": 135,
       "texts": [],
@@ -5719,7 +6870,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    },
    "search-property": {
     "section": "listings",
@@ -5838,6 +6989,13 @@
       ],
       "representative": null
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "agency-page": {
       "count": 5,
       "texts": [
@@ -5855,7 +7013,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    },
    "search-property-commercial": {
     "section": "listings",
@@ -5978,6 +7136,13 @@
       ],
       "representative": null
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "agency-page": {
       "count": 5,
       "texts": [
@@ -6000,7 +7165,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    },
    "search-property-land": {
     "section": "listings",
@@ -6125,6 +7290,13 @@
       ],
       "representative": null
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "agency-page": {
       "count": 4,
       "texts": [
@@ -6152,7 +7324,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    },
    "search-property-rent": {
     "section": "listings",
@@ -6271,6 +7443,13 @@
       ],
       "representative": null
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "agency-page": {
       "count": 5,
       "texts": [
@@ -6293,7 +7472,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    },
    "search-property-vacation": {
     "section": "listings",
@@ -6412,6 +7591,13 @@
       ],
       "representative": null
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "agency-page": {
       "count": 5,
       "texts": [
@@ -6429,7 +7615,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    },
    "search-suggestions": {
     "section": "home",
@@ -6542,6 +7728,11 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
      "ad-detail-property": {
       "count": 43,
       "texts": [],
@@ -6581,7 +7772,7 @@
       "go": "login-dialog"
      }
     ],
-    "neutralised": 30
+    "neutralised": 29
    },
    "search-trucks": {
     "section": "listings",
@@ -6692,6 +7883,13 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "seller-page": {
       "count": 1,
       "texts": [
@@ -6706,7 +7904,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    },
    "seller-page": {
     "section": "ad-detail",
@@ -6740,6 +7938,264 @@
     },
     "hotspots": [],
     "neutralised": 24
+   },
+   "settings-notifications": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 58,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Fiat"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 195,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 26
+   },
+   "settings-privacy": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 58,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Fiat"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 195,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 26
    },
    "sort-menu": {
     "section": "listings",
@@ -6847,6 +8303,13 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "seller-page": {
       "count": 18,
       "texts": [
@@ -6897,7 +8360,188 @@
       "go": "search"
      }
     ],
-    "neutralised": 28
+    "neutralised": 27
+   },
+   "upsell": {
+    "section": "post-ad",
+    "links": {},
+    "hotspots": [],
+    "neutralised": 1
+   },
+   "upsell-select": {
+    "section": "post-ad",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 0
+   },
+   "user-menu": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 2,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 2,
+      "texts": [
+       "Property",
+       "All in Properties"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 2,
+      "texts": [
+       "Vehicles",
+       "All in Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 83,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Hyundai"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 25,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale",
+       "View More",
+       "Find Apartments for Sale in 6th of October"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 25,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent",
+       "View More",
+       "Find Apartments for Rent in 6th of October"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 3,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent",
+       "View More"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 269,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
+     "ad-detail-property": {
+      "count": 45,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail property"
+     },
+     "ad-detail-property-rent": {
+      "count": 11,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail property rent"
+     },
+     "ad-detail-mobile-phone": {
+      "count": 10,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail mobile phone"
+     },
+     "ad-detail": {
+      "count": 26,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 40
    },
    "vehicles-listing": {
     "section": "motors",
@@ -7008,6 +8652,13 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
+     },
      "seller-page": {
       "count": 18,
       "texts": [
@@ -7030,7 +8681,7 @@
      }
     },
     "hotspots": [],
-    "neutralised": 28
+    "neutralised": 27
    }
   },
   "mobile": {
@@ -7651,10 +9302,38 @@
        "Find Cars in Giza"
       ],
       "representative": "a brand or city car listing shows the captured cars list"
+     },
+     "m-user-menu": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Sell"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My ads"
+      ],
+      "representative": null
      }
     },
     "hotspots": [],
-    "neutralised": 37
+    "neutralised": 33
    },
    "car-comparison-result": {
     "section": "motors",
@@ -7755,10 +9434,38 @@
        "Explore"
       ],
       "representative": null
+     },
+     "m-user-menu": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Sell"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My ads"
+      ],
+      "representative": null
      }
     },
     "hotspots": [],
-    "neutralised": 32
+    "neutralised": 28
    },
    "car-finance-bank": {
     "section": "motors",
@@ -7776,6 +9483,30 @@
     },
     "hotspots": [],
     "neutralised": 24
+   },
+   "chat": {
+    "section": "account",
+    "links": {
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 45,
+      "texts": [
+       "M Mona S. Apartment for sale in Zamalek 200m Is ",
+       "K Karim M. iPhone 15 Pro Max 256GB التمن قابل لل",
+       "N Nile Realty Hyundai Elantra 2019 Can you send ",
+       "Y Yasmine A. Villa for sale Mivida compound What"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 12
    },
    "dpv-details-expanded": {
     "section": "ad-detail",
@@ -8041,6 +9772,42 @@
     ],
     "neutralised": 27
    },
+   "edit-profile": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 2,
+      "texts": [
+       "Favourite",
+       "Favorites"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 12
+   },
    "electric-cars": {
     "section": "motors",
     "links": {
@@ -8100,6 +9867,14 @@
       ],
       "representative": "every seller profile shows the captured Smart Car page"
      },
+     "post-ad-category": {
+      "count": 2,
+      "texts": [
+       "Sell Now",
+       "Sell"
+      ],
+      "representative": null
+     },
      "home": {
       "count": 3,
       "texts": [
@@ -8107,10 +9882,63 @@
        "Explore"
       ],
       "representative": null
+     },
+     "m-user-menu": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My ads"
+      ],
+      "representative": null
      }
     },
     "hotspots": [],
-    "neutralised": 33
+    "neutralised": 28
+   },
+   "favourites": {
+    "section": "account",
+    "links": {
+     "favourites": {
+      "count": 2,
+      "texts": [
+       "Favourites",
+       "Favorites"
+      ],
+      "representative": null
+     },
+     "ad-detail-property": {
+      "count": 3,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail property"
+     },
+     "ad-detail-mobile-phone": {
+      "count": 1,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail mobile phone"
+     },
+     "search-mobiles": {
+      "count": 1,
+      "texts": [
+       "Mobile Phones"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 15
    },
    "home": {
     "section": "home",
@@ -8137,6 +9965,18 @@
        "Property",
        "Properties"
       ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourite"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
       "representative": null
      },
      "ad-detail-property": {
@@ -8208,6 +10048,20 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chat"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
      "search-motorcycles": {
       "count": 1,
       "texts": [
@@ -8264,9 +10118,17 @@
        240
       ],
       "go": "m-location-page"
+     },
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
      }
     ],
-    "neutralised": 34
+    "neutralised": 30
    },
    "login": {
     "section": "home",
@@ -8293,6 +10155,18 @@
        "Property",
        "Properties"
       ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourite"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
       "representative": null
      },
      "ad-detail": {
@@ -8364,6 +10238,20 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chat"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
      "search-motorcycles": {
       "count": 1,
       "texts": [
@@ -8418,7 +10306,7 @@
       "go": "home"
      }
     ],
-    "neutralised": 34
+    "neutralised": 30
    },
    "m-filters": {
     "section": "listings",
@@ -8548,6 +10436,13 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
     "hotspots": [
@@ -8569,7 +10464,7 @@
       "go": "search"
      }
     ],
-    "neutralised": 28
+    "neutralised": 27
    },
    "m-location-page": {
     "section": "home",
@@ -8595,6 +10490,13 @@
       "texts": [
        "Property",
        "Properties"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourite"
       ],
       "representative": null
      },
@@ -8667,6 +10569,20 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chat"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
      "search-motorcycles": {
       "count": 1,
       "texts": [
@@ -8726,7 +10642,7 @@
       "go": "home"
      }
     ],
-    "neutralised": 34
+    "neutralised": 31
    },
    "m-search-overlay": {
     "section": "home",
@@ -8753,6 +10669,18 @@
        "Property",
        "Properties"
       ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourite"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
       "representative": null
      },
      "ad-detail-property": {
@@ -8824,6 +10752,20 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chat"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
      "search-motorcycles": {
       "count": 1,
       "texts": [
@@ -8888,7 +10830,7 @@
       "go": "home"
      }
     ],
-    "neutralised": 35
+    "neutralised": 31
    },
    "m-search-suggestions": {
     "section": "home",
@@ -8915,6 +10857,18 @@
        "Property",
        "Properties"
       ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourite"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
       "representative": null
      },
      "ad-detail-property": {
@@ -8986,6 +10940,20 @@
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chat"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
      "search-motorcycles": {
       "count": 1,
       "texts": [
@@ -9045,7 +11013,177 @@
       "go": "home"
      }
     ],
-    "neutralised": 34
+    "neutralised": 30
+   },
+   "m-user-menu": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 3,
+      "texts": [
+       "Logo",
+       "Home",
+       "Change language"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 2,
+      "texts": [
+       "Property",
+       "Properties"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 2,
+      "texts": [
+       "Favourite",
+       "Favorites"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [],
+      "representative": null
+     },
+     "ad-detail-property": {
+      "count": 48,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail property"
+     },
+     "ad-detail-property-rent": {
+      "count": 10,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail property rent"
+     },
+     "ad-detail": {
+      "count": 26,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail"
+     },
+     "ad-detail-mobile-phone": {
+      "count": 8,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail mobile phone"
+     },
+     "search-property": {
+      "count": 23,
+      "texts": [
+       "See All",
+       "Find Apartments for Sale in 6th of October",
+       "Find Apartments for Sale in Sheikh Zayed",
+       "Find Apartments for Sale in Nasr City"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 23,
+      "texts": [
+       "See All",
+       "Find Apartments for Rent in 6th of October",
+       "Find Apartments for Rent in Nasr City",
+       "Find Apartments for Rent in Sheikh Zayed"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 3,
+      "texts": [
+       "See All",
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search": {
+      "count": 188,
+      "texts": [
+       "See All",
+       "Find Cars for Sale in Cairo",
+       "Find Cars for Sale in Alexandria",
+       "Find Cars for Sale in Giza"
+      ],
+      "representative": null
+     },
+     "search-mobiles": {
+      "count": 382,
+      "texts": [
+       "See All",
+       "Find Mobile Phones for Sale in Cairo",
+       "Find Mobile Phones for Sale in Alexandria",
+       "Find Mobile Phones for Sale in Monufia"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chat"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "See all in Vehicles"
+      ],
+      "representative": null
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "properties": {
+      "count": 1,
+      "texts": [
+       "See all in Properties"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 38
    },
    "motors": {
     "section": "motors",
@@ -9127,6 +11265,14 @@
       ],
       "representative": "every seller profile shows the captured Smart Car page"
      },
+     "post-ad-category": {
+      "count": 2,
+      "texts": [
+       "Post an Ad",
+       "Sell"
+      ],
+      "representative": null
+     },
      "search-cars-model": {
       "count": 24,
       "texts": [
@@ -9136,10 +11282,91 @@
        "BMW 320i for Sale"
       ],
       "representative": "a brand + model listing shows the captured Mercedes C180 list"
+     },
+     "m-user-menu": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My ads"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 33
+   },
+   "my-ads": {
+    "section": "account",
+    "links": {
+     "ad-detail-mobile-phone": {
+      "count": 3,
+      "texts": [
+       "آيفون 17 برو ماكس للبيع EGP 55,000 Mobile Phones",
+       "Iphone 12 for sale in CAIRO EGP 14,000 Mobile Ph",
+       "آيفون 17 برو ماكس للبيع في القاهرة EGP 40,000 Mo"
+      ],
+      "representative": "every ad in this vertical opens the captured ad detail mobile phone"
+     },
+     "ad-detail": {
+      "count": 12,
+      "texts": [
+       "EZ-GO 4 Seater Golf Cart for sale EGP 385,000 He",
+       "Yutong Bus for sale EGP 7,500,000 Heavy Trucks, ",
+       "تويوتا كورولا هايبرد 2019 EGP 1,000,000 Cars for",
+       "Vivo V60 للبيع في القاهرة EGP 20,000 Mobile Phon"
+      ],
+      "representative": "every ad in this vertical opens the captured ad detail"
+     },
+     "ad-detail-property": {
+      "count": 5,
+      "texts": [
+       "Stand alone villa for sale EGP 10,000,000 Villas",
+       "Apartment for sale in Alexandria EGP 10,250,000 ",
+       "Apartment for sale in CAIRO EGP 7,000,000 Apartm",
+       "Apartment for sale in CAIRO EGP 4,000,000 Apartm"
+      ],
+      "representative": "every ad in this vertical opens the captured ad detail property"
+     },
+     "my-ads": {
+      "count": 3,
+      "texts": [
+       "2",
+       "3"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
      }
     },
     "hotspots": [],
-    "neutralised": 38
+    "neutralised": 13
    },
    "new-cars": {
     "section": "motors",
@@ -9241,10 +11468,38 @@
        "Explore"
       ],
       "representative": null
+     },
+     "m-user-menu": {
+      "count": 1,
+      "texts": [
+       "Login or Signup"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Sell"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My ads"
+      ],
+      "representative": null
      }
     },
     "hotspots": [],
-    "neutralised": 37
+    "neutralised": 33
    },
    "new-cars-brand": {
     "section": "motors",
@@ -9472,11 +11727,102 @@
     "hotspots": [],
     "neutralised": 24
    },
+   "packages": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 12
+   },
    "payment": {
     "section": "account",
     "links": {},
     "hotspots": [],
     "neutralised": 0
+   },
+   "post-ad": {
+    "section": "post-ad",
+    "links": {
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 14
+   },
+   "post-ad-category": {
+    "section": "post-ad",
+    "links": {
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Change language"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 11
+   },
+   "post-ad-filled": {
+    "section": "post-ad",
+    "links": {
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 14
+   },
+   "post-ad-subcategory": {
+    "section": "post-ad",
+    "links": {
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     },
+     "post-ad-category": {
+      "count": 1,
+      "texts": [
+       "Change language"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 11
    },
    "properties": {
     "section": "property",
@@ -9627,10 +11973,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 29
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 28
    },
    "property-agencies": {
     "section": "property",
@@ -10079,6 +12441,20 @@
       ],
       "representative": "every agency profile shows the captured Gate Real Estate page"
      },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chat"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
      "search-cars-model": {
       "count": 100,
       "texts": [
@@ -10139,8 +12515,17 @@
       "representative": "mobiles & tablets listings show the captured mobile phones list"
      }
     },
-    "hotspots": [],
-    "neutralised": 38
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 36
    },
    "search": {
     "section": "listings",
@@ -10265,15 +12650,30 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
     "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     },
      {
       "selector": "img[alt=\"Filters Icon\"]",
       "go": "m-filters"
      }
     ],
-    "neutralised": 29
+    "neutralised": 28
    },
    "search-cars-model": {
     "section": "listings",
@@ -10398,10 +12798,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 33
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 32
    },
    "search-mobiles": {
     "section": "listings",
@@ -10529,10 +12945,26 @@
        "See all in Properties"
       ],
       "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 28
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 27
    },
    "search-motorcycles": {
     "section": "listings",
@@ -10650,10 +13082,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 29
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 28
    },
    "search-property": {
     "section": "listings",
@@ -10786,10 +13234,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 29
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 28
    },
    "search-property-commercial": {
     "section": "listings",
@@ -10921,10 +13385,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 28
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 27
    },
    "search-property-land": {
     "section": "listings",
@@ -11064,10 +13544,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 28
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 27
    },
    "search-property-rent": {
     "section": "listings",
@@ -11200,10 +13696,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 28
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 27
    },
    "search-property-vacation": {
     "section": "listings",
@@ -11330,10 +13842,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 28
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 27
    },
    "search-trucks": {
     "section": "listings",
@@ -11458,10 +13986,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 29
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 28
    },
    "seller-page": {
     "section": "ad-detail",
@@ -11481,6 +14025,69 @@
     },
     "hotspots": [],
     "neutralised": 27
+   },
+   "settings-notifications": {
+    "section": "account",
+    "links": {
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 12
+   },
+   "settings-privacy": {
+    "section": "account",
+    "links": {
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 13
+   },
+   "upsell": {
+    "section": "post-ad",
+    "links": {
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 13
+   },
+   "upsell-select": {
+    "section": "post-ad",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favorites"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 12
    },
    "vehicles-listing": {
     "section": "motors",
@@ -11612,10 +14219,26 @@
        "Power Banks"
       ],
       "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "All categories"
+      ],
+      "representative": null
      }
     },
-    "hotspots": [],
-    "neutralised": 29
+    "hotspots": [
+     {
+      "text": "Account",
+      "go": "m-user-menu"
+     },
+     {
+      "text": "Sell",
+      "go": "post-ad-category"
+     }
+    ],
+    "neutralised": 28
    }
   }
  }

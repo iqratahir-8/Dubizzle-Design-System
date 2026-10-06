@@ -3,76 +3,306 @@
  "section": "post-ad",
  "label": "Post an ad & upselling",
  "generated": "2026-10-06",
- "entries": {},
- "screens": {},
- "unavailable": [
-  {
+ "entries": {
+  "web-desktop": "post-ad-category",
+  "web-mobile": "m-post-ad-category"
+ },
+ "screens": {
+  "post-ad-category": {
    "page": "post-ad-category",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Post an ad — choose category",
+   "file": "templates/desktop/post-ad-category.html"
   },
-  {
+  "post-ad-subcategory": {
    "page": "post-ad-subcategory",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Post an ad — choose subcategory",
+   "file": "templates/desktop/post-ad-subcategory.html"
   },
-  {
+  "post-ad": {
    "page": "post-ad",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Post an ad — details form (empty)",
+   "file": "templates/desktop/post-ad.html"
   },
-  {
+  "post-ad-filled": {
    "page": "post-ad-filled",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Post an ad — details form (filled, never posted)",
+   "file": "templates/desktop/post-ad-filled.html"
   },
-  {
+  "upsell-select": {
    "page": "upsell-select",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Upselling — choose category",
+   "file": "templates/desktop/upsell-select.html"
   },
-  {
+  "upsell": {
    "page": "upsell",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Upselling — packages",
+   "file": "templates/desktop/upsell.html"
   },
-  {
+  "m-post-ad-category": {
    "page": "post-ad-category",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Post an ad — choose category",
+   "file": "templates/mobile/post-ad-category.html"
   },
-  {
+  "m-post-ad-subcategory": {
    "page": "post-ad-subcategory",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Post an ad — choose subcategory",
+   "file": "templates/mobile/post-ad-subcategory.html"
   },
-  {
+  "m-post-ad": {
    "page": "post-ad",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Post an ad — details form (empty)",
+   "file": "templates/mobile/post-ad.html"
   },
-  {
+  "m-post-ad-filled": {
    "page": "post-ad-filled",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Post an ad — details form (filled, never posted)",
+   "file": "templates/mobile/post-ad-filled.html"
   },
-  {
+  "m-upsell-select": {
    "page": "upsell-select",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Upselling — choose category",
+   "file": "templates/mobile/upsell-select.html"
   },
-  {
+  "m-upsell": {
    "page": "upsell",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
+   "kind": "page",
+   "label": "Upselling — packages",
+   "file": "templates/mobile/upsell.html"
+  }
+ },
+ "unavailable": [],
+ "transitions": [
+  {
+   "from": "post-ad-category",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Logo"
+    ]
+   },
+   "count": 1,
+   "exit": "home"
+  },
+  {
+   "from": "post-ad-subcategory",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Logo"
+    ]
+   },
+   "count": 1,
+   "exit": "home"
+  },
+  {
+   "from": "post-ad",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Logo"
+    ]
+   },
+   "count": 1,
+   "exit": "home"
+  },
+  {
+   "from": "post-ad-filled",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Logo"
+    ]
+   },
+   "count": 1,
+   "exit": "home"
+  },
+  {
+   "from": "upsell-select",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Logo"
+    ]
+   },
+   "count": 1,
+   "exit": "home"
+  },
+  {
+   "from": "m-post-ad-category",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favorites"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-post-ad-category",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Change language"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "from": "m-post-ad-subcategory",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favorites"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-post-ad-subcategory",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Change language"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "from": "m-post-ad",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favorites"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-post-ad-filled",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favorites"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-upsell-select",
+   "to": "m-home",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Logo"
+    ]
+   },
+   "count": 1,
+   "exit": "home"
+  },
+  {
+   "from": "m-upsell-select",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favorites"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-upsell",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favorites"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   }
  ],
- "transitions": [],
- "exits": {},
+ "exits": {
+  "home": {
+   "page": "home",
+   "platform": "web-desktop",
+   "section": "home",
+   "label": "Home",
+   "file": "templates/desktop/home.html"
+  },
+  "m-favourites": {
+   "page": "favourites",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "Favourites (saved ads)",
+   "file": "templates/mobile/favourites.html"
+  },
+  "m-home": {
+   "page": "home",
+   "platform": "web-mobile",
+   "section": "home",
+   "label": "Home",
+   "file": "templates/mobile/home.html"
+  }
+ },
  "summary": {
-  "screens": 0,
-  "transitions": 0,
-  "exits": 0,
-  "unavailable_here": 12
+  "screens": 12,
+  "transitions": 14,
+  "exits": 3,
+  "unavailable_here": 0
  }
 }

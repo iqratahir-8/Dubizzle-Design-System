@@ -50,6 +50,20 @@
    "label": "Ad detail — report this ad modal (never submitted)",
    "file": "templates/desktop/dpv-report.html"
   },
+  "dpv-report-in": {
+   "page": "dpv-report-in",
+   "platform": "web-desktop",
+   "kind": "dialog",
+   "label": "Ad detail — report dialog (signed in, never submitted)",
+   "file": "templates/desktop/dpv-report-in.html"
+  },
+  "dpv-report-form": {
+   "page": "dpv-report-form",
+   "platform": "web-desktop",
+   "kind": "dialog",
+   "label": "Ad detail — report this ad (signed in, never submitted)",
+   "file": "templates/desktop/dpv-report-form.html"
+  },
   "dpv-details-expanded": {
    "page": "dpv-details-expanded",
    "platform": "web-desktop",
@@ -122,16 +136,6 @@
   }
  },
  "unavailable": [
-  {
-   "page": "dpv-report-in",
-   "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
-  },
-  {
-   "page": "dpv-report-form",
-   "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
-  },
   {
    "page": "dpv-phone",
    "platform": "web-mobile",
@@ -1621,6 +1625,530 @@
   },
   {
    "from": "dpv-report",
+   "to": "ad-detail",
+   "kind": "escape",
+   "trigger": {
+    "key": "Escape"
+   },
+   "count": 1
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Logo",
+     "Home"
+    ]
+   },
+   "count": 2,
+   "exit": "home"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "motors",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motors"
+    ]
+   },
+   "count": 1,
+   "exit": "motors"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "property-landing",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Property"
+    ]
+   },
+   "count": 1,
+   "exit": "property"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favourites"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "vehicles-listing",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Vehicles"
+    ]
+   },
+   "count": 2,
+   "exit": "motors"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search",
+   "kind": "link",
+   "trigger": {
+    "links": 64,
+    "texts": [
+     "Cars for Sale",
+     "See All",
+     "Mercedes-Benz",
+     "Hyundai"
+    ]
+   },
+   "count": 64,
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search-motorcycles",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motorcycles &amp; Scooters"
+    ]
+   },
+   "count": 1,
+   "representative": "motorcycle listings show the captured motorcycles list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search-trucks",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Heavy Trucks, Buses &amp; Other Vehicles"
+    ]
+   },
+   "count": 1,
+   "representative": "truck & bus listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search-property",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Sale",
+     "Villas For Sale"
+    ]
+   },
+   "count": 2,
+   "representative": "sale listings show the captured apartments-for-sale list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search-property-rent",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Rent",
+     "Villas For Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "rent listings show the captured apartments-for-rent list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search-property-vacation",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Vacation Homes for Sale",
+     "Vacation Homes for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "vacation-home listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search-property-commercial",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Commercial for Sale",
+     "Commercial for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "commercial listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search-property-land",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Buildings &amp; Lands"
+    ]
+   },
+   "count": 1,
+   "representative": "land & building listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search-mobiles",
+   "kind": "link",
+   "trigger": {
+    "links": 195,
+    "texts": [
+     "Mobiles &amp; Tablets",
+     "Mobile Phones",
+     "Tablets",
+     "See All"
+    ]
+   },
+   "count": 195,
+   "representative": "mobiles & tablets listings show the captured mobile phones list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "search-cars-model",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Mercedes-Benz"
+    ]
+   },
+   "count": 1,
+   "representative": "a brand + model listing shows the captured Mercedes C180 list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "seller-page",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "View More Ads",
+     "Posted by Smart Car Member Since 2021 Active Ads"
+    ]
+   },
+   "count": 2,
+   "representative": "every seller profile shows the captured Smart Car page"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "ad-detail",
+   "kind": "link",
+   "trigger": {
+    "links": 9,
+    "texts": []
+   },
+   "count": 9,
+   "representative": "every ad in this vertical opens the captured ad detail"
+  },
+  {
+   "from": "dpv-report-in",
+   "to": "ad-detail",
+   "kind": "escape",
+   "trigger": {
+    "key": "Escape"
+   },
+   "count": 1
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Logo",
+     "Home"
+    ]
+   },
+   "count": 2,
+   "exit": "home"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "motors",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motors"
+    ]
+   },
+   "count": 1,
+   "exit": "motors"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "property-landing",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Property"
+    ]
+   },
+   "count": 1,
+   "exit": "property"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favourites"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "vehicles-listing",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Vehicles"
+    ]
+   },
+   "count": 2,
+   "exit": "motors"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search",
+   "kind": "link",
+   "trigger": {
+    "links": 64,
+    "texts": [
+     "Cars for Sale",
+     "See All",
+     "Mercedes-Benz",
+     "Hyundai"
+    ]
+   },
+   "count": 64,
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search-motorcycles",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motorcycles &amp; Scooters"
+    ]
+   },
+   "count": 1,
+   "representative": "motorcycle listings show the captured motorcycles list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search-trucks",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Heavy Trucks, Buses &amp; Other Vehicles"
+    ]
+   },
+   "count": 1,
+   "representative": "truck & bus listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search-property",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Sale",
+     "Villas For Sale"
+    ]
+   },
+   "count": 2,
+   "representative": "sale listings show the captured apartments-for-sale list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search-property-rent",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Rent",
+     "Villas For Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "rent listings show the captured apartments-for-rent list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search-property-vacation",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Vacation Homes for Sale",
+     "Vacation Homes for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "vacation-home listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search-property-commercial",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Commercial for Sale",
+     "Commercial for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "commercial listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search-property-land",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Buildings &amp; Lands"
+    ]
+   },
+   "count": 1,
+   "representative": "land & building listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search-mobiles",
+   "kind": "link",
+   "trigger": {
+    "links": 195,
+    "texts": [
+     "Mobiles &amp; Tablets",
+     "Mobile Phones",
+     "Tablets",
+     "See All"
+    ]
+   },
+   "count": 195,
+   "representative": "mobiles & tablets listings show the captured mobile phones list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "search-cars-model",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Mercedes-Benz"
+    ]
+   },
+   "count": 1,
+   "representative": "a brand + model listing shows the captured Mercedes C180 list",
+   "exit": "listings"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "seller-page",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "View More Ads",
+     "Posted by Smart Car Member Since 2021 Active Ads"
+    ]
+   },
+   "count": 2,
+   "representative": "every seller profile shows the captured Smart Car page"
+  },
+  {
+   "from": "dpv-report-form",
+   "to": "ad-detail",
+   "kind": "link",
+   "trigger": {
+    "links": 9,
+    "texts": []
+   },
+   "count": 9,
+   "representative": "every ad in this vertical opens the captured ad detail"
+  },
+  {
+   "from": "dpv-report-form",
    "to": "ad-detail",
    "kind": "escape",
    "trigger": {
@@ -3688,6 +4216,20 @@
    "label": "Property agency profile",
    "file": "templates/desktop/agency-page.html"
   },
+  "favourites": {
+   "page": "favourites",
+   "platform": "web-desktop",
+   "section": "account",
+   "label": "Favourites (saved ads)",
+   "file": "templates/desktop/favourites.html"
+  },
+  "chat": {
+   "page": "chat",
+   "platform": "web-desktop",
+   "section": "account",
+   "label": "Chats",
+   "file": "templates/desktop/chat.html"
+  },
   "m-home": {
    "page": "home",
    "platform": "web-mobile",
@@ -3788,9 +4330,9 @@
   }
  },
  "summary": {
-  "screens": 16,
-  "transitions": 247,
-  "exits": 30,
-  "unavailable_here": 6
+  "screens": 18,
+  "transitions": 285,
+  "exits": 32,
+  "unavailable_here": 4
  }
 }

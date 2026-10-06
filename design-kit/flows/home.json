@@ -417,6 +417,17 @@
   },
   {
    "from": "home",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "home",
    "to": "ad-detail-property",
    "kind": "link",
    "trigger": {
@@ -778,6 +789,17 @@
    "count": 269,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "menu-vehicles",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "menu-vehicles",
@@ -1167,6 +1189,17 @@
   },
   {
    "from": "menu-vehicles-car-care",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "menu-vehicles-car-care",
    "to": "ad-detail-property",
    "kind": "link",
    "trigger": {
@@ -1537,6 +1570,17 @@
    "count": 269,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "menu-properties",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "menu-properties",
@@ -1913,6 +1957,17 @@
   },
   {
    "from": "menu-mobiles",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "menu-mobiles",
    "to": "ad-detail-property",
    "kind": "link",
    "trigger": {
@@ -2283,6 +2338,17 @@
    "count": 269,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "menu-jobs",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "menu-jobs",
@@ -2659,6 +2725,17 @@
   },
   {
    "from": "menu-furniture",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "menu-furniture",
    "to": "ad-detail-property",
    "kind": "link",
    "trigger": {
@@ -3032,6 +3109,17 @@
   },
   {
    "from": "menu-electronics",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "menu-electronics",
    "to": "ad-detail-property",
    "kind": "link",
    "trigger": {
@@ -3402,6 +3490,17 @@
    "count": 269,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "menu-more-categories",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "menu-more-categories",
@@ -3778,6 +3877,17 @@
   },
   {
    "from": "location-dropdown",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "location-dropdown",
    "to": "ad-detail-mobile-phone",
    "kind": "link",
    "trigger": {
@@ -4056,6 +4166,17 @@
   },
   {
    "from": "search-suggestions",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "search-suggestions",
    "to": "ad-detail-property",
    "kind": "link",
    "trigger": {
@@ -4325,6 +4446,17 @@
    "count": 269,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "login-dialog",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "login-dialog",
@@ -4871,6 +5003,30 @@
   },
   {
    "from": "m-home",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favourite"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-home",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "m-home",
    "to": "m-ad-detail-property",
    "kind": "link",
    "trigger": {
@@ -5002,6 +5158,32 @@
   },
   {
    "from": "m-home",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chat"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-home",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My Ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-home",
    "to": "m-search-motorcycles",
    "kind": "link",
    "trigger": {
@@ -5106,6 +5288,26 @@
    "count": 1
   },
   {
+   "from": "m-home",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-home",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
    "from": "m-login",
    "to": "m-home",
    "kind": "link",
@@ -5145,6 +5347,30 @@
    },
    "count": 2,
    "exit": "property"
+  },
+  {
+   "from": "m-login",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favourite"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-login",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "m-login",
@@ -5276,6 +5502,32 @@
    "count": 382,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "m-login",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chat"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-login",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My Ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "m-login",
@@ -5421,6 +5673,30 @@
   },
   {
    "from": "m-m-search-overlay",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favourite"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-m-search-overlay",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "m-m-search-overlay",
    "to": "m-ad-detail-property",
    "kind": "link",
    "trigger": {
@@ -5549,6 +5825,32 @@
    "count": 386,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "m-m-search-overlay",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chat"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-m-search-overlay",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My Ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "m-m-search-overlay",
@@ -5709,6 +6011,30 @@
   },
   {
    "from": "m-m-search-suggestions",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favourite"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-m-search-suggestions",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "m-m-search-suggestions",
    "to": "m-ad-detail-property",
    "kind": "link",
    "trigger": {
@@ -5837,6 +6163,32 @@
    "count": 382,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "m-m-search-suggestions",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chat"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-m-search-suggestions",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My Ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "m-m-search-suggestions",
@@ -5987,6 +6339,19 @@
   },
   {
    "from": "m-m-location-page",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favourite"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-m-location-page",
    "to": "m-ad-detail",
    "kind": "link",
    "trigger": {
@@ -6115,6 +6480,32 @@
    "count": 382,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "m-m-location-page",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chat"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-m-location-page",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My Ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "m-m-location-page",
@@ -6494,6 +6885,13 @@
    "label": "Search results — mobile phones",
    "file": "templates/desktop/search-mobiles.html"
   },
+  "post-ad-category": {
+   "page": "post-ad-category",
+   "platform": "web-desktop",
+   "section": "post-ad",
+   "label": "Post an ad — choose category",
+   "file": "templates/desktop/post-ad-category.html"
+  },
   "ad-detail-property": {
    "page": "ad-detail-property",
    "platform": "web-desktop",
@@ -6535,6 +6933,20 @@
    "section": "property",
    "label": "Property landing — the vertical (/en/realestate/)",
    "file": "templates/mobile/property-landing.html"
+  },
+  "m-favourites": {
+   "page": "favourites",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "Favourites (saved ads)",
+   "file": "templates/mobile/favourites.html"
+  },
+  "m-post-ad-category": {
+   "page": "post-ad-category",
+   "platform": "web-mobile",
+   "section": "post-ad",
+   "label": "Post an ad — choose category",
+   "file": "templates/mobile/post-ad-category.html"
   },
   "m-ad-detail-property": {
    "page": "ad-detail-property",
@@ -6599,6 +7011,20 @@
    "label": "Search results — mobile phones",
    "file": "templates/mobile/search-mobiles.html"
   },
+  "m-chat": {
+   "page": "chat",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "Chats",
+   "file": "templates/mobile/chat.html"
+  },
+  "m-my-ads": {
+   "page": "my-ads",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "My ads",
+   "file": "templates/mobile/my-ads.html"
+  },
   "m-search-motorcycles": {
    "page": "search-motorcycles",
    "platform": "web-mobile",
@@ -6640,12 +7066,19 @@
    "section": "property",
    "label": "All properties listing (/en/properties/)",
    "file": "templates/mobile/properties.html"
+  },
+  "m-m-user-menu": {
+   "page": "m-user-menu",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "Mobile account menu (signed in)",
+   "file": "templates/mobile/m-user-menu.html"
   }
  },
  "summary": {
   "screens": 20,
-  "transitions": 457,
-  "exits": 33,
+  "transitions": 490,
+  "exits": 39,
   "unavailable_here": 14
  }
 }

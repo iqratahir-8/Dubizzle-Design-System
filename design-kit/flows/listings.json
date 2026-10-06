@@ -370,6 +370,19 @@
   },
   {
    "from": "search",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "search",
    "to": "seller-page",
    "kind": "link",
    "trigger": {
@@ -625,6 +638,19 @@
   },
   {
    "from": "search-cars-model",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "search-cars-model",
    "to": "search-cars-model",
    "kind": "link",
    "trigger": {
@@ -852,6 +878,19 @@
   },
   {
    "from": "search-motorcycles",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "search-motorcycles",
    "to": "ad-detail",
    "kind": "link",
    "trigger": {
@@ -1044,6 +1083,19 @@
    },
    "count": 195,
    "representative": "mobiles & tablets listings show the captured mobile phones list"
+  },
+  {
+   "from": "search-trucks",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "search-trucks",
@@ -1270,6 +1322,19 @@
   },
   {
    "from": "search-property",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "search-property",
    "to": "agency-page",
    "kind": "link",
    "trigger": {
@@ -1493,6 +1558,19 @@
    },
    "count": 2,
    "exit": "property"
+  },
+  {
+   "from": "search-property-rent",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "search-property-rent",
@@ -1738,6 +1816,19 @@
   },
   {
    "from": "search-property-commercial",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "search-property-commercial",
    "to": "agency-page",
    "kind": "link",
    "trigger": {
@@ -1976,6 +2067,19 @@
   },
   {
    "from": "search-property-vacation",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "search-property-vacation",
    "to": "agency-page",
    "kind": "link",
    "trigger": {
@@ -2205,6 +2309,19 @@
    },
    "count": 2,
    "exit": "property"
+  },
+  {
+   "from": "search-property-land",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "search-property-land",
@@ -2440,6 +2557,19 @@
   },
   {
    "from": "search-mobiles",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "search-mobiles",
    "to": "seller-page",
    "kind": "link",
    "trigger": {
@@ -2645,6 +2775,19 @@
    },
    "count": 195,
    "representative": "mobiles & tablets listings show the captured mobile phones list"
+  },
+  {
+   "from": "sort-menu",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "sort-menu",
@@ -2921,6 +3064,19 @@
    },
    "count": 195,
    "representative": "mobiles & tablets listings show the captured mobile phones list"
+  },
+  {
+   "from": "save-search",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "save-search",
@@ -3232,6 +3388,39 @@
   },
   {
    "from": "m-search",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "m-search",
    "to": "m-m-filters",
    "kind": "click",
    "trigger": {
@@ -3453,6 +3642,39 @@
    "representative": "mobiles & tablets listings show the captured mobile phones list"
   },
   {
+   "from": "m-search-cars-model",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-cars-model",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-cars-model",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
    "from": "m-search-motorcycles",
    "to": "m-search-motorcycles",
    "kind": "link",
@@ -3650,6 +3872,39 @@
    },
    "count": 358,
    "representative": "mobiles & tablets listings show the captured mobile phones list"
+  },
+  {
+   "from": "m-search-motorcycles",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-motorcycles",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-motorcycles",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "m-search-trucks",
@@ -3863,6 +4118,39 @@
    },
    "count": 358,
    "representative": "mobiles & tablets listings show the captured mobile phones list"
+  },
+  {
+   "from": "m-search-trucks",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-trucks",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-trucks",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "m-search-property",
@@ -4093,6 +4381,39 @@
    "representative": "mobiles & tablets listings show the captured mobile phones list"
   },
   {
+   "from": "m-search-property",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
    "from": "m-search-property-rent",
    "to": "m-agency-page",
    "kind": "link",
@@ -4319,6 +4640,39 @@
    },
    "count": 358,
    "representative": "mobiles & tablets listings show the captured mobile phones list"
+  },
+  {
+   "from": "m-search-property-rent",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property-rent",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property-rent",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "m-search-property-commercial",
@@ -4548,6 +4902,39 @@
    "representative": "mobiles & tablets listings show the captured mobile phones list"
   },
   {
+   "from": "m-search-property-commercial",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property-commercial",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property-commercial",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
    "from": "m-search-property-vacation",
    "to": "m-search-property-vacation",
    "kind": "link",
@@ -4761,6 +5148,39 @@
    },
    "count": 358,
    "representative": "mobiles & tablets listings show the captured mobile phones list"
+  },
+  {
+   "from": "m-search-property-vacation",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property-vacation",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property-vacation",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "m-search-property-land",
@@ -5005,6 +5425,39 @@
    "representative": "mobiles & tablets listings show the captured mobile phones list"
   },
   {
+   "from": "m-search-property-land",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property-land",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-property-land",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
    "from": "m-search-mobiles",
    "to": "m-seller-page",
    "kind": "link",
@@ -5226,6 +5679,39 @@
    },
    "count": 1,
    "exit": "property"
+  },
+  {
+   "from": "m-search-mobiles",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-mobiles",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-search-mobiles",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "m-m-filters",
@@ -5453,6 +5939,19 @@
   },
   {
    "from": "m-m-filters",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-m-filters",
    "to": "m-search",
    "kind": "click",
    "trigger": {
@@ -5512,6 +6011,13 @@
    "section": "motors",
    "label": "All vehicles listing (/en/vehicles/)",
    "file": "templates/desktop/vehicles-listing.html"
+  },
+  "my-ads": {
+   "page": "my-ads",
+   "platform": "web-desktop",
+   "section": "account",
+   "label": "My ads",
+   "file": "templates/desktop/my-ads.html"
   },
   "seller-page": {
    "page": "seller-page",
@@ -5597,6 +6103,27 @@
    "label": "All properties listing (/en/properties/)",
    "file": "templates/mobile/properties.html"
   },
+  "m-my-ads": {
+   "page": "my-ads",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "My ads",
+   "file": "templates/mobile/my-ads.html"
+  },
+  "m-m-user-menu": {
+   "page": "m-user-menu",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "Mobile account menu (signed in)",
+   "file": "templates/mobile/m-user-menu.html"
+  },
+  "m-post-ad-category": {
+   "page": "post-ad-category",
+   "platform": "web-mobile",
+   "section": "post-ad",
+   "label": "Post an ad — choose category",
+   "file": "templates/mobile/post-ad-category.html"
+  },
   "m-agency-page": {
    "page": "agency-page",
    "platform": "web-mobile",
@@ -5628,8 +6155,8 @@
  },
  "summary": {
   "screens": 23,
-  "transitions": 380,
-  "exits": 20,
+  "transitions": 423,
+  "exits": 24,
   "unavailable_here": 3
  }
 }

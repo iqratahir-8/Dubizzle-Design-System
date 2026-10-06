@@ -192,6 +192,33 @@
   },
   {
    "from": "motors",
+   "to": "edit-profile",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "motors",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Post Your Ad",
+     "Post an Ad"
+    ]
+   },
+   "count": 2,
+   "exit": "post-ad"
+  },
+  {
+   "from": "motors",
    "to": "new-cars",
    "kind": "link",
    "trigger": {
@@ -501,6 +528,19 @@
   },
   {
    "from": "vehicles-listing",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "vehicles-listing",
    "to": "seller-page",
    "kind": "link",
    "trigger": {
@@ -579,6 +619,32 @@
    },
    "count": 1,
    "exit": "property"
+  },
+  {
+   "from": "new-cars",
+   "to": "edit-profile",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "new-cars",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Post Your Ad"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "new-cars",
@@ -765,6 +831,32 @@
   },
   {
    "from": "new-cars-brand",
+   "to": "edit-profile",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "new-cars-brand",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Post Your Ad"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "new-cars-brand",
    "to": "new-cars",
    "kind": "link",
    "trigger": {
@@ -916,6 +1008,32 @@
   },
   {
    "from": "new-cars-model",
+   "to": "edit-profile",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "new-cars-model",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Post Your Ad"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "new-cars-model",
    "to": "new-cars",
    "kind": "link",
    "trigger": {
@@ -1047,6 +1165,32 @@
   },
   {
    "from": "car-comparison",
+   "to": "edit-profile",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "car-comparison",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Post Your Ad"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "car-comparison",
    "to": "new-cars",
    "kind": "link",
    "trigger": {
@@ -1167,6 +1311,32 @@
   },
   {
    "from": "car-comparison-result",
+   "to": "edit-profile",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "car-comparison-result",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Post Your Ad"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "car-comparison-result",
    "to": "new-cars",
    "kind": "link",
    "trigger": {
@@ -1282,6 +1452,33 @@
    },
    "count": 1,
    "exit": "property"
+  },
+  {
+   "from": "electric-cars",
+   "to": "edit-profile",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "electric-cars",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Post Your Ad",
+     "Sell Now"
+    ]
+   },
+   "count": 2,
+   "exit": "post-ad"
   },
   {
    "from": "electric-cars",
@@ -1424,6 +1621,32 @@
   },
   {
    "from": "car-finance",
+   "to": "edit-profile",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "car-finance",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Post Your Ad"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "car-finance",
    "to": "new-cars",
    "kind": "link",
    "trigger": {
@@ -1524,6 +1747,32 @@
    },
    "count": 1,
    "exit": "property"
+  },
+  {
+   "from": "car-finance-bank",
+   "to": "edit-profile",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "car-finance-bank",
+   "to": "post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Post Your Ad"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "car-finance-bank",
@@ -1726,6 +1975,20 @@
   },
   {
    "from": "m-motors",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Post an Ad",
+     "Sell"
+    ]
+   },
+   "count": 2,
+   "exit": "post-ad"
+  },
+  {
+   "from": "m-motors",
    "to": "m-search-cars-model",
    "kind": "link",
    "trigger": {
@@ -1740,6 +2003,65 @@
    "count": 24,
    "representative": "a brand + model listing shows the captured Mercedes C180 list",
    "exit": "listings"
+  },
+  {
+   "from": "m-motors",
+   "to": "m-m-user-menu",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-motors",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-motors",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-motors",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-motors",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
   },
   {
    "from": "m-vehicles-listing",
@@ -1978,6 +2300,39 @@
    "exit": "listings"
   },
   {
+   "from": "m-vehicles-listing",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "All categories"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-vehicles-listing",
+   "to": "m-m-user-menu",
+   "kind": "click",
+   "trigger": {
+    "text": "Account"
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-vehicles-listing",
+   "to": "m-post-ad-category",
+   "kind": "click",
+   "trigger": {
+    "text": "Sell"
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
    "from": "m-new-cars",
    "to": "m-new-cars-brand",
    "kind": "link",
@@ -2143,6 +2498,58 @@
    },
    "count": 3,
    "exit": "home"
+  },
+  {
+   "from": "m-new-cars",
+   "to": "m-m-user-menu",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-new-cars",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-new-cars",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Sell"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "m-new-cars",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "m-new-cars-brand",
@@ -2431,6 +2838,58 @@
    "exit": "listings"
   },
   {
+   "from": "m-car-comparison",
+   "to": "m-m-user-menu",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-car-comparison",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-car-comparison",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Sell"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "m-car-comparison",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
    "from": "m-car-comparison-result",
    "to": "m-search",
    "kind": "link",
@@ -2609,6 +3068,20 @@
   },
   {
    "from": "m-electric-cars",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Sell Now",
+     "Sell"
+    ]
+   },
+   "count": 2,
+   "exit": "post-ad"
+  },
+  {
+   "from": "m-electric-cars",
    "to": "m-home",
    "kind": "link",
    "trigger": {
@@ -2620,6 +3093,45 @@
    },
    "count": 3,
    "exit": "home"
+  },
+  {
+   "from": "m-electric-cars",
+   "to": "m-m-user-menu",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-electric-cars",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-electric-cars",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
   },
   {
    "from": "m-car-finance",
@@ -2698,6 +3210,58 @@
    "exit": "home"
   },
   {
+   "from": "m-car-finance",
+   "to": "m-m-user-menu",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Login or Signup"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-car-finance",
+   "to": "m-chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
+   "from": "m-car-finance",
+   "to": "m-post-ad-category",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Sell"
+    ]
+   },
+   "count": 1,
+   "exit": "post-ad"
+  },
+  {
+   "from": "m-car-finance",
+   "to": "m-my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My ads"
+    ]
+   },
+   "count": 1,
+   "exit": "account"
+  },
+  {
    "from": "m-car-finance-bank",
    "to": "m-search",
    "kind": "link",
@@ -2729,6 +3293,20 @@
    "section": "property",
    "label": "Property landing — the vertical (/en/realestate/)",
    "file": "templates/desktop/property-landing.html"
+  },
+  "edit-profile": {
+   "page": "edit-profile",
+   "platform": "web-desktop",
+   "section": "account",
+   "label": "Edit profile",
+   "file": "templates/desktop/edit-profile.html"
+  },
+  "post-ad-category": {
+   "page": "post-ad-category",
+   "platform": "web-desktop",
+   "section": "post-ad",
+   "label": "Post an ad — choose category",
+   "file": "templates/desktop/post-ad-category.html"
   },
   "search": {
    "page": "search",
@@ -2814,6 +3392,13 @@
    "label": "Search results — mobile phones",
    "file": "templates/desktop/search-mobiles.html"
   },
+  "my-ads": {
+   "page": "my-ads",
+   "platform": "web-desktop",
+   "section": "account",
+   "label": "My ads",
+   "file": "templates/desktop/my-ads.html"
+  },
   "ad-detail-property": {
    "page": "ad-detail-property",
    "platform": "web-desktop",
@@ -2856,12 +3441,40 @@
    "label": "Seller / business profile",
    "file": "templates/mobile/seller-page.html"
   },
+  "m-post-ad-category": {
+   "page": "post-ad-category",
+   "platform": "web-mobile",
+   "section": "post-ad",
+   "label": "Post an ad — choose category",
+   "file": "templates/mobile/post-ad-category.html"
+  },
   "m-search-cars-model": {
    "page": "search-cars-model",
    "platform": "web-mobile",
    "section": "listings",
    "label": "Search results — cars, brand + model",
    "file": "templates/mobile/search-cars-model.html"
+  },
+  "m-m-user-menu": {
+   "page": "m-user-menu",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "Mobile account menu (signed in)",
+   "file": "templates/mobile/m-user-menu.html"
+  },
+  "m-chat": {
+   "page": "chat",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "Chats",
+   "file": "templates/mobile/chat.html"
+  },
+  "m-my-ads": {
+   "page": "my-ads",
+   "platform": "web-mobile",
+   "section": "account",
+   "label": "My ads",
+   "file": "templates/mobile/my-ads.html"
   },
   "m-ad-detail-property": {
    "page": "ad-detail-property",
@@ -2936,8 +3549,8 @@
  },
  "summary": {
   "screens": 20,
-  "transitions": 186,
-  "exits": 31,
+  "transitions": 230,
+  "exits": 38,
   "unavailable_here": 0
  }
 }
