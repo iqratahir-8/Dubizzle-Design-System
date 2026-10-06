@@ -1128,7 +1128,12 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 
 ## 6. Next up
 
-0h. **Prototype follow-ups (item 93):** on the Mac: `git checkout claude/trusting-clarke-25poz4 && npm run build:templates
+0h. **Prototype follow-ups (item 93).** DONE 2026-10-06: the owner switched the Mac to this branch and committed the account
+   templates (`343a3d8`, 87 files; PII scan 60/60 clean; account 164/164 and post-ad 14/14 transitions pass). One fix after it:
+   `desktop/favourites.html` pointed at a stylesheet hash that only existed on the Mac (its copy of the capture had localized
+   URLs); repointed to the committed twin `eddd05f4c451f631.css` of the same 2026-09-29 capture — renders correctly.
+   **Capture branches:** `origin/favourites-empty-capture` carries the real empty-state captures (Part B of 0d) — not yet
+   turned into templates. Still open from the original plan — on the Mac: `git checkout claude/trusting-clarke-25poz4 && npm run build:templates
    && npm run check:prototype && npm run check:flows`, look at every people screen (My Ads, Chat, Favourites, Edit profile,
    portal Leads/Candidates/Agents), then `git add design-kit/templates && git commit` — **the account templates are tracked
    since 2026-10-06 (owner's decision, same gate as the portal); the ignore rules are gone** — and push; then rebuild the
@@ -1260,6 +1265,8 @@ LPVs), desktop + mobile; quick vs selected chips; pixel-perfect htmls"):**
 
 ## 7. Known gotchas
 
+- **Do not `rm` a freshly built `_live-css/<hash>.css` just because it is untracked** — a template committed from that
+  machine may reference it (2026-10-06: favourites). Check `grep -l <hash> design-kit/templates/*/*.html` first.
 - **`pkill -f <script>` kills the shell that runs it** when the command line of that shell also contains the script
   name (2026-10-06: it killed the very command that was about to restart the checker). Use `pgrep -fl` first, or
   kill by PID.
