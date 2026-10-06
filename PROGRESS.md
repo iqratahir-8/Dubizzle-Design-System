@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-06 (consumer prototype wired desktop + mobile, flows per section, item 93; account templates tracked; empty states, item 94) · branch `claude/trusting-clarke-25poz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-06 (consumer prototype wired desktop + mobile, flows per section, item 93; account templates tracked; empty states, item 94) · branch `main` (merged from `claude/trusting-clarke-25poz4`, 2026-10-06) · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
