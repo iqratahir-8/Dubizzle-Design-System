@@ -24,102 +24,102 @@
   {
    "page": "my-ads",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "chat",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "edit-profile",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "settings-privacy",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "settings-notifications",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "favourites",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "saved-searches",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "packages",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "user-menu",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "m-user-menu",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "my-ads",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "chat",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "edit-profile",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "settings-privacy",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "settings-notifications",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "favourites",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "saved-searches",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "packages",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "user-menu",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "m-user-menu",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   }
  ],
  "transitions": [],

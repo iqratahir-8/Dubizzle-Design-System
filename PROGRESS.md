@@ -77,6 +77,9 @@ human-designed, with no "AI slop", and that can be regenerated when a new releas
   don't open unread chats (marks them read); don't change settings.
 - The capture Chrome profile (session cookies) lives at `~/.dubizzle-capture/chrome-profile`,
   outside the repo. Never commit or copy it.
+- **Account templates are tracked since 2026-10-06** (owner: "remove this rule"), like the portal since 2026-09-30.
+  The captures in `reference/live/` stay ignored. The gate before any commit of them is `npm run check:prototype`
+  (scans portal + account templates, both layouts) plus an eye-check of every people screen — see D-011/D-017.
 - **Never run `npm audit fix --force`** — it upgrades vite past 6 and breaks Storybook.
 - Repo must stay **private** (licensed Proxima Nova / GESS fonts, internal tokens). The current
   MIT `LICENSE` is wrong and should be replaced (not done yet).
@@ -1125,8 +1128,11 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 
 ## 6. Next up
 
-0h. **Prototype follow-ups (item 93):** run `npm run build:templates && npm run check:flows` on the Mac so the account,
-   Post an Ad and portal screens join the flows; decide whether listing links from the *property* and *mobiles* ad
+0h. **Prototype follow-ups (item 93):** on the Mac: `git checkout claude/trusting-clarke-25poz4 && npm run build:templates
+   && npm run check:prototype && npm run check:flows`, look at every people screen (My Ads, Chat, Favourites, Edit profile,
+   portal Leads/Candidates/Agents), then `git add design-kit/templates && git commit` — **the account templates are tracked
+   since 2026-10-06 (owner's decision, same gate as the portal); the ignore rules are gone** — and push; then rebuild the
+   flows there so the account and Post an Ad sections fill in; decide whether listing links from the *property* and *mobiles* ad
    details should open their own report/phone states (they were captured on the car DPV only — capture them there if
    wanted: `capture:states` with the DPV URL); mobile has no sort menu, gallery or login-gated phone capture yet.
 

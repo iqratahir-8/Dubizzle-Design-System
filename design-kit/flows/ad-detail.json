@@ -125,12 +125,12 @@
   {
    "page": "dpv-report-in",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "dpv-report-form",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "dpv-phone",
@@ -140,12 +140,12 @@
   {
    "page": "dpv-report-in",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "dpv-report-form",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "dpv-gallery",

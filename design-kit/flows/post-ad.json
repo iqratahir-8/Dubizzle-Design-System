@@ -9,62 +9,62 @@
   {
    "page": "post-ad-category",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "post-ad-subcategory",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "post-ad",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "post-ad-filled",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "upsell-select",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "upsell",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "post-ad-category",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "post-ad-subcategory",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "post-ad",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "post-ad-filled",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "upsell-select",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
    "page": "upsell",
    "platform": "web-mobile",
-   "reason": "account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine"
+   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   }
  ],
  "transitions": [],

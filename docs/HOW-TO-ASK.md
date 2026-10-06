@@ -179,9 +179,10 @@ for a family, not a claim that the pages are identical.
 
 **What is not wired, on purpose.** A dialog opens only from the page it was captured on
 ("Report this ad" works on the car ad, not the property ad). The account screens, Post an Ad
-and the agency portal are built from logged-in captures, so they exist only on the capturing
-machine; on that machine the same `npm run wire:prototype` links them in, and the flows show
-them as "not built here" everywhere else. Confirm buttons (Post, Pay, Send, Submit) do nothing.
+and the agency portal are built from logged-in captures on the Mac; since 2026-10-06 they are
+tracked in git (owner's decision), so once committed from there they are linked in everywhere.
+Before committing a rebuild of them run `npm run check:prototype` (the PII scan) and look at
+every people screen. Confirm buttons (Post, Pay, Send, Submit) do nothing.
 
 Say **"rewire the prototype"** after any template rebuild (`npm run wire:prototype` — it is also
 part of `npm run build:templates`), **"rebuild the flows"** (`npm run build:flows`) and

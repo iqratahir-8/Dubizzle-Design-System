@@ -31,12 +31,21 @@ const textOnly = (h) =>
     .replace(/<(svg|script|style|noscript)[\s\S]*?<\/\1>/gi, ' ')
     .replace(/<[^>]*>/g, ' ');
 
+/* Pages built from logged-in captures: the portal, and — tracked since 2026-10-06 — the
+   consumer account screens. Both layouts are scanned for PII; the click-through below
+   covers the portal (the consumer prototype has its own: npm run check:flows). */
+const ACCOUNT = /^(portal-.*|my-ads|chat|edit-profile|settings-privacy|settings-notifications|packages|favourites.*|saved-searches.*|post-ad.*|upsell.*|user-menu|m-user-menu|dpv-report-in|dpv-report-form)\.html$/;
+const MOBILE = join(ROOT, 'design-kit/templates/mobile');
+const accountPages = [
+  ...readdirSync(DIR).filter((f) => ACCOUNT.test(f)).map((f) => ['desktop', f]),
+  ...readdirSync(MOBILE).filter((f) => ACCOUNT.test(f)).map((f) => ['mobile', f]),
+];
 const pages = readdirSync(DIR).filter((f) => f.startsWith('portal-') && f.endsWith('.html'));
 let problems = 0;
 
-console.log(`PRIVACY — ${pages.length} generated portal pages\n`);
-for (const f of pages) {
-  const t = textOnly(readFileSync(join(DIR, f), 'utf8'));
+console.log(`PRIVACY — ${accountPages.length} pages built from logged-in captures (portal + account, both layouts)\n`);
+for (const [layout, f] of accountPages) {
+  const t = textOnly(readFileSync(join(layout === 'mobile' ? MOBILE : DIR, f), 'utf8'));
   const ph = (t.match(PHONE) || []).filter((p) => p.replace(/\D/g, '') !== '01012345678');
   const em = (t.match(EMAIL) || []).filter((e) => !e.endsWith('example.com'));
   const known = KNOWN_LEAKS.filter((k) => t.includes(k));
@@ -44,7 +53,7 @@ for (const f of pages) {
   for (const m of t.match(/\b[A-Z][a-z]+ Agent \d+\b/g) || []) known.push(m.replace(/^\w+/, '<name>'));
   const bad = ph.length || em.length || known.length;
   if (bad) problems++;
-  console.log(`  ${bad ? 'LEAK' : 'ok  '} ${f.padEnd(34)}${bad ? ` phones=${ph.length} emails=${em.length} known=[${known.join(', ')}]` : ''}`);
+  console.log(`  ${bad ? 'LEAK' : 'ok  '} ${`${layout}/${f}`.padEnd(42)}${bad ? ` phones=${ph.length} emails=${em.length} known=[${known.join(', ')}]` : ''}`);
 }
 
 console.log(`\nLINKS — every wired target exists\n`);

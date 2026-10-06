@@ -19,32 +19,11 @@ design-kit/reference/live/
 # throwaway measurement scripts
 scripts/.tmp-*
 
-# Live templates built from redacted logged-in captures stay local, like the captures
-design-kit/templates/desktop/favourites*.html
-design-kit/templates/mobile/favourites*.html
-design-kit/templates/desktop/saved-searches*.html
-design-kit/templates/mobile/saved-searches*.html
-design-kit/templates/desktop/my-ads.html
-design-kit/templates/mobile/my-ads.html
-design-kit/templates/desktop/chat.html
-design-kit/templates/mobile/chat.html
-design-kit/templates/desktop/edit-profile.html
-design-kit/templates/mobile/edit-profile.html
-design-kit/templates/desktop/settings-privacy.html
-design-kit/templates/mobile/settings-privacy.html
-design-kit/templates/desktop/settings-notifications.html
-design-kit/templates/mobile/settings-notifications.html
-design-kit/templates/desktop/packages.html
-design-kit/templates/mobile/packages.html
+# Account templates (my-ads, chat, edit-profile, settings, packages, favourites, saved-searches,
+# post-ad, upsell, user-menu, m-user-menu) ARE tracked since 2026-10-06 (owner's request, private repo),
+# like the portal templates below. They come from redacted logged-in captures: run
+# `npm run check:prototype` (PII scan) and look at every people screen before committing a rebuild.
 design-kit/templates/_live/fidelity.json
-design-kit/templates/desktop/post-ad*.html
-design-kit/templates/mobile/post-ad*.html
-design-kit/templates/desktop/upsell*.html
-design-kit/templates/mobile/upsell*.html
-design-kit/templates/desktop/user-menu.html
-design-kit/templates/mobile/user-menu.html
-design-kit/templates/desktop/m-user-menu.html
-design-kit/templates/mobile/m-user-menu.html
 
 # Design-tool exports — large, contain licensed fonts and raw screenshots.
 # What matters from them is extracted into tokens/illustrations and committed;
@@ -53,9 +32,7 @@ design-kit/reference/exports/
 # Agency portal templates (desktop only, D-012) ARE tracked since 2026-09-30 (owner's request, private repo).
 # They come from signed-in captures whose people-rows are fixtured before anything is written (D-011);
 # every build is PII-scanned before it is committed. Do not re-add `portal-*.html` here without asking.
-# Signed-in consumer modal states (redacted) stay local too
-design-kit/templates/desktop/dpv-report-in.html
-design-kit/templates/desktop/dpv-report-form.html
+# Signed-in consumer modal states (dpv-report-in, dpv-report-form) are tracked too since 2026-10-06, same gate.
 design-kit/reference/live/screens/_live-check/
 
 # Remotion skills installed via `npx skills add` — kept local, not part of the

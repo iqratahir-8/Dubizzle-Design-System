@@ -74,7 +74,7 @@ for (const [id, section] of Object.entries(SECTIONS)) {
         const reason = !t
           ? 'hand-built page, not captured on this layout'
           : t.account
-            ? 'account template: built from a redacted logged-in capture, gitignored — exists only on the capturing machine'
+            ? 'account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)'
             : layout === 'mobile' && /^(menu-|location-dropdown|search-suggestions|login-dialog|sort-menu|save-search|dpv-phone|dpv-gallery|user-menu)/.test(page)
               ? 'desktop-only state (mobile has its own page for it, or it was not captured on mobile)'
               : layout === 'desktop' && /^m-/.test(page)
