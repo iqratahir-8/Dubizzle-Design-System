@@ -78,6 +78,11 @@ export const PORTAL_DRAWER = {
               the site header, and only the tab should jump
      outside  instead of a control: any click outside the element containing this text
               (how an open dropdown closes)
+   selector a control with no stable text: an aria-label, a placeholder, a role
+   event    with selector: 'focus' or 'input' instead of a click (consumer header search)
+   hover    like text, but fires on mouseenter after 350ms (the category mega menus)
+   key      'Escape' — closes this frame back to `go`
+   (the consumer site's rules live in scripts/lib/consumer-prototype.mjs)
    A rule whose target was never captured is dropped at build time, so the prototype
    never offers a jump that goes nowhere. Tab URLs were probed on live 2026-09-21. */
 const LEADS = /^portal-leads(-phone|-sms|-whatsapp)?$/;
@@ -146,7 +151,11 @@ export const PROTOTYPES = {
 export function hotspotsFor(proto, page, isAvailable) {
   return (proto.hotspots || [])
     .filter((h) => h.on.test(page) && isAvailable(h.go))
-    .map(({ text, band, outside, box, go }) => ({ text, band, outside, box, go }));
+    .map(({ text, band, outside, box, selector, event, hover, key, go }) => {
+      const h = { go };
+      for (const [k, v] of Object.entries({ text, band, outside, box, selector, event, hover, key })) if (v !== undefined) h[k] = v;
+      return h;
+    });
 }
 
 export function prototypeFor(name) {
@@ -205,7 +214,14 @@ export function prototypeRuntime(proto, hotspots = []) {
      from the target so a click on an icon inside a tab still counts as the tab. */
   function controlWithText(node, t) {
     for (var i = 0; node && i < 5; node = node.parentElement, i++) {
-      if (node.nodeType === 1 && (node.textContent || '').trim() === t) return node;
+      if (node.nodeType !== 1) continue;
+      if ((node.textContent || '').trim() === t) return node;
+      /* A button whose label is split across spans ("Sort by" + "Newly listed"): the
+         click lands on the button, and one of its leaf spans carries the exact text. */
+      if (node.matches('button, [role="button"], a, [role="tab"]')) {
+        var leaves = node.querySelectorAll('*');
+        for (var j = 0; j < leaves.length; j++) if (!leaves[j].children.length && (leaves[j].textContent || '').trim() === t) return node;
+      }
     }
     return null;
   }
@@ -250,6 +266,7 @@ export function prototypeRuntime(proto, hotspots = []) {
         for (var q = 0; q < HOTSPOTS.length && !claimed; q++) {
           var bx = HOTSPOTS[q].box;
           if (bx) { var px = e.clientX + window.scrollX, py = e.clientY + window.scrollY; if (px >= bx[0] && px <= bx[2] && py >= bx[1] && py <= bx[3]) claimed = true; }
+          if (HOTSPOTS[q].selector && t.closest && t.closest(HOTSPOTS[q].selector)) claimed = true;
         }
         if (claimed) continue;
         var panel = panelOf(h.outside);
@@ -261,11 +278,43 @@ export function prototypeRuntime(proto, hotspots = []) {
         if (x >= h.box[0] && x <= h.box[2] && y >= h.box[1] && y <= h.box[3]) return h.go;
         continue;
       }
+      if (h.selector) {
+        // a control named by selector (an aria-label, a placeholder, a role) — click only
+        if ((h.event || 'click') === 'click' && e.target.closest && e.target.closest(h.selector)) return h.go;
+        continue;
+      }
+      if (h.hover || h.key) continue;
       var c = controlWithText(e.target, h.text);
       if (c && inBand(c, h.band)) return h.go;
     }
     return null;
   }
+  /* Consumer-site triggers that are not clicks (added 2026-10-06):
+       hover   the header category strip opens a mega menu on mouseenter, like live
+       event   focus on the search field opens the suggestions; typing in the mobile
+               search page shows suggestions
+       key     Escape closes an overlay back to the page it opened from */
+  var hoverTimer = null;
+  document.addEventListener('mouseover', function (e) {
+    for (var i = 0; i < HOTSPOTS.length; i++) {
+      var h = HOTSPOTS[i];
+      if (!h.hover) continue;
+      var c = controlWithText(e.target, h.hover);
+      if (c && inBand(c, h.band)) {
+        clearTimeout(hoverTimer);
+        var go = h.go;
+        hoverTimer = setTimeout(function () { if (c.matches(':hover')) location.href = go + '.html'; }, 350);
+        return;
+      }
+    }
+  }, true);
+  document.addEventListener('mouseout', function () { clearTimeout(hoverTimer); }, true);
+  HOTSPOTS.forEach(function (h) {
+    if (!h.selector || !h.event || h.event === 'click') return;
+    [].slice.call(document.querySelectorAll(h.selector)).forEach(function (el) {
+      el.addEventListener(h.event, function () { location.href = h.go + '.html'; });
+    });
+  });
   var KEY = 'proto-drawer:' + ${JSON.stringify(proto.id)};
 
   function note(text) {
@@ -337,6 +386,7 @@ export function prototypeRuntime(proto, hotspots = []) {
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     if (isOpen()) { setDrawer(false); return; }
+    for (var k = 0; k < HOTSPOTS.length; k++) if (HOTSPOTS[k].key === 'Escape') { location.href = HOTSPOTS[k].go + '.html'; return; }
     // a popup frame closes back to the page it opened from, like live
     for (var i = 0; i < HOTSPOTS.length; i++) if (HOTSPOTS[i].outside) { location.href = HOTSPOTS[i].go + '.html'; return; }
   });

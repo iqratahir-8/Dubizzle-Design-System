@@ -155,6 +155,40 @@ credits dropdown, the ⋯ and ⋮ action menus, Change Agent, Invite agent, Sort
 Leads, Purchase Lead. Cancel, a click outside, or Escape closes them. Confirm buttons do
 nothing on purpose: those actions were never performed, so there is no screen after them.
 
+## The consumer prototype and its flows (desktop + mobile)
+
+Every captured consumer screen is linked to the others the way live is, on both layouts.
+Start anywhere — home, a vertical, a listing, an ad — and click: a link opens the template it
+would open on live, the header search field opens the suggestions, the category strip opens its
+mega menu on hover, "Sort by" opens the sort menu, "Report this ad" opens the report dialog, the
+mobile search bar opens the search page, and so on. A link to something that was never captured
+says "Not part of this prototype" instead of leaving for production.
+
+- Kit: `npm run kit`, then **http://localhost:4321/flows/index.html** — the flow map, one
+  section per card (Home & header, Motors, Property, Search & listings, Ad detail, Account,
+  Post an ad, Agency portal), each with a "Start · desktop / mobile" button, every screen, and
+  every transition with the control that triggers it.
+- Storybook: Templates → Pages — the same files, so the links work inside the frame too.
+- The flows are stored as data in **`design-kit/flows/<section>.json`** (entries per platform,
+  screens, transitions, what is not built in this clone), the same shape the deliverables use.
+
+**Representative jumps.** Every car ad opens the captured Mercedes ad; every brand page opens
+the captured Toyota page; every goods category opens the captured mobile phones list. The flow
+files and the index say so on each such transition — it is one captured example standing in
+for a family, not a claim that the pages are identical.
+
+**What is not wired, on purpose.** A dialog opens only from the page it was captured on
+("Report this ad" works on the car ad, not the property ad). The account screens, Post an Ad
+and the agency portal are built from logged-in captures, so they exist only on the capturing
+machine; on that machine the same `npm run wire:prototype` links them in, and the flows show
+them as "not built here" everywhere else. Confirm buttons (Post, Pay, Send, Submit) do nothing.
+
+Say **"rewire the prototype"** after any template rebuild (`npm run wire:prototype` — it is also
+part of `npm run build:templates`), **"rebuild the flows"** (`npm run build:flows`) and
+**"check the flows"** (`npm run check:flows`: a real click-through of every stored transition
+in headless Chrome, desktop and mobile). The rules live in `scripts/lib/consumer-prototype.mjs`
+— a route table from live paths to templates, and the hotspot list for button-driven states.
+
 ## Popups and modals you can name
 
 Consumer: `login-dialog`, `dpv-phone` (login gate), `dpv-report` / `dpv-report-form`,

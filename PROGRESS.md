@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-01 (design-prompt-images skill, item 81; agency-portal pages, QA registry and deliverable, items 70–72; test-account note, item 82) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-06 (consumer prototype wired desktop + mobile, flows stored per section, item 93) · branch `claude/trusting-clarke-25poz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -1085,7 +1085,50 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    included; **8/8 prototype transitions land on the right screen, 0 page errors**; real listing photos render. Empty states are still DERIVED (Part B open). v5 changelog entry added.
    A fresh clone cannot rebuild it until `git fetch origin favourites-capture` + the steps above are repeated.
 
+93. **The consumer templates are a clickable prototype now, desktop and mobile, and the flows are stored per section**
+   (user, 2026-10-06: "the full-flow prototyped version for both desktop and mobile — you fetched the HTMLs but they are
+   not linked; link them and store the flows of every section"). Until now only the agency portal was wired (item 30);
+   every consumer template still linked to production.
+   - **`scripts/lib/consumer-prototype.mjs`** — the route table from live paths to templates (`resolveRoute`: home, the
+     Motors and Property internal pages, every listing family, ad details by vertical from the slug or the page context,
+     seller/agency profiles, My Ads / Chat / Favourites / Post / Account), the **sections** (`SECTIONS`: Home & header,
+     Motors, Property, Search & listings, Ad detail, Account, Post an ad, Agency portal) and the **hotspots** for the
+     button-driven states, per layout — desktop: mega menus on hover, search field focus → suggestions, "Egypt" →
+     location dropdown, Login → dialog, "Sort by" / "Save Search", DPV phone / report / "View +5 more" / gallery, with
+     close ×, click-outside and Escape back; mobile: search bar → search page, typing → suggestions, "Egypt" → location
+     page, Filters icon → filter sheet, DPV report / details, Back arrow → listing. Each hotspot sits only on the page its
+     state was captured on (`scripts/lib/states.mjs` is the source of every trigger).
+   - **`scripts/wire-prototype.mjs`** (`npm run wire:prototype`, also inside `build:templates`) runs on the BUILT
+     templates, so it works in a clone without `reference/live/` — the account templates are simply "not built here".
+     Idempotent (every wired link keeps its live path in `data-proto-path`; the runtime sits between markers). Result:
+     **40,378 links wired, 2,734 neutralised ("Not part of this prototype"), 151 hotspots**;
+     `design-kit/templates/_prototype.json` is the ledger. `prototype.mjs`'s runtime gained `selector` (aria-label /
+     placeholder / role), `event` (focus, input), `hover` and `key: Escape` hotspots; the portal is unchanged.
+   - **`scripts/build-flows.mjs`** (`npm run build:flows`) → **`design-kit/flows/<section>.json`** (entries per platform,
+     screens, transitions with the trigger spelled out, `representative` notes, exits to other sections, what is not
+     built in this clone) + **`design-kit/flows/index.html`**, the flow map with Start buttons per layout — linked from
+     the kit landing page and the templates index. Here: home 20 screens / 472 transitions, motors 20 / 186, property
+     12 / 156, listings 23 / 380, ad-detail 16 / 248; account and post-ad list their screens as local-only.
+   - **`scripts/check-flows.mjs`** (`npm run check:flows`) walks every stored transition in headless Chrome (links
+     statically plus one real click per page; hotspots by real mouse/keyboard), desktop at 1440 and mobile at 390.
+     **1,426/1,426 transitions pass** (home 457, listings 380, ad-detail 247, motors 186, property 156; ~20 min for all,
+     `-- <section>` for one). It caught four things the wiring alone would have shipped broken: the strip hovers
+     from under an open dropdown (the panel covers the strip, as on live — rule removed), a mobile "Login or Sign up"
+     button that lives in a hidden sheet (removed), the mobile dialog's click-outside reaching the page behind
+     (removed; × and Escape close it), and "Sort by" whose label is "Sort by" + ": " in two text nodes (the runtime
+     now also matches a leaf span inside a button; the rule says `Sort by:`).
+   - **Representative jumps are labelled, never silent:** every car ad opens the captured Mercedes DPV, every brand page
+     the Toyota page, every goods category the mobile phones list. HOW-TO-ASK has a new section on all of this.
+   - **On the Mac:** `npm run build:templates` now wires the account / Post an Ad / portal templates too and the flows
+     will show them; re-run `npm run check:flows` there. Hotspot bands and boxes were measured on the current captures —
+     a re-capture from a new release can move them (`check:flows` is what catches it).
+
 ## 6. Next up
+
+0h. **Prototype follow-ups (item 93):** run `npm run build:templates && npm run check:flows` on the Mac so the account,
+   Post an Ad and portal screens join the flows; decide whether listing links from the *property* and *mobiles* ad
+   details should open their own report/phone states (they were captured on the car DPV only — capture them there if
+   wanted: `capture:states` with the DPV URL); mobile has no sort menu, gallery or login-gated phone capture yet.
 
 0g. **Test `design-prompt-images` end to end** once the user reconnects the Higgsfield MCP: one campaign hero + one PromoBanner
    plate (EN + RTL), run the AI-look checklist, log both in PROPOSALS.md.
@@ -1210,6 +1253,12 @@ LPVs), desktop + mobile; quick vs selected chips; pixel-perfect htmls"):**
 5. Replace the MIT `LICENSE` with a proprietary notice; get push access and push the branch.
 
 ## 7. Known gotchas
+
+- **`pkill -f <script>` kills the shell that runs it** when the command line of that shell also contains the script
+  name (2026-10-06: it killed the very command that was about to restart the checker). Use `pgrep -fl` first, or
+  kill by PID.
+- **Chrome in the sandbox waits forever on remote assets** (fonts from typekit, pixels): any script that opens a
+  template there must intercept requests and abort everything that is not `file:` / `data:` (`check-flows.mjs` does).
 
 - `git stash list` in this folder has the old copy's uncommitted vite-8 bump — never apply it.
 - Browser pane screenshots can be unreliable; measure with computed styles instead.

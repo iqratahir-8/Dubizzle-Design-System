@@ -213,13 +213,14 @@ writeFileSync(
     <strong>Live capture</strong> templates are frozen copies of real dubizzle.com.eg pages — they render like
     production (the % is the pixel difference from the live screenshot). Copy one and build your feature on it,
     using the design-system components for anything new. <strong>Hand-built</strong> templates have no capture yet
-    and only approximate the live site.
+    and only approximate the live site. The templates are also a <a href="../flows/index.html">clickable prototype</a>: every link
+    leads to the template it would open on live, desktop and mobile, with the flows stored per section.
   </p>
   <table><thead><tr><th>Page</th><th>Desktop</th><th>Mobile</th><th>Source</th></tr></thead><tbody>
 ${rowsLive}
 ${rowsHand}
   </tbody></table>
-  <p class="lede"><a href="../index.html">← Design system</a> · <a href="../reference/live/gallery.html">Live screens</a></p>
+  <p class="lede"><a href="../index.html">← Design system</a> · <a href="../flows/index.html">Prototype flows</a> · <a href="../reference/live/gallery.html">Live screens</a></p>
 </div></body></html>
 `,
 );
