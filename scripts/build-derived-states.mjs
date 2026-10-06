@@ -3,8 +3,8 @@
  * Builds the states production never showed us by editing a live template: everything (header, title,
  * tabs, footer) stays exactly as captured and only the list block is replaced.
  *
- *   design-kit/templates/<layout>/favourites.html      → favourites-empty.html
  *   design-kit/templates/<layout>/saved-searches.html  → saved-searches-empty.html
+ *   (favourites-empty was derived too until 2026-10-06; it is a real capture now)
  *
  * The replacement is marked data-authored so design-qa knows which part is ours. Copy and structure
  * come from the maple monorepo (favoriteAds.tsx: one bold Text.Large line, no image, no button); the
@@ -20,8 +20,11 @@ import puppeteer from 'puppeteer-core';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CHROME = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+/* favourites-empty is no longer derived: a real capture of an account with no favourites
+   exists since 2026-10-06 (`favourites-empty` in live-templates.json) and showed the same
+   "No favorites yet." line. The saved-searches empty state is still derived — the account
+   captured as "empty" still held three saved searches. */
 const STATES = [
-  { from: 'favourites', to: 'favourites-empty', text: 'No favorites yet.', card: 'article' },
   { from: 'saved-searches', to: 'saved-searches-empty', text: 'No saved searches yet.', card: 'text:Search keyword' },
 ];
 

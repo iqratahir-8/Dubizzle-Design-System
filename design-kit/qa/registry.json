@@ -251,6 +251,58 @@
       "kind": "overlay",
       "vertical": "motors"
     },
+    "dpv-report-form": {
+      "label": "Dpv Report Form",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/dpv-report-form.html"
+      },
+      "kind": "overlay",
+      "vertical": "motors"
+    },
+    "dpv-report-in": {
+      "label": "Dpv Report In",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/dpv-report-in.html"
+      },
+      "kind": "overlay",
+      "vertical": "motors"
+    },
+    "edit-profile": {
+      "label": "Edit Profile",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/edit-profile.html",
+        "web-mobile": "design-kit/templates/mobile/edit-profile.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
     "electric-cars": {
       "label": "Electric Cars",
       "origin": "live",
@@ -295,17 +347,14 @@
       "role_differs": [],
       "flags": [],
       "no_list": false,
-      "unpaired": {},
-      "stale": true
+      "unpaired": {}
     },
     "favourites-empty": {
-      "label": "Favourites — empty state",
-      "origin": "authored",
+      "label": "Favourites — empty state (real capture, 2026-10-06)",
+      "origin": "live",
       "kind": "page",
       "vertical": "account",
       "feature": "favourites-revamp",
-      "derived_from": "favourites",
-      "live_except_authored": true,
       "platforms": {
         "web-desktop": "design-kit/templates/desktop/favourites-empty.html",
         "web-mobile": "design-kit/templates/mobile/favourites-empty.html"
@@ -458,6 +507,23 @@
       },
       "kind": "overlay",
       "vertical": "global"
+    },
+    "m-user-menu": {
+      "label": "M User Menu",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-mobile": "design-kit/templates/mobile/m-user-menu.html"
+      },
+      "kind": "overlay",
+      "vertical": "account"
     },
     "menu-electronics": {
       "label": "Menu Electronics",
@@ -702,6 +768,24 @@
       },
       "kind": "page",
       "vertical": "global"
+    },
+    "packages": {
+      "label": "Packages",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/packages.html",
+        "web-mobile": "design-kit/templates/mobile/packages.html"
+      },
+      "kind": "page",
+      "vertical": "account"
     },
     "payment": {
       "label": "Payment",
@@ -1321,6 +1405,78 @@
       "vertical": "portal",
       "feature": "agency-portal"
     },
+    "post-ad": {
+      "label": "Post Ad",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/post-ad.html",
+        "web-mobile": "design-kit/templates/mobile/post-ad.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
+    "post-ad-category": {
+      "label": "Post Ad Category",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/post-ad-category.html",
+        "web-mobile": "design-kit/templates/mobile/post-ad-category.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
+    "post-ad-filled": {
+      "label": "Post Ad Filled",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/post-ad-filled.html",
+        "web-mobile": "design-kit/templates/mobile/post-ad-filled.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
+    "post-ad-subcategory": {
+      "label": "Post Ad Subcategory",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/post-ad-subcategory.html",
+        "web-mobile": "design-kit/templates/mobile/post-ad-subcategory.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
     "properties": {
       "label": "Properties",
       "origin": "live",
@@ -1694,6 +1850,42 @@
       "kind": "page",
       "vertical": "global"
     },
+    "settings-notifications": {
+      "label": "Settings Notifications",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/settings-notifications.html",
+        "web-mobile": "design-kit/templates/mobile/settings-notifications.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
+    "settings-privacy": {
+      "label": "Settings Privacy",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/settings-privacy.html",
+        "web-mobile": "design-kit/templates/mobile/settings-privacy.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
     "sort-menu": {
       "label": "Sort Menu",
       "origin": "live",
@@ -1710,6 +1902,59 @@
       },
       "kind": "overlay",
       "vertical": "global"
+    },
+    "upsell": {
+      "label": "Upsell",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/upsell.html",
+        "web-mobile": "design-kit/templates/mobile/upsell.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
+    "upsell-select": {
+      "label": "Upsell Select",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/upsell-select.html",
+        "web-mobile": "design-kit/templates/mobile/upsell-select.html"
+      },
+      "kind": "page",
+      "vertical": "account"
+    },
+    "user-menu": {
+      "label": "User Menu",
+      "origin": "live",
+      "states": [
+        "default"
+      ],
+      "roles": [],
+      "role_differs": [],
+      "flags": [],
+      "no_list": true,
+      "unpaired": {},
+      "platforms": {
+        "web-desktop": "design-kit/templates/desktop/user-menu.html"
+      },
+      "kind": "overlay",
+      "vertical": "account"
     },
     "vehicles-listing": {
       "label": "Vehicles Listing",

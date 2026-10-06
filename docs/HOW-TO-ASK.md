@@ -177,6 +177,10 @@ the captured Toyota page; every goods category opens the captured mobile phones 
 files and the index say so on each such transition — it is one captured example standing in
 for a family, not a claim that the pages are identical.
 
+**Empty states.** `favourites-empty` is a real capture (an account with no favourites, 2026-10-06,
+desktop + mobile). `saved-searches-empty` is still derived from the live Saved searches page: the
+account captured as "empty" still had saved searches. Both are listed under Account in the flows.
+
 **What is not wired, on purpose.** A dialog opens only from the page it was captured on
 ("Report this ad" works on the car ad, not the property ad). The account screens, Post an Ad
 and the agency portal are built from logged-in captures on the Mac; since 2026-10-06 they are

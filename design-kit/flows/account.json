@@ -50,6 +50,27 @@
    "label": "Favourites (saved ads)",
    "file": "templates/desktop/favourites.html"
   },
+  "favourites-empty": {
+   "page": "favourites-empty",
+   "platform": "web-desktop",
+   "kind": "page",
+   "label": "Favourites — empty (real capture, account with no favourites)",
+   "file": "templates/desktop/favourites-empty.html"
+  },
+  "saved-searches": {
+   "page": "saved-searches",
+   "platform": "web-desktop",
+   "kind": "page",
+   "label": "Saved searches",
+   "file": "templates/desktop/saved-searches.html"
+  },
+  "saved-searches-empty": {
+   "page": "saved-searches-empty",
+   "platform": "web-desktop",
+   "kind": "page",
+   "label": "saved-searches-empty",
+   "file": "templates/desktop/saved-searches-empty.html"
+  },
   "packages": {
    "page": "packages",
    "platform": "web-desktop",
@@ -113,6 +134,27 @@
    "label": "Favourites (saved ads)",
    "file": "templates/mobile/favourites.html"
   },
+  "m-favourites-empty": {
+   "page": "favourites-empty",
+   "platform": "web-mobile",
+   "kind": "page",
+   "label": "Favourites — empty (real capture, account with no favourites)",
+   "file": "templates/mobile/favourites-empty.html"
+  },
+  "m-saved-searches": {
+   "page": "saved-searches",
+   "platform": "web-mobile",
+   "kind": "page",
+   "label": "Saved searches",
+   "file": "templates/mobile/saved-searches.html"
+  },
+  "m-saved-searches-empty": {
+   "page": "saved-searches-empty",
+   "platform": "web-mobile",
+   "kind": "page",
+   "label": "saved-searches-empty",
+   "file": "templates/mobile/saved-searches-empty.html"
+  },
   "m-packages": {
    "page": "packages",
    "platform": "web-mobile",
@@ -137,18 +179,8 @@
  },
  "unavailable": [
   {
-   "page": "saved-searches",
-   "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
-  },
-  {
    "page": "m-user-menu",
    "platform": "web-desktop",
-   "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
-  },
-  {
-   "page": "saved-searches",
-   "platform": "web-mobile",
    "reason": "account template: built from a redacted logged-in capture on the capturing machine — not committed yet (tracked since 2026-10-06; commit it from the Mac after npm run check:prototype)"
   },
   {
@@ -1576,6 +1608,699 @@
    "exit": "ad-detail"
   },
   {
+   "from": "favourites-empty",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Logo"
+    ]
+   },
+   "count": 1,
+   "exit": "home"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "motors",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motors"
+    ]
+   },
+   "count": 1,
+   "exit": "motors"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "property-landing",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Property"
+    ]
+   },
+   "count": 1,
+   "exit": "property"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Favourites"
+    ]
+   },
+   "count": 2
+  },
+  {
+   "from": "favourites-empty",
+   "to": "chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "from": "favourites-empty",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My Ads"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "from": "favourites-empty",
+   "to": "vehicles-listing",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Vehicles"
+    ]
+   },
+   "count": 1,
+   "exit": "motors"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "search",
+   "kind": "link",
+   "trigger": {
+    "links": 58,
+    "texts": [
+     "Cars for Sale",
+     "See All",
+     "Mercedes-Benz",
+     "Hyundai"
+    ]
+   },
+   "count": 58,
+   "exit": "listings"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "search-motorcycles",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motorcycles &amp; Scooters"
+    ]
+   },
+   "count": 1,
+   "representative": "motorcycle listings show the captured motorcycles list",
+   "exit": "listings"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "search-trucks",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Heavy Trucks, Buses &amp; Other Vehicles"
+    ]
+   },
+   "count": 1,
+   "representative": "truck & bus listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "search-property",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Sale",
+     "Villas For Sale"
+    ]
+   },
+   "count": 2,
+   "representative": "sale listings show the captured apartments-for-sale list",
+   "exit": "listings"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "search-property-rent",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Rent",
+     "Villas For Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "rent listings show the captured apartments-for-rent list",
+   "exit": "listings"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "search-property-vacation",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Vacation Homes for Sale",
+     "Vacation Homes for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "vacation-home listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "search-property-commercial",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Commercial for Sale",
+     "Commercial for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "commercial listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "search-property-land",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Buildings &amp; Lands"
+    ]
+   },
+   "count": 1,
+   "representative": "land & building listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "favourites-empty",
+   "to": "search-mobiles",
+   "kind": "link",
+   "trigger": {
+    "links": 196,
+    "texts": [
+     "Mobiles &amp; Tablets",
+     "Mobile Phones",
+     "Tablets",
+     "See All"
+    ]
+   },
+   "count": 196,
+   "representative": "mobiles & tablets listings show the captured mobile phones list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Logo"
+    ]
+   },
+   "count": 1,
+   "exit": "home"
+  },
+  {
+   "from": "saved-searches",
+   "to": "motors",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motors"
+    ]
+   },
+   "count": 1,
+   "exit": "motors"
+  },
+  {
+   "from": "saved-searches",
+   "to": "property-landing",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Property"
+    ]
+   },
+   "count": 1,
+   "exit": "property"
+  },
+  {
+   "from": "saved-searches",
+   "to": "favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Favourites"
+    ]
+   },
+   "count": 2
+  },
+  {
+   "from": "saved-searches",
+   "to": "chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "from": "saved-searches",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My Ads"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "from": "saved-searches",
+   "to": "vehicles-listing",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Vehicles"
+    ]
+   },
+   "count": 1,
+   "exit": "motors"
+  },
+  {
+   "from": "saved-searches",
+   "to": "search",
+   "kind": "link",
+   "trigger": {
+    "links": 58,
+    "texts": [
+     "Cars for Sale",
+     "See All",
+     "Mercedes-Benz",
+     "Hyundai"
+    ]
+   },
+   "count": 58,
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "search-motorcycles",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motorcycles &amp; Scooters"
+    ]
+   },
+   "count": 1,
+   "representative": "motorcycle listings show the captured motorcycles list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "search-trucks",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Heavy Trucks, Buses &amp; Other Vehicles"
+    ]
+   },
+   "count": 1,
+   "representative": "truck & bus listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "search-property",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Sale",
+     "Villas For Sale"
+    ]
+   },
+   "count": 2,
+   "representative": "sale listings show the captured apartments-for-sale list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "search-property-rent",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Rent",
+     "Villas For Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "rent listings show the captured apartments-for-rent list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "search-property-vacation",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Vacation Homes for Sale",
+     "Vacation Homes for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "vacation-home listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "search-property-commercial",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Commercial for Sale",
+     "Commercial for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "commercial listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "search-property-land",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Buildings &amp; Lands"
+    ]
+   },
+   "count": 1,
+   "representative": "land & building listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "search-mobiles",
+   "kind": "link",
+   "trigger": {
+    "links": 196,
+    "texts": [
+     "Mobiles &amp; Tablets",
+     "Mobile Phones",
+     "Tablets",
+     "See All"
+    ]
+   },
+   "count": 196,
+   "representative": "mobiles & tablets listings show the captured mobile phones list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches",
+   "to": "ad-detail-property",
+   "kind": "link",
+   "trigger": {
+    "links": 3,
+    "texts": []
+   },
+   "count": 3,
+   "representative": "every ad in this vertical opens the captured ad detail property",
+   "exit": "ad-detail"
+  },
+  {
+   "from": "saved-searches",
+   "to": "ad-detail-mobile-phone",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "representative": "every ad in this vertical opens the captured ad detail mobile phone",
+   "exit": "ad-detail"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "home",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Logo"
+    ]
+   },
+   "count": 1,
+   "exit": "home"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "motors",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motors"
+    ]
+   },
+   "count": 1,
+   "exit": "motors"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "property-landing",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Property"
+    ]
+   },
+   "count": 1,
+   "exit": "property"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Favourites"
+    ]
+   },
+   "count": 2
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "chat",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Chats"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "my-ads",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "My Ads"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "vehicles-listing",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Vehicles"
+    ]
+   },
+   "count": 1,
+   "exit": "motors"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "search",
+   "kind": "link",
+   "trigger": {
+    "links": 58,
+    "texts": [
+     "Cars for Sale",
+     "See All",
+     "Mercedes-Benz",
+     "Hyundai"
+    ]
+   },
+   "count": 58,
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "search-motorcycles",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Motorcycles &amp; Scooters"
+    ]
+   },
+   "count": 1,
+   "representative": "motorcycle listings show the captured motorcycles list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "search-trucks",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Heavy Trucks, Buses &amp; Other Vehicles"
+    ]
+   },
+   "count": 1,
+   "representative": "truck & bus listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "search-property",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Sale",
+     "Villas For Sale"
+    ]
+   },
+   "count": 2,
+   "representative": "sale listings show the captured apartments-for-sale list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "search-property-rent",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Apartments for Rent",
+     "Villas For Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "rent listings show the captured apartments-for-rent list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "search-property-vacation",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Vacation Homes for Sale",
+     "Vacation Homes for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "vacation-home listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "search-property-commercial",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Commercial for Sale",
+     "Commercial for Rent"
+    ]
+   },
+   "count": 2,
+   "representative": "commercial listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "search-property-land",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Buildings &amp; Lands"
+    ]
+   },
+   "count": 1,
+   "representative": "land & building listings show the captured list",
+   "exit": "listings"
+  },
+  {
+   "from": "saved-searches-empty",
+   "to": "search-mobiles",
+   "kind": "link",
+   "trigger": {
+    "links": 195,
+    "texts": [
+     "Mobiles &amp; Tablets",
+     "Mobile Phones",
+     "Tablets",
+     "See All"
+    ]
+   },
+   "count": 195,
+   "representative": "mobiles & tablets listings show the captured mobile phones list",
+   "exit": "listings"
+  },
+  {
    "from": "packages",
    "to": "home",
    "kind": "link",
@@ -2105,6 +2830,96 @@
    "count": 1,
    "representative": "mobiles & tablets listings show the captured mobile phones list",
    "exit": "listings"
+  },
+  {
+   "from": "m-favourites-empty",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Favourites"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "from": "m-favourites-empty",
+   "to": "m-search-mobiles",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Mobile Phones"
+    ]
+   },
+   "count": 1,
+   "representative": "mobiles & tablets listings show the captured mobile phones list",
+   "exit": "listings"
+  },
+  {
+   "from": "m-saved-searches",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Favourites",
+     "Favorites"
+    ]
+   },
+   "count": 2
+  },
+  {
+   "from": "m-saved-searches",
+   "to": "m-ad-detail-property",
+   "kind": "link",
+   "trigger": {
+    "links": 3,
+    "texts": []
+   },
+   "count": 3,
+   "representative": "every ad in this vertical opens the captured ad detail property",
+   "exit": "ad-detail"
+  },
+  {
+   "from": "m-saved-searches",
+   "to": "m-ad-detail-mobile-phone",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": []
+   },
+   "count": 1,
+   "representative": "every ad in this vertical opens the captured ad detail mobile phone",
+   "exit": "ad-detail"
+  },
+  {
+   "from": "m-saved-searches",
+   "to": "m-search-mobiles",
+   "kind": "link",
+   "trigger": {
+    "links": 1,
+    "texts": [
+     "Mobile Phones"
+    ]
+   },
+   "count": 1,
+   "representative": "mobiles & tablets listings show the captured mobile phones list",
+   "exit": "listings"
+  },
+  {
+   "from": "m-saved-searches-empty",
+   "to": "m-favourites",
+   "kind": "link",
+   "trigger": {
+    "links": 2,
+    "texts": [
+     "Favourites",
+     "Favorites"
+    ]
+   },
+   "count": 2
   },
   {
    "from": "m-packages",
@@ -2698,9 +3513,9 @@
   }
  },
  "summary": {
-  "screens": 18,
-  "transitions": 164,
+  "screens": 24,
+  "transitions": 221,
   "exits": 37,
-  "unavailable_here": 4
+  "unavailable_here": 2
  }
 }

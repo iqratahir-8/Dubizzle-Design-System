@@ -461,6 +461,11 @@
       "capture": "saved-searches",
       "label": "Saved searches",
       "account": true
+    },
+    "favourites-empty": {
+      "capture": "favourites-empty",
+      "label": "Favourites — empty (real capture, account with no favourites)",
+      "account": true
     }
   },
   "_states": "Templates whose capture is an interaction state (scripts/capture-states.mjs): the header mega menus, the location dropdown, the search suggestions, the mobile search/location overlays and the signed-in user menu. They are one viewport tall, not full pages."

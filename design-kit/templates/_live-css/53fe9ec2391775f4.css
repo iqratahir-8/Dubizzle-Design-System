@@ -1,0 +1,24 @@
+.swg-dialog, .swg-toast, .publisher-toast { box-sizing: border-box; }
+.swg-toast { background-color: rgb(255, 255, 255) !important; max-height: 46px !important; }
+.publisher-toast { background-color: transparent !important; max-width: 360px !important; }
+.swg-toast, .publisher-toast { position: fixed !important; bottom: 0px !important; z-index: 2147483647 !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: none !important; }
+@media (min-width: 871px) and (min-height: 641px) {
+  .swg-dialog.swg-wide-dialog { left: -435px !important; }
+  .swg-dialog.swg-wide-dialog, .swg-toast, .publisher-toast { width: 870px !important; }
+}
+@media (max-width: 640px), (max-height: 640px) {
+  .swg-dialog, .swg-toast { width: 480px !important; left: -240px !important; margin-inline-start: calc(50vw) !important; border-top-left-radius: 8px !important; border-top-right-radius: 8px !important; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 1px, rgba(60, 64, 67, 0.15) 0px 1px 4px 1px !important; }
+  .publisher-toast { width: 480px !important; left: -240px !important; margin-inline-start: calc(50vw) !important; }
+  [dir="rtl"] .swg-dialog, [dir="rtl"] .swg-toast, [dir="rtl"] .publisher-toast { margin-inline-start: calc(-240px + 50vw) !important; }
+}
+@media (min-width: 641px) and (min-height: 641px) {
+  .swg-dialog, .swg-toast, .publisher-toast { width: 630px !important; }
+  .swg-dialog { left: -315px !important; margin-inline-start: calc(50vw) !important; background-color: transparent !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: none !important; }
+  [dir="rtl"] .swg-dialog { margin-inline-start: calc(-315px + 50vw) !important; }
+  .swg-toast { border-radius: 4px !important; bottom: 8px !important; box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px !important; left: 8px !important; }
+  .publisher-toast { bottom: 8px !important; right: 30px !important; }
+}
+@media (max-width: 480px) {
+  .swg-dialog, .swg-toast, .publisher-toast { width: 100% !important; max-width: 100% !important; left: 0px !important; right: 0px !important; margin-inline-start: 0px !important; }
+}
+html.swg-disable-scroll, html.swg-disable-scroll * { overflow: hidden !important; }

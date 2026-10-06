@@ -2289,6 +2289,135 @@
     "hotspots": [],
     "neutralised": 27
    },
+   "favourites-empty": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 2,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 58,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Hyundai"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 196,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 27
+   },
    "home": {
     "section": "home",
     "links": {
@@ -6320,6 +6449,274 @@
     ],
     "neutralised": 27
    },
+   "saved-searches": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 2,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 58,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Hyundai"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 196,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     },
+     "ad-detail-property": {
+      "count": 3,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail property"
+     },
+     "ad-detail-mobile-phone": {
+      "count": 1,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail mobile phone"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 27
+   },
+   "saved-searches-empty": {
+    "section": "account",
+    "links": {
+     "home": {
+      "count": 1,
+      "texts": [
+       "Logo"
+      ],
+      "representative": null
+     },
+     "motors": {
+      "count": 1,
+      "texts": [
+       "Motors"
+      ],
+      "representative": null
+     },
+     "property-landing": {
+      "count": 1,
+      "texts": [
+       "Property"
+      ],
+      "representative": null
+     },
+     "favourites": {
+      "count": 2,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "chat": {
+      "count": 1,
+      "texts": [
+       "Chats"
+      ],
+      "representative": null
+     },
+     "my-ads": {
+      "count": 1,
+      "texts": [
+       "My Ads"
+      ],
+      "representative": null
+     },
+     "vehicles-listing": {
+      "count": 1,
+      "texts": [
+       "Vehicles"
+      ],
+      "representative": null
+     },
+     "search": {
+      "count": 58,
+      "texts": [
+       "Cars for Sale",
+       "See All",
+       "Mercedes-Benz",
+       "Hyundai"
+      ],
+      "representative": null
+     },
+     "search-motorcycles": {
+      "count": 1,
+      "texts": [
+       "Motorcycles &amp; Scooters"
+      ],
+      "representative": "motorcycle listings show the captured motorcycles list"
+     },
+     "search-trucks": {
+      "count": 1,
+      "texts": [
+       "Heavy Trucks, Buses &amp; Other Vehicles"
+      ],
+      "representative": "truck & bus listings show the captured list"
+     },
+     "search-property": {
+      "count": 2,
+      "texts": [
+       "Apartments for Sale",
+       "Villas For Sale"
+      ],
+      "representative": "sale listings show the captured apartments-for-sale list"
+     },
+     "search-property-rent": {
+      "count": 2,
+      "texts": [
+       "Apartments for Rent",
+       "Villas For Rent"
+      ],
+      "representative": "rent listings show the captured apartments-for-rent list"
+     },
+     "search-property-vacation": {
+      "count": 2,
+      "texts": [
+       "Vacation Homes for Sale",
+       "Vacation Homes for Rent"
+      ],
+      "representative": "vacation-home listings show the captured list"
+     },
+     "search-property-commercial": {
+      "count": 2,
+      "texts": [
+       "Commercial for Sale",
+       "Commercial for Rent"
+      ],
+      "representative": "commercial listings show the captured list"
+     },
+     "search-property-land": {
+      "count": 1,
+      "texts": [
+       "Buildings &amp; Lands"
+      ],
+      "representative": "land & building listings show the captured list"
+     },
+     "search-mobiles": {
+      "count": 195,
+      "texts": [
+       "Mobiles &amp; Tablets",
+       "Mobile Phones",
+       "Tablets",
+       "See All"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 25
+   },
    "search": {
     "section": "listings",
     "links": {
@@ -9940,6 +10337,27 @@
     "hotspots": [],
     "neutralised": 15
    },
+   "favourites-empty": {
+    "section": "account",
+    "links": {
+     "favourites": {
+      "count": 1,
+      "texts": [
+       "Favourites"
+      ],
+      "representative": null
+     },
+     "search-mobiles": {
+      "count": 1,
+      "texts": [
+       "Mobile Phones"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 3
+   },
    "home": {
     "section": "home",
     "links": {
@@ -12526,6 +12944,53 @@
      }
     ],
     "neutralised": 36
+   },
+   "saved-searches": {
+    "section": "account",
+    "links": {
+     "favourites": {
+      "count": 2,
+      "texts": [
+       "Favourites",
+       "Favorites"
+      ],
+      "representative": null
+     },
+     "ad-detail-property": {
+      "count": 3,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail property"
+     },
+     "ad-detail-mobile-phone": {
+      "count": 1,
+      "texts": [],
+      "representative": "every ad in this vertical opens the captured ad detail mobile phone"
+     },
+     "search-mobiles": {
+      "count": 1,
+      "texts": [
+       "Mobile Phones"
+      ],
+      "representative": "mobiles & tablets listings show the captured mobile phones list"
+     }
+    },
+    "hotspots": [],
+    "neutralised": 15
+   },
+   "saved-searches-empty": {
+    "section": "account",
+    "links": {
+     "favourites": {
+      "count": 2,
+      "texts": [
+       "Favourites",
+       "Favorites"
+      ],
+      "representative": null
+     }
+    },
+    "hotspots": [],
+    "neutralised": 13
    },
    "search": {
     "section": "listings",

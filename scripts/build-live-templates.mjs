@@ -18,6 +18,10 @@
  * hand-built version (scripts/build-templates.mjs runs first). Rebuilds templates/index.html.
  *
  *   npm run build:templates
+ *   node scripts/build-live-templates.mjs --only favourites-empty,saved-searches-empty
+ *       builds just those templates from their captures and skips the prune, for a machine
+ *       that holds some captures but not all (a full build there would delete the shared
+ *       CSS of every page whose capture is missing — PROGRESS item 57).
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync, unlinkSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -36,6 +40,9 @@ const SHARED = join(TEMPLATES, '_live');
 const CSS_DIR = join(TEMPLATES, '_live-css');
 const ASSET_DIR = join(SHARED, 'assets');
 const LAYOUTS = ['desktop', 'mobile'];
+const ONLY = (process.argv.find((a) => a.startsWith('--only='))?.slice(7) || process.argv[process.argv.indexOf('--only') + 1] || '')
+  .split(',').map((s) => s.trim()).filter(Boolean);
+const only = process.argv.includes('--only') || process.argv.some((a) => a.startsWith('--only=')) ? new Set(ONLY) : null;
 
 const { templates } = JSON.parse(readFileSync(join(TEMPLATES, 'live-templates.json'), 'utf8'));
 const manifest = JSON.parse(readFileSync(join(ROOT, 'design-kit/reference/capture-manifest.json'), 'utf8'));
@@ -129,6 +136,7 @@ function buildTemplate(name, entry, layout) {
 
 const built = [];
 for (const [name, entry] of Object.entries(templates)) {
+  if (only && !only.has(name)) continue;
   for (const layout of LAYOUTS) {
     const r = buildTemplate(name, entry, layout);
     if (r) built.push(r);
@@ -140,7 +148,8 @@ for (const b of built.filter((b) => b.proto)) {
 }
 
 // ── Prune shared files no template references any more (old captures) ─────────
-{
+if (only) console.log(`--only: ${built.length} template(s) built, prune skipped`);
+else {
   const referenced = new Set();
   for (const layout of LAYOUTS) {
     for (const f of readdirSync(join(TEMPLATES, layout)).filter((f) => f.endsWith('.html'))) {
@@ -167,7 +176,7 @@ for (const layout of LAYOUTS) {
     if (!text.includes('LIVE TEMPLATE')) handBuilt.add(name);
   }
 }
-const liveNames = [...new Set(built.map((b) => b.name))];
+const liveNames = Object.keys(templates).filter((name) => LAYOUTS.some((l) => existsSync(join(TEMPLATES, l, `${name}.html`))));
 let report = {};
 try {
   report = Object.fromEntries(JSON.parse(readFileSync(join(TEMPLATES, '_live/fidelity.json'), 'utf8')).map((r) => [r.base, r]));

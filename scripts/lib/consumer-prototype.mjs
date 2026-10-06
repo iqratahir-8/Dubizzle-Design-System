@@ -67,7 +67,7 @@ export const SECTIONS = {
     label: 'Account (signed in)',
     entry: 'my-ads',
     pages: [
-      'my-ads', 'chat', 'edit-profile', 'settings-privacy', 'settings-notifications', 'favourites', 'saved-searches',
+      'my-ads', 'chat', 'edit-profile', 'settings-privacy', 'settings-notifications', 'favourites', 'favourites-empty', 'saved-searches', 'saved-searches-empty',
       'packages', 'user-menu', 'm-user-menu', 'payment',
     ],
   },

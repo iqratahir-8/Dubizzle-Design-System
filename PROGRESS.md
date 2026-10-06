@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-06 (consumer prototype wired desktop + mobile, flows stored per section, item 93) · branch `claude/trusting-clarke-25poz4` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-06 (consumer prototype wired desktop + mobile, flows per section, item 93; account templates tracked; empty states, item 94) · branch `claude/trusting-clarke-25poz4` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -1126,7 +1126,26 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
      will show them; re-run `npm run check:flows` there. Hotspot bands and boxes were measured on the current captures —
      a re-capture from a new release can move them (`check:flows` is what catches it).
 
+94. **Empty states wired into the templates** (user: "wire the empty states captures in to the templates"). The four captures
+   on `origin/favourites-empty-capture` were brought in and rendered. **Favourites empty is real** on both layouts —
+   "No favorites yet." under the live tab bar, which confirms the 2026-09-29 proposal. **Saved-searches "empty" was not
+   empty:** both captures show the same three saved searches as the regular capture (mobile screenshots byte-identical),
+   so it is NOT shipped as a capture; `saved-searches-empty` is regenerated as a derived state from the live Saved searches
+   template (now committed too, both layouts). `build-derived-states.mjs` derives only that one now.
+   `build-live-templates.mjs --only a,b` builds named templates from their captures and **skips the prune** — the safe way
+   to build on a machine that holds some captures but not all (the item-57 gotcha). Registry: `favourites-empty` is origin
+   `live` (104 live / 2 authored pages). QA `--scope favourites-revamp`: PASS WITH WARNINGS, 0 blockers — the one warning
+   is `flw.orphan` on `favourites-empty`: the deliverable's `flows.json` cannot reference it yet because every node of the
+   favourites screens in `design-kit/qa/ids.json` is **retired** (allocated against the 2026-09-29 derived templates; the
+   recapture changed the DOM). The next `design-deliverables` build of `favourites-revamp` (v6, on the Mac) regenerates the
+   ledger; add the list → list-empty transition (heart on the last card, illustrative) then. Prototype: account 24 screens,
+   221/221 transitions pass; PII scan 66/66 clean; `favourites-empty` and `saved-searches` (both layouts) are committed.
+
 ## 6. Next up
+
+0i. **favourites-revamp v6:** rebuild the deliverable on the Mac so the ledger is reallocated against the recaptured
+   templates, then add `list → list-empty` / `m-list → m-list-empty` (illustrative) to `flows.json` and clear the
+   `flw.orphan` warning (item 94).
 
 0h. **Prototype follow-ups (item 93).** DONE 2026-10-06: the owner switched the Mac to this branch and committed the account
    templates (`343a3d8`, 87 files; PII scan 60/60 clean; account 164/164 and post-ad 14/14 transitions pass). One fix after it:
@@ -1151,7 +1170,7 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    bell, and any pick to swap (`icons/settings.html` shows the rejected options). Then decide whether the 7 new ones become React
    icons (`scripts/build-component-icons.mjs`) and kit icons. Live shows no icons on these pages; they are proposals.
 
-0d. **Favourites/Saved searches re-capture.** **Part A is DONE** (the user's recapture was already on `origin/favourites-capture`; rebuilt 2026-10-02, item 92). Part B (real empty-account captures) is still open. Original plan kept below for the record.
+0d. **Favourites/Saved searches re-capture.** **Part A DONE** (item 92). **Part B HALF DONE** (item 94, 2026-10-06): `favourites-empty` is a real capture now; `saved-searches-empty` is still derived because the "empty" account still held three saved searches — to finish it, delete those three on that account (or use one that has none) and `npm run capture:account -- saved-searches-empty`, push on a capture branch, then `node scripts/build-live-templates.mjs --only saved-searches-empty` + add it to `live-templates.json` + `npm run wire:prototype`. Original plan kept below for the record.
    - **Part A (done):** on the Mac, signed in: `git checkout claude/eloquent-maxwell-gokls5 && git pull
      origin claude/eloquent-maxwell-gokls5 && npm run capture:account -- favourites saved-searches` (images now inline). Then
      `git checkout -B favourites-capture && git add -f design-kit/reference/live/favourites.* design-kit/reference/live/saved-searches.*
