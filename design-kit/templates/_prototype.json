@@ -2147,8 +2147,26 @@
       "representative": "every seller profile shows the captured Smart Car page"
      }
     },
-    "hotspots": [],
-    "neutralised": 28
+    "hotspots": [
+     {
+      "text": "Search",
+      "band": [
+       300,
+       760
+      ],
+      "go": "search"
+     }
+    ],
+    "neutralised": 28,
+    "hero": {
+     "selects": {},
+     "toggles": [
+      "Price Range"
+     ],
+     "make": 73,
+     "location": 27,
+     "segment": null
+    }
    },
    "favourites": {
     "section": "account",
@@ -4943,8 +4961,29 @@
       "representative": "a brand + model listing shows the captured Mercedes C180 list"
      }
     },
-    "hotspots": [],
-    "neutralised": 35
+    "hotspots": [
+     {
+      "text": "Search",
+      "band": [
+       300,
+       760
+      ],
+      "go": "search"
+     }
+    ],
+    "neutralised": 35,
+    "hero": {
+     "selects": {
+      "Transmission": "captured mobile filter sheet"
+     },
+     "toggles": [
+      "Price Range",
+      "Year"
+     ],
+     "make": 73,
+     "location": 27,
+     "segment": null
+    }
    },
    "my-ads": {
     "section": "account",
@@ -5232,8 +5271,30 @@
       "representative": "every ad in this vertical opens the captured ad detail property"
      }
     },
-    "hotspots": [],
-    "neutralised": 35
+    "hotspots": [
+     {
+      "text": "Search",
+      "band": [
+       300,
+       760
+      ],
+      "go": "search"
+     }
+    ],
+    "neutralised": 35,
+    "hero": {
+     "selects": {
+      "Transmission": "captured mobile filter sheet",
+      "Body Type": "captured mobile filter sheet",
+      "Fuel Economy": "not captured"
+     },
+     "toggles": [
+      "Price Range"
+     ],
+     "make": 73,
+     "location": 0,
+     "segment": null
+    }
    },
    "new-cars-brand": {
     "section": "motors",
@@ -6281,8 +6342,39 @@
       "representative": "every compound page shows the captured Mivida page"
      }
     },
-    "hotspots": [],
-    "neutralised": 35
+    "hotspots": [
+     {
+      "text": "Search",
+      "band": [
+       420,
+       620
+      ],
+      "go": "search-property"
+     },
+     {
+      "text": "Agencies",
+      "band": [
+       300,
+       420
+      ],
+      "go": "property-agencies"
+     }
+    ],
+    "neutralised": 35,
+    "hero": {
+     "selects": {
+      "Beds / Bathrooms": "not captured",
+      "Area (m²)": "not captured",
+      "Price (EGP)": "not captured"
+     },
+     "toggles": [],
+     "make": 0,
+     "location": 0,
+     "segment": [
+      "Buy",
+      "Rent"
+     ]
+    }
    },
    "save-search": {
     "section": "listings",

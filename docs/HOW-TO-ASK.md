@@ -194,6 +194,23 @@ part of `npm run build:templates`), **"rebuild the flows"** (`npm run build:flow
 in headless Chrome, desktop and mobile). The rules live in `scripts/lib/consumer-prototype.mjs`
 — a route table from live paths to templates, and the hotspot list for button-driven states.
 
+## Hero search widgets (Motors, New Cars, Electric Cars, Property)
+
+The landing pages' search boxes work in the prototype (desktop): **Price Range** and **Year**
+open their real captured menus (live's own `active` class); **Transmission**, **Body Type** open
+option lists taken from the captured mobile filter sheet; **make or model** suggests the 73
+brands of the captured New Cars page; **Egypt** lists the governorates measured on the header
+dropdown; the property **Buy / Rent** control moves its selected state; **Agencies** and **Search**
+go to their pages. The menu chrome is measured (Price Range menu); the option row height is
+authored — see `docs/PROPOSALS.md`.
+
+**Not captured, says so when clicked:** property Beds / Bathrooms, Area and Price; New Cars'
+Fuel Economy. To fill them with live's own lists and menu style: `npm run extract:hero-filters`
+on the Mac (read-only, public pages, no sign-in), then `npm run wire:prototype`, then commit
+`design-kit/content/hero-filters.json`. The mobile Motors hero (a tab strip whose panels were
+captured empty) is not wired. Rules: `scripts/lib/prototype-hero.mjs`; check: `npm run check:prototype`
+(HERO section).
+
 ## Popups and modals you can name
 
 Consumer: `login-dialog`, `dpv-phone` (login gate), `dpv-report` / `dpv-report-form`,

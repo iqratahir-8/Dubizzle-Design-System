@@ -1,7 +1,7 @@
 {
   "name": "dubizzle-design-system",
   "version": "0.1.0",
-  "description": "React component library and design tokens for dubizzle Egypt — buttons, forms, ad cards, header/footer, and the foundations behind them.",
+  "description": "React component library and design tokens for dubizzle Egypt \u2014 buttons, forms, ad cards, header/footer, and the foundations behind them.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -64,7 +64,8 @@
     "qa": "python3 .claude/skills/design-qa/scripts/run.py",
     "deliverable": "python3 .claude/skills/design-deliverables/scripts/build_deliverable.py",
     "package:skill": "python3 scripts/package-single-skill.py",
-    "localize:assets": "node scripts/localize-remote-assets.mjs"
+    "localize:assets": "node scripts/localize-remote-assets.mjs",
+    "extract:hero-filters": "node scripts/extract-hero-filters.mjs"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

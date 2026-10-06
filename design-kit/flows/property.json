@@ -291,6 +291,33 @@
    "representative": "every compound page shows the captured Mivida page"
   },
   {
+   "from": "property-landing",
+   "to": "search-property",
+   "kind": "click",
+   "trigger": {
+    "text": "Search",
+    "band": [
+     420,
+     620
+    ]
+   },
+   "count": 1,
+   "exit": "listings"
+  },
+  {
+   "from": "property-landing",
+   "to": "property-agencies",
+   "kind": "click",
+   "trigger": {
+    "text": "Agencies",
+    "band": [
+     300,
+     420
+    ]
+   },
+   "count": 1
+  },
+  {
    "from": "properties",
    "to": "home",
    "kind": "link",
@@ -2737,7 +2764,7 @@
  },
  "summary": {
   "screens": 12,
-  "transitions": 164,
+  "transitions": 166,
   "exits": 34,
   "unavailable_here": 0
  }

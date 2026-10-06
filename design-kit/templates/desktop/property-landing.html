@@ -19,7 +19,7 @@
 <script>
 (function () {
   var DRAWER = null;
-  var HOTSPOTS = [];
+  var HOTSPOTS = [{"text":"Search","band":[420,620],"go":"search-property"},{"text":"Agencies","band":[300,420],"go":"property-agencies"}];
 
   /* The control a click landed on, if its own text is exactly t: walk up a few levels
      from the target so a click on an icon inside a tab still counts as the tab. */
@@ -229,6 +229,156 @@
       box.style.display = 'none';
     }
   }, true);
+})();
+</script>
+<script>
+(function () {
+  var CFG = {"page":"property-landing","selects":{"Beds / Bathrooms":{"options":null,"style":null,"source":null},"Area (m²)":{"options":null,"style":null,"source":null},"Price (EGP)":{"options":null,"style":null,"source":null}},"toggles":[],"make":null,"location":null,"locationInput":{"placeholder":"Location or Compound","options":["Alexandria","Aswan","Asyut","Beheira","Beni Suef","Cairo","Dakahlia","Damietta","Faiyum","Gharbia","Giza","Ismailia","Kafr al-Sheikh","Luxor","Matruh","Minya","Monufia","New Valley","North Sinai","Port Said","Qalyubia","Qena","Red Sea","Sharqia","Sohag","South Sinai","Suez","Mivida","Hyde Park","Mountain View","Eastown","Beverly Hills","Palm Hills","Badya Palm Hills","Allegria Residence","Lake View Residence","Galleria Moon Valley","De Joya","Etapa","Joulz"]},"segment":["Buy","Rent"]};
+  /* Menu chrome measured on the Price Range menu (motors.desktop, 2026-10-06); the row
+     geometry is authored (see the header of prototype-hero.mjs). */
+  var MENU = 'position:absolute;z-index:9;background:#fff;border-radius:4px;box-shadow:0 3px 6px rgba(0,0,0,.16);padding:8px 0;max-height:320px;overflow:auto;box-sizing:border-box;' +
+    'font:16px/19.2px proxima-nova,helvetica,"GE SS Two",sans-serif;color:#23262a;';
+  var ROW = 'display:block;width:100%;text-align:start;background:none;border:0;padding:10px 16px;font:inherit;color:inherit;cursor:pointer;line-height:20px;';
+  var open = null;
+  function norm(s) { return (s || '').replace(/\s+/g, ' ').trim(); }
+  function close() { if (open) { open.menu.remove(); open.field.setAttribute('aria-expanded', 'false'); open = null; } }
+  function place(menu, field) {
+    var r = field.getBoundingClientRect();
+    menu.style.left = (r.left + window.scrollX) + 'px';
+    menu.style.top = (r.bottom + window.scrollY + 4) + 'px';
+    menu.style.minWidth = r.width + 'px';
+  }
+  function note(text) {
+    var n = document.getElementById('proto-note');
+    if (!n) {
+      n = document.createElement('div'); n.id = 'proto-note'; n.setAttribute('role', 'status');
+      n.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483647;background:#23262a;color:#fff;font:14px/1.4 ProximaNova,system-ui,sans-serif;padding:10px 16px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.22);opacity:0;transition:opacity .15s;max-width:90vw;pointer-events:none';
+      document.body.appendChild(n);
+    }
+    n.textContent = text; n.style.opacity = '1'; clearTimeout(n._t); n._t = setTimeout(function () { n.style.opacity = '0'; }, 2600);
+  }
+  /* A list menu under a field. onPick(label) gets the chosen option. */
+  function listMenu(field, options, style, onPick, filter) {
+    close();
+    var menu = document.createElement('div');
+    menu.id = 'proto-hero-menu'; menu.setAttribute('role', 'listbox');
+    menu.style.cssText = MENU;
+    if (style && style.panel) {
+      if (style.panel.borderRadius) menu.style.borderRadius = style.panel.borderRadius;
+      if (style.panel.boxShadow) menu.style.boxShadow = style.panel.boxShadow;
+      if (style.panel.backgroundColor) menu.style.background = style.panel.backgroundColor;
+    }
+    var shown = options.filter(function (o) { return !filter || o.toLowerCase().indexOf(filter.toLowerCase()) >= 0; }).slice(0, 60);
+    // a captured field may hold a value already ("Egypt"); then the full list is the useful answer
+    if (!shown.length && filter) shown = options.slice(0, 60);
+    if (!shown.length) { var e = document.createElement('div'); e.style.cssText = 'padding:10px 16px;color:#7b7f85'; e.textContent = 'No matches'; menu.appendChild(e); }
+    shown.forEach(function (o) {
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'option'); b.style.cssText = ROW; b.textContent = o;
+      if (style && style.row) { if (style.row.height) b.style.minHeight = style.row.height + 'px'; if (style.row.fontSize) b.style.fontSize = style.row.fontSize; if (style.row.fontWeight) b.style.fontWeight = style.row.fontWeight; }
+      b.addEventListener('mouseenter', function () { b.style.background = '#f5f5f5'; });
+      b.addEventListener('mouseleave', function () { b.style.background = 'none'; });
+      b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); onPick(o); close(); });
+      menu.appendChild(b);
+    });
+    document.body.appendChild(menu);
+    place(menu, field);
+    field.setAttribute('aria-expanded', 'true');
+    open = { menu: menu, field: field };
+  }
+  /* The field whose own leaf text is exactly t (the select's resting label). */
+  function fieldWithLabel(t) {
+    var leaves = [].slice.call(document.querySelectorAll('button, [role="button"]')).filter(function (b) { return norm(b.textContent) === t && b.getBoundingClientRect().width > 40; });
+    return leaves[0] || null;
+  }
+  function setLabel(field, text) {
+    // react-select keeps the placeholder in its own div; the custom selects in a content div
+    var slot = null;
+    ['.select__placeholder', '.select__single-value', '.select_selectContent__3y3q8 > div', '.SelectDropDown_text__F8SV_', 'span', 'div'].some(function (sel) { slot = field.querySelector(sel); return !!slot; });
+    if (slot) { slot.textContent = text; slot.style.color = '#23262a'; } else field.textContent = text;
+    field.setAttribute('data-proto-value', text);
+  }
+
+  /* ---- selects: Transmission, Body Type, … ---- */
+  Object.keys(CFG.selects).forEach(function (label) {
+    var s = CFG.selects[label];
+    var field = fieldWithLabel(label);
+    if (!field) return;
+    field.setAttribute('aria-haspopup', 'listbox'); field.setAttribute('aria-expanded', 'false'); field.style.cursor = 'pointer';
+    field.addEventListener('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
+      if (open && open.field === field) { close(); return; }
+      if (!s.options) { note(label + ': menu not captured yet — run npm run extract:hero-filters on the Mac to read it off live'); return; }
+      listMenu(field, s.options, s.style, function (o) { setLabel(field, o); });
+    }, true);
+  });
+
+  /* ---- toggles: Price Range, Year — the captured menu, hidden by CSS ---- */
+  CFG.toggles.forEach(function (label) {
+    var trig = fieldWithLabel(label);
+    if (!trig) return;
+    var wrap = trig.closest('.SelectDropDown_dropdown__36w7u') || trig.parentElement;
+    var menu = wrap && wrap.querySelector('.SelectDropDown_dropdownMenu__kqCzK');
+    if (!menu) return;
+    trig.setAttribute('aria-expanded', 'false'); trig.style.cursor = 'pointer';
+    /* live opens this menu by adding SelectDropDown_active__22oJX (captured CSS: opacity 1,
+       visibility visible, with a .24s transition) — so the prototype toggles that very class. */
+    function show(on) {
+      menu.classList.toggle('SelectDropDown_active__22oJX', on);
+      trig.setAttribute('aria-expanded', on ? 'true' : 'false'); menu.setAttribute('data-proto-open', on ? '1' : '0');
+    }
+    trig.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); close(); show(menu.getAttribute('data-proto-open') !== '1'); }, true);
+    document.addEventListener('click', function (e) { if (menu.getAttribute('data-proto-open') === '1' && !wrap.contains(e.target)) show(false); }, true);
+    menu.addEventListener('click', function (e) { e.stopPropagation(); }, true);
+  });
+
+  /* ---- make or model: suggestions from the New Cars brand list ---- */
+  if (CFG.make && CFG.make.length) {
+    var mk = document.querySelector('input[placeholder^="Search by make"], input[placeholder^="Search by Car Make"]');
+    if (mk) {
+      var field = mk.closest('.input_inputOuter__106FQ') || mk;
+      var showMake = function () { listMenu(field, CFG.make, null, function (o) { mk.value = o; mk.dispatchEvent(new Event('input', { bubbles: true })); }, mk.value); };
+      mk.addEventListener('focus', function () { mk.select(); showMake(); }); mk.addEventListener('input', showMake);
+      mk.addEventListener('click', function (e) { e.stopPropagation(); showMake(); }, true);
+    }
+  }
+  /* ---- location: the governorates measured on the header dropdown ---- */
+  if (CFG.location && CFG.location.length) {
+    var loc = document.querySelector('.locationDrilldown_triggerBtn__2k1Mm');
+    if (loc) {
+      loc.style.cursor = 'pointer';
+      loc.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        if (open && open.field === loc) { close(); return; }
+        listMenu(loc, ['Egypt'].concat(CFG.location), null, function (o) { setLabel(loc, o); });
+      }, true);
+    }
+  }
+  if (CFG.locationInput) {
+    var li = document.querySelector('input[placeholder="' + CFG.locationInput.placeholder + '"]');
+    if (li) {
+      var lf = li.parentElement;
+      var showLoc = function () { listMenu(lf, CFG.locationInput.options, null, function (o) { li.value = o; }, li.value); };
+      li.addEventListener('focus', function () { li.select(); showLoc(); }); li.addEventListener('input', showLoc);
+      li.addEventListener('click', function (e) { e.stopPropagation(); showLoc(); }, true);
+    }
+  }
+  /* ---- segmented control (Buy / Rent): the selected class moves ---- */
+  if (CFG.segment) {
+    var segs = CFG.segment.map(fieldWithLabel).filter(Boolean);
+    if (segs.length === CFG.segment.length) {
+      var all = segs.map(function (b) { return [].slice.call(b.classList); });
+      var onlyActive = all[0].filter(function (c) { return all.slice(1).every(function (l) { return l.indexOf(c) < 0; }); });
+      segs.forEach(function (b) {
+        b.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          segs.forEach(function (x) { onlyActive.forEach(function (c) { x.classList.toggle(c, x === b); }); x.setAttribute('aria-pressed', String(x === b)); });
+        }, true);
+      });
+    }
+  }
+  document.addEventListener('click', function (e) { if (open && !open.menu.contains(e.target) && !open.field.contains(e.target)) close(); }, true);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) { close(); e.stopPropagation(); } }, true);
+  window.__protoHero = { open: function () { return open; }, cfg: CFG };
 })();
 </script>
 <!-- /proto-runtime:consumer -->

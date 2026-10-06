@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-06 (consumer prototype wired desktop + mobile, flows per section, item 93; account templates tracked; empty states, item 94) · branch `main` (merged from `claude/trusting-clarke-25poz4`, 2026-10-06) · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-06 (consumer prototype wired desktop + mobile, flows per section, item 93; account templates tracked; empty states, item 94; hero widgets, item 95) · branch `main` (merged from `claude/trusting-clarke-25poz4`, 2026-10-06) · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -1141,7 +1141,27 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    ledger; add the list → list-empty transition (heart on the last card, illustrative) then. Prototype: account 24 screens,
    221/221 transitions pass; PII scan 66/66 clean; `favourites-empty` and `saved-searches` (both layouts) are committed.
 
+95. **Hero search widgets work in the prototype** (user: "dropdowns in the hero sections are not working"). They are React
+   selects frozen closed — nothing to toggle in the captures. New `scripts/lib/prototype-hero.mjs` (injected by
+   `wire-prototype.mjs`, desktop: motors, new-cars, electric-cars, property-landing): **Price Range / Year** toggle their
+   real captured menus with live's own `SelectDropDown_active` class (the first attempt set inline styles and lost to the
+   .24s visibility transition); **Transmission / Body Type** list the options read from the captured mobile filter sheet;
+   **make or model** suggests the 73 New Cars brands; **Egypt** lists the measured governorates; property **Buy / Rent**
+   moves the selected class; **Agencies / Search** are hotspots (Search → cars list / property list). Menu chrome measured on
+   the Price Range menu; the option row is authored (PROPOSALS). **Not built, says so on click:** property Beds / Bathrooms,
+   Area, Price and New Cars' Fuel Economy — no option list exists in any capture. New `scripts/extract-hero-filters.mjs`
+   (`npm run extract:hero-filters`, read-only, public pages) harvests options + menu style off live into
+   `design-kit/content/hero-filters.json`, which the runtime prefers over everything when present. Mobile Motors hero
+   (tab strip, panels captured empty) not wired. `check:prototype` gained a HERO section (13 checks) and finds Playwright's
+   Chromium when Chrome is absent. Gotchas: the property location field is pre-filled "Egypt" (a filter on it matched
+   nothing — the list now falls back to all options, and the field selects its text on focus); a "click outside" in a test
+   must land on a blank spot, the hero sits over wired links.
+
 ## 6. Next up
+
+0j. **Hero menus from live (item 95):** on the Mac, `npm run capture:login` (the window; no sign-in needed), then
+   `npm run extract:hero-filters && npm run wire:prototype`, look at the four landings, commit `hero-filters.json` and the
+   rewired templates. Then move the authored option-row values in PROPOSALS to measured.
 
 0i. **favourites-revamp v6:** rebuild the deliverable on the Mac so the ledger is reallocated against the recaptured
    templates, then add `list → list-empty` / `m-list → m-list-empty` (illustrative) to `flows.json` and clear the

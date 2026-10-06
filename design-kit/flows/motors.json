@@ -337,6 +337,20 @@
    "exit": "listings"
   },
   {
+   "from": "motors",
+   "to": "search",
+   "kind": "click",
+   "trigger": {
+    "text": "Search",
+    "band": [
+     300,
+     760
+    ]
+   },
+   "count": 1,
+   "exit": "listings"
+  },
+  {
    "from": "vehicles-listing",
    "to": "home",
    "kind": "link",
@@ -789,6 +803,20 @@
    "count": 1,
    "representative": "every ad in this vertical opens the captured ad detail property",
    "exit": "ad-detail"
+  },
+  {
+   "from": "new-cars",
+   "to": "search",
+   "kind": "click",
+   "trigger": {
+    "text": "Search",
+    "band": [
+     300,
+     760
+    ]
+   },
+   "count": 1,
+   "exit": "listings"
   },
   {
    "from": "new-cars-brand",
@@ -1578,6 +1606,20 @@
    "count": 1,
    "representative": "every seller profile shows the captured Smart Car page",
    "exit": "ad-detail"
+  },
+  {
+   "from": "electric-cars",
+   "to": "search",
+   "kind": "click",
+   "trigger": {
+    "text": "Search",
+    "band": [
+     300,
+     760
+    ]
+   },
+   "count": 1,
+   "exit": "listings"
   },
   {
    "from": "car-finance",
@@ -3549,7 +3591,7 @@
  },
  "summary": {
   "screens": 20,
-  "transitions": 230,
+  "transitions": 233,
   "exits": 38,
   "unavailable_here": 0
  }

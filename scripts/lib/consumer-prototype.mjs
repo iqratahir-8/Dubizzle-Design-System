@@ -214,6 +214,10 @@ export const CONSUMER_HOTSPOTS = {
     { on: /^login-dialog$/, selector: 'button[aria-label="Close button"]', go: 'home' },
     { on: /^login-dialog$/, outside: 'Login with Google', go: 'home' },
     { on: /^login-dialog$/, key: 'Escape', go: 'home' },
+    // hero search buttons (the header's own Search button sits above the band)
+    { on: /^(motors|new-cars|electric-cars)$/, text: 'Search', band: [300, 760], go: 'search' },
+    { on: /^property-landing$/, text: 'Search', band: [420, 620], go: 'search-property' },
+    { on: /^property-landing$/, text: 'Agencies', band: [300, 420], go: 'property-agencies' },
     // listing: sort menu and save search (captured on the cars list)
     { on: /^search$/, text: 'Sort by:', go: 'sort-menu' },
     { on: /^sort-menu$/, selector: '[role="option"]', go: 'search' },

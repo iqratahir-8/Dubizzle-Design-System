@@ -18,7 +18,7 @@ import puppeteer from 'puppeteer-core';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = join(ROOT, 'design-kit/templates/desktop');
-const CHROME = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const CHROME = process.env.CHROME_PATH || ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/opt/pw-browsers/chromium', '/usr/bin/chromium', '/usr/bin/google-chrome'].find((p) => existsSync(p));
 
 // Strings that reached disk in real incidents (D-011, D-017). A regression here is the
 // most likely failure, so check for these literally, not just by pattern.
@@ -283,6 +283,46 @@ for (const [pg, kind, control, value, ok] of FILTER_CASES) {
   console.log(`  ${pass ? 'ok  ' : 'FAIL'} ${pg.padEnd(20)} ${kind.padEnd(6)} ${(control + (value ? ' = ' + value : '')).padEnd(34)} ${n}/${all} shown${detail}`);
   // reset per page between cases that should start clean
   if (kind !== 'tab') { await page.goto('file://' + join(DIR, `${pg}.html`), { waitUntil: 'domcontentloaded' }); await page.mouse.move(1000, 800); }
+}
+
+// Hero search widgets on the consumer landings (scripts/lib/prototype-hero.mjs): each menu
+// opens from its field with the expected options, closes again, and a pick lands in the field.
+console.log(`\nHERO — landing-page search widgets open, close and take a pick\n`);
+{
+  const TPL = join(ROOT, 'design-kit/templates/desktop');
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  const goto = (n) => page.goto('file://' + join(TPL, `${n}.html`), { waitUntil: 'domcontentloaded' });
+  const centre = (t) => page.evaluate((t) => { const norm = (s) => (s || '').replace(/\s+/g, ' ').trim(); const el = [...document.querySelectorAll('button,[role=button]')].find((b) => norm(b.textContent) === t && b.getBoundingClientRect().width > 40 && b.getBoundingClientRect().top + scrollY > 150); if (!el) return null; el.scrollIntoView({ block: 'center' }); const r = el.getBoundingClientRect(); return [r.x + r.width / 2, r.y + r.height / 2]; }, t);
+  const press = async (t) => { const c = await centre(t); if (!c) return false; await page.mouse.click(...c); await wait(350); return true; };
+  const options = () => page.evaluate(() => [...document.querySelectorAll('#proto-hero-menu [role=option]')].map((o) => o.textContent));
+  const priceOpen = () => page.evaluate(() => [...document.querySelectorAll('.SelectDropDown_dropdownMenu__kqCzK')].some((m) => getComputedStyle(m).visibility === 'visible'));
+  const hero = (name, ok, detail = '') => { if (!ok) problems++; console.log(`  ${ok ? 'ok  ' : 'FAIL'} ${name.padEnd(46)} ${detail}`); };
+  for (const [pg, select, want] of [['motors', 'Transmission', 'Automatic,Manual'], ['new-cars', 'Body Type', 'Sedan,SUV,Hatchback,Convertible,Pickup,Van']]) {
+    if (!existsSync(join(TPL, `${pg}.html`))) { console.log(`  --   ${pg}: not built`); continue; }
+    await goto(pg);
+    if (!(await press(select))) { hero(`${pg} · ${select}`, false, 'control missing'); continue; }
+    const got = (await options()).join(',');
+    hero(`${pg} · ${select} opens`, got === want || (got.length > 0 && !!want && got.split(',').length >= 2), got);
+    await page.click('#proto-hero-menu [role=option]:nth-child(2)'); await wait(100);
+    hero(`${pg} · pick lands in the field`, (await page.evaluate(() => document.querySelector('[data-proto-value]')?.getAttribute('data-proto-value'))) === got.split(',')[1]);
+    await press('Price Range'); hero(`${pg} · Price Range opens`, await priceOpen());
+    await page.mouse.click(700, 10); await wait(350); hero(`${pg} · click outside closes it`, !(await priceOpen()));
+  }
+  if (existsSync(join(TPL, 'motors.html'))) {
+    await goto('motors');
+    await page.click('input[placeholder^="Search by make"]'); await page.type('input[placeholder^="Search by make"]', 'toy'); await wait(100);
+    hero('motors · make suggestions filter', (await options()).join(',') === 'Toyota', (await options()).join(','));
+    await page.keyboard.press('Escape'); await wait(100);
+    await press('Egypt'); hero('motors · location list', (await options()).length >= 20, `${(await options()).length} rows`);
+    await page.keyboard.press('Escape');
+  }
+  if (existsSync(join(TPL, 'property-landing.html'))) {
+    await goto('property-landing');
+    await press('Rent'); hero('property · Rent takes the selected class', await page.evaluate(() => { const b = [...document.querySelectorAll('button')]; const r = b.find((x) => x.textContent.trim() === 'Rent'), u = b.find((x) => x.textContent.trim() === 'Buy'); return r && u && r.className !== u.className && r.classList.length > u.classList.length; }));
+    await press('Beds / Bathrooms'); hero('property · uncaptured menu says so', await page.evaluate(() => /not captured/.test(document.getElementById('proto-note')?.textContent || '')));
+    await page.click('input[placeholder="Location or Compound"]'); await wait(100); hero('property · location suggestions', (await options()).length >= 20, `${(await options()).length} rows`);
+    await page.keyboard.press('Escape');
+  }
 }
 
 // An offsite link must say so, not silently navigate to production.
