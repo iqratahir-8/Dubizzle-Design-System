@@ -15,8 +15,9 @@ import argparse, datetime, glob, html as htmllib, json, os, pathlib, re, shutil,
 from common import (repo_root, load_json, load_platforms, select_pages, resolve_file, file_ok, visible_text,
                     live_regions, strip_live_regions)
 from matrix import build_matrix
+import tracking as trklib
 
-SKILL_VERSION = "1.0.0"
+SKILL_VERSION = "1.1.0"
 SCHEMA_VERSION = 1
 
 # default severity per check id (authored screens). Live origin is capped at note — see cap().
@@ -36,6 +37,7 @@ SEV = {
     "prv.leak": "blocker", "prv.click": "blocker",
     "cmp.parity": "blocker", "cmp.live": "blocker",
     "render.error": "warning",
+    **trklib.TRK_SEV,
 }
 NEVER_CAPPED = {"prv.leak", "prv.click"}
 HINT = {"cov": "state-screens", "ovf": "edge-cases", "brk": "edge-cases", "a11y": "accessibility",
@@ -324,6 +326,35 @@ def check_flows(rep, root, registry, pages):
             rep.skip(c, "no flows.json registered for the pages in scope (registry.features[*].flows)")
 
 
+def check_tracking(rep, root, registry, pages):
+    """trk.* — a feature's tracking.json against the shared event catalog and tenant file (tracking.py)."""
+    cat = trklib.load(root, f"{trklib.ANALYTICS}/event-catalog.json")
+    tenants = trklib.load(root, f"{trklib.ANALYTICS}/tenants.json")
+    checks = sorted(trklib.TRK_SEV)
+    feats = sorted({p.get("feature") for p in pages.values() if p.get("feature")})
+    found = []
+    for feat in feats:
+        fe = (registry.get("features") or {}).get(feat) or {}
+        if fe.get("tracking") and (root / fe["tracking"]).exists():
+            found.append((feat, fe))
+    if not found or not cat:
+        for c in checks:
+            rep.skip(c, "no tracking.json registered for the features in scope (registry.features[*].tracking)" if cat else
+                     f"{trklib.ANALYTICS}/event-catalog.json missing")
+        return
+    ledger = load_json(root / "design-kit/qa/ids.json", {}) or {}
+    ids = set((ledger.get("nodes") or {}).keys())
+    issues = trklib.catalog_issues(cat, tenants)
+    for feat, fe in found:
+        trk = json.loads((root / fe["tracking"]).read_text(encoding="utf-8"))
+        flows = load_json(root / fe["flows"], None) if fe.get("flows") else None
+        issues += trklib.feature_issues(trk, cat, tenants, flows, ids)
+    for c in checks:
+        rep.ran(c)
+    for check, subj, msg in issues:
+        rep.fail(check, subj, msg, hint="open-questions")
+
+
 def check_parity(rep, root, pages, plats_in_scope):
     for pid, page in pages.items():
         plats = [p for p in (page.get("platforms") or {}) if p in ("web-desktop", "web-mobile")]
@@ -581,6 +612,7 @@ def main():
     files = authored_files(root, pages, plats)
     check_tokens_and_copy(rep, root, files, tokens)
     check_flows(rep, root, registry, pages)
+    check_tracking(rep, root, registry, pages)
     check_parity(rep, root, pages, plats)
 
     if not a.no_wrap:

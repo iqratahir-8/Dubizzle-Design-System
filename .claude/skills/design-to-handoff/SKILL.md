@@ -7,7 +7,7 @@ description: >-
   hand it over", "take this PRD all the way", "do the whole thing", "end to end", "from idea to
   deliverable", or gives a feature with no instruction about which stage. For one stage only
   (just design, just QA, just the deliverable) use that skill directly instead.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Design to hand-off — dubizzle Egypt
@@ -45,6 +45,7 @@ the gaps:
 | Who reads the deliverable: web engineers, Pro portal engineers, stakeholders? | all three |
 | How far: design only / design + QA / all the way to the deliverable? | all the way |
 | Product sources available (KB, product agent)? Who owns the open questions? | ask |
+| Tracking: which tenants ship it, and the primary metric + guardrails? (`analytics-tracking`) | the tenants in the PRD; metric from the PRD, else ask |
 
 Feature name (kebab-case) is fixed here; it becomes the registry `feature` and the folder
 `design-kit/deliverables/<feature>/`.
@@ -74,6 +75,14 @@ used when the review names them.
 
 **Gate:** no open P0 or P1. Fix them (back to Stage 2) or have the user accept them in writing; list
 what was accepted in the Stage 5 summary.
+
+## Stage 2.7 — Tracking (when a metric or tenant was given at intake)
+
+Invoke `analytics-tracking`: metrics → actions on the flow's screens → `event-taxonomy` → the feature's
+`tracking.json`, registered in the registry. Works for any tenant; the screens stay Egypt-measured.
+
+**Gate:** `npm run check:tracking -- --feature <feature>` has no blockers. Events that are only
+`proposed` are said out loud in the Stage 5 summary.
 
 ## Stage 3 — QA
 

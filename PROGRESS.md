@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-07 (session summary of 2026-10-06, item 96: consumer prototype + flows, account templates tracked, empty states, hero widgets — all on `main`) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-07 (multi-tenant analytics layer: GA4 events, tracking plans, funnels — item 97, D-022; on branch `claude/analytics-multi-tenant`, pushed to `origin`, not merged) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -1181,7 +1181,30 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    - **Open, in order:** 0j hero menus from live → 0i favourites-revamp deliverable v6 → 0d saved-searches empty recapture →
      mobile Motors hero tabs (not wired; panels captured empty).
 
+97. **Analytics for every tenant (user: "for all").** The design system had no analytics. Added the one
+   multi-tenant layer, `design-kit/analytics/` (D-022): `tenants.json` (EG, KSA, KW, BH, OM, JO — origins checked on
+   the public sites; currency + ISO decimals, KWD/BHD/OMR/JOD = 3; every GA4/GTM/Firebase/BigQuery id `null`),
+   `event-catalog.json` (21 events, all `proposed`, GA4 recommended names first, naming/limit/PII rules),
+   `funnels.json` (8 standard funnels). Five skills: `analytics-tracking` (entry: metrics → events → the feature's
+   `tracking.json`), `event-taxonomy`, `ga4-event-spec`, `funnel-analysis` (+ BigQuery SQL, readout template),
+   `analytics-insights`. `design-qa` 1.1.0 gains `trk.*` (`scripts/tracking.py`, also `npm run check:tracking`);
+   `design-deliverables` 1.1.0 gains an **Analytics and tracking** section when a `tracking.json` is registered;
+   `design-to-handoff` gains Stage 2.7. Worked example: `favourites-revamp/tracking.json` (6 events, 4 metrics,
+   registered) — QA: trk blockers 0, `trk.ids` warning (no EG ids recorded); the v5 deliverable built in a copy shows
+   the section. New `scripts/extract-tracking.mjs` (`npm run extract:tracking -- --tenant=XX [--write]`): read-only,
+   public pages, records GA4 `/g/collect` hits, GTM ids and dataLayer events, masks digits, drops client ids.
+   **Not run against live** (the cloud session cannot reach the sites); parsing and `--write` were tested on a local
+   page. The SQL is untested against a real export. Plugin 1.1.0; `.skill` rebuilt.
+   **Branch `claude/analytics-multi-tenant` on `origin`, rebased on `ee17e3a`; not merged to `main`, not on the mirror.**
+
 ## 6. Next up
+
+0k. **Analytics (item 97), on the Mac:** `git fetch origin && git checkout claude/analytics-multi-tenant`. Merge to `main`
+   is the owner's call (then push both remotes). Then `npm run extract:tracking -- --tenant=EG --write` and the same for
+   KSA, KW, BH, OM, JO. Review `design-kit/analytics/live/*.json`: add live events missing from the catalog with their
+   live names (event-taxonomy), log naming exceptions in PROPOSALS. Ask the analytics owner for GA4 property ids,
+   BigQuery datasets, key events and consent mode per tenant (they stay `null` until then). Rebuild the favourites
+   deliverable so v6 carries the tracking section. Page loads only — clicks and logged-in events are not observed yet.
 
 0j. **Hero menus from live (item 95):** on the Mac, `npm run capture:login` (the window; no sign-in needed), then
    `npm run extract:hero-filters && npm run wire:prototype`, look at the four landings, commit `hero-filters.json` and the

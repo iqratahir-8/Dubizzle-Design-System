@@ -22,7 +22,8 @@ SUB = ("references", "assets", "schema", "scripts")
 # package has exactly one SKILL.md). Kept in sync with .claude-plugin/plugin.json by the check below.
 SPECIALISTS = ["design-review", "design-copy", "design-forms", "design-grid", "design-interaction",
                "design-typography", "design-inspiration", "design-prompt-images", "icons",
-               "token-check", "rtl-arabic", "motion-design", "imagery-illustration", "chart-data-viz"]
+               "token-check", "rtl-arabic", "motion-design", "imagery-illustration", "chart-data-viz",
+               "analytics-tracking", "event-taxonomy", "ga4-event-spec", "funnel-analysis", "analytics-insights"]
 
 
 EXT = ROOT / ".claude" / "external-skills" / "dubizzle-egypt"

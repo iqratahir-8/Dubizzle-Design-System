@@ -67,6 +67,15 @@ and screen-reader behaviour need a person.
 Only when a budget is declared, naming what is budgeted against what number and where the number came
 from. A budget with no source is a wish.
 
+## tracking
+
+Analytics and tracking. Applies when the feature registers a `tracking.json`
+(`analytics-tracking`). Generated: metrics; events (user action, event, decision, screen and node,
+parameters, when it fires, catalog status and where it has been seen live, key event); one dataLayer
+example; custom definitions to register; per tenant currency, decimals, which GA4 ids are known and key
+events; the DebugView checklist; open `trk.*` findings; tracking questions. **Never says an event is
+live unless `observed_live` says so.** Deeper engineering detail: `ga4-event-spec`.
+
 ## acceptance
 Every criterion objectively checkable, tied to a check id or node id. Generated from checks that passed,
 plus authored criteria. Skipped checks are listed as **not verified** — claiming nothing beats implying

@@ -1,0 +1,225 @@
+{
+  "_purpose": "One record per dubizzle tenant for analytics work: origin, locale facts that change tracking, and the GA4 / GTM / Firebase / BigQuery ids. The design system itself is measured on Egypt only; this file is the only multi-tenant layer.",
+  "_rules": [
+    "null means unknown. Never fill an id from memory or a guess; ask the owner or read it from live with `npm run extract:tracking -- --tenant=XX`.",
+    "currency.decimals are ISO 4217 minor units (KWD, BHD, OMR, JOD = 3; EGP, SAR = 2). Prices go to GA4 as numbers, never formatted strings.",
+    "digits: Western everywhere (D-020) is decided for Egypt only; other tenants are unconfirmed until measured."
+  ],
+  "shared_parameters": {
+    "tenant": {
+      "type": "string",
+      "example": "EG",
+      "values": [
+        "EG",
+        "KSA",
+        "KW",
+        "BH",
+        "OM",
+        "JO"
+      ]
+    },
+    "vertical": {
+      "type": "string",
+      "example": "motors",
+      "values": [
+        "motors",
+        "property",
+        "classifieds",
+        "jobs",
+        "portal"
+      ]
+    },
+    "surface": {
+      "type": "string",
+      "example": "web-mobile",
+      "values": [
+        "web-desktop",
+        "web-mobile",
+        "ios",
+        "android"
+      ]
+    },
+    "ui_language": {
+      "type": "string",
+      "example": "en",
+      "values": [
+        "en",
+        "ar"
+      ]
+    },
+    "page_type": {
+      "type": "string",
+      "example": "dpv",
+      "values": [
+        "home",
+        "lpv",
+        "dpv",
+        "post_ad",
+        "favourites",
+        "saved_searches",
+        "my_ads",
+        "chat",
+        "profile",
+        "portal",
+        "other"
+      ]
+    },
+    "user_type": {
+      "type": "string",
+      "example": "guest",
+      "values": [
+        "guest",
+        "buyer",
+        "seller",
+        "dealer",
+        "agency"
+      ]
+    }
+  },
+  "default_key_events": [
+    "generate_lead",
+    "submit_ad",
+    "purchase",
+    "sign_up"
+  ],
+  "tenants": {
+    "EG": {
+      "name": "dubizzle Egypt",
+      "origin": "https://www.dubizzle.com.eg",
+      "region": "egypt",
+      "design_system": "measured",
+      "arabic_dialect": "egyptian",
+      "digits": "western (D-020)",
+      "currency": {
+        "code": "EGP",
+        "decimals": 2
+      },
+      "ga4": {
+        "measurement_id": null,
+        "property_id": null,
+        "gtm_container": null,
+        "firebase_ios_app": null,
+        "firebase_android_app": null,
+        "bigquery_dataset": null
+      },
+      "key_events": null,
+      "consent_mode": null,
+      "source": "origin verified 2026-10-07 (public site); everything under ga4, key_events and consent_mode is unknown"
+    },
+    "KSA": {
+      "name": "dubizzle Saudi Arabia",
+      "origin": "https://www.dubizzle.sa",
+      "region": "gcc",
+      "design_system": "not measured — Egypt components and tokens are not verified for this tenant",
+      "arabic_dialect": "gulf",
+      "digits": null,
+      "currency": {
+        "code": "SAR",
+        "decimals": 2
+      },
+      "ga4": {
+        "measurement_id": null,
+        "property_id": null,
+        "gtm_container": null,
+        "firebase_ios_app": null,
+        "firebase_android_app": null,
+        "bigquery_dataset": null
+      },
+      "key_events": null,
+      "consent_mode": null,
+      "source": "origin verified 2026-10-07 (public site); everything under ga4, key_events and consent_mode is unknown"
+    },
+    "KW": {
+      "name": "dubizzle Kuwait",
+      "origin": "https://www.dubizzle.com.kw",
+      "region": "gcc",
+      "design_system": "not measured — Egypt components and tokens are not verified for this tenant",
+      "arabic_dialect": "gulf",
+      "digits": null,
+      "currency": {
+        "code": "KWD",
+        "decimals": 3
+      },
+      "ga4": {
+        "measurement_id": null,
+        "property_id": null,
+        "gtm_container": null,
+        "firebase_ios_app": null,
+        "firebase_android_app": null,
+        "bigquery_dataset": null
+      },
+      "key_events": null,
+      "consent_mode": null,
+      "source": "origin verified 2026-10-07 (public site); everything under ga4, key_events and consent_mode is unknown"
+    },
+    "BH": {
+      "name": "dubizzle Bahrain",
+      "origin": "https://www.dubizzle.com.bh",
+      "region": "gcc",
+      "design_system": "not measured — Egypt components and tokens are not verified for this tenant",
+      "arabic_dialect": "gulf",
+      "digits": null,
+      "currency": {
+        "code": "BHD",
+        "decimals": 3
+      },
+      "ga4": {
+        "measurement_id": null,
+        "property_id": null,
+        "gtm_container": null,
+        "firebase_ios_app": null,
+        "firebase_android_app": null,
+        "bigquery_dataset": null
+      },
+      "key_events": null,
+      "consent_mode": null,
+      "source": "origin verified 2026-10-07 (public site); everything under ga4, key_events and consent_mode is unknown"
+    },
+    "OM": {
+      "name": "dubizzle Oman",
+      "origin": "https://www.dubizzle.com.om",
+      "region": "gcc",
+      "design_system": "not measured — Egypt components and tokens are not verified for this tenant",
+      "arabic_dialect": "gulf",
+      "digits": null,
+      "currency": {
+        "code": "OMR",
+        "decimals": 3
+      },
+      "ga4": {
+        "measurement_id": null,
+        "property_id": null,
+        "gtm_container": null,
+        "firebase_ios_app": null,
+        "firebase_android_app": null,
+        "bigquery_dataset": null
+      },
+      "key_events": null,
+      "consent_mode": null,
+      "source": "origin verified 2026-10-07 (public site); everything under ga4, key_events and consent_mode is unknown"
+    },
+    "JO": {
+      "name": "dubizzle Jordan",
+      "origin": "https://www.dubizzle.jo",
+      "region": "levant",
+      "design_system": "not measured — Egypt components and tokens are not verified for this tenant",
+      "arabic_dialect": "levantine",
+      "digits": null,
+      "currency": {
+        "code": "JOD",
+        "decimals": 3
+      },
+      "ga4": {
+        "measurement_id": null,
+        "property_id": null,
+        "gtm_container": null,
+        "firebase_ios_app": null,
+        "firebase_android_app": null,
+        "bigquery_dataset": null
+      },
+      "key_events": null,
+      "consent_mode": null,
+      "source": "origin verified 2026-10-07 (public site); everything under ga4, key_events and consent_mode is unknown"
+    }
+  }
+}

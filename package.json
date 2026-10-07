@@ -59,6 +59,8 @@
     "extract:portal-filters": "node scripts/extract-portal-filters.mjs",
     "check:live": "node scripts/check-live.mjs",
     "check:rtl": "node scripts/check-rtl.mjs",
+    "check:tracking": "python3 .claude/skills/design-qa/scripts/tracking.py",
+    "extract:tracking": "node scripts/extract-tracking.mjs",
     "qa:registry": "python3 .claude/skills/design-qa/scripts/build_registry.py",
     "qa:matrix": "python3 .claude/skills/design-qa/scripts/matrix.py",
     "qa": "python3 .claude/skills/design-qa/scripts/run.py",

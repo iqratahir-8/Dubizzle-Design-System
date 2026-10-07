@@ -239,6 +239,64 @@ def next_display_numbers(sections, applicable):
     return out
 
 
+def tracking_section(root, trk, rep):
+    """Analytics and tracking — tracking.json resolved against the shared catalog and tenant file."""
+    cat = jload(root / "design-kit/analytics/event-catalog.json", {}) or {}
+    ten = jload(root / "design-kit/analytics/tenants.json", {}) or {}
+    evs = {e["name"]: e for e in cat.get("events", [])}
+    shared = list((ten.get("shared_parameters") or {}))
+    tenants = trk.get("tenants", [])
+    t0 = (ten.get("tenants") or {}).get(tenants[0], {}) if tenants else {}
+    out = ['<p>Events come from the shared catalog <code>design-kit/analytics/event-catalog.json</code> '
+           f'(v{esc(cat.get("version", "?"))}). <b>Status matters:</b> <i>proposed</i> means designed here and not yet seen on live; '
+           '<i>live</i> means observed with <code>npm run extract:tracking</code>. Shared parameters are sent on every event: '
+           + ", ".join(f"<code>{esc(p)}</code>" for p in shared) + ".</p>"]
+    out.append("<h3>Metrics</h3>" + table(["id", "kind", "metric", "definition", "events"],
+               [(esc(m.get("id")), esc(m.get("kind")), esc(m.get("name")), esc(m.get("definition")), ", ".join(f"<code>{esc(e)}</code>" for e in m.get("events", []))) for m in trk.get("metrics", [])]))
+    rows = []
+    for e in trk.get("events", []):
+        ce = evs.get(e.get("event"), {})
+        obs = ", ".join(sorted((ce.get("observed_live") or {}))) or "—"
+        params = ", ".join([f"<code>{esc(k)}={esc(json.dumps(v, ensure_ascii=False))}</code>" for k, v in (e.get("params") or {}).items()] +
+                           [f"<code>{esc(k)}</code> (runtime)" for k in e.get("dynamic", [])])
+        rows.append((esc(e.get("id")), esc(e.get("action")), f"<code>{esc(e.get('event'))}</code>", esc(e.get("decision")),
+                     esc(", ".join(e.get("screens") or [e.get("screen", "")])) + (f" · node <code>{esc(e['node'])}</code>" if e.get("node") else ""),
+                     params, esc(ce.get("fires_on", "")), esc(ce.get("status", "not in catalog")) + f" · live: {esc(obs)}", "yes" if e.get("key_event") else "no"))
+    out.append("<h3>Events</h3>" + table(["id", "user action", "event", "decision", "fires on screen", "parameters", "fires when", "catalog status", "key event"], rows))
+    if trk.get("events"):
+        e = trk["events"][0]
+        sample = {"event": e["event"], **{k: v for k, v in (e.get("params") or {}).items()}}
+        sample.update({k: (evs.get(e["event"], {}).get("parameters", {}).get(k, {}).get("example")) for k in e.get("dynamic", [])})
+        cur = (t0.get("currency") or {}).get("code")
+        sample.update({"tenant": tenants[0] if tenants else None, "surface": "web-mobile", "ui_language": "en"})
+        if cur and any(k in sample for k in ("price", "value")):
+            sample["currency"] = cur
+        out.append("<h3>Implementation pattern</h3><p>Web pushes to the GTM data layer; the apps log the same name and parameters to Firebase. "
+                   f"Example for <code>{esc(e['event'])}</code>:</p><pre><code>window.dataLayer = window.dataLayer || [];\nwindow.dataLayer.push("
+                   + esc(json.dumps(sample, indent=2, ensure_ascii=False)) + ");</code></pre>")
+    custom = sorted({k for e in trk.get("events", []) for k in list((e.get("params") or {})) + list(e.get("dynamic", []))} | set(shared))
+    out.append("<h3>Custom definitions to register in GA4</h3><p>Each parameter a report needs must be registered as a custom dimension or metric "
+               "(GA4 Admin → Custom definitions). Check what is already registered before adding.</p>" + table(["parameter", "scope"], [(f"<code>{esc(p)}</code>", "event") for p in custom]))
+    trow = []
+    for code in tenants:
+        t = (ten.get("tenants") or {}).get(code, {})
+        ga = t.get("ga4") or {}
+        known = [k for k, v in ga.items() if v]
+        trow.append((esc(code), esc((t.get("currency") or {}).get("code")), esc((t.get("currency") or {}).get("decimals")),
+                     esc(", ".join(known)) if known else '<span style="color:var(--bad)">none recorded — DebugView check not possible yet</span>',
+                     esc(", ".join(t.get("key_events") or ten.get("default_key_events", []))) + ("" if t.get("key_events") else " (default, unconfirmed)")))
+    out.append("<h3>Per tenant</h3>" + table(["tenant", "currency", "decimals", "GA4 ids known", "key events"], trow))
+    out.append("<h3>QA verification</h3><ul><li>Each event fires once, at the moment in <i>fires when</i>, with every parameter above, in GA4 DebugView / GTM Preview / Firebase DebugView, per tenant property.</li>"
+               "<li>No personal data in any parameter (names, phone numbers, emails, message text).</li>"
+               "<li>Money parameters are numbers with the tenant's ISO currency code.</li></ul>")
+    trk_f = [f for f in rep.get("findings", []) if f["check"].startswith("trk.") and not f.get("waived") and f["severity"] != "note"]
+    if trk_f:
+        out.append("<h3>Open tracking findings</h3>" + table(["check", "where", "finding"], [(esc(f["check"]), esc(f["screen"]), esc(f["message"])) for f in trk_f]))
+    if trk.get("open_questions"):
+        out.append("<h3>Tracking questions</h3>" + table(["question", "who can answer", "blocks"], [(esc(q.get("q")), esc(q.get("owner")), esc(q.get("blocks"))) for q in trk["open_questions"]]))
+    return "".join(out)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--feature", required=True)
@@ -307,6 +365,8 @@ def main():
     imgs = sorted({m for h in screens_html for m in re.findall(r'<img[^>]*\ssrc="(?!data:)([^"]+)"', h)})
     n_data_imgs = sum(len(re.findall(r'<img[^>]*\ssrc="data:', h)) for h in screens_html)
     n_svg = sum(len(re.findall(r"<svg\b", h)) for h in screens_html)
+    trk_rel = (registry.get("features", {}).get(a.feature) or {}).get("tracking") or dj.get("tracking")
+    trk = jload(root / trk_rel) if trk_rel and (root / trk_rel).exists() else None
     excl = (dj.get("sections") or {}).get("exclude", {})
     app = {}
     for sid, s in sections.items():
@@ -320,6 +380,7 @@ def main():
         elif sid == "gestures": ok, why = bool(dj.get("gestures")) and "web-mobile" in dj["platforms"], "no gesture specified for a touch platform in scope"
         elif sid == "assets": ok, why = bool(imgs or n_data_imgs or n_svg), "screens use no images or icons"
         elif sid == "performance": ok, why = bool(dj.get("performance")), "no performance budget declared"
+        elif sid == "tracking": ok, why = bool(trk), "no tracking.json registered for this feature (analytics-tracking skill)"
         elif sid == "platform-notes": ok, why = len(dj["platforms"]) > 1, "one platform in scope"
         else: ok, why = True, None
         app[sid] = (ok, why or "")
@@ -369,6 +430,7 @@ def main():
                       "The full set lives there; this is not a copy of it.</p>" + table(["token", "value", "rules using it"], [(f"<code>{esc(t)}</code>", esc(v), n or "alias") for t, v, n in tokens_rows]))
     body["accessibility"] = md_to_html(frags["accessibility"]) + "<p class=\"dd-hint\">Palette-wide: several production colour pairings fail AA (<code>npm run check:a11y</code>); they are production values and are not changed here. RTL/Arabic: " + ("in scope." if "ar" in dj.get("locales", ["en"]) else "<b>out of scope</b> — Arabic is parked.") + " Focus order and screen-reader behaviour need a person.</p>"
     body["performance"] = f"<p>{esc(json.dumps(dj.get('performance')))}</p>"
+    body["tracking"] = tracking_section(root, trk, rep) if trk else ""
     body["acceptance"] = md_to_html(frags["acceptance"]) + ("<h3>Authored criteria</h3><ul>" + "".join(f"<li>{esc(x)}</li>" for x in dj["acceptance"]) + "</ul>" if dj.get("acceptance") else "")
     unpaired = [(pid, pl, why) for pid in dj["pages"] for pl, why in (registry["pages"][pid].get("unpaired") or {}).items()]
     par = [f for f in rep["findings"] if f["check"].startswith("par.") and not f.get("waived")]

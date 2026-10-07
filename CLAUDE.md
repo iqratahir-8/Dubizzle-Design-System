@@ -30,6 +30,11 @@
 7. **Whole job, idea to hand-off? Use `design-to-handoff`.** It asks questions, gets a plan approved,
    then runs `feature-design` → `design-qa` → `design-deliverables` with a gate between each. Use the
    three skills directly when only one stage is wanted.
-8. **How others use the skills:** `docs/USING-THE-SKILLS.md`. The distributable single file is `skills/dubizzle-design-handoff.skill`
+8. **Analytics — the only multi-tenant part.** Tracking plans, GA4 events and funnels work for every tenant
+   (EG, KSA, KW, BH, OM, JO): `analytics-tracking` (entry), `event-taxonomy`, `ga4-event-spec`, `funnel-analysis`,
+   `analytics-insights`. Data in `design-kit/analytics/` (read its README). Catalog events are proposals until
+   `npm run extract:tracking` sees them on live; never write a GA4 / GTM / Firebase id from memory. Screens stay
+   Egypt-measured — never imply another tenant's UI is verified.
+9. **How others use the skills:** `docs/USING-THE-SKILLS.md`. The distributable single file is `skills/dubizzle-design-handoff.skill`
    (generated: `npm run package:skill`, then copy to `skills/`). Rebuild and commit it whenever a skill changes.
 

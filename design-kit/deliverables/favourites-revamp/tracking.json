@@ -1,0 +1,174 @@
+{
+  "feature": "favourites-revamp",
+  "version": 1,
+  "tenants": [
+    "EG"
+  ],
+  "_note": "Worked example. Every event is a proposal (catalog status 'proposed') until observed on live EG with `npm run extract:tracking` or confirmed by the analytics owner.",
+  "metrics": [
+    {
+      "id": "M1",
+      "kind": "primary",
+      "name": "Favourites visits that open a listing",
+      "definition": "users with select_item (item_list_id=favourites) / users with view_item_list (item_list_id=favourites)",
+      "events": [
+        "view_item_list",
+        "select_item"
+      ]
+    },
+    {
+      "id": "M2",
+      "kind": "guardrail",
+      "name": "Unfavourite rate on the Favourites page",
+      "definition": "remove_from_wishlist (source=favourites) per view_item_list (item_list_id=favourites)",
+      "events": [
+        "remove_from_wishlist"
+      ]
+    },
+    {
+      "id": "M3",
+      "kind": "primary",
+      "name": "Saved searches that get reopened",
+      "definition": "users with select_saved_search / users with view_saved_searches where results_count > 0",
+      "events": [
+        "view_saved_searches",
+        "select_saved_search"
+      ]
+    },
+    {
+      "id": "M4",
+      "kind": "guardrail",
+      "name": "Saved searches deleted to zero",
+      "definition": "delete_saved_search where remaining_count = 0 (leads to the empty state)",
+      "events": [
+        "delete_saved_search"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "E1",
+      "action": "Favourites list shown",
+      "event": "view_item_list",
+      "decision": "reuse",
+      "screens": [
+        "list",
+        "m-list"
+      ],
+      "params": {
+        "item_list_id": "favourites",
+        "item_list_name": "Favourites",
+        "page_type": "favourites"
+      },
+      "dynamic": [
+        "results_count"
+      ],
+      "key_event": false
+    },
+    {
+      "id": "E2",
+      "action": "Open a favourited listing",
+      "event": "select_item",
+      "decision": "parameter",
+      "screens": [
+        "list",
+        "m-list"
+      ],
+      "params": {
+        "item_list_id": "favourites",
+        "page_type": "favourites"
+      },
+      "dynamic": [
+        "item_id",
+        "index",
+        "is_promoted"
+      ],
+      "key_event": false
+    },
+    {
+      "id": "E3",
+      "action": "Unfavourite from the list (heart)",
+      "event": "remove_from_wishlist",
+      "decision": "new",
+      "screens": [
+        "list",
+        "m-list"
+      ],
+      "params": {
+        "source": "favourites",
+        "page_type": "favourites"
+      },
+      "dynamic": [
+        "item_id"
+      ],
+      "key_event": false
+    },
+    {
+      "id": "E4",
+      "action": "Saved searches tab shown (also the empty state, results_count = 0)",
+      "event": "view_saved_searches",
+      "decision": "new",
+      "screens": [
+        "saved",
+        "saved-empty",
+        "m-saved",
+        "m-saved-empty"
+      ],
+      "params": {
+        "page_type": "saved_searches"
+      },
+      "dynamic": [
+        "results_count"
+      ],
+      "key_event": false
+    },
+    {
+      "id": "E5",
+      "action": "Open a saved search",
+      "event": "select_saved_search",
+      "decision": "new",
+      "screens": [
+        "saved",
+        "m-saved"
+      ],
+      "params": {
+        "page_type": "saved_searches"
+      },
+      "dynamic": [
+        "index"
+      ],
+      "key_event": false
+    },
+    {
+      "id": "E6",
+      "action": "Delete a saved search (trash)",
+      "event": "delete_saved_search",
+      "decision": "new",
+      "screens": [
+        "saved",
+        "m-saved"
+      ],
+      "node": "5:1043",
+      "params": {
+        "page_type": "saved_searches"
+      },
+      "dynamic": [
+        "index",
+        "remaining_count"
+      ],
+      "key_event": false
+    }
+  ],
+  "open_questions": [
+    {
+      "q": "Is the Saved searches tab gated per market (R1)? If so, view_saved_searches only fires where it is on — confirm the flag name for the tracking spec.",
+      "owner": "product owner",
+      "blocks": "E4 trigger rule"
+    },
+    {
+      "q": "Live EG GA4 measurement id / GTM container, so QA can verify in DebugView.",
+      "owner": "analytics owner",
+      "blocks": "trk.ids"
+    }
+  ]
+}

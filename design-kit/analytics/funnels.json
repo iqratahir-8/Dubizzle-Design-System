@@ -1,0 +1,108 @@
+{
+  "_purpose": "Standard funnels. Reuse these ids so funnels compare across tenants and over time. Change a definition only with a DECISIONS entry — a changed funnel breaks every before/after comparison.",
+  "defaults": {
+    "type": "closed",
+    "order": "indirectly_followed_by",
+    "unit": "users",
+    "breakdowns": [
+      "tenant",
+      "surface",
+      "ui_language",
+      "vertical"
+    ],
+    "min_users_step1": 500
+  },
+  "funnels": {
+    "buyer_lead": {
+      "steps": [
+        [
+          "search",
+          "view_item_list"
+        ],
+        "select_item",
+        "view_item",
+        "generate_lead"
+      ],
+      "window": "7d",
+      "question": "From browsing to contacting a seller"
+    },
+    "dpv_lead": {
+      "steps": [
+        "view_item",
+        "generate_lead"
+      ],
+      "window": "session",
+      "split_by": "lead_channel",
+      "question": "Which contact options convert on the DPV"
+    },
+    "post_ad": {
+      "steps": [
+        "start_post_ad",
+        "post_ad_step",
+        "submit_ad"
+      ],
+      "window": "session",
+      "split_by": "step_name",
+      "question": "Which Post an Ad step loses sellers"
+    },
+    "paid_feature": {
+      "steps": [
+        "begin_checkout",
+        "purchase"
+      ],
+      "window": "1d",
+      "question": "Checkout to payment for Featured / Elite / packages"
+    },
+    "favourite_to_lead": {
+      "steps": [
+        "add_to_wishlist",
+        "view_item_list",
+        "select_item",
+        "generate_lead"
+      ],
+      "window": "30d",
+      "filters": {
+        "view_item_list": {
+          "item_list_id": "favourites"
+        }
+      },
+      "question": "Do favourites turn into contacts"
+    },
+    "saved_search_return": {
+      "steps": [
+        "save_search",
+        "view_saved_searches",
+        "select_saved_search"
+      ],
+      "window": "30d",
+      "question": "Do saved searches bring people back"
+    },
+    "signup": {
+      "steps": [
+        {
+          "event": "prompt_shown",
+          "where": {
+            "prompt_id": "login_wall"
+          }
+        },
+        "sign_up"
+      ],
+      "window": "session",
+      "question": "Login wall to account"
+    },
+    "permission_prompt": {
+      "steps": [
+        "prompt_shown",
+        {
+          "event": "prompt_action",
+          "where": {
+            "action": "accept"
+          }
+        }
+      ],
+      "window": "session",
+      "split_by": "prompt_id",
+      "question": "Soft prompt acceptance"
+    }
+  }
+}

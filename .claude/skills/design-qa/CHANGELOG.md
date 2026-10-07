@@ -3,6 +3,14 @@
 Two versions move independently: this skill and the report schema it emits. Consumers pin to the
 schema, not to the skill.
 
+## [1.1.0] — 2026-10-07
+Report schema: v1 (unchanged — new check ids only)
+
+### Added
+- `trk.*` tracking checks (`scripts/tracking.py`, also `npm run check:tracking`): a feature's `tracking.json`
+  against `design-kit/analytics/event-catalog.json` and `tenants.json`, for any tenant. Findings use
+  `section_hint: open-questions`; the deliverable's tracking section reads them directly.
+
 ## [1.0.0] — 2026-09-29
 Report schema: v1
 

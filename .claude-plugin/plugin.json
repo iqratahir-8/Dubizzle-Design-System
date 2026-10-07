@@ -1,7 +1,7 @@
 {
   "name": "dubizzle-design",
-  "version": "1.0.0",
-  "description": "dubizzle Egypt design workflow: design a feature, QA it against every state/platform, and build an internal hand-off deliverable. Needs the dubizzle-design-system repo checked out (the skills call its scripts).",
+  "version": "1.1.0",
+  "description": "dubizzle Egypt design workflow: design a feature, QA it against every state/platform, and build an internal hand-off deliverable. Needs the dubizzle-design-system repo checked out (the skills call its scripts). Analytics skills (GA4 events, tracking plans, funnels) cover every tenant: EG, KSA, KW, BH, OM, JO.",
   "author": {
     "name": "dubizzle design system team"
   },
@@ -24,6 +24,11 @@
     "./.claude/skills/design-grid",
     "./.claude/skills/design-interaction",
     "./.claude/skills/design-inspiration",
-    "./.claude/skills/design-prompt-images"
+    "./.claude/skills/design-prompt-images",
+    "./.claude/skills/analytics-tracking",
+    "./.claude/skills/event-taxonomy",
+    "./.claude/skills/ga4-event-spec",
+    "./.claude/skills/funnel-analysis",
+    "./.claude/skills/analytics-insights"
   ]
 }

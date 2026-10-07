@@ -572,3 +572,21 @@ by this decision. It is now flagged in `.claude/external-skills/dubizzle-egypt/R
 
 **Not checked:** whether the repo defines separate app-platform tokens for it; RULES.md does not yet say "apps only".
 
+
+## D-022 — Analytics is multi-tenant; the design system stays Egypt-measured (2026-10-07)
+
+**User decision:** analytics skills "for all" tenants — EG, KSA, KW, BH, OM, JO.
+
+**Rule:** `design-kit/analytics/` is the one multi-tenant layer: `tenants.json` (origin, currency and
+decimals, Arabic dialect, GA4 / GTM / Firebase / BigQuery ids, key events), one shared
+`event-catalog.json` (same event names in every tenant — the tenant is a parameter, never part of a
+name) and `funnels.json`. Tokens, components, templates and captures remain dubizzle Egypt only; a
+tracking plan for another tenant never implies that tenant's screens are verified.
+
+**Truth levels:** ids are `null` until the owner gives them or `npm run extract:tracking` reads them
+off live; catalog events are `proposed` until observed on that tenant's live site. Tenant origins
+were checked on the public sites on 2026-10-07.
+
+**Changed:** new skills `analytics-tracking`, `event-taxonomy`, `ga4-event-spec`, `funnel-analysis`,
+`analytics-insights`; `design-qa` 1.1.0 (`trk.*`); `design-deliverables` 1.1.0 (Analytics and tracking
+section); `design-to-handoff` 1.1.0 (Stage 2.7); plugin 1.1.0; `check:tracking`, `extract:tracking`.

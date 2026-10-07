@@ -3,6 +3,12 @@
 Three versions move independently: this skill, each deliverable document, and the QA report
 schema this skill consumes.
 
+## [1.1.0] — 2026-10-07
+### Added
+- **Analytics and tracking** section (`tracking`, order 135): built from the feature's registered `tracking.json`
+  resolved against `design-kit/analytics/`, plus open `trk.*` findings. Not applicable (and listed as such) when no
+  `tracking.json` is registered, so existing deliverables are unchanged until one is added.
+
 ## [1.0.2] — 2026-10-02
 ### Changed
 - Smaller documents, no visual change: identical CSS rules are deduplicated (last copy kept, so the cascade is

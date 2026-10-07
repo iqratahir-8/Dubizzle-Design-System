@@ -1977,7 +1977,8 @@
   },
   "features": {
     "favourites-revamp": {
-      "flows": "design-kit/deliverables/favourites-revamp/flows.json"
+      "flows": "design-kit/deliverables/favourites-revamp/flows.json",
+      "tracking": "design-kit/deliverables/favourites-revamp/tracking.json"
     },
     "agency-portal": {
       "flows": "design-kit/deliverables/agency-portal/flows.json"

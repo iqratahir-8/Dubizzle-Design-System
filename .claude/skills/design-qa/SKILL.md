@@ -12,7 +12,7 @@ description: >-
   screen or component on its own. It wraps the repo's existing linters (check:design,
   check:a11y, check:rtl, check:prototype, check:parity, check:live) and adds the checks the
   repo did not have: state coverage, content extremes, breakpoints, flows, parity, reduced motion.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Design QA — dubizzle Egypt
@@ -134,6 +134,7 @@ Full catalogue with status (implemented / planned) in `references/checks.md`.
 | `tok` | tokens — no orphan hex/px, no inline style, every `var()` resolves | native + `check:design` |
 | `cpy` | copy — placeholder text, voice, verbatim against `product/copy.md` | native + `check:design` |
 | `flw` | flows — transitions resolve, reachable, back route, dismissible | native |
+| `trk` | tracking — the feature's `tracking.json` against the shared event catalog and tenant file (any tenant): events exist, names, parameters, no personal data, currency, screens, metrics | native (`scripts/tracking.py`), runs when `registry.features[*].tracking` is set |
 | `par` | parity — desktop/mobile pairs agree or declare the difference | native |
 | `rtl` | RTL — physical properties (only with `ar` in scope) | `check:rtl` |
 | `a11y` | labels, alt, headings, hit targets | `check:a11y` + native render |

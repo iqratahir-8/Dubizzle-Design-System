@@ -118,6 +118,26 @@ past the viewport edge, or clipping with no `text-overflow: ellipsis`.
 Findings whose element is inside a live region (production header at 768px overflows by 80px)
 are recorded as `live` notes, not blockers.
 
+## trk — tracking
+
+Runs when the feature has `registry.features[<feature>].tracking` (a `tracking.json`, written by
+`analytics-tracking`). Same code as `npm run check:tracking`. Any tenant in `design-kit/analytics/tenants.json`.
+
+| id | test | sev | status |
+|---|---|---|---|
+| `trk.catalog` | every event is in `design-kit/analytics/event-catalog.json`, not deprecated; `decision` is reuse / parameter / new | blocker | ✅ |
+| `trk.name` | catalog names: snake_case, ≤ 40 chars, no reserved GA4 name or prefix, no duplicates | blocker | ✅ |
+| `trk.params` | parameters declared on the event (or shared), required ones set or `dynamic`, enumerated values respected, ≤ 25 per event | blocker | ✅ |
+| `trk.pii` | no parameter that would carry personal data (name, phone, email, message, address, national id) | blocker | ✅ |
+| `trk.currency` | `price` / `value` always travel with `currency` | blocker | ✅ |
+| `trk.tenant` | every tenant exists in `tenants.json`; currency decimals are ISO minor units | blocker | ✅ |
+| `trk.screen` | every event names a screen, and the screen is in the feature's `flows.json` | blocker | ✅ |
+| `trk.node` | a named node is in the ledger `ids.json` | warning | ✅ |
+| `trk.metric` | every metric has events; every event measures a metric (or is `debug_only`) | warning | ✅ |
+| `trk.ids` | the tenant has a GA4 measurement id or GTM container recorded (else DebugView verification is impossible) | warning | ✅ |
+| `trk.unobserved` | the event has been seen on that tenant's live site (`observed_live`) — otherwise it is a proposal | note | ✅ |
+| `trk.fires` | the event actually fires in the built product with these parameters | — | 🗓 needs the implemented build and DebugView; manual today |
+
 ## mot — motion (render)
 
 | id | test | sev | status |

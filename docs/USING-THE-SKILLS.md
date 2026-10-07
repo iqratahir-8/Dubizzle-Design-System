@@ -29,6 +29,7 @@ Cloud Claude Code sessions on this repo already have the skills (no plugin insta
 | "QA the favourites page" / "is this ready?" | `design-qa`: PASS, PASS WITH WARNINGS or BLOCKED, plus a report |
 | "Make the deliverable for [feature]" | `design-deliverables`: one self-contained INTERNAL HTML file in `design-kit/deliverables/<feature>/dist/` |
 | "Which icon for…" / "write a prompt for a campaign photo" | `icons` / `design-prompt-images` |
+| "What should we track for [feature]?" / "build the Post an Ad funnel for KSA" / "did it work?" | `analytics-tracking` / `funnel-analysis` / `analytics-insights` — **all tenants** (EG, KSA, KW, BH, OM, JO) |
 
 Say "just design", "just QA" or "just the deliverable" to run one stage.
 

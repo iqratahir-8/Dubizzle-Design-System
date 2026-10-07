@@ -1,0 +1,643 @@
+{
+  "_purpose": "The one list of analytics events for every dubizzle tenant. Edited only through the event-taxonomy skill. Every event here is a PROPOSAL until it is observed on live (`npm run extract:tracking`) or confirmed by the analytics owner.",
+  "version": "0.1.0",
+  "naming": {
+    "pattern": "^[a-z][a-z0-9_]{0,39}$",
+    "style": "verb_object, GA4 recommended name when one fits",
+    "reserved_prefixes": [
+      "ga_",
+      "google_",
+      "firebase_"
+    ],
+    "reserved_names": [
+      "ad_activeview",
+      "ad_click",
+      "ad_exposure",
+      "ad_query",
+      "ad_reward",
+      "adunit_exposure",
+      "app_background",
+      "app_clear_data",
+      "app_exception",
+      "app_install",
+      "app_remove",
+      "app_store_refund",
+      "app_update",
+      "app_upgrade",
+      "dynamic_link_app_open",
+      "dynamic_link_app_update",
+      "dynamic_link_first_open",
+      "error",
+      "first_open",
+      "first_visit",
+      "in_app_purchase",
+      "notification_dismiss",
+      "notification_foreground",
+      "notification_open",
+      "notification_receive",
+      "os_update",
+      "screen_view",
+      "session_start",
+      "user_engagement"
+    ],
+    "limits": {
+      "name_chars": 40,
+      "param_name_chars": 40,
+      "param_value_chars": 100,
+      "params_per_event": 25
+    },
+    "limits_source": "GA4 collection limits for standard properties as documented by Google; re-check the GA4 help centre before a release — limits change.",
+    "pii_param_pattern": "^((user|seller|buyer|contact|customer|account)_)?(name|first_name|last_name|full_name|dob|birth_date|address|message|message_text)$|(email|phone|mobile_number|msisdn|whatsapp_number|national_id)"
+  },
+  "status_values": [
+    "proposed",
+    "approved",
+    "live",
+    "deprecated"
+  ],
+  "events": [
+    {
+      "name": "search",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": false,
+      "purpose": "A search is submitted (keyboard, suggestion or hero search).",
+      "fires_on": "the results request is sent",
+      "page_types": [
+        "home",
+        "lpv"
+      ],
+      "parameters": {
+        "search_term": {
+          "type": "string",
+          "example": "toyota corolla",
+          "required": true,
+          "note": "strip phone numbers before sending"
+        },
+        "category_id": {
+          "type": "string",
+          "example": "23",
+          "required": false
+        },
+        "filters_applied": {
+          "type": "number",
+          "example": 2,
+          "required": false
+        },
+        "results_count": {
+          "type": "number",
+          "example": 148,
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "view_item_list",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": false,
+      "purpose": "A list of listings is shown: LPV, favourites, similar ads.",
+      "fires_on": "first render of the list, and again when filters or sort change",
+      "page_types": [
+        "lpv",
+        "favourites",
+        "dpv"
+      ],
+      "parameters": {
+        "item_list_id": {
+          "type": "string",
+          "example": "lpv",
+          "required": true
+        },
+        "item_list_name": {
+          "type": "string",
+          "example": "Cars for Sale",
+          "required": false
+        },
+        "sort": {
+          "type": "string",
+          "example": "newest",
+          "required": false
+        },
+        "results_count": {
+          "type": "number",
+          "example": 148,
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "select_item",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": false,
+      "purpose": "A listing card is opened from a list.",
+      "fires_on": "tap on the card",
+      "page_types": [
+        "lpv",
+        "favourites",
+        "home",
+        "dpv"
+      ],
+      "parameters": {
+        "item_list_id": {
+          "type": "string",
+          "example": "lpv",
+          "required": true
+        },
+        "item_id": {
+          "type": "string",
+          "example": "206113432",
+          "required": true
+        },
+        "index": {
+          "type": "number",
+          "example": 3,
+          "required": false
+        },
+        "is_promoted": {
+          "type": "boolean",
+          "example": false,
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "view_item",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": false,
+      "purpose": "An ad detail page (DPV) is shown.",
+      "fires_on": "DPV render",
+      "page_types": [
+        "dpv"
+      ],
+      "parameters": {
+        "item_id": {
+          "type": "string",
+          "example": "206113432",
+          "required": true
+        },
+        "category_id": {
+          "type": "string",
+          "example": "23",
+          "required": false
+        },
+        "price": {
+          "type": "number",
+          "example": 990000,
+          "required": false
+        },
+        "currency": {
+          "type": "string",
+          "example": "EGP",
+          "required": false
+        },
+        "seller_type": {
+          "type": "string",
+          "example": "dealer",
+          "required": false
+        },
+        "is_promoted": {
+          "type": "boolean",
+          "example": true,
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "add_to_wishlist",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": false,
+      "purpose": "A listing is added to favourites.",
+      "fires_on": "the favourite request succeeds",
+      "page_types": [
+        "lpv",
+        "dpv",
+        "home"
+      ],
+      "parameters": {
+        "item_id": {
+          "type": "string",
+          "example": "206113432",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "example": "lpv",
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "remove_from_wishlist",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": false,
+      "purpose": "A listing is removed from favourites. Separate from add_to_wishlist on purpose: GA4 reports count add_to_wishlist as intent, so an opposite action must not share its name.",
+      "fires_on": "the unfavourite request succeeds",
+      "page_types": [
+        "favourites",
+        "lpv",
+        "dpv"
+      ],
+      "parameters": {
+        "item_id": {
+          "type": "string",
+          "example": "206113432",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "example": "favourites",
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "share",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": false,
+      "purpose": "A listing is shared.",
+      "fires_on": "a share option is chosen",
+      "page_types": [
+        "dpv"
+      ],
+      "parameters": {
+        "item_id": {
+          "type": "string",
+          "example": "206113432",
+          "required": true
+        },
+        "method": {
+          "type": "string",
+          "example": "whatsapp",
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "generate_lead",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": true,
+      "purpose": "The buyer contacts the seller.",
+      "fires_on": "call, WhatsApp, chat, SMS or email action is taken (for chat: first message sent)",
+      "page_types": [
+        "dpv",
+        "lpv",
+        "favourites"
+      ],
+      "parameters": {
+        "item_id": {
+          "type": "string",
+          "example": "206113432",
+          "required": true
+        },
+        "lead_channel": {
+          "type": "string",
+          "example": "whatsapp",
+          "required": true,
+          "values": [
+            "call",
+            "whatsapp",
+            "chat",
+            "sms",
+            "email"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "example": "dpv",
+          "required": false
+        },
+        "value": {
+          "type": "number",
+          "example": 0,
+          "required": false
+        },
+        "currency": {
+          "type": "string",
+          "example": "EGP",
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "save_search",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": false,
+      "purpose": "A search is saved.",
+      "fires_on": "the save request succeeds",
+      "page_types": [
+        "lpv"
+      ],
+      "parameters": {
+        "category_id": {
+          "type": "string",
+          "example": "23",
+          "required": false
+        },
+        "filters_applied": {
+          "type": "number",
+          "example": 3,
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "view_saved_searches",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": false,
+      "purpose": "The Saved searches list is shown.",
+      "fires_on": "first render",
+      "page_types": [
+        "saved_searches"
+      ],
+      "parameters": {
+        "results_count": {
+          "type": "number",
+          "example": 3,
+          "required": true
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "select_saved_search",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": false,
+      "purpose": "A saved search is opened.",
+      "fires_on": "tap on the saved search row",
+      "page_types": [
+        "saved_searches"
+      ],
+      "parameters": {
+        "index": {
+          "type": "number",
+          "example": 0,
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "delete_saved_search",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": false,
+      "purpose": "A saved search is deleted. A new intent: no catalog event covers removing a saved search, and save_search must not carry an opposite action.",
+      "fires_on": "the delete request succeeds",
+      "page_types": [
+        "saved_searches"
+      ],
+      "parameters": {
+        "index": {
+          "type": "number",
+          "example": 0,
+          "required": false
+        },
+        "remaining_count": {
+          "type": "number",
+          "example": 2,
+          "required": true
+        }
+      },
+      "observed_live": {},
+      "proposed_for": "favourites-revamp"
+    },
+    {
+      "name": "start_post_ad",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": false,
+      "purpose": "Post an Ad is entered.",
+      "fires_on": "the category step renders",
+      "page_types": [
+        "post_ad"
+      ],
+      "parameters": {
+        "entry_point": {
+          "type": "string",
+          "example": "header",
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "post_ad_step",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": false,
+      "purpose": "A Post an Ad step is completed.",
+      "fires_on": "the step's Next succeeds",
+      "page_types": [
+        "post_ad"
+      ],
+      "parameters": {
+        "step_name": {
+          "type": "string",
+          "example": "photos",
+          "required": true
+        },
+        "step_index": {
+          "type": "number",
+          "example": 2,
+          "required": true
+        },
+        "category_id": {
+          "type": "string",
+          "example": "23",
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "submit_ad",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": true,
+      "purpose": "An ad is submitted.",
+      "fires_on": "the submit request succeeds",
+      "page_types": [
+        "post_ad"
+      ],
+      "parameters": {
+        "category_id": {
+          "type": "string",
+          "example": "23",
+          "required": true
+        },
+        "photos_count": {
+          "type": "number",
+          "example": 8,
+          "required": false
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "begin_checkout",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": false,
+      "purpose": "A paid feature checkout is opened (Featured, Elite, packages).",
+      "fires_on": "the payment page renders",
+      "page_types": [
+        "post_ad",
+        "my_ads"
+      ],
+      "parameters": {
+        "value": {
+          "type": "number",
+          "example": 450,
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "example": "EGP",
+          "required": true
+        },
+        "items": {
+          "type": "array",
+          "example": "[{item_id:'featured_7d'}]",
+          "required": true
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "purchase",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": true,
+      "purpose": "A paid feature is bought. Never used for a buyer–seller deal.",
+      "fires_on": "payment confirmed by the backend",
+      "page_types": [
+        "post_ad",
+        "my_ads"
+      ],
+      "parameters": {
+        "transaction_id": {
+          "type": "string",
+          "example": "T-81723",
+          "required": true
+        },
+        "value": {
+          "type": "number",
+          "example": 450,
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "example": "EGP",
+          "required": true
+        },
+        "items": {
+          "type": "array",
+          "example": "[{item_id:'featured_7d'}]",
+          "required": true
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "sign_up",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": true,
+      "purpose": "An account is created.",
+      "fires_on": "the backend confirms the account",
+      "page_types": [
+        "other"
+      ],
+      "parameters": {
+        "method": {
+          "type": "string",
+          "example": "phone",
+          "required": true
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "login",
+      "status": "proposed",
+      "ga4_recommended": true,
+      "key_event_default": false,
+      "purpose": "A user logs in.",
+      "fires_on": "the backend confirms the session",
+      "page_types": [
+        "other"
+      ],
+      "parameters": {
+        "method": {
+          "type": "string",
+          "example": "phone",
+          "required": true
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "prompt_shown",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": false,
+      "purpose": "An onboarding element, coach mark, login wall or soft permission prompt is shown.",
+      "fires_on": "it becomes visible",
+      "page_types": [],
+      "parameters": {
+        "prompt_id": {
+          "type": "string",
+          "example": "push_soft_prompt",
+          "required": true
+        }
+      },
+      "observed_live": {}
+    },
+    {
+      "name": "prompt_action",
+      "status": "proposed",
+      "ga4_recommended": false,
+      "key_event_default": false,
+      "purpose": "That prompt is answered.",
+      "fires_on": "accept, dismiss or later is chosen",
+      "page_types": [],
+      "parameters": {
+        "prompt_id": {
+          "type": "string",
+          "example": "push_soft_prompt",
+          "required": true
+        },
+        "action": {
+          "type": "string",
+          "example": "accept",
+          "required": true,
+          "values": [
+            "accept",
+            "dismiss",
+            "later"
+          ]
+        }
+      },
+      "observed_live": {}
+    }
+  ]
+}

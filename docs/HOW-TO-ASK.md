@@ -283,6 +283,22 @@ Things to know:
   it never grants one.
 - After a re-capture: `npm run qa:registry` refreshes the screen list without losing your edits.
 
+## Analytics and tracking (all tenants)
+
+The design screens are Egypt-only; analytics works for **EG, KSA, KW, BH, OM and JO**.
+
+| You say | It does |
+|---|---|
+| "What should we track for [feature]?" / "tracking plan for [feature] in KSA and Kuwait" | `analytics-tracking`: metrics → events on the flow's screens → `tracking.json`, checked by `npm run check:tracking -- --feature <f>` |
+| "Is there an event for…" / "name this event" | `event-taxonomy`: reuse, add a parameter, or a new event — in that order |
+| "GA4 spec / dataLayer / Firebase events for [feature]" | `ga4-event-spec`: every push written out, ecommerce items, custom definitions, consent, DebugView plan |
+| "Where do users drop in Post an Ad?" / "build the buyer-lead funnel for EG" | `funnel-analysis`: standard funnel from `design-kit/analytics/funnels.json`, BigQuery SQL or GA4 exploration steps, readout |
+| "Did the favourites revamp work?" / "post-launch review" | `analytics-insights`: before/after against `tracking.json` metrics, per tenant |
+| "Which events does live KSA send?" | `npm run extract:tracking -- --tenant=KSA` (on the Mac — needs the site) |
+
+Once a feature has a `tracking.json`, its deliverable gains an **Analytics and tracking** section and QA runs `trk.*` checks.
+Every event says whether it is *proposed* or seen *live* — nothing is presented as measured until it is.
+
 ## Installing the skills as a plugin (any Claude account)
 
 The skills call this repo's scripts, so **clone the repo and run `npm install` first**. Then, once per account:
@@ -294,14 +310,14 @@ The skills call this repo's scripts, so **clone the repo and run `npm install` f
 
 That gives `design-to-handoff`, `feature-design`, `design-qa`, `design-deliverables` and the specialist skills
 (`token-check`, `rtl-arabic`, `motion-design`, `imagery-illustration`, `chart-data-viz`, `icons`, and the craft skills `design-review`, `design-copy`, `design-forms`, `design-typography`,
-`design-grid`, `design-interaction`, `design-inspiration`, `design-prompt-images`) in every folder. Inside the repo
+`design-grid`, `design-interaction`, `design-inspiration`, `design-prompt-images`, and the analytics skills `analytics-tracking`, `event-taxonomy`, `ga4-event-spec`, `funnel-analysis`, `analytics-insights`) in every folder. Inside the repo
 they already load from `.claude/skills/` without the plugin. Update later with `/plugin marketplace update dubizzle`.
 The plugin definition is `.claude-plugin/` (it points at `.claude/skills`, so nothing is duplicated).
 
 ## One skill for claude.ai upload
 
 The repo keeps four separate skills. For claude.ai (where names like `design-qa` can clash with skills already on the account)
-run `npm run package:skill`: it stitches them, plus 16 specialist guides (copy, forms, grid, typography, interaction, review, icons, RTL, motion, imagery, charts, tokens, inspiration, image prompts, the Egypt foundations and the design-system sync), into **one** skill, `dubizzle-design-handoff`, at
+run `npm run package:skill`: it stitches them, plus 21 specialist guides (copy, forms, grid, typography, interaction, review, icons, RTL, motion, imagery, charts, tokens, inspiration, image prompts, the five analytics skills, the Egypt foundations and the design-system sync), into **one** skill, `dubizzle-design-handoff`, at
 `dist/skills/dubizzle-design-handoff.skill` (gitignored). Upload it at Settings → Capabilities → Skills. The scripts still need
 the repo checked out and are run from its root, so use it for the process in Claude Design and Claude Code in the repo for real runs.
 

@@ -63,7 +63,7 @@
       "requires": [
         "intake"
       ],
-      "validator": "each rule is testable \u2014 a reader can say whether an implementation satisfies it"
+      "validator": "each rule is testable — a reader can say whether an implementation satisfies it"
     },
     "motion": {
       "title": "Interaction and motion",
@@ -79,7 +79,7 @@
       "title": "dotLottie",
       "order": 75,
       "always": false,
-      "applies_when": "a lottie asset is referenced (the design system ships none \u2014 normally not applicable)",
+      "applies_when": "a lottie asset is referenced (the design system ships none — normally not applicable)",
       "requires": [
         "assets"
       ],
@@ -144,6 +144,18 @@
         "intake"
       ],
       "validator": "states what is being budgeted and against what number; a budget with no source is not a budget"
+    },
+    "tracking": {
+      "title": "Analytics and tracking",
+      "order": 135,
+      "always": false,
+      "applies_when": "a tracking.json is registered for this feature (registry.features[*].tracking)",
+      "requires": [
+        "tracking",
+        "qa_report"
+      ],
+      "generated_from": "the feature's tracking.json resolved against design-kit/analytics/event-catalog.json and tenants.json, plus trk.* findings",
+      "validator": "every event names its screen, its catalog status and its parameters; every metric names its events; per tenant: currency and whether GA4 ids are known; nothing marked live that was not observed"
     },
     "acceptance": {
       "title": "Acceptance criteria",
