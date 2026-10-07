@@ -31,9 +31,9 @@ accurate as the system grows.
 **Git (2026-09-22):** two private remotes, kept identical — push to both.
 - **`origin` = `git@github.com:chaudhary-umair-ahmad/Dubizzle-Design-System.git`** (the canonical repo;
   `iqratahir-8` was added as a collaborator on 2026-09-22 and pushes over SSH).
-- `iqratahir` = `git@github.com:iqratahir-8/Dubizzle-Design-Agent.git` (a mirror made while the owner
-  was away; **renamed from Dubizzle-Design-System on 2026-09-24** — the old name still redirects, but
-  the remote URL here is the new one).
+- `iqratahir` = `git@github.com:iqratahir-8/Dubizzle-Design-System.git` (a mirror made while the owner
+  was away; renamed to Dubizzle-Design-Agent on 2026-09-24 and **back to Dubizzle-Design-System by 2026-10-07** —
+  GitHub said so on push; the old names redirect, but set the remote to this URL).
 Branches on both: `main` and `claude/keen-hypatia-ftrhz4` = the current work; `legacy-main` = the first
 session's separate history. The owner's one extra commit (Remotion-skills gitignore, 79973fd) was
 merged in, never overwritten. Push with: `git push origin HEAD:main HEAD:claude/keen-hypatia-ftrhz4 &&
@@ -1160,7 +1160,10 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
 96. **Session summary, 2026-10-06 → 07 — state at hand-off.** Everything below is on **`origin/main`** of
    `chaudhary-umair-ahmad/Dubizzle-Design-System` (fast-forwarded from `claude/trusting-clarke-25poz4`, same commit; the
    working tree was clean at hand-off). **Not pushed to the mirror** `iqratahir-8/Dubizzle-Design-Agent` — this session
-   could not reach it; push from the Mac with the recipe in section 1 if the two must stay identical.
+   could not reach it. **Synced 2026-10-07 from the Mac:** local `main` was the old `legacy-main` history (kept as
+   branch `backup-old-main` on the Mac), reset to `origin/main`, then force-pushed (with lease) to the mirror, which
+   replaced its `main` tip `3643123` (not in origin's history — check `git log cadb16f..3643123` on the Mac before
+   deleting the backup). Both remotes' `main` = `cadb16f` and later.
    - **Consumer prototype (item 93):** every consumer template, desktop + mobile, links to the template it opens on live;
      dropdowns, dialogs and sheets open from their real triggers. Flows stored per section in `design-kit/flows/<section>.json`,
      map at `design-kit/flows/index.html` (linked from the kit landing page). `npm run wire:prototype`, `build:flows`,
