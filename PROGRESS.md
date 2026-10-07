@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-07 (multi-tenant analytics layer: GA4 events, tracking plans, funnels — item 97, D-022; on branch `claude/analytics-multi-tenant`, pushed to `origin`, not merged) · branch `main` · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-07 (multi-tenant analytics layer: GA4 events, tracking plans, funnels — item 97, D-022; merged to `main` and pushed to both remotes from the Mac, 2026-10-07) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -1195,12 +1195,11 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    public pages, records GA4 `/g/collect` hits, GTM ids and dataLayer events, masks digits, drops client ids.
    **Not run against live** (the cloud session cannot reach the sites); parsing and `--write` were tested on a local
    page. The SQL is untested against a real export. Plugin 1.1.0; `.skill` rebuilt.
-   **Branch `claude/analytics-multi-tenant` on `origin`, rebased on `ee17e3a`; not merged to `main`, not on the mirror.**
+   **On `main` (`29f5078`), both remotes, merged from the Mac 2026-10-07.** The branch `claude/analytics-multi-tenant` can be deleted.
 
 ## 6. Next up
 
-0k. **Analytics (item 97), on the Mac:** `git fetch origin && git checkout claude/analytics-multi-tenant`. Merge to `main`
-   is the owner's call (then push both remotes). Then `npm run extract:tracking -- --tenant=EG --write` and the same for
+0k. **Analytics (item 97), on the Mac (already on `main`):** `git pull origin main`, then `npm run extract:tracking -- --tenant=EG --write` and the same for
    KSA, KW, BH, OM, JO. Review `design-kit/analytics/live/*.json`: add live events missing from the catalog with their
    live names (event-taxonomy), log naming exceptions in PROPOSALS. Ask the analytics owner for GA4 property ids,
    BigQuery datasets, key events and consent mode per tenant (they stay `null` until then). Rebuild the favourites
