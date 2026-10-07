@@ -4,7 +4,7 @@
 should read this first and continue from "Next up". It is updated after every milestone,
 so it is safe to switch accounts at any point.
 
-Last updated: 2026-10-06 (consumer prototype wired desktop + mobile, flows per section, item 93; account templates tracked; empty states, item 94; hero widgets, item 95) · branch `main` (merged from `claude/trusting-clarke-25poz4`, 2026-10-06) · location `~/Dubizzle-Design-System`
+Last updated: 2026-10-07 (session summary of 2026-10-06, item 96: consumer prototype + flows, account templates tracked, empty states, hero widgets — all on `main`) · branch `main` · location `~/Dubizzle-Design-System`
 
 Older, partly superseded notes: `HANDOFF.md` (first session), `docs/SESSION-HANDOFF.md`
 (second session). Where they disagree with this file, this file wins.
@@ -1156,6 +1156,27 @@ Plus HTTP-fetched listing/DPV pages from the manifest.
    Chromium when Chrome is absent. Gotchas: the property location field is pre-filled "Egypt" (a filter on it matched
    nothing — the list now falls back to all options, and the field selects its text on focus); a "click outside" in a test
    must land on a blank spot, the hero sits over wired links.
+
+96. **Session summary, 2026-10-06 → 07 — state at hand-off.** Everything below is on **`origin/main`** of
+   `chaudhary-umair-ahmad/Dubizzle-Design-System` (fast-forwarded from `claude/trusting-clarke-25poz4`, same commit; the
+   working tree was clean at hand-off). **Not pushed to the mirror** `iqratahir-8/Dubizzle-Design-Agent` — this session
+   could not reach it; push from the Mac with the recipe in section 1 if the two must stay identical.
+   - **Consumer prototype (item 93):** every consumer template, desktop + mobile, links to the template it opens on live;
+     dropdowns, dialogs and sheets open from their real triggers. Flows stored per section in `design-kit/flows/<section>.json`,
+     map at `design-kit/flows/index.html` (linked from the kit landing page). `npm run wire:prototype`, `build:flows`,
+     `check:flows` (all stored transitions pass).
+   - **Account templates tracked (owner's decision):** the `.gitignore` rules are gone; the owner committed them from the Mac
+     (`343a3d8`). Gate before committing a rebuild: `npm run check:prototype` (PII scan, portal + account, both layouts) plus
+     an eye-check of every people screen. Captures in `reference/live/` stay ignored.
+   - **Empty states (item 94):** `favourites-empty` is a real capture; `saved-searches-empty` stays derived (the "empty"
+     capture still held saved searches). `build-live-templates.mjs --only a,b` builds named templates without the prune.
+   - **Hero widgets (item 95):** Motors, New Cars, Electric Cars and Property search boxes work in the prototype (desktop).
+     Four menus with no captured options say so on click until `npm run extract:hero-filters` runs on the Mac.
+   - **On the Mac, first thing:** `git checkout main && git pull origin main` (if local `main` diverged: `git reset --hard
+     origin/main`, it is the old history from item 88). Then **avoid `npm run build:templates`** while some captures are
+     missing — it prunes shared CSS other templates need; use `--only` or `npm run wire:prototype` instead.
+   - **Open, in order:** 0j hero menus from live → 0i favourites-revamp deliverable v6 → 0d saved-searches empty recapture →
+     mobile Motors hero tabs (not wired; panels captured empty).
 
 ## 6. Next up
 
