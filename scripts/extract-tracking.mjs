@@ -11,7 +11,8 @@
  * (`cid`, `uid`, `sid`, `_p`, …) or parameter values — only names, counts and one short example
  * per parameter with digits masked, so a phone number in a search term cannot be kept.
  *
- * Output: design-kit/analytics/live/<TENANT>.json, and with --write it marks the matching catalog
+ * Output: design-kit/analytics/live/<TENANT>.json (a run narrowed with --paths or --layout writes
+ * <TENANT>.partial.json instead, so it never replaces the full record), and with --write it marks the matching catalog
  * events `observed_live.<TENANT>` and fills tenants.json ga4.measurement_id / gtm_container when
  * they are still null (never overwrites a recorded value).
  *
@@ -144,7 +145,11 @@ const out = {
   ga4_events: seen.events, datalayer_events: seen.datalayer_events,
 };
 mkdirSync(join(A, 'live'), { recursive: true });
-writeFileSync(join(A, 'live', `${code}.json`), JSON.stringify(out, null, 2) + '\n');
+// A narrowed run (--paths or --layout) never replaces the full record: it goes to <TENANT>.partial.json.
+const partial = Boolean(args.paths || args.layout);
+const outName = partial ? `${code}.partial.json` : `${code}.json`;
+writeFileSync(join(A, 'live', outName), JSON.stringify(out, null, 2) + '\n');
+console.log(`wrote design-kit/analytics/live/${outName}${partial ? ' (partial run — the full record is untouched)' : ''}`);
 
 const names = new Set([...Object.keys(seen.events), ...Object.keys(seen.datalayer_events)]);
 const inCat = catalog.events.filter((e) => names.has(e.name)).map((e) => e.name);
@@ -153,7 +158,9 @@ console.log(`\n${code}: ${names.size} event names observed; in catalog: ${inCat.
 if (notInCat.length) console.log(`live but not in the catalog (add through event-taxonomy, keep live names): ${notInCat.join(', ')}`);
 console.log(`GA4 measurement ids: ${out.measurement_ids.join(', ') || 'none seen'} · GTM: ${out.gtm_containers.join(', ') || 'none seen'}`);
 
-if (args.write) {
+if (args.write && partial) {
+  console.log('--write ignored on a partial run (--paths / --layout): run without them to update the catalog and tenants.json.');
+} else if (args.write) {
   const day = out.extracted_at.slice(0, 10);
   for (const e of catalog.events) if (names.has(e.name)) (e.observed_live ||= {})[code] = day;
   writeFileSync(catalogFile, JSON.stringify(catalog, null, 2) + '\n');

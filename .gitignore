@@ -53,3 +53,6 @@ __pycache__/
 # icons skill: cached @iconify-json packages and candidate lists
 icons/.npm-sets/
 icons/candidates.json
+
+# partial extractor runs (--paths / --layout) are scratch
+design-kit/analytics/live/*.partial.json
