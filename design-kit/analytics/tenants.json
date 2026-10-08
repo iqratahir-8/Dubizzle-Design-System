@@ -95,9 +95,9 @@
         "decimals": 2
       },
       "ga4": {
-        "measurement_id": null,
+        "measurement_id": "G-547QBEKWP2",
         "property_id": null,
-        "gtm_container": null,
+        "gtm_container": "GTM-KF9GVXD",
         "firebase_ios_app": null,
         "firebase_android_app": null,
         "bigquery_dataset": null

@@ -1,0 +1,2000 @@
+{
+  "tenant": "EG",
+  "origin": "https://www.dubizzle.com.eg",
+  "extracted_at": "2026-10-08T08:40:32.277Z",
+  "pages": [
+    "https://www.dubizzle.com.eg/en/",
+    "https://www.dubizzle.com.eg/en/motors/",
+    "https://www.dubizzle.com.eg/en/properties/",
+    "https://www.dubizzle.com.eg/en/vehicles/cars-for-sale/",
+    "https://www.dubizzle.com.eg/en/properties/apartments-duplex-for-sale/",
+    "https://www.dubizzle.com.eg/en/mobile-phones-tablets-accessories-numbers/mobile-phones/",
+    "https://www.dubizzle.com.eg/en/ad/mercedes-benz-e300-2018-amg-ID208928385.html",
+    "https://www.dubizzle.com.eg/en/ad/penthouse-167-m2-fully-finished-with-acs-ready-to-move-for-sale-in-fifth-square-al-marasem-new-cairo-ID504003995.html",
+    "https://www.dubizzle.com.eg/en/ad/honor-robot-phone-1-tera-16g-ram-ID208912587.html",
+    "https://www.dubizzle.com.eg/en/motors/car-finance/",
+    "https://www.dubizzle.com.eg/en/vehicles/cars-for-sale/?filter=new_used_eq_1",
+    "https://www.dubizzle.com.eg/en/vehicles/cars-for-sale/toyota/"
+  ],
+  "layouts": [
+    "desktop",
+    "mobile"
+  ],
+  "note": "Page loads and scrolling only — events that need a click, a login or a form are not observed here.",
+  "measurement_ids": [
+    "G-547QBEKWP2"
+  ],
+  "gtm_containers": [
+    "GTM-KF9GVXD"
+  ],
+  "ga4_events": {
+    "page_view": {
+      "count": 28,
+      "params": {
+        "website_section": {
+          "type": "string",
+          "example": "main_site"
+        },
+        "page_type": {
+          "type": "string",
+          "example": "home"
+        },
+        "page_number": {
+          "type": "number",
+          "example": "#"
+        },
+        "loc_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_name": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "loc_breadcrumb": {
+          "type": "string",
+          "example": ";#-#;"
+        },
+        "area_unit": {
+          "type": "string",
+          "example": "Sq. M."
+        },
+        "fresh_recommendations": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "popular_categories": {
+          "type": "string",
+          "example": "####,##,##,####,###,####,##"
+        },
+        "is_agent": {
+          "type": "string",
+          "example": "no"
+        },
+        "engagement_flag": {
+          "type": "string",
+          "example": "false"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en"
+        },
+        "listing_arrangement": {
+          "type": "string",
+          "example": "LIST"
+        },
+        "page_count": {
+          "type": "number",
+          "example": "####"
+        },
+        "ad_id": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "category_1_id": {
+          "type": "number",
+          "example": "###"
+        },
+        "category_1_name": {
+          "type": "string",
+          "example": "properties"
+        },
+        "category_2_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_2_name": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_name": {
+          "type": "string",
+          "example": ""
+        },
+        "search_keyword": {
+          "type": "string",
+          "example": ""
+        },
+        "company_ids": {
+          "type": "number",
+          "example": "####"
+        },
+        "seller_type": {
+          "type": "string",
+          "example": "business"
+        },
+        "ad_title": {
+          "type": "string",
+          "example": "Mercedes-Benz E### #### AMG"
+        },
+        "package_type": {
+          "type": "string",
+          "example": "elite"
+        },
+        "loc_1_name": {
+          "type": "string",
+          "example": "Cairo"
+        },
+        "loc_1_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_2_name": {
+          "type": "string",
+          "example": "Maadi"
+        },
+        "loc_2_id": {
+          "type": "string",
+          "example": "#-###"
+        },
+        "number_of_photos": {
+          "type": "number",
+          "example": "##"
+        },
+        "condition": {
+          "type": "string",
+          "example": "#"
+        },
+        "color": {
+          "type": "string",
+          "example": "##"
+        },
+        "model": {
+          "type": "string",
+          "example": "###"
+        },
+        "transmission": {
+          "type": "string",
+          "example": "#"
+        },
+        "price": {
+          "type": "number",
+          "example": "#######"
+        },
+        "year": {
+          "type": "number",
+          "example": "####"
+        },
+        "engine_capacity": {
+          "type": "number",
+          "example": "####"
+        },
+        "mileage": {
+          "type": "number",
+          "example": "#####"
+        },
+        "ownership_type": {
+          "type": "string",
+          "example": "non-freehold"
+        },
+        "agency_id": {
+          "type": "string",
+          "example": "####"
+        },
+        "agency_name": {
+          "type": "string",
+          "example": "Smart Car"
+        },
+        "agency_tier": {
+          "type": "number",
+          "example": "#"
+        },
+        "tal": {
+          "type": "string",
+          "example": "##"
+        },
+        "loc_3_name": {
+          "type": "string",
+          "example": "#th Settlement"
+        },
+        "loc_3_id": {
+          "type": "string",
+          "example": "#-####"
+        },
+        "purpose": {
+          "type": "string",
+          "example": "#"
+        }
+      }
+    },
+    "home_view": {
+      "count": 2,
+      "params": {
+        "website_section": {
+          "type": "string",
+          "example": "main_site"
+        },
+        "page_type": {
+          "type": "string",
+          "example": "home"
+        },
+        "page_number": {
+          "type": "number",
+          "example": "#"
+        },
+        "loc_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_name": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "loc_breadcrumb": {
+          "type": "string",
+          "example": ";#-#;"
+        },
+        "area_unit": {
+          "type": "string",
+          "example": "Sq. M."
+        },
+        "fresh_recommendations": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "popular_categories": {
+          "type": "string",
+          "example": "####,##,##,####,###,####,##"
+        },
+        "is_agent": {
+          "type": "string",
+          "example": "no"
+        },
+        "engagement_flag": {
+          "type": "string",
+          "example": "false"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en"
+        },
+        "event_unique_id": {
+          "type": "string",
+          "example": "##ced#a#-#df#-##cc-##c#-#afd#cdb##bd"
+        }
+      }
+    },
+    "ad_impression": {
+      "count": 53,
+      "params": {
+        "website_section": {
+          "type": "string",
+          "example": "main_site"
+        },
+        "page_type": {
+          "type": "string",
+          "example": "home"
+        },
+        "page_number": {
+          "type": "number",
+          "example": "#"
+        },
+        "loc_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_name": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "loc_breadcrumb": {
+          "type": "string",
+          "example": ";#-#;"
+        },
+        "area_unit": {
+          "type": "string",
+          "example": "Sq. M."
+        },
+        "fresh_recommendations": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "popular_categories": {
+          "type": "string",
+          "example": "####,##,##,####,###,####,##"
+        },
+        "is_agent": {
+          "type": "string",
+          "example": "no"
+        },
+        "engagement_flag": {
+          "type": "string",
+          "example": "false"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en"
+        },
+        "query_id": {
+          "type": "string",
+          "example": "COb#-ZeBqpcDFX#lRAAdKKwA#Q"
+        },
+        "page_section": {
+          "type": "string",
+          "example": "top_banner"
+        },
+        "name": {
+          "type": "string",
+          "example": "Noor city"
+        },
+        "event_unique_id": {
+          "type": "string",
+          "example": "##dd#b#b-be##-#ed#-####-a#dcda#ab#c#"
+        },
+        "listing_arrangement": {
+          "type": "string",
+          "example": "LIST"
+        },
+        "page_count": {
+          "type": "number",
+          "example": "####"
+        },
+        "ad_id": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "category_1_id": {
+          "type": "number",
+          "example": "###"
+        },
+        "category_1_name": {
+          "type": "string",
+          "example": "properties"
+        },
+        "category_2_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_2_name": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_name": {
+          "type": "string",
+          "example": ""
+        },
+        "search_keyword": {
+          "type": "string",
+          "example": ""
+        },
+        "company_ids": {
+          "type": "number",
+          "example": "####"
+        },
+        "seller_type": {
+          "type": "string",
+          "example": "business"
+        },
+        "ad_title": {
+          "type": "string",
+          "example": "Mercedes-Benz E### #### AMG"
+        },
+        "package_type": {
+          "type": "string",
+          "example": "elite"
+        },
+        "loc_1_name": {
+          "type": "string",
+          "example": "Cairo"
+        },
+        "loc_1_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_2_name": {
+          "type": "string",
+          "example": "Maadi"
+        },
+        "loc_2_id": {
+          "type": "string",
+          "example": "#-###"
+        },
+        "number_of_photos": {
+          "type": "number",
+          "example": "##"
+        },
+        "condition": {
+          "type": "string",
+          "example": "#"
+        },
+        "color": {
+          "type": "string",
+          "example": "##"
+        },
+        "model": {
+          "type": "string",
+          "example": "###"
+        },
+        "transmission": {
+          "type": "string",
+          "example": "#"
+        },
+        "price": {
+          "type": "number",
+          "example": "#######"
+        },
+        "year": {
+          "type": "number",
+          "example": "####"
+        },
+        "engine_capacity": {
+          "type": "number",
+          "example": "####"
+        },
+        "mileage": {
+          "type": "number",
+          "example": "#####"
+        },
+        "ownership_type": {
+          "type": "string",
+          "example": "non-freehold"
+        },
+        "agency_id": {
+          "type": "string",
+          "example": "####"
+        },
+        "agency_name": {
+          "type": "string",
+          "example": "Smart Car"
+        },
+        "agency_tier": {
+          "type": "number",
+          "example": "#"
+        },
+        "tal": {
+          "type": "string",
+          "example": "##"
+        },
+        "loc_3_name": {
+          "type": "string",
+          "example": "#th Settlement"
+        },
+        "loc_3_id": {
+          "type": "string",
+          "example": "#-####"
+        }
+      }
+    },
+    "for_you_feed_ad_impression": {
+      "count": 2,
+      "params": {
+        "website_section": {
+          "type": "string",
+          "example": "main_site"
+        },
+        "page_type": {
+          "type": "string",
+          "example": "home"
+        },
+        "page_number": {
+          "type": "number",
+          "example": "#"
+        },
+        "loc_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_name": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "loc_breadcrumb": {
+          "type": "string",
+          "example": ";#-#;"
+        },
+        "area_unit": {
+          "type": "string",
+          "example": "Sq. M."
+        },
+        "fresh_recommendations": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "popular_categories": {
+          "type": "string",
+          "example": "####,##,##,####,###,####,##"
+        },
+        "is_agent": {
+          "type": "string",
+          "example": "no"
+        },
+        "engagement_flag": {
+          "type": "string",
+          "example": "false"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en"
+        },
+        "page_section": {
+          "type": "string",
+          "example": "top_banner"
+        },
+        "ad_id": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "name": {
+          "type": "string",
+          "example": ""
+        },
+        "event_unique_id": {
+          "type": "string",
+          "example": "f###f##b-###b-###a-b###-#ab######acc"
+        }
+      }
+    },
+    "scroll": {
+      "count": 14,
+      "params": {
+        "website_section": {
+          "type": "string",
+          "example": "main_site"
+        },
+        "page_type": {
+          "type": "string",
+          "example": "home"
+        },
+        "page_number": {
+          "type": "number",
+          "example": "#"
+        },
+        "loc_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_name": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "loc_breadcrumb": {
+          "type": "string",
+          "example": ";#-#;"
+        },
+        "area_unit": {
+          "type": "string",
+          "example": "Sq. M."
+        },
+        "fresh_recommendations": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "popular_categories": {
+          "type": "string",
+          "example": "####,##,##,####,###,####,##"
+        },
+        "is_agent": {
+          "type": "string",
+          "example": "no"
+        },
+        "engagement_flag": {
+          "type": "string",
+          "example": "false"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en"
+        },
+        "percent_scrolled": {
+          "type": "number",
+          "example": "##"
+        },
+        "listing_arrangement": {
+          "type": "string",
+          "example": "LIST"
+        },
+        "page_count": {
+          "type": "number",
+          "example": "###"
+        },
+        "ad_id": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "category_1_id": {
+          "type": "number",
+          "example": "###"
+        },
+        "category_1_name": {
+          "type": "string",
+          "example": "vehicles"
+        },
+        "category_2_id": {
+          "type": "number",
+          "example": "##"
+        },
+        "category_2_name": {
+          "type": "string",
+          "example": "cars-for-sale"
+        },
+        "category_3_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_name": {
+          "type": "string",
+          "example": ""
+        },
+        "search_keyword": {
+          "type": "string",
+          "example": ""
+        },
+        "company_ids": {
+          "type": "number",
+          "example": "##"
+        },
+        "seller_type": {
+          "type": "string",
+          "example": "business"
+        },
+        "ad_title": {
+          "type": "string",
+          "example": "Penthouse ### m² Fully Finished with ACs"
+        },
+        "package_type": {
+          "type": "string",
+          "example": "free"
+        },
+        "loc_1_name": {
+          "type": "string",
+          "example": "Cairo"
+        },
+        "loc_1_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_2_name": {
+          "type": "string",
+          "example": "New Cairo"
+        },
+        "loc_2_id": {
+          "type": "string",
+          "example": "#-###"
+        },
+        "loc_3_name": {
+          "type": "string",
+          "example": "#th Settlement"
+        },
+        "loc_3_id": {
+          "type": "string",
+          "example": "#-####"
+        },
+        "number_of_photos": {
+          "type": "number",
+          "example": "##"
+        },
+        "price": {
+          "type": "number",
+          "example": "########"
+        },
+        "ownership_type": {
+          "type": "string",
+          "example": "non-freehold"
+        },
+        "agency_id": {
+          "type": "string",
+          "example": "##"
+        },
+        "agency_name": {
+          "type": "string",
+          "example": "Green Home"
+        },
+        "agency_tier": {
+          "type": "number",
+          "example": "#"
+        },
+        "tal": {
+          "type": "string",
+          "example": "##"
+        },
+        "condition": {
+          "type": "string",
+          "example": "New"
+        }
+      }
+    },
+    "click_filter": {
+      "count": 2,
+      "params": {
+        "engagement_flag": {
+          "type": "string",
+          "example": "false"
+        },
+        "website_section": {
+          "type": "string",
+          "example": "main_site"
+        },
+        "page_type": {
+          "type": "string",
+          "example": "motors_home"
+        },
+        "page_section": {
+          "type": "string",
+          "example": "filters"
+        },
+        "loc_name": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "loc_1_name": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "loc_1_id": {
+          "type": "number",
+          "example": "#"
+        },
+        "value": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "name": {
+          "type": "string",
+          "example": "Location"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en-GB"
+        }
+      }
+    },
+    "search_done": {
+      "count": 12,
+      "params": {
+        "website_section": {
+          "type": "string",
+          "example": "main_site"
+        },
+        "page_type": {
+          "type": "string",
+          "example": "searchresult"
+        },
+        "listing_arrangement": {
+          "type": "string",
+          "example": "LIST"
+        },
+        "page_number": {
+          "type": "number",
+          "example": "#"
+        },
+        "page_count": {
+          "type": "number",
+          "example": "####"
+        },
+        "ad_id": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "category_1_id": {
+          "type": "number",
+          "example": "###"
+        },
+        "category_1_name": {
+          "type": "string",
+          "example": "properties"
+        },
+        "category_2_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_2_name": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_name": {
+          "type": "string",
+          "example": ""
+        },
+        "loc_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_name": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "loc_breadcrumb": {
+          "type": "string",
+          "example": ";#-#;"
+        },
+        "area_unit": {
+          "type": "string",
+          "example": "Sq. M."
+        },
+        "popular_categories": {
+          "type": "string",
+          "example": "####,##,##,####,###,####,##"
+        },
+        "search_keyword": {
+          "type": "string",
+          "example": ""
+        },
+        "is_agent": {
+          "type": "string",
+          "example": "no"
+        },
+        "engagement_flag": {
+          "type": "string",
+          "example": "false"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en"
+        },
+        "event_unique_id": {
+          "type": "string",
+          "example": "#a####e#-#c##-#d##-##c#-b###d####e#c"
+        },
+        "condition": {
+          "type": "string",
+          "example": "New"
+        }
+      }
+    },
+    "sell_pitch_banner": {
+      "count": 12,
+      "params": {
+        "website_section": {
+          "type": "string",
+          "example": "main_site"
+        },
+        "page_type": {
+          "type": "string",
+          "example": "searchresults"
+        },
+        "listing_arrangement": {
+          "type": "string",
+          "example": "LIST"
+        },
+        "page_number": {
+          "type": "number",
+          "example": "#"
+        },
+        "page_count": {
+          "type": "number",
+          "example": "####"
+        },
+        "ad_id": {
+          "type": "string",
+          "example": "#########,#########,#########,#########,"
+        },
+        "category_1_id": {
+          "type": "number",
+          "example": "###"
+        },
+        "category_1_name": {
+          "type": "string",
+          "example": "properties"
+        },
+        "category_2_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_2_name": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_name": {
+          "type": "string",
+          "example": ""
+        },
+        "loc_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_name": {
+          "type": "string",
+          "example": "Egypt"
+        },
+        "loc_breadcrumb": {
+          "type": "string",
+          "example": ";#-#;"
+        },
+        "area_unit": {
+          "type": "string",
+          "example": "Sq. M."
+        },
+        "popular_categories": {
+          "type": "string",
+          "example": "####,##,##,####,###,####,##"
+        },
+        "search_keyword": {
+          "type": "string",
+          "example": ""
+        },
+        "is_agent": {
+          "type": "string",
+          "example": "no"
+        },
+        "engagement_flag": {
+          "type": "string",
+          "example": "false"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en"
+        },
+        "page_section": {
+          "type": "string",
+          "example": "featured_dealers"
+        },
+        "event_unique_id": {
+          "type": "string",
+          "example": "###d#d#b-####-#bd#-###c-###dd##cd#ec"
+        },
+        "condition": {
+          "type": "string",
+          "example": "New"
+        }
+      }
+    },
+    "ad_view": {
+      "count": 6,
+      "params": {
+        "website_section": {
+          "type": "string",
+          "example": "main_site"
+        },
+        "page_type": {
+          "type": "string",
+          "example": "offerdetail"
+        },
+        "company_ids": {
+          "type": "number",
+          "example": "####"
+        },
+        "seller_type": {
+          "type": "string",
+          "example": "business"
+        },
+        "ad_id": {
+          "type": "string",
+          "example": "#########"
+        },
+        "ad_title": {
+          "type": "string",
+          "example": "Mercedes-Benz E### #### AMG"
+        },
+        "package_type": {
+          "type": "string",
+          "example": "elite"
+        },
+        "category_1_id": {
+          "type": "number",
+          "example": "###"
+        },
+        "category_1_name": {
+          "type": "string",
+          "example": "vehicles"
+        },
+        "category_2_id": {
+          "type": "number",
+          "example": "##"
+        },
+        "category_2_name": {
+          "type": "string",
+          "example": "cars-for-sale"
+        },
+        "category_3_id": {
+          "type": "string",
+          "example": ""
+        },
+        "category_3_name": {
+          "type": "string",
+          "example": ""
+        },
+        "loc_id": {
+          "type": "string",
+          "example": "#-###"
+        },
+        "loc_name": {
+          "type": "string",
+          "example": "Maadi"
+        },
+        "loc_breadcrumb": {
+          "type": "string",
+          "example": ";#-#;#-#;#-###;"
+        },
+        "loc_1_name": {
+          "type": "string",
+          "example": "Cairo"
+        },
+        "loc_1_id": {
+          "type": "string",
+          "example": "#-#"
+        },
+        "loc_2_name": {
+          "type": "string",
+          "example": "Maadi"
+        },
+        "loc_2_id": {
+          "type": "string",
+          "example": "#-###"
+        },
+        "number_of_photos": {
+          "type": "number",
+          "example": "##"
+        },
+        "condition": {
+          "type": "string",
+          "example": "#"
+        },
+        "color": {
+          "type": "string",
+          "example": "##"
+        },
+        "model": {
+          "type": "string",
+          "example": "###"
+        },
+        "transmission": {
+          "type": "string",
+          "example": "#"
+        },
+        "price": {
+          "type": "number",
+          "example": "#######"
+        },
+        "year": {
+          "type": "number",
+          "example": "####"
+        },
+        "engine_capacity": {
+          "type": "number",
+          "example": "####"
+        },
+        "mileage": {
+          "type": "number",
+          "example": "#####"
+        },
+        "area_unit": {
+          "type": "string",
+          "example": "Sq. M."
+        },
+        "is_agent": {
+          "type": "string",
+          "example": "no"
+        },
+        "engagement_flag": {
+          "type": "string",
+          "example": "false"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en"
+        },
+        "ownership_type": {
+          "type": "string",
+          "example": "non-freehold"
+        },
+        "agency_id": {
+          "type": "string",
+          "example": "####"
+        },
+        "agency_name": {
+          "type": "string",
+          "example": "Smart Car"
+        },
+        "agency_tier": {
+          "type": "number",
+          "example": "#"
+        },
+        "tal": {
+          "type": "string",
+          "example": "##"
+        },
+        "event_unique_id": {
+          "type": "string",
+          "example": "####aa##-##f#-####-##cd-###eb##a##b#"
+        },
+        "loc_3_name": {
+          "type": "string",
+          "example": "#th Settlement"
+        },
+        "loc_3_id": {
+          "type": "string",
+          "example": "#-####"
+        },
+        "purpose": {
+          "type": "string",
+          "example": "#"
+        }
+      }
+    }
+  },
+  "datalayer_events": {
+    "home_view": {
+      "count": 2,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "website_section",
+        "is_agent",
+        "page_type",
+        "page_number",
+        "fresh_recommendations",
+        "popular_categories",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "event_unique_id",
+        "event_id",
+        "gtm.uniqueEventId"
+      ]
+    },
+    "home_banner_impression": {
+      "count": 6,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "website_section",
+        "is_agent",
+        "page_type",
+        "page_number",
+        "fresh_recommendations",
+        "popular_categories",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "event_unique_id",
+        "name",
+        "banner_id",
+        "page_section",
+        "event_id",
+        "gtm.uniqueEventId",
+        "originalLocation"
+      ]
+    },
+    "for_you_feed_ad_impression": {
+      "count": 2,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "website_section",
+        "is_agent",
+        "page_type",
+        "page_number",
+        "fresh_recommendations",
+        "popular_categories",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "originalLocation",
+        "event_unique_id",
+        "ad_id",
+        "event_id",
+        "gtm.uniqueEventId"
+      ]
+    },
+    "scroll_for_you_feed": {
+      "count": 8,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "website_section",
+        "is_agent",
+        "page_type",
+        "page_number",
+        "fresh_recommendations",
+        "popular_categories",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "originalLocation",
+        "event_unique_id",
+        "percent_scrolled",
+        "ads_loaded",
+        "event_id",
+        "gtm.uniqueEventId"
+      ]
+    },
+    "page_view": {
+      "count": 4,
+      "keys": [
+        "page_type",
+        "language",
+        "website_section",
+        "gtm.uniqueEventId"
+      ]
+    },
+    "click_filter": {
+      "count": 2,
+      "keys": [
+        "page_type",
+        "page_section",
+        "language",
+        "website_section",
+        "loc_name",
+        "loc_1_name",
+        "loc_1_id",
+        "name",
+        "value",
+        "location_level",
+        "location_depth",
+        "location_method",
+        "gtm.uniqueEventId"
+      ]
+    },
+    "preferred_source_impression": {
+      "count": 4,
+      "keys": [
+        "page_type",
+        "page_section",
+        "language",
+        "website_section",
+        "page_path",
+        "gtm.uniqueEventId"
+      ]
+    },
+    "search_done": {
+      "count": 12,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "website_section",
+        "is_agent",
+        "category_1_id",
+        "category_1_name",
+        "category_2_id",
+        "category_2_name",
+        "category_3_id",
+        "category_3_name",
+        "listing_arrangement",
+        "page_number",
+        "page_count",
+        "sort_by",
+        "search_keyword",
+        "filter_name",
+        "filter_value",
+        "ad_ids",
+        "ad_ids_set_2",
+        "ad_ids_set_3",
+        "ad_ids_set_4",
+        "ad_ids_set_5",
+        "ad_ids_set_6",
+        "popular_categories",
+        "page_type",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "event_unique_id",
+        "total_featured",
+        "event_id",
+        "gtm.uniqueEventId",
+        "new_used",
+        "make"
+      ]
+    },
+    "featured_dealer_impression": {
+      "count": 12,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "website_section",
+        "is_agent",
+        "category_1_id",
+        "category_1_name",
+        "category_2_id",
+        "category_2_name",
+        "category_3_id",
+        "category_3_name",
+        "listing_arrangement",
+        "page_number",
+        "page_count",
+        "sort_by",
+        "search_keyword",
+        "filter_name",
+        "filter_value",
+        "ad_ids",
+        "ad_ids_set_2",
+        "ad_ids_set_3",
+        "ad_ids_set_4",
+        "ad_ids_set_5",
+        "ad_ids_set_6",
+        "popular_categories",
+        "page_type",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "event_unique_id",
+        "agencies",
+        "page_section",
+        "event_id",
+        "gtm.uniqueEventId",
+        "new_used",
+        "make"
+      ]
+    },
+    "sell_pitch_banner": {
+      "count": 12,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "website_section",
+        "is_agent",
+        "category_1_id",
+        "category_1_name",
+        "category_2_id",
+        "category_2_name",
+        "category_3_id",
+        "category_3_name",
+        "listing_arrangement",
+        "page_number",
+        "page_count",
+        "sort_by",
+        "search_keyword",
+        "filter_name",
+        "filter_value",
+        "ad_ids",
+        "ad_ids_set_2",
+        "ad_ids_set_3",
+        "ad_ids_set_4",
+        "ad_ids_set_5",
+        "ad_ids_set_6",
+        "popular_categories",
+        "page_type",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "event_unique_id",
+        "event_id",
+        "gtm.uniqueEventId",
+        "new_used",
+        "make"
+      ]
+    },
+    "ad_view": {
+      "count": 6,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "website_section",
+        "is_agent",
+        "make",
+        "tags",
+        "year",
+        "color",
+        "doors",
+        "model",
+        "power",
+        "price",
+        "video",
+        "owners",
+        "petrol",
+        "source",
+        "air_con",
+        "mileage",
+        "version",
+        "interior",
+        "new_used",
+        "panorama",
+        "body_type",
+        "ga_user_id",
+        "price_type",
+        "parentModel",
+        "down_payment",
+        "transmission",
+        "ga_session_id",
+        "payment_option",
+        "engine_capacity",
+        "display_down_payment",
+        "deliverable",
+        "featured_agency",
+        "seller_verified",
+        "delivery",
+        "category_1_id",
+        "category_1_name",
+        "category_2_id",
+        "category_2_name",
+        "category_3_id",
+        "category_3_name",
+        "ad_id",
+        "ad_source",
+        "ad_title",
+        "seller_id",
+        "ad_condition",
+        "package_type",
+        "seller_type",
+        "company_ids",
+        "agency_tier",
+        "_tal",
+        "number_of_photos",
+        "page_type",
+        "ownership_type",
+        "agency_id",
+        "agency_name",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "product_type",
+        "event_unique_id",
+        "event_id",
+        "gtm.uniqueEventId",
+        "ft",
+        "type",
+        "rooms",
+        "bathrooms",
+        "completion_status",
+        "RAM",
+        "Storage",
+        "purpose",
+        "has_warranty",
+        "Battery Capacity"
+      ]
+    },
+    "related_ads": {
+      "count": 8,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "website_section",
+        "is_agent",
+        "make",
+        "tags",
+        "year",
+        "color",
+        "doors",
+        "model",
+        "power",
+        "price",
+        "video",
+        "owners",
+        "petrol",
+        "source",
+        "air_con",
+        "mileage",
+        "version",
+        "interior",
+        "new_used",
+        "panorama",
+        "body_type",
+        "ga_user_id",
+        "price_type",
+        "parentModel",
+        "down_payment",
+        "transmission",
+        "ga_session_id",
+        "payment_option",
+        "engine_capacity",
+        "display_down_payment",
+        "deliverable",
+        "featured_agency",
+        "seller_verified",
+        "delivery",
+        "category_1_id",
+        "category_1_name",
+        "category_2_id",
+        "category_2_name",
+        "category_3_id",
+        "category_3_name",
+        "ad_id",
+        "ad_source",
+        "ad_title",
+        "seller_id",
+        "ad_condition",
+        "package_type",
+        "seller_type",
+        "company_ids",
+        "agency_tier",
+        "_tal",
+        "number_of_photos",
+        "page_type",
+        "ownership_type",
+        "agency_id",
+        "agency_name",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "product_type",
+        "event_unique_id",
+        "related_ads",
+        "view_section",
+        "event_id",
+        "gtm.uniqueEventId",
+        "ft",
+        "type",
+        "rooms",
+        "bathrooms",
+        "completion_status",
+        "RAM",
+        "Storage",
+        "purpose",
+        "has_warranty",
+        "Battery Capacity"
+      ]
+    },
+    "pitch_install_banner": {
+      "count": 14,
+      "keys": [
+        "experiments",
+        "device_type",
+        "app_agent_version",
+        "app_agent",
+        "app_environment",
+        "language",
+        "lang",
+        "area_unit",
+        "currency_unit",
+        "layout_preference",
+        "url",
+        "query_params",
+        "route",
+        "referrer",
+        "website_referrer",
+        "starting_page_url",
+        "anonymous_session_id",
+        "user_profile",
+        "website_platform",
+        "thumb_uid",
+        "loc_id",
+        "loc_name",
+        "loc_breadcrumb",
+        "website_section",
+        "is_agent",
+        "page_type",
+        "page_number",
+        "fresh_recommendations",
+        "popular_categories",
+        "sort_preference",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "custom_traffic_source",
+        "gclid",
+        "wbraid_id",
+        "loc_1_id",
+        "loc_1_name",
+        "loc_2_id",
+        "loc_2_name",
+        "loc_3_id",
+        "loc_3_name",
+        "loc_4_id",
+        "loc_4_name",
+        "user_id",
+        "event_unique_id",
+        "view_section",
+        "page_section",
+        "event_id",
+        "gtm.uniqueEventId",
+        "category_1_id",
+        "category_1_name",
+        "category_2_id",
+        "category_2_name",
+        "category_3_id",
+        "category_3_name",
+        "listing_arrangement",
+        "page_count",
+        "sort_by",
+        "search_keyword",
+        "filter_name",
+        "filter_value",
+        "ad_ids",
+        "ad_ids_set_2",
+        "ad_ids_set_3",
+        "ad_ids_set_4",
+        "ad_ids_set_5",
+        "ad_ids_set_6",
+        "originalLocation",
+        "make",
+        "tags",
+        "year",
+        "color",
+        "doors",
+        "model",
+        "power",
+        "price",
+        "video",
+        "owners",
+        "petrol",
+        "source",
+        "air_con",
+        "mileage",
+        "version",
+        "interior",
+        "new_used",
+        "panorama",
+        "body_type",
+        "ga_user_id",
+        "price_type",
+        "parentModel",
+        "down_payment",
+        "transmission",
+        "ga_session_id",
+        "payment_option",
+        "engine_capacity",
+        "display_down_payment",
+        "deliverable",
+        "featured_agency",
+        "seller_verified",
+        "delivery",
+        "ad_id",
+        "ad_source",
+        "ad_title",
+        "seller_id",
+        "ad_condition",
+        "package_type",
+        "seller_type",
+        "company_ids",
+        "agency_tier",
+        "_tal",
+        "number_of_photos",
+        "ownership_type",
+        "agency_id",
+        "agency_name",
+        "product_type",
+        "ft",
+        "type",
+        "rooms",
+        "bathrooms",
+        "completion_status",
+        "RAM",
+        "Storage",
+        "purpose",
+        "has_warranty",
+        "Battery Capacity"
+      ]
+    }
+  }
+}
